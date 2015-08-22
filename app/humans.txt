@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  Axel Moussard -- <role> -- @drassuom
+  Benjamin Cabanes -- <role> -- @bencabanes
+  Maurice Lefebvre -- <role> --
+  Nicolas Rousseau-Lirette -- <role> --
+
+# THANKS
+
+  <name>
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3
