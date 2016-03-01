@@ -1,13 +1,14 @@
 .navbar-brand.logo {
-	background: url(../images/qm/logo.png) no-repeat left;
-  background-size: 60px 60px;
+	background: url(../images/qm/LogoLong.png) no-repeat left;
+  background-size: 240px 60px;
+  width: 240px;
 }
 .navbar-brand {
   height: 65px;
 }
 
 .compact .header .navbar-brand {
-  background-size: 55px 55px;
+  background-size: 220px 55px;
   background-position: left 5px;
 }
 
