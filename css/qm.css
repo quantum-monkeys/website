@@ -15,3 +15,12 @@
 .two-color-boxes-bgimg {
   background: url(../images/qm/montreal-247796_1920.jpg) no-repeat right top fixed;
 }
+
+#contactForm ::-webkit-input-placeholder {
+  color: #656565;
+}
+
+#messageError,
+#messageSuccess {
+  display:none;
+}

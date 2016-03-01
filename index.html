@@ -71,6 +71,8 @@
                     <li class="skroll-active"><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
                   </ul>
                 </div>
@@ -368,18 +370,20 @@
               </ul>
             </div>
             <div class="col-md-8">
-              <form method="get" action="index.html">
+              <div id="messageSuccess" class="alert alert-success" role="alert">Well done! You successfully read this important alert message. </div>
+              <div id="messageError" class="alert alert-danger" role="alert">Oh snap! Change a few things up and try submitting again. </div>
+              <form id="contactForm" method="POST" action="/contacts.php">
                 <div class="col-md-6 m-bottom3">
-                  <input type="text" class="input-b-line" name="dsearch" value="Your Name" onfocus="if (this.value == 'Your Name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Your Name';}">
+                  <input type="text" class="input-b-line" name="name" placeholder="Your Name" />
                 </div>
                 <div class="col-md-6 m-bottom3">
-                  <input type="text" class="input-b-line" name="dsearch" value="Email" onfocus="if (this.value == 'Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Email';}">
+                  <input type="text" class="input-b-line" name="email"  placeholder="Email" />
                 </div>
                 <div class="col-md-12 m-bottom3">
-                  <input type="text" class="input-b-line" name="dsearch" value="Subject" onfocus="if (this.value == 'Subject') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Subject';}">
+                  <input type="text" class="input-b-line" name="subject" placeholder="Subject" />
                 </div>
                 <div class="col-md-12 m-bottom5">
-                  <textarea name="dsearch" onfocus="if (this.value == 'Your Message') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Your Message';}" cols="2" rows="3"></textarea>
+                  <textarea name="message" placeholder="Your message" cols="2" rows="3"></textarea>
                 </div>
                 <div class="col-md-12">
                   <input type="submit" name="" value="Send Message" class="submit-btn">
@@ -471,5 +475,26 @@
 
 <!-- counters -->
 <script src="js/aninum/jquery.animateNumber.min.js"></script>
+
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<script>
+    // wait for the DOM to be loaded
+    $(document).ready(function() {
+        // bind 'myForm' and provide a simple callback function
+        $('#contactForm').ajaxForm(function(data) {
+            if (data === 'success') {
+              $('#contactForm input, #contactForm textarea').val('');
+              $('#messageSuccess').slideDown();
+              $('#messageError').slideUp();
+              setTimeout(function() {
+                $('#messageSuccess').slideUp();
+              }, 3000);
+            } else {
+              $('#messageError').slideDown();
+              $('#messageSuccess').slideUp();
+            }
+        });
+    });
+</script>
 </body>
 </html>
