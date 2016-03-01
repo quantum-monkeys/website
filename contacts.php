@@ -5,7 +5,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) 
 
 	$subject = $_POST['subject'];
 	$message = $_POST['message'] . "\n\n" . 'Regards, ' . $_POST['name'] . '.';
-	$headers = 'From: ' . $_POST['name'] . "\r\n" . 'Reply-To: ' . $_POST['email'] . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+	$headers = 'From: ' . $_POST['name'] . "<" . $_POST['email'] . ">\r\n" . 'X-Mailer: PHP/' . phpversion();
 
 	mail($to, $subject, $message, $headers);
 	echo 'success';
