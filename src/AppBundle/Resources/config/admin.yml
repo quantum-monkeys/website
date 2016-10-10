@@ -1,0 +1,102 @@
+services:
+    admin.event_occurrence:
+        class: AppBundle\Admin\EventOccurrenceAdmin
+        arguments: [~, AppBundle\Entity\EventOccurrence, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Events
+              label: EventOccurrence
+    admin.location:
+        class: AppBundle\Admin\LocationAdmin
+        arguments: [~, AppBundle\Entity\Location, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Events
+              label: Location
+
+    admin.conference:
+        class: AppBundle\Admin\Events\ConferenceAdmin
+        arguments: [~, AppBundle\Entity\Events\Conference, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Training
+              label: Conference
+    admin.meet_a_coach:
+        class: AppBundle\Admin\Events\MeetACoachAdmin
+        arguments: [~, AppBundle\Entity\Events\MeetACoach, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Training
+              label: Meet a coach
+    admin.power_training:
+        class: AppBundle\Admin\Events\PowerTrainingAdmin
+        arguments: [~, AppBundle\Entity\Events\PowerTraining, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Training
+              label: PowerTraining
+    admin.seminar:
+        class: AppBundle\Admin\Events\SeminarAdmin
+        arguments: [~, AppBundle\Entity\Events\Seminar, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Training
+              label: Seminar
+    admin.workshop:
+        class: AppBundle\Admin\Events\WorkshopAdmin
+        arguments: [~, AppBundle\Entity\Events\Workshop, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Training
+              label: Workshop
+    admin.other:
+        class: AppBundle\Admin\Events\OtherAdmin
+        arguments: [~, AppBundle\Entity\Events\Other, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Training
+              label: Other
+
+    admin.services:
+        class: AppBundle\Admin\ServiceAdmin
+        arguments: [~, AppBundle\Entity\Service, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Services
+              label: Service
+
+    admin.person:
+        class: AppBundle\Admin\PersonAdmin
+        arguments: [~, AppBundle\Entity\Person, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Community Management
+              label: People
+
+    admin.testimonials:
+        class: AppBundle\Admin\TestimonialAdmin
+        arguments: [~, AppBundle\Entity\Testimonial, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Community Management
+              label: Testimonial
+
+    admin.event_occurrence_cost:
+        class: AppBundle\Admin\EventOccurrenceCostAdmin
+        arguments: [~, AppBundle\Entity\EventOccurrenceCost, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: EventOccurrenceCost

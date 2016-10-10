@@ -1,0 +1,7 @@
+services:
+    app.form.type.search:
+        class: AppBundle\Form\Type\EventSearchType
+        arguments:
+            - '@app.manager.location'
+        tags:
+            - { name: form.type }

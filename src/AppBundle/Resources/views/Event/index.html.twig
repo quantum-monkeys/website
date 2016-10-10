@@ -1,0 +1,23 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Upcoming events</h2>
+
+    {{ form(form) }}
+
+    <ul>
+        {% for event in events %}
+            <li>
+                {% media event.event.picture, 'small' %}
+
+                <a href="{{ path('event_show', { id: event.id }) }}">
+                    <h4>{{ event.event.name }}</h4>
+                </a>
+                <span>{{ event.begin|localizeddate('medium') }}</span>
+                <span>{{ event.location.city }}</span>
+                <span>{{ event.event.lang }}</span>
+                <span>{{ event.remainingSeats }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

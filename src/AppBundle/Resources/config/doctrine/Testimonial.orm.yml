@@ -1,0 +1,18 @@
+AppBundle\Entity\Testimonial:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TestimonialRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        content:
+            type: text
+    manyToOne:
+        person:
+            targetEntity: AppBundle\Entity\Person
+            fetch: EAGER
+    lifecycleCallbacks: {  }

@@ -1,0 +1,38 @@
+homepage:
+    path: /
+    defaults:
+        _controller: AppBundle:Home:index
+
+service_list:
+    path: /services
+    defaults:
+        _controller: AppBundle:Service:index
+
+training_list:
+    path: /trainings
+    defaults:
+        _controller: AppBundle:Training:index
+
+event_list:
+    path: /events
+    defaults:
+        _controller: AppBundle:Event:index
+
+event_show:
+    path: /events/{id}
+    defaults:
+        _controller: AppBundle:Event:show
+
+about_us:
+    path: /about-us
+    defaults:
+        _controller: AppBundle:AboutUs:index
+
+old_homepage:
+    path: /old
+    defaults:
+        _controller: AppBundle:Home:oldIndex
+
+contact:
+    path: /contact
+    methods: POST

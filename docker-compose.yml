@@ -1,0 +1,49 @@
+nginx:
+    image: nginx:1.9
+    volumes:
+        - ./docker/nginx/app.conf:/etc/nginx/conf.d/default.conf:ro
+    volumes_from:
+        - data
+    links:
+        - fpm
+    environment:
+        VIRTUAL_HOST: quantum.local
+
+fpm:
+    build: docker/fpm
+    volumes_from:
+        - data
+    links:
+        - mariadb
+    environment:
+        SYMFONY_ENV: dev
+
+mariadb:
+    build: docker/mariadb
+    environment:
+        - MARIADATA=/var/lib/mariadb/data
+        - MYSQL_ROOT_PASSWORD=axel
+        - MYSQL_DATABASE=quantum
+        - MYSQL_USER=quantum
+        - MYSQL_PASSWORD=quantum
+    volumes_from: [data]
+    ports:
+        - 3307:3306
+
+node:
+    build: docker/node
+    volumes_from:
+        - data
+
+php:
+    build: docker/php
+    volumes_from:
+        - data
+    links:
+        - mariadb
+
+data:
+    image: busybox
+    volumes:
+        - .:/var/www/html
+        - ~/.composer:/var/www/.composer

@@ -1,0 +1,29 @@
+AppBundle\Entity\Service:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ServiceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        specifications:
+            type: text
+        lang:
+            type: string
+            length: 255
+#    manyToOne:
+#        picture:
+#            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+#            fetch: EAGER
+#            cascade:
+#                - "persist"
+#                - "remove"
+    lifecycleCallbacks: {  }

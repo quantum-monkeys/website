@@ -1,0 +1,25 @@
+AppBundle\Entity\EventOccurrenceCost:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EventOccurrenceCostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        cost:
+            type: decimal
+            precision: '2'
+            scale: 0
+        currency:
+            type: string
+            length: 255
+    manyToOne:
+        eventOccurrence:
+            targetEntity: AppBundle\Entity\EventOccurrence
+    lifecycleCallbacks: {  }

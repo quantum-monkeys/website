@@ -1,0 +1,14 @@
+<div class="panel panel-default col-md-6">
+    <div class="panel-heading">Coaching services</div>
+    <div class="panel-body">
+        <ul>
+            {% for service in services %}
+                <li>
+                    {{ service.name }}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ path('service_list') }}">See all</a>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="panel panel-default col-md-6">
+    <div class="panel-heading">Upcoming events</div>
+    <div class="panel-body">
+        <ul>
+            {% for event in events %}
+                <li>
+                    <a href="{{ path('event_show', { id: event.id }) }}">
+                        <h4>{{ event.event.name }}</h4>
+                    </a>
+                    <span>{{ event.begin|localizeddate('medium') }}</span>
+                    <span>{{ event.location.city }}</span>
+                    <span>{{ event.event.lang }}</span>
+                    <span>{{ event.remainingSeats }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ path('event_list') }}">See all</a>
+    </div>
+</div>

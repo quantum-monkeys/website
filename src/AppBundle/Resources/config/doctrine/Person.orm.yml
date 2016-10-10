@@ -1,0 +1,38 @@
+AppBundle\Entity\Person:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PersonRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+            nullable: true
+        position:
+            type: string
+            length: 255
+            nullable: true
+        company:
+            type: string
+            length: 255
+            nullable: true
+        description:
+            type: text
+        quantumMonkeysMember:
+            type: boolean
+#    manyToOne:
+#        picture:
+#            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+#            fetch: EAGER
+#            cascade:
+#                - "persist"
+#                - "remove"
+    lifecycleCallbacks: {  }

@@ -1,0 +1,40 @@
+AppBundle\Entity\Event:
+    type: entity
+    table: null
+    inheritanceType: SINGLE_TABLE
+    discriminatorColumn:
+        name: type
+        type: string
+        length: 255
+    discriminatorMap:
+        conference: AppBundle\Entity\Events\Conference
+        meet_a_coach: AppBundle\Entity\Events\MeetACoach
+        other: AppBundle\Entity\Events\Other
+        power_training: AppBundle\Entity\Events\PowerTraining
+        seminar: AppBundle\Entity\Events\Seminar
+        workshop: AppBundle\Entity\Events\Workshop
+    repositoryClass: AppBundle\Repository\EventRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        lang:
+            type: string
+            length: 255
+
+#    manyToOne:
+#        picture:
+#            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+#            fetch: EAGER
+#            cascade:
+#                - "persist"
+#                - "remove"
+    lifecycleCallbacks: {  }

@@ -1,0 +1,17 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>Our services</h2>
+
+    <ul>
+        {% for service in services %}
+            <li>
+                {% media service.picture, 'big' %}
+
+                <h4>{{ service.name }}</h4>
+                <p>{{ service.description }}</p>
+                <p>{{ service.specifications }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

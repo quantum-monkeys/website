@@ -1,0 +1,14 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>About us</h2>
+
+    <ul>
+        {% for person in people %}
+            <li>
+                {{ person.displayName }}
+                {% media person.picture, 'small' %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,8 @@
+AppBundle\Entity\Person:
+  axel:
+    firstName: Axel
+    lastName: Moussard
+    position: Technical Coach
+    company: Quantum Monkeys
+    description: description axel
+    quantumMonkeysMember: true

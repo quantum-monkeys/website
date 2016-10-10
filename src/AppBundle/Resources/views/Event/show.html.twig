@@ -1,0 +1,24 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <h2>{{ eventOccurrence.event.name }}</h2>
+
+    <p>{{ eventOccurrence.event.description }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>{{ 'event.costs.category'|trans }}</th>
+                <th>{{ 'event.costs.price'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for eventCost in eventOccurrence.costs %}
+                <tr>
+                    <td>{{ eventCost.name }}</td>
+                    <td>{{ eventCost.cost|localizedcurrency(eventCost.currency) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

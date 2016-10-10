@@ -1,0 +1,37 @@
+AppBundle\Entity\EventOccurrence:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EventOccurrenceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        begin:
+            type: datetime
+        end:
+            type: datetime
+        remainingSeats:
+            type: integer
+        eventBriteLink:
+            type: string
+            length: 255
+            nullable: true
+        free:
+            type: boolean
+    manyToOne:
+        event:
+            targetEntity: AppBundle\Entity\Event
+        location:
+            targetEntity: AppBundle\Entity\Location
+            fetch: EAGER
+    oneToMany:
+        costs:
+            targetEntity: AppBundle\Entity\EventOccurrenceCost
+            mappedBy: eventOccurrence
+            cascade:
+              - "persist"
+              - "remove"
+    lifecycleCallbacks: {  }

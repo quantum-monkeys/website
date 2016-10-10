@@ -1,0 +1,5 @@
+AppBundle\Entity\Events\MeetACoach:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Events\MeetACoachRepository
+    lifecycleCallbacks: {  }

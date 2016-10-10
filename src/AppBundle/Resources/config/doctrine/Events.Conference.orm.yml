@@ -1,0 +1,5 @@
+AppBundle\Entity\Events\Conference:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Events\ConferenceRepository
+    lifecycleCallbacks: {  }

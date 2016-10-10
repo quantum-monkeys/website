@@ -1,0 +1,21 @@
+services:
+    app.manager.location:
+        class: AppBundle\Manager\LocationManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    app.manager.search_engine:
+        class: AppBundle\Manager\SearchEngine
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
+    app.twig.locale_extension:
+        class: AppBundle\Twig\LocaleExtension
+        arguments: [ "@router" ]
+        tags:
+            - { name: twig.extension }
+
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }
