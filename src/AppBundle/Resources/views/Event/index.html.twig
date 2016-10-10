@@ -8,7 +8,7 @@
     <ul>
         {% for event in events %}
             <li>
-                {% media event.event.picture, 'small' %}
+                {#{% media event.event.picture, 'small' %}#}
 
                 <a href="{{ path('event_show', { id: event.id }) }}">
                     <h4>{{ event.event.name }}</h4>

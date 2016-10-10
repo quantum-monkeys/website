@@ -1,0 +1,14 @@
+AppBundle\Entity\Service:
+  service-fr-{1..5}:
+    name: <sentence(2)>
+    description: <paragraph()>
+    specifications: <paragraph()>
+    specifications: <paragraph()>
+    lang: fr
+
+  service-en-{1..5}:
+    name: <sentence(2)>
+    description: <paragraph()>
+    specifications: <paragraph()>
+    specifications: <paragraph()>
+    lang: en

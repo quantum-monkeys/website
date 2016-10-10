@@ -1,0 +1,4 @@
+AppBundle\Entity\Testimonial:
+  testimonial-{1..5}:
+    person: @testimonials-person-<current()>
+    content: <paragraph()>

@@ -1,0 +1,9 @@
+AppBundle\Entity\Location:
+  location-{1..3}:
+    name: <company()>
+    streetNumber: <buildingNumber()>
+    streetName: <streetName()>
+    zipCode: <postcode()>
+    city: <city()>
+    region: <state()>
+    country: <country()>

@@ -14,6 +14,7 @@ class TestimonialController extends Controller
     {
         $testimonials = $this->get('doctrine')->getRepository('AppBundle:Testimonial')->findBy([], null, 5);
 
+        dump($testimonials);
         return $this->render(
             'AppBundle:Testimonial:widget.html.twig',
             [

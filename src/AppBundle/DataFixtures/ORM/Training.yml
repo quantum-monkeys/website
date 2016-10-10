@@ -1,0 +1,59 @@
+AppBundle\Entity\Events\Conference:
+  conference (template):
+    name: <sentence()>
+    description: <paragraph(6)>
+
+  conference-fr-{1..2} (extends conference):
+    lang: fr
+  conference-en-{1..2} (extends conference):
+    lang: en
+
+AppBundle\Entity\Events\MeetACoach:
+  meet-a-coach (template):
+    name: <sentence()>
+    description: <paragraph(6)>
+
+  meet-a-coach-fr-{1..2} (extends meet-a-coach):
+    lang: fr
+  meet-a-coach-en-{1..2} (extends meet-a-coach):
+    lang: en
+
+AppBundle\Entity\Events\PowerTraining:
+  power-training (template):
+    name: <sentence()>
+    description: <paragraph(6)>
+
+  power-training-fr-{1..2} (extends power-training):
+    lang: fr
+  power-training-en-{1..2} (extends power-training):
+    lang: en
+
+AppBundle\Entity\Events\Seminar:
+  seminar (template):
+    name: <sentence()>
+    description: <paragraph(6)>
+
+  seminar-fr-{1..2} (extends seminar):
+    lang: fr
+  seminar-en-{1..2} (extends seminar):
+    lang: en
+
+AppBundle\Entity\Events\Workshop:
+  workshop (template):
+    name: <sentence()>
+    description: <paragraph(6)>
+
+  workshop-fr-{1..2} (extends workshop):
+    lang: fr
+  workshop-en-{1..2} (extends workshop):
+    lang: en
+
+AppBundle\Entity\Events\Other:
+  other (template):
+    name: <sentence()>
+    description: <paragraph(6)>
+
+  other-fr-{1..2} (extends other):
+    lang: fr
+  other-en-{1..2} (extends other):
+    lang: en

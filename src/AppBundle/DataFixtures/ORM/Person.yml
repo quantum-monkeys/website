@@ -1,8 +1,16 @@
 AppBundle\Entity\Person:
-  axel:
-    firstName: Axel
-    lastName: Moussard
-    position: Technical Coach
-    company: Quantum Monkeys
-    description: description axel
+  members-{1..5}:
+    firstName: <firstname()>
+    lastName: <lastname()>
+    position: <jobTitle()>
+    company: <company()>
+    description: <paragraph()>
     quantumMonkeysMember: true
+
+  testimonials-person-{1..5}:
+    firstName: <firstname()>
+    lastName: <lastname()>
+    position: <jobTitle()>
+    company: <company()>
+    description: <paragraph()>
+    quantumMonkeysMember: false

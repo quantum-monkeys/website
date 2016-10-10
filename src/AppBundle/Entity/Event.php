@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-use Application\Sonata\MediaBundle\Entity\Media;
+//use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Event
