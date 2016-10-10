@@ -4,3 +4,18 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+sonata_classification:
+#    admin:
+#        category:
+#            class: "Application\\Sonata\\ClassificationBundle\\Admin\\CategoryAdmin"
+
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                #metadata_cache_driver: apc
+                #query_cache_driver: apc
+                #result_cache_driver: apc
+                mappings:
+                    ApplicationSonataClassificationBundle: ~
