@@ -19,11 +19,11 @@ AppBundle\Entity\Service:
         lang:
             type: string
             length: 255
-#    manyToOne:
-#        picture:
-#            targetEntity: Application\Sonata\MediaBundle\Entity\Media
-#            fetch: EAGER
-#            cascade:
-#                - "persist"
-#                - "remove"
+    manyToOne:
+        picture:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
     lifecycleCallbacks: {  }

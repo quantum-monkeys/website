@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-//use Application\Sonata\MediaBundle\Entity\Media;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Event
@@ -29,10 +29,10 @@ abstract class Event
      */
     private $lang;
 
-//    /**
-//     * @var Media
-//     */
-//    private $picture;
+    /**
+     * @var Media
+     */
+    private $picture;
 
     public function getId() : int
     {
@@ -103,21 +103,21 @@ abstract class Event
     {
         return $this->lang;
     }
-//
-//    /**
-//     * @return Media
-//     */
-//    public function getPicture()
-//    {
-//        return $this->picture;
-//    }
-//
-//    /**
-//     * @param Media $picture
-//     */
-//    public function setPicture(Media $picture)
-//    {
-//        $this->picture = $picture;
-//    }
+
+    /**
+     * @return Media
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param Media $picture
+     */
+    public function setPicture(Media $picture)
+    {
+        $this->picture = $picture;
+    }
 }
 

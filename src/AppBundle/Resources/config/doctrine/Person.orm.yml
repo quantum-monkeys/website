@@ -28,11 +28,11 @@ AppBundle\Entity\Person:
             type: text
         quantumMonkeysMember:
             type: boolean
-#    manyToOne:
-#        picture:
-#            targetEntity: Application\Sonata\MediaBundle\Entity\Media
-#            fetch: EAGER
-#            cascade:
-#                - "persist"
-#                - "remove"
+    manyToOne:
+        picture:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
     lifecycleCallbacks: {  }

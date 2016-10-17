@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-//use Application\Sonata\MediaBundle\Entity\Media;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 /**
  * Service
@@ -34,10 +34,10 @@ class Service
      */
     private $lang;
 
-//    /**
-//     * @var Media
-//     */
-//    private $picture;
+    /**
+     * @var Media
+     */
+    private $picture;
 
     /**
      * Get id
@@ -137,20 +137,20 @@ class Service
         $this->lang = $lang;
     }
 
-//    /**
-//     * @return Media
-//     */
-//    public function getPicture()
-//    {
-//        return $this->picture;
-//    }
-//
-//    /**
-//     * @param Media $picture
-//     */
-//    public function setPicture(Media $picture)
-//    {
-//        $this->picture = $picture;
-//    }
+    /**
+     * @return Media
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param Media $picture
+     */
+    public function setPicture(Media $picture)
+    {
+        $this->picture = $picture;
+    }
 }
 

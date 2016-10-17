@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 
-//use Application\Sonata\MediaBundle\Entity\Media;
+use Application\Sonata\MediaBundle\Entity\Media;
 
 class Person
 {
@@ -41,10 +41,10 @@ class Person
      */
     private $quantumMonkeysMember;
 
-//    /**
-//     * @var Media
-//     */
-//    private $picture;
+    /**
+     * @var Media
+     */
+    private $picture;
 
     /**
      * Get id
@@ -195,20 +195,20 @@ class Person
         $this->quantumMonkeysMember = $quantumMonkeysMember;
     }
 
-//    /**
-//     * @return Media
-//     */
-//    public function getPicture()
-//    {
-//        return $this->picture;
-//    }
-//
-//    /**
-//     * @param Media $picture
-//     */
-//    public function setPicture(Media $picture)
-//    {
-//        $this->picture = $picture;
-//    }
+    /**
+     * @return Media
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param Media $picture
+     */
+    public function setPicture(Media $picture)
+    {
+        $this->picture = $picture;
+    }
 }
 
