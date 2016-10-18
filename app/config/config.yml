@@ -35,6 +35,10 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form:
+        resources:
+            # ...
+            - 'SonataFormatterBundle:Form:formatter.html.twig'
 
 # Doctrine Configuration
 doctrine:
