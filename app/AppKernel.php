@@ -41,6 +41,8 @@ class AppKernel extends Kernel
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
 
+            new Accord\MandrillSwiftMailerBundle\AccordMandrillSwiftMailerBundle(),
+
             new AppBundle\AppBundle(),
         );
 

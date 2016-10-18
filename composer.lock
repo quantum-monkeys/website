@@ -4,9 +4,71 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "90e758b668c76614ce42211bf6ae896d",
-    "content-hash": "658012f0efb1331de21c937b0e35676c",
+    "hash": "3244ca0deaf06b61b8e9473488977125",
+    "content-hash": "677dd82b895743cf51cd7eedec834975",
     "packages": [
+        {
+            "name": "accord/mandrill-swiftmailer-bundle",
+            "version": "1.1.0",
+            "target-dir": "Accord/MandrillSwiftMailerBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AccordGroup/MandrillSwiftMailerBundle.git",
+                "reference": "e04e46a39e8e348267696c82812cfd8334821ed4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AccordGroup/MandrillSwiftMailerBundle/zipball/e04e46a39e8e348267696c82812cfd8334821ed4",
+                "reference": "e04e46a39e8e348267696c82812cfd8334821ed4",
+                "shasum": ""
+            },
+            "require": {
+                "mandrill/mandrill": "~1.0",
+                "php": ">=5.3.3",
+                "swiftmailer/swiftmailer": "~5.3",
+                "symfony/framework-bundle": ">=2.3",
+                "symfony/swiftmailer-bundle": ">=2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5",
+                "symfony/config": ">=2.3",
+                "symfony/finder": ">=2.3"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Accord\\MandrillSwiftMailerBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "James Rattue",
+                    "email": "james.rattue@accordgroup.co.uk"
+                },
+                {
+                    "name": "James Willans",
+                    "email": "james.willans@accordgroup.co.uk"
+                }
+            ],
+            "description": "Symfony bundle to provide a Mandrill SwiftMailer service",
+            "homepage": "https://github.com/AccordGroup/MandrillSwiftMailerBundle",
+            "keywords": [
+                "bundle",
+                "mandill",
+                "swiftmailer",
+                "symfony"
+            ],
+            "time": "2015-05-22 10:18:20"
+        },
         {
             "name": "cocur/slugify",
             "version": "v1.4.1",
@@ -1844,6 +1906,49 @@
                 "http client"
             ],
             "time": "2015-06-25 17:26:56"
+        },
+        {
+            "name": "mandrill/mandrill",
+            "version": "1.0.55",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/mailchimp/mandrill-api-php.git",
+                "reference": "da3adc10042eafac2e53de141b358a52b8e53596"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/mailchimp/mandrill-api-php/get/da3adc10042eafac2e53de141b358a52b8e53596.zip",
+                "reference": "da3adc10042eafac2e53de141b358a52b8e53596",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Mandrill": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Mandrill Devs",
+                    "email": "community@mandrill.com",
+                    "homepage": "http://mandrill.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "API client library for the Mandrill email as a service platform",
+            "homepage": "https://bitbucket.org/mailchimp/mandrill-api-php",
+            "keywords": [
+                "api",
+                "email"
+            ],
+            "time": "2015-09-22 13:58:03"
         },
         {
             "name": "michelf/php-markdown",

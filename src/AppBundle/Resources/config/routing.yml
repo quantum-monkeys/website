@@ -36,3 +36,5 @@ old_homepage:
 contact:
     path: /contact
     methods: POST
+    defaults:
+        _controller: AppBundle:Home:contact

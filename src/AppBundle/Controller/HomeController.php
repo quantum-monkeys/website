@@ -3,9 +3,6 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Form\Type\ContactType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -13,7 +10,9 @@ class HomeController extends Controller
 {
     public function indexAction()
     {
-        $form = $this->createForm(ContactType::class);
+        $form = $this->createForm(ContactType::class, null, [
+            'action' => $this->generateUrl('contact'),
+        ]);
 
         return $this->render(
             'AppBundle:Home:index.html.twig',
