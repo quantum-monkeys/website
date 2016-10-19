@@ -38,3 +38,9 @@ contact:
     methods: POST
     defaults:
         _controller: AppBundle:Home:contact
+
+newsletter:
+    path: /newsletter
+    methods: POST
+    defaults:
+        _controller: AppBundle:Home:newsletter

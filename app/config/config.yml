@@ -75,3 +75,8 @@ jms_i18n_routing:
     default_locale: en
     locales: [en, fr]
     strategy: prefix_except_default
+
+hype_mailchimp:
+    api_key: 6e639e2ed35e339033c8c2c5c1539cd3-us13
+    default_list: 5e1038db89
+    ssl: true #optional configuring curl connection

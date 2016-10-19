@@ -43,6 +43,8 @@ class AppKernel extends Kernel
 
             new Accord\MandrillSwiftMailerBundle\AccordMandrillSwiftMailerBundle(),
 
+            new Hype\MailchimpBundle\HypeMailchimpBundle(),
+
             new AppBundle\AppBundle(),
         );
 

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3244ca0deaf06b61b8e9473488977125",
-    "content-hash": "677dd82b895743cf51cd7eedec834975",
+    "hash": "e0f50742758abc357925e8c026c0e474",
+    "content-hash": "0b6f02d35df7901efbd027aa91745569",
     "packages": [
         {
             "name": "accord/mandrill-swiftmailer-bundle",
@@ -68,6 +68,61 @@
                 "symfony"
             ],
             "time": "2015-05-22 10:18:20"
+        },
+        {
+            "name": "ahmedsamy/hype-mailchimp-bundle",
+            "version": "v1.2",
+            "target-dir": "Hype/MailchimpBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AhmedSamy/HypeMailchimpBundle.git",
+                "reference": "25c3c91cd929c58d557888934bf9bf920444a5f8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AhmedSamy/HypeMailchimpBundle/zipball/25c3c91cd929c58d557888934bf9bf920444a5f8",
+                "reference": "25c3c91cd929c58d557888934bf9bf920444a5f8",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "kriswallsmith/buzz": ">=0.7",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Hype\\MailchimpBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmed Samy",
+                    "email": "ahmed.samy.cs@gmail.com",
+                    "homepage": "http://www.ahmed-samy.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mailchimp V2.0 API Object Oriented wrapper",
+            "homepage": "https://github.com/AhmedSamy/hype-mailchimp-api-2.0",
+            "keywords": [
+                "api",
+                "curl",
+                "http client",
+                "mailchimp",
+                "newsletter"
+            ],
+            "time": "2015-02-23 17:20:20"
         },
         {
             "name": "cocur/slugify",

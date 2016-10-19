@@ -32,7 +32,8 @@
         "sonata-project/news-bundle": "^3.0",
         "friendsofsymfony/rest-bundle": "~1.1",
         "nelmio/api-doc-bundle": "^2.13",
-        "accord/mandrill-swiftmailer-bundle": "^1.1"
+        "accord/mandrill-swiftmailer-bundle": "^1.1",
+        "ahmedsamy/hype-mailchimp-bundle": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
