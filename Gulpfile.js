@@ -59,8 +59,8 @@ gulp.task('fonts', () => {
 
 gulp.task('js', () => {
     gulp.src([
-            'node_modules/bootstrap/dist/js/bootstrap.js',
-            'node_modules/jquery/dist/jquery.js'
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/bootstrap/dist/js/bootstrap.js'
             // 'app/Resources/scripts/vendors/jquery.js',
             // 'app/Resources/scripts/vendors/bootstrap.min.js',
             // 'app/Resources/scripts/vendors/masterslider/jquery.easing.min.js',

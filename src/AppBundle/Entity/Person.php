@@ -210,5 +210,10 @@ class Person
     {
         $this->picture = $picture;
     }
+
+    public function __toString(): string
+    {
+        return $this->getDisplayName();
+    }
 }
 

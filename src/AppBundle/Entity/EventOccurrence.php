@@ -2,6 +2,8 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * EventOccurrence
  */
@@ -48,13 +50,19 @@ class EventOccurrence
     private $free;
 
     /**
+     * @var Person[]
+     */
+    private $speakers;
+
+    /**
      * @var EventOccurrenceCost[]
      */
     private $costs;
 
     public function __construct()
     {
-        $this->costs = [];
+        $this->costs = new ArrayCollection();
+        $this->speakers = new ArrayCollection();
     }
 
     /**
@@ -232,6 +240,22 @@ class EventOccurrence
     public function setFree(bool $free)
     {
         $this->free = $free;
+    }
+
+    /**
+     * @return Person[]
+     */
+    public function getSpeakers()
+    {
+        return $this->speakers;
+    }
+
+    /**
+     * @param Person[] $speakers
+     */
+    public function setSpeakers($speakers)
+    {
+        $this->speakers = $speakers;
     }
 }
 

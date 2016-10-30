@@ -33,10 +33,18 @@ class EventController extends Controller
      */
     public function showAction(EventOccurrence $eventOccurrence)
     {
+        $gMapSearch = '';
+        $gMapSearch .= $eventOccurrence->getLocation()->getStreetNumber() . ' ' . $eventOccurrence->getLocation()->getStreetName();
+        $gMapSearch .= ', ' . $eventOccurrence->getLocation()->getCity();
+        $gMapSearch .= ', ' . $eventOccurrence->getLocation()->getRegion();
+        $gMapSearch .= ' ' . $eventOccurrence->getLocation()->getZipCode();
+        $gMapSearch .= ', ' . $eventOccurrence->getLocation()->getCountry();
+
         return $this->render(
             'AppBundle:Event:show.html.twig',
             [
-                'eventOccurrence' => $eventOccurrence
+                'eventOccurrence' => $eventOccurrence,
+                'gmapQuery' => urlencode($gMapSearch),
             ]
         );
     }

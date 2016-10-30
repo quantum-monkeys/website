@@ -24,14 +24,14 @@ class ServiceController extends Controller
         );
     }
 
-    public function widgetAction(Request $request)
+    public function servicesAndTrainingsWidgetAction(Request $request)
     {
         $services = $this->get('doctrine')->getRepository('AppBundle:Service')->findBy([
             'lang' => $request->getLocale(),
         ]);
 
         return $this->render(
-            'AppBundle:Service:widget.html.twig',
+            'AppBundle:Service:servicesAndTrainingsWidget.html.twig',
             [
                 'services' => $services
             ]

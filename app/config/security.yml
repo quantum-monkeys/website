@@ -3,14 +3,27 @@
 security:
     encoders:
         FOS\UserBundle\Model\UserInterface: sha512
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    amoussard:
+                        password: quantum2016
+                        roles: 'ROLE_ADMIN'
+                    mlefebvre:
+                        password: quantum2016
+                        roles: 'ROLE_ADMIN'
+                    nrousseau:
+                        password: quantum2016
+                        roles: 'ROLE_ADMIN'
+                    kpilon:
+                        password: quantum2016
+                        roles: 'ROLE_ADMIN'
 
     acl:
         connection: default
-
-    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
-    providers:
-        in_memory:
-            memory: ~
 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
@@ -22,8 +35,13 @@ security:
             anonymous: ~
             # activate different ways to authenticate
 
-            # http_basic: ~
+            http_basic: ~
             # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
 
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+    access_control:
+        - { path: ^/translate, roles: ROLE_ADMIN }
+        - { path: ^/, roles: ROLE_ADMIN }
+        - { path: ^/admin, roles: ROLE_ADMIN }

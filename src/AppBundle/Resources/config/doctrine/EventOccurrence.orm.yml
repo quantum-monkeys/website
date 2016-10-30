@@ -32,6 +32,17 @@ AppBundle\Entity\EventOccurrence:
             targetEntity: AppBundle\Entity\EventOccurrenceCost
             mappedBy: eventOccurrence
             cascade:
-              - "persist"
-              - "remove"
+                - "persist"
+                - "remove"
+    manyToMany:
+        speakers:
+            targetEntity: AppBundle\Entity\Person
+            joinTable:
+                name: event_occurences_speakers
+                joinColumns:
+                    event_occurence_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    speaker_id:
+                        referencedColumnName: id
     lifecycleCallbacks: {  }

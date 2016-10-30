@@ -37,6 +37,7 @@ class EventOccurrenceAdmin extends Admin
             ->add('free', 'checkbox', [
                 'required' => false,
             ])
+            ->add('speakers', 'sonata_type_model', array('multiple' => true, 'by_reference' => false))
         ;
     }
 

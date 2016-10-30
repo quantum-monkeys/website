@@ -1,24 +1,82 @@
 {% extends 'AppBundle::base.html.twig' %}
 
+{% trans_default_domain 'events' %}
+
 {% block body %}
-    <h2>{{ eventOccurrence.event.name }}</h2>
+    <div class="col-md-6">
+        {% media eventOccurrence.event.picture, 'small' %}
 
-    <p>{{ eventOccurrence.event.description }}</p>
+        <iframe width="600" height="450" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/search?q={{ gmapQuery }}&key=AIzaSyA96Xcp2D46ewYvCzJfBjL2EpID2AKgng8" allowfullscreen></iframe>
 
-    <table>
-        <thead>
-            <tr>
-                <th>{{ 'event.costs.category'|trans }}</th>
-                <th>{{ 'event.costs.price'|trans }}</th>
-            </tr>
-        </thead>
-        <tbody>
+        <div>
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#description" aria-controls="description" role="tab" data-toggle="tab">{{ 'view.description'|trans }}</a>
+                </li>
+                <li role="presentation">
+                    <a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">{{ 'view.tickets'|trans }}</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="description">
+                    <p>{{ eventOccurrence.event.description }}</p>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="tickets">
+                    <p>Description pour les tickets</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>{{ eventOccurrence.event.name }}</h2>
+
+        <h3>{{ eventOccurrence.location.name }} - {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h3>
+
+        <h5>{{ 'view.start_from'|trans({ date: eventOccurrence.begin|localizeddate('short', 'none') }) }}</h5>
+        <h5>{{ 'view.start_at'|trans({ date: eventOccurrence.begin|localizeddate('none', 'short') }) }}</h5>
+        <p>{{ eventOccurrence.event.description }}</p>
+
+        <div class="col-md-3">
             {% for eventCost in eventOccurrence.costs %}
-                <tr>
-                    <td>{{ eventCost.name }}</td>
-                    <td>{{ eventCost.cost|localizedcurrency(eventCost.currency) }}</td>
-                </tr>
+                <div class="panel panel-info">
+                    <div class="panel-heading">{{ eventCost.name }}</div>
+                    <div class="panel-body">
+                        {{ eventCost.cost|localizedcurrency(eventCost.currency) }}
+                    </div>
+                </div>
             {% endfor %}
-        </tbody>
-    </table>
+        </div>
+        <div class="col-md-9">
+            <h5>{{ eventOccurrence.location.name }}</h5>
+            <h5>{{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h5>
+            <h5>{{ eventOccurrence.location.country }}</h5>
+        </div>
+
+        <div class="col-md-12">
+            <h3>{{ 'view.speakers'|trans }}</h3>
+            {% for speaker in eventOccurrence.speakers %}
+                <div>
+                    {% media speaker.picture, 'small' %}
+                    <h4>{{ speaker.displayName }}</h4>
+                    <p>{{ speaker.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $('#myTabs a').click(function (e) {
+            e.preventDefault()
+            $(this).tab('show')
+        })
+    </script>
 {% endblock %}

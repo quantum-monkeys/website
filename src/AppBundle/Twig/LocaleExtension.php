@@ -28,6 +28,7 @@ class LocaleExtension extends \Twig_Extension
     {
         return array(
             'localeSwitch' => new \Twig_Function_Method($this, 'localeSwitch'),
+            'languageName' => new \Twig_Function_Method($this, 'getLanguageName'),
         );
     }
 
@@ -44,6 +45,11 @@ class LocaleExtension extends \Twig_Extension
         $requestAttributes['_route_params']['_locale'] = $sNewLocale;
 
         return $this->router->generate($requestAttributes['_route'], $requestAttributes['_route_params']);
+    }
+
+    public function getLanguageName(string $locale): string
+    {
+        return \Locale::getDisplayLanguage($locale);
     }
 
     /**

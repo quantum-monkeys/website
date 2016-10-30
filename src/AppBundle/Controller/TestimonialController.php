@@ -10,11 +10,12 @@ use Symfony\Component\Intl\Intl;
 
 class TestimonialController extends Controller
 {
+    const MAX_HOMEPAGE_TESTIMONIALS = 3;
+
     public function widgetAction(Request $request)
     {
-        $testimonials = $this->get('doctrine')->getRepository('AppBundle:Testimonial')->findBy([], null, 5);
+        $testimonials = $this->get('doctrine')->getRepository('AppBundle:Testimonial')->findBy([], null, self::MAX_HOMEPAGE_TESTIMONIALS);
 
-        dump($testimonials);
         return $this->render(
             'AppBundle:Testimonial:widget.html.twig',
             [

@@ -1,21 +1,56 @@
 {% extends 'AppBundle::base.html.twig' %}
 
-{% block body %}
-    <h1>MAKE PEOPLE AWESOME</h1>
-    <p>blabla</p>
-    <h2>How do we do that?</h2>
-    {{ render(controller('AppBundle:Service:widget')) }}
-    {{ include('AppBundle:Training:widget.html.twig') }}
-    <h2>What's happening with us now</h2>
-    {{ render(controller('AppBundle:Event:widget')) }}
-    {{ render(controller('AppBundle:Testimonial:widget')) }}
+{% trans_default_domain 'home' %}
 
-    <div class="panel panel-default col-md-12">
-        <div class="panel-heading">Contact us</div>
-        <div class="panel-body">
-            {{ form(contactForm) }}
-        </div>
+{% block body %}
+    <div class="jumbotron">
+        {% for i in 1..3 %}
+            <div>
+                <h2>{{ ('hero.slide' ~ i ~ '.title')|trans }}</h2>
+                <h3>{{ ('hero.slide' ~ i ~ '.subtitle')|trans }}</h3>
+                <p>{{ ('hero.slide' ~ i ~ '.text')|trans }}</p>
+            </div>
+        {% endfor %}
     </div>
+
+    <div>
+        <h2 class="text-center">{{ 'how.title'|trans }}</h2>
+        <h3 class="text-center">{{ 'how.subtitle'|trans }}</h3>
+
+        {% for i in 1..3 %}
+            <div class="col-md-4">
+                <h2>{{ ('how.element' ~ i ~ '.title')|trans }}</h2>
+                <p>{{ ('how.element' ~ i ~ '.text')|trans }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div>
+        <h2 class="text-center">{{ 'how.title'|trans }}</h2>
+        <h3 class="text-center">{{ 'how.subtitle'|trans }}</h3>
+
+        {% for i in 1..3 %}
+            <div class="col-md-4">
+                <h2>{{ ('how.element' ~ i ~ '.title')|trans }}</h2>
+                <p>{{ ('how.element' ~ i ~ '.text')|trans }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div>
+        <h2 class="text-center">{{ 'what.title'|trans }}</h2>
+        <h3 class="text-center">{{ 'what.subtitle'|trans }}</h3>
+        {{ render(controller('AppBundle:Service:servicesAndTrainingswidget')) }}
+    </div>
+
+    <div>
+        <h2 class="text-center">{{ 'activities.title'|trans }}</h2>
+        <h3 class="text-center">{{ 'activities.subtitle'|trans }}</h3>
+        {{ render(controller('AppBundle:News:widget')) }}
+        {{ render(controller('AppBundle:Event:widget')) }}
+    </div>
+
+    {{ render(controller('AppBundle:Testimonial:widget')) }}
 
     <div class="panel panel-default col-md-12">
         <div class="panel-heading">Newsletter</div>

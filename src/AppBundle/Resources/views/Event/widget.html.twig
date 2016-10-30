@@ -1,20 +1,25 @@
+{% trans_default_domain 'widget' %}
+
 <div class="panel panel-default col-md-6">
-    <div class="panel-heading">Upcoming events</div>
+    <div class="panel-heading">{{ 'events.title'|trans }}</div>
     <div class="panel-body">
         <ul>
             {% for event in events %}
                 <li>
+                    {% media event.event.picture, 'small' %}
+
                     <a href="{{ path('event_show', { id: event.id }) }}">
                         <h4>{{ event.event.name }}</h4>
                     </a>
-                    <span>{{ event.begin|localizeddate('medium') }}</span>
-                    <span>{{ event.location.city }}</span>
-                    <span>{{ event.event.lang }}</span>
-                    <span>{{ event.remainingSeats }}</span>
+
+                    <span>{{ event.begin|localizeddate('short', 'none') }} {{ event.begin|localizeddate('none', 'short') }}</span>
+                    <span>{{ event.location.city }}, {{ event.location.country }}</span>
+                    <span>{{ languageName(event.event.lang) }}</span>
+                    <span>{{ 'event.remaining_seats'|transchoice(event.remainingSeats) }}</span>
                 </li>
             {% endfor %}
         </ul>
 
-        <a href="{{ path('event_list') }}">See all</a>
+        <a href="{{ path('event_list') }}">{{ 'events.see_all'|trans }}</a>
     </div>
 </div>

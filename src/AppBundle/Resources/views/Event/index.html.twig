@@ -1,23 +1,33 @@
 {% extends 'AppBundle::base.html.twig' %}
 
+{% trans_default_domain 'events' %}
+
 {% block body %}
-    <h2>Upcoming events</h2>
+    <h2>{{ 'list.title'|trans }}</h2>
 
     {{ form(form) }}
 
-    <ul>
+    <div class="row">
         {% for event in events %}
-            <li>
-                {#{% media event.event.picture, 'small' %}#}
-
-                <a href="{{ path('event_show', { id: event.id }) }}">
-                    <h4>{{ event.event.name }}</h4>
-                </a>
-                <span>{{ event.begin|localizeddate('medium') }}</span>
-                <span>{{ event.location.city }}</span>
-                <span>{{ event.event.lang }}</span>
-                <span>{{ event.remainingSeats }}</span>
-            </li>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a href="{{ path('event_show', { id: event.id }) }}">
+                        {% media event.event.picture, 'small' %}
+                    </a>
+                    <div class="caption">
+                        <h4>{{ event.begin|localizeddate('short', 'none') }}</h4>
+                        <a href="{{ path('event_show', { id: event.id }) }}">
+                            <h3>{{ event.event.name }}</h3>
+                        </a>
+                        <h5>{{ event.location.name }} - {{ event.location.city }}, {{ event.location.region }} @ {{ event.begin|localizeddate('none', 'short') }}</h5>
+                        <p>{{ event.event.description|truncate(150, true, '...') }}</p>
+                        <p>
+                            <a href="{{ path('event_show', { id: event.id }) }}" class="btn btn-primary" role="button">{{ 'list.button.details'|trans }}</a>
+                            <a href="{{ event.eventBriteLink }}" class="btn btn-default" role="button">{{ 'list.button.tickets'|trans }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

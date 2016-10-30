@@ -10,12 +10,13 @@ class Builder
     {
         $menu = $factory->createItem('root');
 
-        $menu->addChild('menu.home', array('route' => 'homepage'));
-        $menu->addChild('menu.services', array('route' => 'service_list'));
-        $menu->addChild('menu.trainings', array('route' => 'training_list'));
-        $menu->addChild('menu.events', array('route' => 'event_list'));
-        $menu->addChild('menu.about_us', array('route' => 'about_us'));
-        $menu->addChild('menu.old_home', array('route' => 'old_homepage'));
+        $menu->addChild('home', ['route' => 'homepage'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('services', ['route' => 'service_list'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('trainings', ['route' => 'training_list'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('events', ['route' => 'event_list'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('about_us', ['route' => 'about_us'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('blog', ['route' => 'sonata_news_home'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('contact_us', ['uri' => '#contact-us'])->setExtra('translation_domain', 'menu');
 
         return $menu;
     }

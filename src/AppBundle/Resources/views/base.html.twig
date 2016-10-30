@@ -27,6 +27,11 @@
 {{ knp_menu_render('AppBundle:Builder:mainMenu', { template: 'AppBundle:Menu:knp_menu.html.twig' } ) }}
 
 {% block body %}{% endblock %}
-{% block javascripts %}{% endblock %}
+
+{{ render(controller('AppBundle:AboutUs:contactWidget')) }}
+
+{% block javascripts %}
+    <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
+{% endblock %}
 </body>
 </html>

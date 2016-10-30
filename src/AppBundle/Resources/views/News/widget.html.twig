@@ -1,0 +1,19 @@
+<div class="panel panel-default col-md-6">
+    <div class="panel-heading">{{ 'blog.title'|trans }}</div>
+    <div class="panel-body">
+        <ul>
+            {% for post in pager.getResults() %}
+                <li>
+                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">
+                        <span>{{ post.publicationDateStart|localizeddate('full', 'none') }}</span>
+                        <h4>{{ post.title }}</h4>
+                    </a>
+                    <p>{{ post.abstract }}</p>
+                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ 'blog.read_more'|trans }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ path('sonata_news_home') }}">{{ 'blog.go_to'|trans }}</a>
+    </div>
+</div>
