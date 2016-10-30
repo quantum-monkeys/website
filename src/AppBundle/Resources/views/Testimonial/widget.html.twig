@@ -6,9 +6,9 @@
         {% for testimonial in testimonials %}
             {% media testimonial.person.picture, 'small' %}
             <h4>{{ testimonial.person.displayName }}</h4>
-            <span>{{ testimonial.person.position }}</span>
+            <span>{{ translate(testimonial.person.personTranslations, 'position') }}</span>
             {% if testimonial.person.company %}
-                <span>{{ 'testimonials.at'|trans({ company: testimonial.person.company}) }}</span>
+                <span>{{ 'testimonials.at'|trans({ company: testimonial.person.company }) }}</span>
             {% endif %}
             <p>{{ testimonial.content }}</p>
         {% endfor %}

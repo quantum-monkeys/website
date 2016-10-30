@@ -15,6 +15,12 @@ services:
         tags:
             - { name: twig.extension }
 
+    app.twig.translate_extension:
+        class: AppBundle\Twig\TranslateExtension
+        arguments: ["@request_stack"]
+        tags:
+            - { name : twig.extension }
+
     twig.extension.intl:
         class: Twig_Extensions_Extension_Intl
         tags:

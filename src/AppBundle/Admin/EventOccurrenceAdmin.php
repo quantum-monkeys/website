@@ -27,17 +27,20 @@ class EventOccurrenceAdmin extends Admin
                 'class' => 'AppBundle\Entity\Event',
                 'choice_label' => 'name',
             ])
-            ->add('costs', 'sonata_type_collection', array(), array(
+            ->add('costs', 'sonata_type_collection', [], [
                 'edit' => 'inline',
                 'inline' => 'table',
                 'sortable'  => 'position',
                 'by_reference' => true,
                 'admin_code' => 'admin.event_occurrence_cost',
-            ))
+            ])
             ->add('free', 'checkbox', [
                 'required' => false,
             ])
-            ->add('speakers', 'sonata_type_model', array('multiple' => true, 'by_reference' => false))
+            ->add('speakers', 'sonata_type_model', [
+                'multiple' => true,
+                'by_reference' => false
+            ])
         ;
     }
 

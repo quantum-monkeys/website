@@ -2,15 +2,36 @@ AppBundle\Entity\Person:
   members-{1..5}:
     firstName: <firstname()>
     lastName: <lastname()>
-    position: <jobTitle()>
     company: <company()>
-    description: <paragraph()>
     quantumMonkeysMember: true
 
   testimonials-person-{1..5}:
     firstName: <firstname()>
     lastName: <lastname()>
-    position: <jobTitle()>
     company: <company()>
-    description: <paragraph()>
     quantumMonkeysMember: false
+
+AppBundle\Entity\PersonTranslation:
+  members-{1..5}-fr:
+    locale: fr
+    person: @members-<current()>
+    position: fr <jobTitle()>
+    description: fr <paragraph()>
+
+  members-{1..5}-en:
+    locale: en
+    person: @members-<current()>
+    position: en <jobTitle()>
+    description: en <paragraph()>
+
+  testimonials-person-{1..5}-fr:
+    locale: fr
+    person: @testimonials-person-<current()>
+    position: fr <jobTitle()>
+    description: fr <paragraph()>
+
+  testimonials-person-{1..5}-en:
+    locale: en
+    person: @testimonials-person-<current()>
+    position: en <jobTitle()>
+    description: en <paragraph()>

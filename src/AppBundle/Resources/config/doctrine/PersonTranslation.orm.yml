@@ -1,0 +1,31 @@
+AppBundle\Entity\PersonTranslation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PersonTranslationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        locale:
+            type: string
+            length: 5
+        position:
+            type: string
+            length: 255
+            nullable: true
+        description:
+            type: text
+    manyToOne:
+        person:
+            targetEntity: AppBundle\Entity\Person
+            inversedBy: translations
+            cascade:
+                - "persist"
+                - "remove"
+            joinColumn:
+                nullable: false
+                onDelete: cascade
+    lifecycleCallbacks: {  }

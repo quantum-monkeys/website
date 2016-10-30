@@ -16,16 +16,10 @@ AppBundle\Entity\Person:
             type: string
             length: 255
             nullable: true
-        position:
-            type: string
-            length: 255
-            nullable: true
         company:
             type: string
             length: 255
             nullable: true
-        description:
-            type: text
         quantumMonkeysMember:
             type: boolean
     manyToOne:
@@ -35,4 +29,13 @@ AppBundle\Entity\Person:
             cascade:
                 - "persist"
                 - "remove"
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\PersonTranslation
+            mappedBy: person
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
     lifecycleCallbacks: {  }

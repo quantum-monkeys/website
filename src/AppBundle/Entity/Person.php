@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Application\Sonata\MediaBundle\Entity\Media;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class Person
 {
@@ -24,17 +25,7 @@ class Person
     /**
      * @var string
      */
-    private $position;
-
-    /**
-     * @var string
-     */
     private $company;
-
-    /**
-     * @var string
-     */
-    private $description;
 
     /**
      * @var boolean
@@ -45,6 +36,16 @@ class Person
      * @var Media
      */
     private $picture;
+
+    /**
+     * @var PersonTranslation[]
+     */
+    private $translations;
+
+    public function __construct()
+    {
+        $this->translations = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -105,30 +106,6 @@ class Person
     }
 
     /**
-     * Set position
-     *
-     * @param string $position
-     *
-     * @return Person
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return string
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
-
-    /**
      * Set company
      *
      * @param string $company
@@ -161,22 +138,6 @@ class Person
         }
 
         return $displayName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param string $description
-     */
-    public function setDescription(string $description)
-    {
-        $this->description = $description;
     }
 
     /**
@@ -214,6 +175,21 @@ class Person
     public function __toString(): string
     {
         return $this->getDisplayName();
+    }
+
+    public function setTranslations($translations)
+    {
+        $this->translations = $translations;
+
+        /** @var PersonTranslation $translation */
+        foreach ($translations as $translation) {
+            $translation->setPerson($this);
+        }
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
     }
 }
 
