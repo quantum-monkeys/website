@@ -5,6 +5,7 @@ AppBundle\Entity\EventOccurrence:
     remainingSeats: <numberBetween(0, 25)>
     eventBriteLink: <url()>
     location: @location-<numberBetween(1, 3)>
+    languages: []
 
   event-conference-{1..2} (extends event):
     event: @conference-<current()>

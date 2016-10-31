@@ -23,6 +23,7 @@ AppBundle\Entity\EventOccurrence:
             type: boolean
         languages:
             type: simple_array
+            nullable: true
     manyToOne:
         event:
             targetEntity: AppBundle\Entity\Event
