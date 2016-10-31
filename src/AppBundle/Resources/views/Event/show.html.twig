@@ -10,7 +10,6 @@
                 src="https://www.google.com/maps/embed/v1/search?q={{ gmapQuery }}&key=AIzaSyA96Xcp2D46ewYvCzJfBjL2EpID2AKgng8" allowfullscreen></iframe>
 
         <div>
-
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation" class="active">
@@ -24,7 +23,7 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="description">
-                    <p>{{ eventOccurrence.event.description }}</p>
+                    <p>{{ translate(eventOccurrence.event.translations, 'description') }}</p>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="tickets">
                     <p>Description pour les tickets</p>
@@ -34,13 +33,13 @@
         </div>
     </div>
     <div class="col-md-6">
-        <h2>{{ eventOccurrence.event.name }}</h2>
+        <h2>{{ translate(eventOccurrence.event.translations, 'name') }}</h2>
 
         <h3>{{ eventOccurrence.location.name }} - {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h3>
 
         <h5>{{ 'view.start_from'|trans({ date: eventOccurrence.begin|localizeddate('short', 'none') }) }}</h5>
         <h5>{{ 'view.start_at'|trans({ date: eventOccurrence.begin|localizeddate('none', 'short') }) }}</h5>
-        <p>{{ eventOccurrence.event.description }}</p>
+        <p>{{ translate(eventOccurrence.event.translations, 'description') }}</p>
 
         <div class="col-md-3">
             {% for eventCost in eventOccurrence.costs %}
@@ -64,7 +63,7 @@
                 <div>
                     {% media speaker.picture, 'small' %}
                     <h4>{{ speaker.displayName }}</h4>
-                    <p>{{ speaker.description }}</p>
+                    <p>{{ translate(speaker.translations, 'description') }}</p>
                 </div>
             {% endfor %}
         </div>

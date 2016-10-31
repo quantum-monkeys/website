@@ -14,8 +14,8 @@ AppBundle\Entity\EventOccurrenceCost:
             length: 255
         cost:
             type: decimal
-            precision: '2'
-            scale: 0
+            precision: 10
+            scale: 2
         currency:
             type: string
             length: 255

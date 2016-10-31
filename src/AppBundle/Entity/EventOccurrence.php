@@ -59,10 +59,16 @@ class EventOccurrence
      */
     private $costs;
 
+    /**
+     * @var string[]
+     */
+    private $languages;
+
     public function __construct()
     {
         $this->costs = new ArrayCollection();
         $this->speakers = new ArrayCollection();
+        $this->languages = new ArrayCollection();
     }
 
     /**
@@ -256,6 +262,22 @@ class EventOccurrence
     public function setSpeakers($speakers)
     {
         $this->speakers = $speakers;
+    }
+
+    /**
+     * @return string[]
+     */
+    public function getLanguages()
+    {
+        return $this->languages;
+    }
+
+    /**
+     * @param string[] $languages
+     */
+    public function setLanguages($languages)
+    {
+        $this->languages = $languages;
     }
 }
 

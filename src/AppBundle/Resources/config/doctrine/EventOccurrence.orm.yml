@@ -21,6 +21,8 @@ AppBundle\Entity\EventOccurrence:
             nullable: true
         free:
             type: boolean
+        languages:
+            type: simple_array
     manyToOne:
         event:
             targetEntity: AppBundle\Entity\Event

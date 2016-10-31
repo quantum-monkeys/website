@@ -27,7 +27,6 @@ class SearchEngine
 
         $eventSearch = new EventSearch();
         $eventSearch
-            ->setContent(!empty($searchData['content']) ? $searchData['content'] : null)
             ->setCity(!empty($searchData['city']) ? $searchData['city'] : null)
             ->setLang(!empty($searchData['lang']) ? $searchData['lang'] : null)
             ->setFree(isset($searchData['free']) ? intval($searchData['free']) > 0 ? true : false : false)
@@ -57,24 +56,9 @@ class SearchEngine
             $qb->setParameter('city', $eventSearch->getCity());
         }
 
-        if (!is_null($eventSearch->getContent()) || !is_null($eventSearch->getLang())) {
-            $qb->innerJoin(
-                'AppBundle\Entity\Event', 'e',
-                Expr\Join::WITH, $qb->expr()->eq('e.id', 'eo.event')
-            );
-
-            if (!is_null($eventSearch->getContent())) {
-                $qb->andWhere($qb->expr()->orX(
-                    $qb->expr()->like('e.name', ':content'),
-                    $qb->expr()->like('e.description', ':content')
-                ));
-                $qb->setParameter('content', '%' . $eventSearch->getContent() . '%');
-            }
-
-            if (!is_null($eventSearch->getLang())) {
-                $qb->andWhere($qb->expr()->like('e.lang', ':lang'));
-                $qb->setParameter('lang', '%' . $eventSearch->getLang() . '%');
-            }
+        if (!is_null($eventSearch->getLang())) {
+            $qb->andWhere($qb->expr()->like('eo.languages', ':language'));
+            $qb->setParameter('language', '%' . $eventSearch->getLang() . '%');
         }
 
         $qb->orderBy('eo.begin', 'ASC');

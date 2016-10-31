@@ -24,9 +24,6 @@ class EventSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', TextType::class, [
-                'required' => false,
-            ])
             ->add('city', ChoiceType::class, [
                 'choices' => $this->getCityChoices(),
                 'required' => false,

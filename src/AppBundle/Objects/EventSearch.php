@@ -12,11 +12,6 @@ class EventSearch
     /**
      * @var string
      */
-    protected $content;
-
-    /**
-     * @var string
-     */
     protected $lang;
 
     /**
@@ -32,18 +27,6 @@ class EventSearch
     public function setCity(string $city = null)
     {
         $this->city = $city;
-
-        return $this;
-    }
-
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    public function setContent(string $content = null)
-    {
-        $this->content = $content;
 
         return $this;
     }

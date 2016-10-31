@@ -41,6 +41,14 @@ class EventOccurrenceAdmin extends Admin
                 'multiple' => true,
                 'by_reference' => false
             ])
+            ->add('languages', 'language', [
+                'choices' => [
+                    'English' => 'en',
+                    'Français' => 'fr',
+                ],
+                'multiple' => true,
+                'expanded'=> true,
+            ])
         ;
     }
 
