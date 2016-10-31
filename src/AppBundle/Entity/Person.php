@@ -177,12 +177,20 @@ class Person
         return $this->getDisplayName();
     }
 
-    public function setTranslations($translations)
+    public function addTranslation(PersonTranslation $personTranslation)
     {
-        $this->translations = $translations;
+        $personTranslation->setPerson($this);
+        $this->translations[] = $personTranslation;
+
+        return $this;
+    }
+
+    public function setTranslations($personTranslations)
+    {
+        $this->translations = $personTranslations;
 
         /** @var PersonTranslation $translation */
-        foreach ($translations as $translation) {
+        foreach ($personTranslations as $translation) {
             $translation->setPerson($this);
         }
     }

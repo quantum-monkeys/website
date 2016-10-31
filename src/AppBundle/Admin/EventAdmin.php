@@ -12,18 +12,17 @@ abstract class EventAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text')
-            ->add('description', 'textarea')
-            ->add('lang', 'language', [
-                'choices' => [
-                    'English' => 'en',
-                    'Français' => 'fr',
-                ],
-            ])
             ->add('picture', 'sonata_media_type', [
                 'required' => false,
                 'context' => 'default',
                 'provider' => 'sonata.media.provider.image',
+            ])
+            ->add('translations', 'sonata_type_collection', [
+                'by_reference' => false,
+            ], [
+                'edit' => 'inline',
+                'inline' => 'table',
+                'admin_code' => 'admin.event_translation',
             ])
         ;
     }
@@ -32,15 +31,14 @@ abstract class EventAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('lang')
         ;
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+            ->addIdentifier('id')
             ->addIdentifier('name')
-            ->add('lang')
         ;
     }
 }

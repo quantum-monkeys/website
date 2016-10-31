@@ -20,15 +20,6 @@ AppBundle\Entity\Event:
             id: true
             generator:
                 strategy: AUTO
-    fields:
-        name:
-            type: string
-            length: 255
-        description:
-            type: text
-        lang:
-            type: string
-            length: 255
 
     manyToOne:
         picture:
@@ -37,4 +28,14 @@ AppBundle\Entity\Event:
             cascade:
                 - "persist"
                 - "remove"
+
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\EventTranslation
+            mappedBy: event
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
     lifecycleCallbacks: {  }

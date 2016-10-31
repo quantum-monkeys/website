@@ -14,7 +14,7 @@
 
                     <span>{{ event.begin|localizeddate('short', 'none') }} {{ event.begin|localizeddate('none', 'short') }}</span>
                     <span>{{ event.location.city }}, {{ event.location.country }}</span>
-                    <span>{{ languageName(event.event.lang) }}</span>
+                    {#<span>{{ languageName(event.event.lang) }}</span>#}
                     <span>{{ 'event.remaining_seats'|transchoice(event.remainingSeats) }}</span>
                 </li>
             {% endfor %}

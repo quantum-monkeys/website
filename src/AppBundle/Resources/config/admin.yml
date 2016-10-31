@@ -109,3 +109,12 @@ services:
               manager_type: orm
               group: Don't touch !
               label: PersonTranslation
+
+    admin.event_translation:
+        class: AppBundle\Admin\EventTranslationAdmin
+        arguments: [~, AppBundle\Entity\EventTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: EventTranslation

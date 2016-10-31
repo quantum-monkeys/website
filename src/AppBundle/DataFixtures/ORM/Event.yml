@@ -6,50 +6,25 @@ AppBundle\Entity\EventOccurrence:
     eventBriteLink: <url()>
     location: @location-<numberBetween(1, 3)>
 
-  event-conference (template, extends event):
+  event-conference-{1..2} (extends event):
+    event: @conference-<current()>
     free: true
 
-  event-conference-fr-{1..2} (extends event-conference):
-    event: @conference-fr-<current()>
-
-  event-conference-en-{1..2} (extends event-conference):
-    event: @conference-en-<current()>
-
-  event-meet-a-coach (template, extends event):
+  event-meet-a-coach-{1..2} (extends event):
+    event: @meet-a-coach-<current()>
     free: true
 
-  event-meet-a-coach-fr-{1..2} (extends event-meet-a-coach):
-    event: @meet-a-coach-fr-<current()>
-
-  event-meet-a-coach-en-{1..2} (extends event-meet-a-coach):
-    event: @meet-a-coach-en-<current()>
-
-  event-power-training (template, extends event):
+  event-power-training-{1..2} (extends event):
+    event: @power-training-<current()>
     free: false
 
-  event-power-training-fr-{1..2} (extends event-power-training):
-    event: @power-training-fr-<current()>
-
-  event-power-training-en-{1..2} (extends event-power-training):
-    event: @power-training-en-<current()>
-
-  event-seminar (template, extends event):
+  event-seminar-{1..2} (extends event):
+    event: @seminar-<current()>
     free: false
 
-  event-seminar-fr-{1..2} (extends event-seminar):
-    event: @seminar-fr-<current()>
-
-  event-seminar-en-{1..2} (extends event-seminar):
-    event: @seminar-en-<current()>
-
-  event-workshop (template, extends event):
+  event-workshop-{1..2} (extends event):
+    event: @workshop-<current()>
     free: false
-
-  event-workshop-fr-{1..2} (extends event-workshop):
-    event: @workshop-fr-<current()>
-
-  event-workshop-en-{1..2} (extends event-workshop):
-    event: @workshop-en-<current()>
 
 AppBundle\Entity\EventOccurrenceCost:
   cost-event (template):
@@ -57,21 +32,11 @@ AppBundle\Entity\EventOccurrenceCost:
     cost: <numberBetween(100, 2000)>
     currency: <currencyCode()>
 
-  cost-event-power-training-fr-{1..5} (extends cost-event):
-    eventOccurrence: @event-power-training-fr-<numberBetween(1, 2)>
+  cost-event-power-training-{1..5} (extends cost-event):
+    eventOccurrence: @event-power-training-<numberBetween(1, 2)>
 
-  cost-event-power-training-en-{1..5} (extends cost-event):
-    eventOccurrence: @event-power-training-en-<numberBetween(1, 2)>
+  cost-event-seminar-{1..5} (extends cost-event):
+    eventOccurrence: @event-seminar-<numberBetween(1, 2)>
 
-  cost-event-seminar-fr-{1..5} (extends cost-event):
-    eventOccurrence: @event-seminar-fr-<numberBetween(1, 2)>
-
-  cost-event-seminar-en-{1..5} (extends cost-event):
-    eventOccurrence: @event-seminar-en-<numberBetween(1, 2)>
-
-  cost-event-workshop-fr-{1..5} (extends cost-event):
-    eventOccurrence: @event-workshop-fr-<numberBetween(1, 2)>
-
-  cost-event-workshop-en-{1..5} (extends cost-event):
-    eventOccurrence: @event-workshop-en-<numberBetween(1, 2)>
-
+  cost-event-workshop-{1..5} (extends cost-event):
+    eventOccurrence: @event-workshop-<numberBetween(1, 2)>

@@ -12,9 +12,7 @@ class TrainingController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $trainings = $this->get('doctrine')->getRepository('AppBundle:Event')->findBy([
-            'lang' => $request->getLocale(),
-        ]);
+        $trainings = $this->get('doctrine')->getRepository('AppBundle:Event')->findAll();
 
         return $this->render(
             'AppBundle:Training:index.html.twig',

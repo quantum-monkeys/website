@@ -17,9 +17,7 @@ class PersonAdmin extends Admin
         $formMapper
             ->add('firstName', 'text')
             ->add('lastName', 'text')
-//            ->add('position', 'text')
             ->add('company', 'text')
-//            ->add('description', 'textarea')
             ->add('quantumMonkeysMember', 'checkbox', [
                 'required' => false,
             ])

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Application\Sonata\MediaBundle\Entity\Media;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Event
@@ -15,93 +16,23 @@ abstract class Event
     private $id;
 
     /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $description;
-
-    /**
-     * @var string
-     */
-    private $lang;
-
-    /**
      * @var Media
      */
     private $picture;
 
+    /**
+     * @var EventTranslation[]
+     */
+    private $translations;
+
+    public function __construct()
+    {
+        $this->translations = new ArrayCollection();
+    }
+
     public function getId() : int
     {
         return $this->id;
-    }
-
-    public function setName(string $name) : Event
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Event
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set lang
-     *
-     * @param string $lang
-     *
-     * @return Event
-     */
-    public function setLang($lang)
-    {
-        $this->lang = $lang;
-
-        return $this;
-    }
-
-    /**
-     * Get lang
-     *
-     * @return string
-     */
-    public function getLang()
-    {
-        return $this->lang;
     }
 
     /**
@@ -115,9 +46,52 @@ abstract class Event
     /**
      * @param Media $picture
      */
-    public function setPicture(Media $picture)
+    public function setPicture($picture)
     {
         $this->picture = $picture;
+    }
+
+    public function addTranslation(EventTranslation $eventTranslation)
+    {
+        $eventTranslation->setEvent($this);
+        $this->translations[] = $eventTranslation;
+
+        return $this;
+    }
+
+    public function setTranslations($eventTranslations)
+    {
+        $this->translations = $eventTranslations;
+
+        /** @var EventTranslation $translation */
+        foreach ($eventTranslations as $translation) {
+            $translation->setEvent($this);
+        }
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    public function getName()
+    {
+        if ($this->getTranslations()->count() === 0) {
+            return "Not translated";
+        }
+
+        foreach ($this->getTranslations() as $translation) {
+            if ($translation->getLocale() === 'en') {
+                return $translation->getName();
+            }
+        }
+
+        return $this->getTranslations()->first()->getName();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 }
 
