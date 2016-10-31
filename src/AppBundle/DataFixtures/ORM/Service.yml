@@ -1,14 +1,18 @@
 AppBundle\Entity\Service:
+  service-{1..5}:
+    translations: []
+
+AppBundle\Entity\ServiceTranslation:
   service-fr-{1..5}:
-    name: <sentence(2)>
-    description: <paragraph()>
-    specifications: <paragraph()>
-    specifications: <paragraph()>
-    lang: fr
+    locale: fr
+    service: @service-<current()>
+    name: fr <sentence(2)>
+    description: fr <paragraph()>
+    specifications: fr <paragraph()>
 
   service-en-{1..5}:
-    name: <sentence(2)>
-    description: <paragraph()>
-    specifications: <paragraph()>
-    specifications: <paragraph()>
-    lang: en
+    locale: en
+    service: @service-<current()>
+    name: en <sentence(2)>
+    description: en <paragraph()>
+    specifications: en <paragraph()>

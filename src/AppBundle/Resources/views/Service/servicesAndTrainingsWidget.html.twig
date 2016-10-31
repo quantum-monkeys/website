@@ -7,7 +7,7 @@
         <ul>
             {% for service in services %}
                 <li>
-                    {{ service.name }}
+                    {{ translate(service.translations, 'name') }}
                 </li>
             {% endfor %}
         </ul>

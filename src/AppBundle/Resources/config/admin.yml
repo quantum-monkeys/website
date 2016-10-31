@@ -118,3 +118,12 @@ services:
               manager_type: orm
               group: Don't touch !
               label: EventTranslation
+
+    admin.service_translation:
+        class: AppBundle\Admin\ServiceTranslationAdmin
+        arguments: [~, AppBundle\Entity\ServiceTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: ServiceTranslation

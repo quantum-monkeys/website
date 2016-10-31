@@ -8,9 +8,9 @@
             <li>
                 {% media service.picture, 'big' %}
 
-                <h4>{{ service.name }}</h4>
-                <p>{{ service.description }}</p>
-                <p>{{ service.specifications }}</p>
+                <h4>{{ translate(service.translations, 'name') }}</h4>
+                <p>{{ translate(service.translations, 'description') }}</p>
+                <p>{{ translate(service.translations, 'specifications') }}</p>
             </li>
         {% endfor %}
     </ul>

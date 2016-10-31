@@ -3,10 +3,8 @@
 namespace AppBundle\Entity;
 
 use Application\Sonata\MediaBundle\Entity\Media;
+use Doctrine\Common\Collections\ArrayCollection;
 
-/**
- * Service
- */
 class Service
 {
     /**
@@ -15,29 +13,19 @@ class Service
     private $id;
 
     /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $description;
-
-    /**
-     * @var string
-     */
-    private $specifications;
-
-    /**
-     * @var string
-     */
-    private $lang;
-
-    /**
      * @var Media
      */
     private $picture;
+
+    /**
+     * @var ServiceTranslation[]
+     */
+    private $translations;
+
+    public function __construct()
+    {
+        $this->translations = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -64,80 +52,6 @@ class Service
     }
 
     /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Service
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * Set specifications
-     *
-     * @param string $specifications
-     *
-     * @return Service
-     */
-    public function setSpecifications($specifications)
-    {
-        $this->specifications = $specifications;
-
-        return $this;
-    }
-
-    /**
-     * Get specifications
-     *
-     * @return string
-     */
-    public function getSpecifications()
-    {
-        return $this->specifications;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLang()
-    {
-        return $this->lang;
-    }
-
-    /**
-     * @param string $lang
-     */
-    public function setLang(string $lang)
-    {
-        $this->lang = $lang;
-    }
-
-    /**
      * @return Media
      */
     public function getPicture()
@@ -151,6 +65,50 @@ class Service
     public function setPicture(Media $picture)
     {
         $this->picture = $picture;
+    }
+
+
+    public function addTranslation(ServiceTranslation $serviceTranslation)
+    {
+        $serviceTranslation->setService($this);
+        $this->translations[] = $serviceTranslation;
+
+        return $this;
+    }
+
+    public function setTranslations($serviceTranslations)
+    {
+        $this->translations = $serviceTranslations;
+
+        /** @var ServiceTranslation $translation */
+        foreach ($serviceTranslations as $translation) {
+            $translation->setService($this);
+        }
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    public function getName()
+    {
+        if ($this->getTranslations()->count() === 0) {
+            return "Not translated";
+        }
+
+        foreach ($this->getTranslations() as $translation) {
+            if ($translation->getLocale() === 'en') {
+                return $translation->getName();
+            }
+        }
+
+        return $this->getTranslations()->first()->getName();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 }
 

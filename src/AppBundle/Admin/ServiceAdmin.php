@@ -13,21 +13,16 @@ class ServiceAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name', 'text')
-            ->add('description', 'textarea')
-            ->add('specifications', 'textarea', [
-                'required' => false,
-            ])
-            ->add('lang', 'language', [
-                'choices' => [
-                    'English' => 'en',
-                    'Français' => 'fr',
-                ],
-            ])
             ->add('picture', 'sonata_media_type', [
                 'required' => false,
                 'context' => 'default',
                 'provider' => 'sonata.media.provider.image',
+            ])
+            ->add('translations', 'sonata_type_collection', [
+                'by_reference' => false,
+            ], [
+                'edit' => 'inline',
+                'admin_code' => 'admin.service_translation',
             ])
         ;
     }
