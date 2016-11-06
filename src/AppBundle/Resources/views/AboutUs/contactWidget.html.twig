@@ -1,8 +1,48 @@
 {% trans_default_domain 'widget' %}
 
-<div class="panel panel-default col-md-12" id="contact-us">
-    <div class="panel-heading">{{ 'contact.title'|trans }}</div>
-    <div class="panel-body">
-        {{ form(form) }}
-    </div>
-</div>
+{#<div class="panel panel-default col-md-12" id="contact-us">#}
+    {#<div class="panel-heading">{{ 'contact.title'|trans }}</div>#}
+    {#<div class="panel-body">#}
+        {#{{ form(form) }}#}
+    {#</div>#}
+{#</div>#}
+
+{{ form_start(form) }}
+    {{ form_widget(form.firstName, {
+        'attr': {
+            'class': 'footer_mainpanel_right_input'
+        }
+    }) }}
+    {{ form_widget(form.lastName, {
+        'attr': {
+            'class': 'footer_mainpanel_right_input'
+        }
+    }) }}
+    {{ form_widget(form.email, {
+        'attr': {
+            'class': 'footer_mainpanel_right_input'
+        }
+    }) }}
+    {{ form_widget(form.project, {
+        'attr': {
+            'class': 'footer_mainpanel_right_input'
+        }
+    }) }}
+    {{ form_widget(form.message, {
+        'attr': {
+            'class': 'footer_mainpanel_right_input footer_mainpanel_right_inputarea'
+        }
+    }) }}
+    {{ form_widget(form.submit, {
+        'attr': {
+            'class': 'footer_mainpanel_right_submit'
+        }
+    }) }}
+{{ form_end(form) }}
+
+{#<input type="text" value="JohnAndree" class="footer_mainpanel_right_input"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue">#}
+{#<input type="text" value="Last name" class="footer_mainpanel_right_input"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue">#}
+{#<input type="text" value="Email" class="footer_mainpanel_right_input"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue">#}
+{#<input type="text" value="Project name" class="footer_mainpanel_right_input"  onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue">#}
+{#<textarea class="footer_mainpanel_right_input footer_mainpanel_right_inputarea" onfocus="if(this.value==this.defaultValue)this.value=''" onblur="if(this.value=='')this.value=this.defaultValue" >Your Message....</textarea>#}
+{#<input type="submit" value="Subscribe" class="footer_mainpanel_right_submit">#}

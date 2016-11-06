@@ -21,9 +21,8 @@ gulp.task('image-min', () => {
 
 gulp.task('css', () => {
     gulp.src([
-            'node_modules/bootstrap/dist/css/bootstrap.css'
-            // 'app/Resources/styles/vendors/bootstrap.min.css',
-            // 'app/Resources/styles/vendors/font-awesome/css/font-awesome.min.css',
+            'node_modules/bootstrap/dist/css/bootstrap.min.css',
+            'node_modules/font-awesome/css/font-awesome.min.css',
             // 'app/Resources/styles/vendors/simple-line-icons.css',
             // 'app/Resources/styles/vendors/yamm/yamm.css',
             // 'app/Resources/styles/vendors/yamm/menu.css',
@@ -39,10 +38,10 @@ gulp.task('css', () => {
         .pipe(gulp.dest('web/css'));
 
     return gulp.src([
-            // 'app/Resources/styles/style.css',
+            'app/Resources/styles/style.css',
             // 'app/Resources/styles/reset.css',
             // 'app/Resources/styles/orange.css',
-            // 'app/Resources/styles/qm.css'
+            'app/Resources/styles/custom.css'
         ])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
@@ -53,16 +52,20 @@ gulp.task('css', () => {
 });
 
 gulp.task('fonts', () => {
-    return gulp.src('app/Resources/styles/vendors/font-awesome/fonts/*')
+    return gulp.src([
+            'node_modules/font-awesome/fonts/*',
+            'app/Resources/fonts/*'
+        ])
         .pipe(gulp.dest('web/fonts'));
 });
 
 gulp.task('js', () => {
     gulp.src([
         'node_modules/jquery/dist/jquery.js',
-        'node_modules/bootstrap/dist/js/bootstrap.js'
-            // 'app/Resources/scripts/vendors/jquery.js',
-            // 'app/Resources/scripts/vendors/bootstrap.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.js',
+        'node_modules/jcf/dist/js/jcf.js',
+        'node_modules/jcf/dist/js/jcf.select.js',
+        'app/Resources/scripts/vendors/responsiveCarousel.min.js',
             // 'app/Resources/scripts/vendors/masterslider/jquery.easing.min.js',
             // 'app/Resources/scripts/vendors/masterslider/masterslider.min.js',
             // 'app/Resources/scripts/vendors/yamm/sticky.js',
@@ -70,16 +73,17 @@ gulp.task('js', () => {
             // 'app/Resources/scripts/vendors/jquery.form.js'
         ])
         .pipe(concat('vendors.min.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('web/js'));
 
     return gulp.src([
-            // 'app/Resources/scripts/slider.js',
-            // 'app/Resources/scripts/contact.js'
+            'app/Resources/scripts/script.js',
+            'app/Resources/scripts/functions.js',
         ])
         .pipe(concat('app.min.js'))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('web/js'));
 });
 
-gulp.task('default', ['image-min', 'css', 'fonts', 'js']);
+gulp.task('image', ['image-min']);
+gulp.task('default', ['css', 'fonts', 'js']);

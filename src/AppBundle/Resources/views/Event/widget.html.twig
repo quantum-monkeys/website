@@ -1,25 +1,18 @@
 {% trans_default_domain 'widget' %}
 
-<div class="panel panel-default col-md-6">
-    <div class="panel-heading">{{ 'events.title'|trans }}</div>
-    <div class="panel-body">
-        <ul>
-            {% for event in events %}
-                <li>
-                    {% media event.event.picture, 'small' %}
-
-                    <a href="{{ path('event_show', { id: event.id }) }}">
-                        <h4>{{ event.event.name }}</h4>
-                    </a>
-
-                    <span>{{ event.begin|localizeddate('short', 'none') }} {{ event.begin|localizeddate('none', 'short') }}</span>
-                    <span>{{ event.location.city }}, {{ event.location.country }}</span>
-                    {#<span>{{ languageName(event.event.lang) }}</span>#}
-                    <span>{{ 'event.remaining_seats'|transchoice(event.remainingSeats) }}</span>
-                </li>
-            {% endfor %}
-        </ul>
-
-        <a href="{{ path('event_list') }}">{{ 'events.see_all'|trans }}</a>
+<h3><img src="images/upcomming-icon.png" alt="image description" height="50px"/> <span>{{ 'events.title'|trans }}</span></h3>
+{% for event in events %}
+    <div class="whats_happening_box">
+        <div class="whats_happening_box_left">
+            {% media event.event.picture, 'event_widget' %}
+        </div>
+        <div class="whats_happening_box_right">
+            <p><span>{{ translate(event.event.translations, 'name') }}</span></p>
+            <div class="events_small_panel"><img src="images/events-icon1.png" alt="image description"> {{ event.location.city }}, {{ event.location.country }}</div>
+            <div class="events_small_panel"><img src="images/events-icon2.png" alt="image description"> {{ event.begin|localizeddate('short', 'none') }} {{ event.begin|localizeddate('none', 'short') }}</div>
+            <div class="events_small_panel"><img src="images/events-icon3.png" alt="image description">{% for language in event.languages %}{{ languageName(language) }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
+            <div class="events_small_panel"><img src="images/events-icon4.png" alt="image description"> {{ 'event.remaining_seats'|transchoice(event.remainingSeats) }}</div>
+        </div>
     </div>
-</div>
+{% endfor %}
+<a href="{{ path('event_list') }}">{{ 'events.see_all'|trans }}</a>

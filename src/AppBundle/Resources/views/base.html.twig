@@ -11,27 +11,122 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" media="screen" href="{{ asset('css/vendors.min.css') }}" type="text/css" />
     <link rel="stylesheet" media="screen" href="{{ asset('css/app.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
 </head>
 <body>
+    {% if app.request.locale and app.request.locale == 'fr' %}
+        {% set sNewLocale = 'en' %}
+    {% else %}
+        {% set sNewLocale = 'fr' %}
+    {% endif %}
+    {% set requestAttributes =  app.request.attributes.all() %}
+    {% set route = requestAttributes._route %}
 
-{% if app.request.locale and app.request.locale == 'fr' %}
-    {% set sNewLocale = 'en' %}
-{% else %}
-    {% set sNewLocale = 'fr' %}
-{% endif %}
+    <!--start_top_contanear-->
+    <div class="top_contanear">
+        <div class="contanear">
+            <div class="top_heade_right_area">
+                <div class="top_social_area">
+                    <p>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+                <div class="codecon_half">
+                    <a href="{{ localeSwitch(sNewLocale, requestAttributes) }}">{{ ('lang_switch.'~sNewLocale)|trans|raw }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end_top_contanear-->
 
-{% set requestAttributes =  app.request.attributes.all() %}
-{% set route = requestAttributes._route %}
-<a href="{{ localeSwitch(sNewLocale, requestAttributes) }}">{{ ('lang_switch.'~sNewLocale)|trans|raw }}</a>
+    <!--start_mob_logo_area-->
+    <div class="mob_logo_area"> <img src="/images/logo-m.png" alt="image description"> </div>
+    <!--end_mob_logo_area-->
 
-{{ knp_menu_render('AppBundle:Builder:mainMenu', { template: 'AppBundle:Menu:knp_menu.html.twig' } ) }}
+    <!--start_mob_nav_contanear-->
+    <div class="mob_nav_contanear">
+        <div class="contanear">
+            <div class="small_manu">
+                <a style="display: inline-block;" class="toggleMenu active" href="#">
+                    <span><img src="/images/small_nav_icon.png" align="right"/></span>
+                </a>
+                {{ knp_menu_render('AppBundle:Builder:mainMenu', { template: 'AppBundle:Menu:knp_menu_mobile.html.twig' } ) }}
+            </div>
+        </div>
+    </div>
+    <!--end_mob_nav_contanear-->
 
-{% block body %}{% endblock %}
+    <!--start_top_nav_and_slider_contanear-->
+    <div class="top_nav_and_slider_contanear">
 
-{{ render(controller('AppBundle:AboutUs:contactWidget')) }}
+        {% block hero %}
+            <div class="top_slider_contanear">
+                <img src="/images/topbg.jpg" alt="" />
+            </div>
+        {% endblock hero %}
 
-{% block javascripts %}
-    <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
-{% endblock %}
+        <div class="top_nav_contanear">
+            <div class="contanear">
+                <div class="logo_area"><a href="{{ url('homepage') }}"><img src="/images/logo.png" alt="image description"></a></div>
+                <div class="nav_main_area">
+                    {{ knp_menu_render('AppBundle:Builder:mainMenu', { template: 'AppBundle:Menu:knp_menu.html.twig' } ) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end_top_nav_and_slider_contanear-->
+
+    {% block body %}{% endblock %}
+
+    <div class="footer">
+        <div class="contanear">
+            <div class="footer_top">
+                <img src="/images/say.png" alt="image description">{{ 'contact.subtitle'|trans }}
+                <p>{{ 'contact.description'|trans }}</p>
+            </div>
+            <div class="footer_mainpanel_left">
+                <div class="footer_mainpanel_left_inner"> <img src="/images/address-icon.png" alt="image description">
+                    <p>
+                        <span>{{ 'contact.informations.address.title'|trans }}</span><br>
+                        {{ 'contact.informations.address.value'|trans }}
+                    </p>
+                </div>
+                <div class="footer_mainpanel_left_inner"> <img src="/images/phone-icon.png" alt="image description">
+                    <p>
+                        <span>{{ 'contact.informations.phone.title'|trans }}</span><br>
+                        {{ 'contact.informations.phone.value'|trans }}
+                    </p>
+                </div>
+                <div class="footer_mainpanel_left_inner"> <img src="/images/message-icon.png" alt="image description">
+                    <p>
+                        <span>{{ 'contact.informations.email.title'|trans }}</span><br>
+                        {{ 'contact.informations.email.value'|trans }}
+                    </p>
+                </div>
+            </div>
+            <div class="footer_mainpanel_right" id="contact-us">
+                {{ render(controller('AppBundle:AboutUs:contactWidget')) }}
+            </div>
+            <div class="footer_mainpanel_social">
+                <a href="https://www.facebook.com/quantummonkeys"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/quantum-monkeys"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://www.twitter.com/quantummonkeys"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a href="http://plus.google.com/117632737566323856593"> <i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_bottom">
+        <div class="contanear">{{ 'copyright'|trans }}</div>
+    </div>
+
+    {% block javascripts %}
+        <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
+        <script type="application/javascript" src="{{ asset('js/app.min.js') }}"></script>
+    {% endblock %}
 </body>
 </html>

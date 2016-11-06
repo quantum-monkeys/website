@@ -1,19 +1,18 @@
-<div class="panel panel-default col-md-6">
-    <div class="panel-heading">{{ 'blog.title'|trans }}</div>
-    <div class="panel-body">
-        <ul>
-            {% for post in pager.getResults() %}
-                <li>
-                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">
-                        <span>{{ post.publicationDateStart|localizeddate('full', 'none') }}</span>
-                        <h4>{{ post.title }}</h4>
-                    </a>
-                    <p>{{ post.abstract }}</p>
-                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ 'blog.read_more'|trans }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+<h3><img src="images/blog-icon.png" alt="image description"> <span>{{ 'blog.title'|trans }}</span></h3>
 
-        <a href="{{ path('sonata_news_home') }}">{{ 'blog.go_to'|trans }}</a>
+{% for post in pager.getResults() %}
+    <div class="whats_happening_box">
+        <div class="whats_happening_box_left"> <img src="images/blog-{{ loop.index }}.jpg" alt="image description"> </div>
+        <div class="whats_happening_box_right">
+            <p><span>{{ post.publicationDateStart|localizeddate('full', 'none') }}</span><br> {{ post.title }}</p>
+            {{ post.abstract }}
+            <div class="plus_icon">
+                <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">
+                    <img src="images/plus.png" alt="image description">
+                </a>
+            </div>
+        </div>
     </div>
-</div>
+{% endfor %}
+
+<a href="{{ path('sonata_news_home') }}">{{ 'blog.go_to'|trans }}</a>

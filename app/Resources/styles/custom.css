@@ -1,0 +1,77 @@
+.codecon_half {
+    float: right;
+    width: 400px;
+    text-align: right;
+    padding-top: 10px;
+}
+
+.current {
+    background: #FF8A00;
+    padding: 42px 15px;
+}
+
+.search-form .reset {
+    border: 0;
+    padding: 0;
+    color: #ff8a00;
+    width: 100%;
+    height: 49px;
+    display: block;
+    cursor: pointer;
+    margin: 25px 0 0;
+    text-transform: capitalize;
+    background: #fff;
+    font: 400 18px/22px Arial,helvetica,sans-serif;
+    text-align: center;
+}
+
+.location {
+    width: inherit;
+    float: left;
+}
+.location p {
+    width: 100%;
+    float: left;
+    margin: 0px;
+}
+.location p img {
+    float: left;
+    width: 25px;
+}
+.location p span {
+    display: table;
+    padding: 0px 15px;
+    font-family: Open Sans;
+    font-weight: normal;
+    color: #808080;
+    font-size: 18px;
+}
+
+.calender-regular {
+    width: inherit;
+}
+
+.cost {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.cost .name {
+    width: 100%;
+    background-color: #a7a7a7;
+    text-align: center;
+    color: #fff;
+    font-family: Open Sans;
+    font-weight: normal;
+    text-transform: uppercase;
+    /*padding: 5px 1em;*/
+}
+.cost .price {
+    width: 100%;
+    background-color: #6b6b6b;
+    text-align: center;
+    color: #fff;
+    font-family: Open Sans;
+    font-weight: normal;
+    /*padding: 5px 1em;*/
+}

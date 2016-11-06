@@ -3,79 +3,98 @@
 {% trans_default_domain 'events' %}
 
 {% block body %}
-    <div class="col-md-6">
-        {% media eventOccurrence.event.picture, 'small' %}
-
-        <iframe width="600" height="450" frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/search?q={{ gmapQuery }}&key=AIzaSyA96Xcp2D46ewYvCzJfBjL2EpID2AKgng8" allowfullscreen></iframe>
-
-        <div>
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                    <a href="#description" aria-controls="description" role="tab" data-toggle="tab">{{ 'view.description'|trans }}</a>
-                </li>
-                <li role="presentation">
-                    <a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">{{ 'view.tickets'|trans }}</a>
-                </li>
-            </ul>
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="description">
-                    <p>{{ translate(eventOccurrence.event.translations, 'description') }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
+                <ol class="breadcrumb">
+                    <li><a href="index.thml">Home</a></li>
+                    <li><a href="blog.thml">Blog</a></li>
+                    <li>Blog Details</li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="blog-img-detail">
+                    {% media eventOccurrence.event.picture, 'event_big' with {
+                        'class': 'img-responsive'
+                    } %}
                 </div>
-                <div role="tabpanel" class="tab-pane" id="tickets">
-                    <p>Description pour les tickets</p>
+                <div class="map-section">
+                    <iframe width="100%" height="300" frameborder="0" style="border:0"
+                            src="https://www.google.com/maps/embed/v1/search?q={{ gmapQuery }}&key=AIzaSyA96Xcp2D46ewYvCzJfBjL2EpID2AKgng8" allowfullscreen></iframe>
+                </div>
+                <div class="discription-section">
+                    <ul role="tablist">
+                        <li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">{{ 'view.description'|trans }}</a></li>
+                        <li role="presentation"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">{{ 'view.tickets'|trans }}</a></li>
+                    </ul>
+                    <div role="tabpanel" class="discription-content" id="description">
+                        <p>{{ translate(eventOccurrence.event.translations, 'description')|nl2br }}</p>
+                    </div>
+                    {#<div role="tabpanel" class="discription-content" id="tickets">#}
+                        {#Test#}
+                    {#</div>#}
                 </div>
             </div>
-
-        </div>
-    </div>
-    <div class="col-md-6">
-        <h2>{{ translate(eventOccurrence.event.translations, 'name') }}</h2>
-
-        <h3>{{ eventOccurrence.location.name }} - {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h3>
-
-        <h5>{{ 'view.start_from'|trans({ date: eventOccurrence.begin|localizeddate('short', 'none') }) }}</h5>
-        <h5>{{ 'view.start_at'|trans({ date: eventOccurrence.begin|localizeddate('none', 'short') }) }}</h5>
-        <p>{{ translate(eventOccurrence.event.translations, 'description') }}</p>
-
-        <div class="col-md-3">
-            {% for eventCost in eventOccurrence.costs %}
-                <div class="panel panel-info">
-                    <div class="panel-heading">{{ eventCost.name }}</div>
-                    <div class="panel-body">
-                        {{ eventCost.cost|localizedcurrency(eventCost.currency) }}
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="age-section">
+                    <h4 class="age-title">{{ translate(eventOccurrence.event.translations, 'name') }}</h4>
+                    <h3>{{ eventOccurrence.location.name }} - {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h3>
+                    <p>
+                        <img src="/images/calender-img.png" alt="img" />
+                        <span>{{ 'view.start_from'|trans({ date: eventOccurrence.begin|localizeddate('short', 'none') }) }}</span>
+                    </p>
+                    <p>
+                        <img src="/images/speaker-img.png" alt="img" />
+                        <span>{{ 'view.start_at'|trans({ date: eventOccurrence.begin|localizeddate('none', 'short') }) }}</span>
+                    </p>
+                    <p>{{ translate(eventOccurrence.event.translations, 'description') }}</p>
+                </div>
+                <div class="calender-regular col-sm-2 col-md-2 col-lg-2">
+                    {% for eventCost in eventOccurrence.costs %}
+                        <div class="cost">
+                            <div class="name">{{ eventCost.name }}</div>
+                            <div class="price">{{ eventCost.cost|localizedcurrency(eventCost.currency) }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="location col-sm-10 col-md-10 col-lg-10">
+                    <p>
+                        <img src="/images/location.png" alt="loaction img" />
+                        <span>
+                            {{ eventOccurrence.location.name }}<br />
+                            {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}<br />
+                            {{ eventOccurrence.location.country }}
+                        </span>
+                    </p>
+                </div>
+                <div class="feature-speaker">
+                    <div class="blog-title-form">
+                        <h3>{{ 'view.speakers'|trans }}</h3>
+                    </div>
+                    <!--End-->
+                    <div class="blog-post-list">
+                        <ul>
+                            {% for speaker in eventOccurrence.speakers %}
+                                <li>
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-6 blog-list-img">
+                                            {% media speaker.picture, 'person_event' %}
+                                        </div>
+                                        <div class="col-xs-6 col-sm-6">
+                                            <div class="blog-list-content">
+                                                <h3>{{ speaker.displayName }}</h3>
+                                                <p>{{ translate(speaker.translations, 'description') }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="col-md-9">
-            <h5>{{ eventOccurrence.location.name }}</h5>
-            <h5>{{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h5>
-            <h5>{{ eventOccurrence.location.country }}</h5>
-        </div>
-
-        <div class="col-md-12">
-            <h3>{{ 'view.speakers'|trans }}</h3>
-            {% for speaker in eventOccurrence.speakers %}
-                <div>
-                    {% media speaker.picture, 'small' %}
-                    <h4>{{ speaker.displayName }}</h4>
-                    <p>{{ translate(speaker.translations, 'description') }}</p>
-                </div>
-            {% endfor %}
+            </div>
         </div>
     </div>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script>
-        $('#myTabs a').click(function (e) {
-            e.preventDefault()
-            $(this).tab('show')
-        })
-    </script>
 {% endblock %}

@@ -1,17 +1,46 @@
 {% extends 'AppBundle::base.html.twig' %}
 
 {% block body %}
-    <h2>Our services</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
+                <ol class="breadcrumb">
+                    <li><a href="index.thml">Home</a></li>
+                    <li>Services</li>
+                </ol>
+            </div>
+        </div>
 
-    <ul>
         {% for service in services %}
-            <li>
-                {% media service.picture, 'big' %}
-
-                <h4>{{ translate(service.translations, 'name') }}</h4>
-                <p>{{ translate(service.translations, 'description') }}</p>
-                <p>{{ translate(service.translations, 'specifications') }}</p>
-            </li>
+            <div class="row">
+                {% if loop.index % 2 == 1 %}
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                        <div class="left-slider">
+                            <div class="item">
+                                {% media service.picture, 'service_big' %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="over-cont">
+                        <div class="mission-heading">
+                            <h3>{{ translate(service.translations, 'name') }}</h3>
+                        </div>
+                        <p>{{ translate(service.translations, 'description')|nl2br }}</p>
+                        <span class="amazings-text">
+                            <h3>{{ translate(service.translations, 'specifications') }}</h3>
+                        </span>
+                    </div>
+                </div>
+                {% if loop.index % 2 == 0 %}
+                    <div class="col-md-6">
+                        <div class="working_method">
+                            {% media service.picture, 'service_big' %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}
