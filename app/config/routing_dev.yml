@@ -12,3 +12,7 @@ _errors:
 
 _main:
     resource: routing.yml
+
+lexik_translation_edition:
+    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+    prefix:   /_trans

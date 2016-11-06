@@ -18,6 +18,7 @@ class AppKernel extends Kernel
 
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new JMS\I18nRoutingBundle\JMSI18nRoutingBundle(),
+            new Lexik\Bundle\TranslationBundle\LexikTranslationBundle(),
 
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
@@ -26,6 +27,7 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            new Sonata\SeoBundle\SonataSeoBundle(),
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Sonata\MediaBundle\SonataMediaBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),

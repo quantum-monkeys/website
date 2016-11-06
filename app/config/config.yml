@@ -80,3 +80,10 @@ hype_mailchimp:
     api_key: 6e639e2ed35e339033c8c2c5c1539cd3-us13
     default_list: 5e1038db89
     ssl: true #optional configuring curl connection
+
+lexik_translation:
+    fallback_locale: [en]         # (required) default locale(s) to use
+    managed_locales: [en, fr] # (required) locales that the bundle have to manage
+    use_yml_tree: true
+    auto_cache_clean: true
+    auto_cache_clean_interval: 600  # number of seconds to wait before trying to check if translations have changed in the database.

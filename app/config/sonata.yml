@@ -153,3 +153,33 @@ sonata_admin:
     templates:
         # default global templates
         layout:  SonataAdminBundle::layout.html.twig
+
+sonata_seo:
+    encoding:         UTF-8
+    page:
+        default:          sonata.seo.page.default
+        title:            Quantum Monkeys
+        metas:
+            name:
+                keywords:             Consulting Agile PLA Pragmatic Lean Coaching Automation Continuous Integration Deployment Symfony Nodejs
+                description:          Agile think tank that allows us to explore the themes of making organizations and people more dynamic, more efficient and just plain awesome.
+                robots:               index, follow
+
+            property:
+                'og:title':           Quantum Monkeys
+                'og:site_name':       Quantum Monkeys
+                'og:type':            "website"
+                'og:url':             "http://www.quantummonkeys.com"
+                'og:image':           "http://www.quantummonkeys.com/images/qm/logo.png"
+                'og:description':     Agile think tank that allows us to explore the themes of making organizations and people more dynamic, more efficient and just plain awesome.
+
+            http-equiv:
+                'Content-Type':         text/html; charset=utf-8
+
+            charset:
+                UTF-8:    ''
+
+        head:
+            'xmlns':              http://www.w3.org/1999/xhtml
+            'xmlns:og':           http://opengraphprotocol.org/schema/
+            #'xmlns:fb':           "http://www.facebook.com/2008/fbml"
