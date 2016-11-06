@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class AboutUsController extends Controller
@@ -42,6 +43,7 @@ class AboutUsController extends Controller
     }
 
     public function contactAction(Request $request) {
+        $success = false;
         $form = $this->createForm(ContactType::class);
 
         $form->handleRequest($request);
@@ -76,11 +78,19 @@ class AboutUsController extends Controller
             ;
 
             try {
-                $this->get('mailer')->send($message);
+                $recipients = $this->get('mailer')->send($message);
+
+                if ($recipients > 0) {
+                    $success = true;
+                }
             } catch(\Exception $e) {
             }
         } else {
         }
+
+        return new JsonResponse([
+            'success' => $success,
+        ]);
     }
 
     public function newsletterAction(Request $request) {

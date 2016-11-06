@@ -65,6 +65,7 @@ gulp.task('js', () => {
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/jcf/dist/js/jcf.js',
         'node_modules/jcf/dist/js/jcf.select.js',
+        'node_modules/jquery-form/jquery.form.js',
         'app/Resources/scripts/vendors/responsiveCarousel.min.js',
             // 'app/Resources/scripts/vendors/masterslider/jquery.easing.min.js',
             // 'app/Resources/scripts/vendors/masterslider/masterslider.min.js',
@@ -73,15 +74,16 @@ gulp.task('js', () => {
             // 'app/Resources/scripts/vendors/jquery.form.js'
         ])
         .pipe(concat('vendors.min.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('web/js'));
 
     return gulp.src([
             'app/Resources/scripts/script.js',
             'app/Resources/scripts/functions.js',
+            'app/Resources/scripts/contact.js',
         ])
         .pipe(concat('app.min.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('web/js'));
 });
 

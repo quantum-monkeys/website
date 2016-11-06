@@ -64,7 +64,6 @@
     font-family: Open Sans;
     font-weight: normal;
     text-transform: uppercase;
-    /*padding: 5px 1em;*/
 }
 .cost .price {
     width: 100%;
@@ -73,5 +72,8 @@
     color: #fff;
     font-family: Open Sans;
     font-weight: normal;
-    /*padding: 5px 1em;*/
+}
+
+#contact-us .alert {
+    display: none;
 }

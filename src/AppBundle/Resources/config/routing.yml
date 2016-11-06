@@ -37,10 +37,10 @@ contact:
     path: /contact
     methods: POST
     defaults:
-        _controller: AppBundle:Home:contact
+        _controller: AppBundle:AboutUs:contact
 
 newsletter:
     path: /newsletter
     methods: POST
     defaults:
-        _controller: AppBundle:Home:newsletter
+        _controller: AppBundle:AboutUs:newsletter

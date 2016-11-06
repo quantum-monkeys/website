@@ -9,3 +9,5 @@ trainings.subtitle: __trainings.subtitle
 trainings.see_all: __trainings.see_all
 testimonials.title: __testimonials.title
 testimonials.at: __testimonials.at
+contact.message.success: __contact.message.success
+contact.message.error: __contact.message.error

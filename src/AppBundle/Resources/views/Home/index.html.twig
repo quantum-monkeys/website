@@ -4,7 +4,7 @@
 
 {% block hero %}
     <div class="top_slider_contanear">
-        <img src="images/slider_img2.png" alt="Agile training and coaching">
+        <img src="/images/slider_img2.png" alt="Agile training and coaching">
     </div>
 
     {#{% for i in 1..3 %}#}
@@ -28,9 +28,9 @@
             <div class="how_can_help_box_area">
                 {% for i in 1..3 %}
                     <div class="how_can_help_box1">
-                        <div class="how_can_help_top_img_area"><img src="images/how_can_help_top_icon.jpg" alt="image description"></div>
+                        <div class="how_can_help_top_img_area"><img src="/images/how_can_help_top_icon.jpg" alt="image description"></div>
                         <div class="how_can_help_main_img_and_text_area">
-                            <div class="how_can_help_main_img_box"><img src="images/how_can_help_img{{ i }}.jpg" alt="image description"></div>
+                            <div class="how_can_help_main_img_box"><img src="/images/how_can_help_img{{ i }}.jpg" alt="image description"></div>
                             <div class="how_can_help_text_area">
                                 <p>{{ ('how.element' ~ i ~ '.title')|trans }}</p>
                             </div>
