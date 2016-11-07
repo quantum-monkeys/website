@@ -3,17 +3,10 @@
 {% trans_default_domain 'home' %}
 
 {% block hero %}
-    <div class="top_slider_contanear">
-        <img src="/images/slider_img2.png" alt="Agile training and coaching">
+    <div class="home-hero" style="background-image: url(/images/doors-1690423_1920-orange.jpg);">
+        <h2>{{ 'hero.title'|trans|raw }}</h2>
+        <h3>{{ 'hero.subtitle'|trans|raw }}</h3>
     </div>
-
-    {#{% for i in 1..3 %}#}
-        {#<div>#}
-            {#<h2>{{ ('hero.slide' ~ i ~ '.title')|trans }}</h2>#}
-            {#<h3>{{ ('hero.slide' ~ i ~ '.subtitle')|trans }}</h3>#}
-            {#<p>{{ ('hero.slide' ~ i ~ '.text')|trans }}</p>#}
-        {#</div>#}
-    {#{% endfor %}#}
 {% endblock hero %}
 
 {% block body %}

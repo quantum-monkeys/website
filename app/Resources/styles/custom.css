@@ -12,7 +12,7 @@
 
 .search-form .reset {
     border: 0;
-    padding: 0;
+    padding: 13px;
     color: #ff8a00;
     width: 100%;
     height: 49px;
@@ -76,4 +76,112 @@
 
 #contact-us .alert {
     display: none;
+}
+
+.langSwitcher {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.search-form button {
+    border: 0;
+    padding: 0;
+    color: #fff;
+    width: 100%;
+    height: 49px;
+    display: block;
+    cursor: pointer;
+    margin: 25px 0 0;
+    text-transform: capitalize;
+    background: #ff8a00;
+    font: 400 18px/22px Arial, helvetica, sans-serif;
+}
+.search-form button:hover {
+    background: #fff;
+    color: #ff8a00;
+}
+
+.search-form .free {
+    margin-top: 26px;
+    padding: 13px 0;
+}
+
+.jcf-checkbox {
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #ff8a00;
+    margin: 0 12px 0 0;
+    height: 20px;
+    width: 20px;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.jcf-checkbox span {
+    position: absolute;
+    height: 6px;
+    width: 10px;
+    top: 50%;
+    left: 50%;
+    margin: -7px 0 0 -6px;
+    border: 1px solid #ff8a00;
+    border-width: 0 0 2px 2px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    display: none;
+}
+
+.jcf-checkbox span {
+    margin: -4px 0 0 -5px;
+}
+.jcf-checkbox.jcf-checked span {
+    display: block;
+}
+
+.home-hero {
+    overflow: hidden;
+    position: relative;
+    padding: 480px 0 110px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    -webkit-background-size: cover;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+
+    text-shadow:
+            -1px -1px 1px #000,
+            1px -1px 1px #000,
+            -1px 1px 1px #000,
+            1px 1px 1px #000;
+    letter-spacing: 0.5em;
+    font: 700 32px/38px 'Antonio-Bold', Arial, helvetica, sans-serif;
+}
+
+.home-hero h2 {
+    font: 700 2em/1.2em 'Antonio-Bold', Arial, helvetica, sans-serif;
+}
+
+.home-hero h3 {
+    font: 700 1em/1em 'Antonio-Bold', Arial, helvetica, sans-serif;
+}
+
+.home-hero h2 span,
+.home-hero h3 span {
+    color: #ff8a00;
+}
+
+.how_can_help_text_area p {
+    text-align: right;
+}
+
+.how_can_help_box1:hover .how_can_help_text_area p {
+    text-align: center;
 }
