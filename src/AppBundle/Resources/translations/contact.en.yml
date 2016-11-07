@@ -1,9 +1,9 @@
 form:
   placeholders:
-    firstname: ''
-    lastname: ''
-    email: ''
-    project: ''
-    message: ''
+    firstname: 'First Name'
+    lastname: 'Last Name'
+    email: Email
+    project: Project
+    message: Message
   label:
-    submit: ''
+    submit: Submit

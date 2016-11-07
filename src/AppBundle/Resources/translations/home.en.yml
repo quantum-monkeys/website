@@ -1,12 +1,12 @@
 how:
   title: 'How can we help you in?'
-  subtitle: Subtitle
+  subtitle: 'We have avenues of action adapted for your needs.'
   element1:
-    title: '__how.element1.title'
+    title: 'Implement continual improvement practices'
   element2:
-    title: '__how.element1.title'
+    title: 'Accompany transition toward Agility'
   element3:
-    title: '__how.element1.title'
+    title: 'Help individuals and teams to reach their goals'
 what:
   title: 'How do we do that'
   subtitle: Subtitle

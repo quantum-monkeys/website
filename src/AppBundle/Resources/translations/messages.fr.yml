@@ -1,3 +1,4 @@
+copyright: 'Tous droits réservés'
 contact:
   subtitle: 'Avez-vous des projets?'
   description: Contact
@@ -11,7 +12,6 @@ contact:
     email:
       title: Courriel
       value: company@quantummonkeys.com
-copyright: 'Tous droits réservés'
 menu:
   home: Accueil
   about_us: __menu.about_us

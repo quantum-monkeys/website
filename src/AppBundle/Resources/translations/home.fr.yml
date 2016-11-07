@@ -1,12 +1,12 @@
 how:
   title: 'Comment pouvons-nous vous aider?'
-  subtitle: Sous-titre
+  subtitle: 'Nous avons des pistes de solution adaptées à vos besoins.'
   element1:
-    title: '__how.element1.title'
+    title: 'Mettre en place des pratiques d''amélioration continue'
   element2:
-    title: '__how.element1.title'
+    title: 'Accompagner la transition vers l''Agilité'
   element3:
-    title: '__how.element1.title'
+    title: 'Aider les individus et les équipes à atteindre leurs objectifs'
 what:
   title: 'Nous pouvons vous offrir'
   subtitle: Sous-titre
