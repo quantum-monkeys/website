@@ -5,3 +5,6 @@ events: Events
 home: Home
 services: Services
 trainings: Trainings
+lang_switch:
+  fr: FR
+  en: EN

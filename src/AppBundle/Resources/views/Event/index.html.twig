@@ -31,38 +31,14 @@
 {% endblock hero %}
 
 {% block body %}
-    {#<h2>{{ 'list.title'|trans }}</h2>#}
-
-    {#{{ form(form) }}#}
-
-    {#<div class="row">#}
-        {#{% for event in events %}#}
-            {#<div class="col-sm-6 col-md-4">#}
-                {#<div class="thumbnail">#}
-                    {#<a href="{{ path('event_show', { id: event.id }) }}">#}
-                        {#{% media event.event.picture, 'small' %}#}
-                    {#</a>#}
-                    {#<div class="caption">#}
-                        {#<h4>{{ event.begin|localizeddate('short', 'none') }}</h4>#}
-                        {#<a href="{{ path('event_show', { id: event.id }) }}">#}
-                            {#<h3>{{ translate(event.event.translations, 'name') }}</h3>#}
-                        {#</a>#}
-                        {#<h5>{{ event.location.name }} - {{ event.location.city }}, {{ event.location.region }} @ {{ event.begin|localizeddate('none', 'short') }}</h5>#}
-                        {#<p>{{ translate(event.event.translations, 'description')|truncate(150, true, '...') }}</p>#}
-                        {#<p>#}
-                            {#<a href="{{ path('event_show', { id: event.id }) }}" class="btn btn-primary" role="button">{{ 'list.button.details'|trans }}</a>#}
-                            {#<a href="{{ event.eventBriteLink }}" class="btn btn-default" role="button">{{ 'list.button.tickets'|trans }}</a>#}
-                        {#</p>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#{% endfor %}#}
-    {#</div>#}
-
     <div class="search-block">
         <div class="container">
-            <form action="#" class="search-form">
-                <div class="col">
+            {{ form_start(form, {
+                attr: {
+                    class: 'search-form'
+                }
+            }) }}
+                <div class="col col-xs-12 col-sm-6 col-md-6 cold-lg-3">
                     {{ form_row(form.city, {
                         'attr': {
                             'class': 'present',
@@ -70,7 +46,7 @@
                         }
                     }) }}
                 </div>
-                <div class="col">
+                <div class="col col-xs-12 col-sm-6 col-md-6 cold-lg-3">
                     {{ form_row(form.lang, {
                         'attr': {
                             'class': 'present',
@@ -78,13 +54,19 @@
                         }
                     }) }}
                 </div>
-                <div class="col">
-                    <input type="submit" value="search">
+                <div class="col col-xs-12 col-sm-6 col-md-6 cold-lg-3">
+                    <div class="free">
+                        {{ form_widget(form.free) }}
+                        {{ form_label(form.free) }}
+                    </div>
                 </div>
-                <div class="col">
-                    <a class="reset" href="{{ path('event_list') }}">Reset</a>
+                <div class="col col-xs-12 col-sm-6 col-md-6 cold-lg-3">
+                    {{ form_row(form.submit) }}
                 </div>
-            </form>
+                <div class="col col-xs-12 col-sm-6 col-md-6 cold-lg-3">
+                    <a class="reset" href="{{ path('event_list') }}">{{ 'form.submit.label'|trans({}, 'search') }}</a>
+                </div>
+            {{ form_end(form) }}
         </div>
     </div>
     <!-- breadcrumb -->

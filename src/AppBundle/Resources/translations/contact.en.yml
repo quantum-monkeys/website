@@ -1,0 +1,9 @@
+form:
+  placeholders:
+    firstname: ''
+    lastname: ''
+    email: ''
+    project: ''
+    message: ''
+  label:
+    submit: ''

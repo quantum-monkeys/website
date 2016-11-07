@@ -23,6 +23,7 @@ gulp.task('css', () => {
     gulp.src([
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
+            // 'node_modules/jcf/css/jcf.css',
             // 'app/Resources/styles/vendors/simple-line-icons.css',
             // 'app/Resources/styles/vendors/yamm/yamm.css',
             // 'app/Resources/styles/vendors/yamm/menu.css',
@@ -65,6 +66,7 @@ gulp.task('js', () => {
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/jcf/dist/js/jcf.js',
         'node_modules/jcf/dist/js/jcf.select.js',
+        'node_modules/jcf/dist/js/jcf.checkbox.js',
         'node_modules/jquery-form/jquery.form.js',
         'app/Resources/scripts/vendors/responsiveCarousel.min.js',
             // 'app/Resources/scripts/vendors/masterslider/jquery.easing.min.js',

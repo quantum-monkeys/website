@@ -27,6 +27,7 @@ class EventSearchType extends AbstractType
             ->add('city', ChoiceType::class, [
                 'choices' => $this->getCityChoices(),
                 'required' => false,
+                'label' => 'form.city.label',
             ])
             ->add('lang', LanguageType::class, [
                 'choices' => [
@@ -34,12 +35,14 @@ class EventSearchType extends AbstractType
                     'Français' => 'fr',
                 ],
                 'required' => false,
+                'label' => 'form.language.label',
             ])
             ->add('free', CheckboxType::class, [
                 'required' => false,
+                'label' => 'form.free.label',
             ])
             ->add('submit', SubmitType::class, array(
-                'label' => 'events.form.placeholders.submit'
+                'label' => 'form.submit.label'
             ))
         ;
     }
@@ -59,6 +62,7 @@ class EventSearchType extends AbstractType
     {
         $resolver->setDefaults([
             'csrf_protection' => false,
+            'translation_domain' => 'search',
         ]);
     }
 }

@@ -36,7 +36,9 @@
                     </p>
                 </div>
                 <div class="codecon_half">
-                    <a href="{{ localeSwitch(sNewLocale, requestAttributes) }}">{{ ('lang_switch.'~sNewLocale)|trans|raw }}</a>
+                    <a href="{{ localeSwitch(sNewLocale, requestAttributes) }}" class="langSwitcher">
+                        {{ ('lang_switch.'~sNewLocale)|trans({}, 'menu') }}
+                    </a>
                 </div>
             </div>
         </div>

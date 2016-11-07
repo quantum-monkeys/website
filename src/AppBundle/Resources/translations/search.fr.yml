@@ -1,0 +1,11 @@
+form:
+  city:
+    label: ''
+  language:
+    label: ''
+  free:
+    label: ''
+  submit:
+    label: ''
+  reset:
+    label: ''

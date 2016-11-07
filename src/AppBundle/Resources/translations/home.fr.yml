@@ -1,6 +1,12 @@
 how:
   title: 'Comment pouvons-nous vous aider?'
   subtitle: Sous-titre
+  element1:
+    title: '__how.element1.title'
+  element2:
+    title: '__how.element1.title'
+  element3:
+    title: '__how.element1.title'
 what:
   title: 'Nous pouvons vous offrir'
   subtitle: Sous-titre

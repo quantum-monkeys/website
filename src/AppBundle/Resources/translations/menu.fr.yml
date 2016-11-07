@@ -5,3 +5,6 @@ events: Évènements
 home: Accueil
 services: Services
 trainings: Formations
+lang_switch:
+  fr: FR
+  en: EN
