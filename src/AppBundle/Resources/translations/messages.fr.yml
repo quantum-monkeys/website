@@ -1,63 +1,88 @@
-contact.subtitle: __contact.subtitle
-contact.description: __contact.description
-contact.informations.address.title: __contact.informations.address.title
-contact.informations.address.value: __contact.informations.address.value
-contact.informations.phone.title: __contact.informations.phone.title
-contact.informations.phone.value: __contact.informations.phone.value
-contact.informations.email.title: __contact.informations.email.title
-contact.informations.email.value: __contact.informations.email.value
-copyright: __copyright
-menu.home: __menu.home
-menu.about_us: __menu.about_us
-menu.our_services: __menu.our_services
-menu.contact_us: __menu.contact_us
-slider.slide1.pretitle: __slider.slide1.pretitle
-slider.slide1.title: __slider.slide1.title
-slider.slide1.description: __slider.slide1.description
-slider.slide1.call_to_action: __slider.slide1.call_to_action
-slider.slide2.pretitle: __slider.slide2.pretitle
-slider.slide2.title: __slider.slide2.title
-slider.slide2.description: __slider.slide2.description
-slider.slide2.call_to_action: __slider.slide2.call_to_action
-slider.slide3.pretitle: __slider.slide3.pretitle
-slider.slide3.title: __slider.slide3.title
-slider.slide3.description: __slider.slide3.description
-slider.slide3.call_to_action: __slider.slide3.call_to_action
-company.pretitle: __company.pretitle
-company.title: __company.title
-company.introduction: __company.introduction
-company.description: __company.description
-company.tab1.title: __company.tab1.title
-company.tab2.title: __company.tab2.title
-company.tab3.title: __company.tab3.title
-company.tab1.description: __company.tab1.description
-company.tab2.description: __company.tab2.description
-company.tab3.description: __company.tab3.description
-services.pretitle: __services.pretitle
-services.title: __services.title
-services.service1.title: __services.service1.title
-services.service1.description: __services.service1.description
-services.service2.title: __services.service2.title
-services.service2.description: __services.service2.description
-services.service3.title: __services.service3.title
-services.service3.description: __services.service3.description
-services.service4.title: __services.service4.title
-services.service4.description: __services.service4.description
-services.service5.title: __services.service5.title
-services.service5.description: __services.service5.description
-services.service6.title: __services.service6.title
-services.service6.description: __services.service6.description
-contactus.pretitle: __contactus.pretitle
-contactus.title: __contactus.title
-contactus.infos: __contactus.infos
-contactus.address: __contactus.address
-contactus.phone: __contactus.phone
-contactus.email: __contactus.email
-contactus.form.success: __contactus.form.success
-contactus.form.error: __contactus.form.error
-contactus.form.placeholders.name: __contactus.form.placeholders.name
-contactus.form.placeholders.email: __contactus.form.placeholders.email
-contactus.form.placeholders.subject: __contactus.form.placeholders.subject
-contactus.form.placeholders.message: __contactus.form.placeholders.message
-blog.title: __blog.title
-blog.go_to: __blog.go_to
+contact:
+  subtitle: 'Avez-vous des projets?'
+  description: Contact
+  informations:
+    address:
+      title: Localisation
+      value: '605 avenue Atwater, H3J 2T8, 3e étage bureau #8'
+    phone:
+      title: 'Numéro de téléphone'
+      value: (438)3927084
+    email:
+      title: Courriel
+      value: company@quantummonkeys.com
+copyright: 'Tous droits réservés'
+menu:
+  home: Accueil
+  about_us: __menu.about_us
+  our_services: __menu.our_services
+  contact_us: __menu.contact_us
+slider:
+  slide1:
+    pretitle: __slider.slide1.pretitle
+    title: __slider.slide1.title
+    description: __slider.slide1.description
+    call_to_action: __slider.slide1.call_to_action
+  slide2:
+    pretitle: __slider.slide2.pretitle
+    title: __slider.slide2.title
+    description: __slider.slide2.description
+    call_to_action: __slider.slide2.call_to_action
+  slide3:
+    pretitle: __slider.slide3.pretitle
+    title: __slider.slide3.title
+    description: __slider.slide3.description
+    call_to_action: __slider.slide3.call_to_action
+company:
+  pretitle: __company.pretitle
+  title: __company.title
+  introduction: __company.introduction
+  description: __company.description
+  tab1:
+    title: __company.tab1.title
+    description: __company.tab1.description
+  tab2:
+    title: __company.tab2.title
+    description: __company.tab2.description
+  tab3:
+    title: __company.tab3.title
+    description: __company.tab3.description
+services:
+  pretitle: __services.pretitle
+  title: __services.title
+  service1:
+    title: __services.service1.title
+    description: __services.service1.description
+  service2:
+    title: __services.service2.title
+    description: __services.service2.description
+  service3:
+    title: __services.service3.title
+    description: __services.service3.description
+  service4:
+    title: __services.service4.title
+    description: __services.service4.description
+  service5:
+    title: __services.service5.title
+    description: __services.service5.description
+  service6:
+    title: __services.service6.title
+    description: __services.service6.description
+contactus:
+  pretitle: __contactus.pretitle
+  title: __contactus.title
+  infos: __contactus.infos
+  address: __contactus.address
+  phone: __contactus.phone
+  email: __contactus.email
+  form:
+    success: 'Message envoyé avec succès'
+    error: 'Erreur dans le formulaire d''envoi'
+    placeholders:
+      name: Nom
+      email: Courriel
+      subject: Sujet
+      message: Message
+blog:
+  title: 'Dernières publications'
+  go_to: __blog.go_to

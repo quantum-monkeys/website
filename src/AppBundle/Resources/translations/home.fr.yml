@@ -1,6 +1,9 @@
-how.title: __how.title
-how.subtitle: __how.subtitle
-what.title: __what.title
-what.subtitle: __what.subtitle
-activities.title: __activities.title
-activities.subtitle: __activities.subtitle
+how:
+  title: 'Comment pouvons-nous vous aider?'
+  subtitle: Sous-titre
+what:
+  title: 'Nous pouvons vous offrir'
+  subtitle: Sous-titre
+activities:
+  title: 'Ce que nous faisons en ce moment'
+  subtitle: Sous-titre

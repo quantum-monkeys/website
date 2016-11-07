@@ -1,13 +1,20 @@
-events.title: __events.title
-event.remaining_seats: __event.remaining_seats
-events.see_all: __events.see_all
-services.title: __services.title
-services.subtitle: __services.subtitle
-services.see_all: __services.see_all
-trainings.title: __trainings.title
-trainings.subtitle: __trainings.subtitle
-trainings.see_all: __trainings.see_all
-testimonials.title: __testimonials.title
-testimonials.at: __testimonials.at
-contact.message.success: __contact.message.success
-contact.message.error: __contact.message.error
+events:
+  title: 'Événements à venir'
+  see_all: 'Tout montrer'
+event:
+  remaining_seats: 'Places disponibles'
+services:
+  title: Services
+  subtitle: Sous-titre
+  see_all: 'Tout montrer'
+trainings:
+  title: Formation
+  subtitle: Sous-titre
+  see_all: 'Tout montrer'
+testimonials:
+  title: Témoignages
+  at: __testimonials.at
+contact:
+  message:
+    success: 'Message envoyé avec succès'
+    error: 'Erreur lors de l''envoi du message'

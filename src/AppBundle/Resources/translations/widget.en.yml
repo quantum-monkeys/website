@@ -1,13 +1,20 @@
-events.title: __events.title
-event.remaining_seats: __event.remaining_seats
-events.see_all: __events.see_all
-services.title: __services.title
-services.subtitle: __services.subtitle
-services.see_all: __services.see_all
-trainings.title: __trainings.title
-trainings.subtitle: __trainings.subtitle
-trainings.see_all: __trainings.see_all
-testimonials.title: __testimonials.title
-testimonials.at: __testimonials.at
-contact.message.success: __contact.message.success
-contact.message.error: __contact.message.error
+events:
+  title: 'Upcoming events'
+  see_all: 'See all'
+event:
+  remaining_seats: 'Remaining seats'
+services:
+  title: Services
+  subtitle: Subtitle
+  see_all: 'See all'
+trainings:
+  title: Training
+  subtitle: Subtitle
+  see_all: 'See all'
+testimonials:
+  title: Testimonials
+  at: __testimonials.at
+contact:
+  message:
+    success: 'Message successfully sent'
+    error: 'Contact error'
