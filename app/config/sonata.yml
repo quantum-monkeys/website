@@ -73,7 +73,7 @@ sonata_media:
 
             formats:
                 small: { width: 150 , quality: 95}
-                big:   { width: 500 , quality: 90}
+                wide:  { width: 763 , quality: 90}
     cdn:
         server:
             path: /uploads/media # http://media.sonata-project.org/

@@ -185,3 +185,30 @@
 .how_can_help_box1:hover .how_can_help_text_area p {
     text-align: center;
 }
+
+.blogs .blog-detail-share ul li {
+    font-weight: 400;
+    text-decoration: none;
+    color: #cecece;
+    float: left;
+    font-size: 18px;
+    padding: 2px 10px;
+}
+
+.post .img-responsive {
+    max-height: 370px;
+}
+
+.post h3 a {
+    color: #ff8a00;
+    cursor: pointer;
+}
+
+.blogpost .blogs ul li:nth-child(4) {
+    border: none;
+    text-align: right;
+}
+
+.blogpost .blogs {
+    border: none;
+}

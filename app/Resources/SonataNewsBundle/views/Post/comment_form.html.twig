@@ -1,0 +1,58 @@
+{#
+
+/*
+ * This file is part of the Sonata package.
+ *
+ * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+#}
+
+<div class="blog-title-form">
+    <h3>{{'title_leave_comment'|trans({}, 'SonataNewsBundle') }}</h3>
+</div>
+<div class="blog-input-sec">
+    <form action="{{ url('sonata_news_add_comment', {'id': post_id}) }}" method="POST">
+        <div class="row">
+            <div class="col-sm-9 form-group comment-form">
+                {{ form_widget(form.name, {
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'Name'
+                    }
+                }) }}
+            </div>
+            <div class="col-sm-9 form-group comment-form">
+                {{ form_widget(form.email, {
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'Email'
+                    }
+                }) }}
+            </div>
+            <div class="col-sm-9 form-group comment-form">
+                {{ form_widget(form.url, {
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'Website'
+                    }
+                }) }}
+            </div>
+            <div class="col-sm-9 form-group comment-form">
+                {{ form_widget(form.message, {
+                    attr: {
+                        class: 'form-control',
+                        placeholder: 'Comments',
+                        row: 3
+                    }
+                }) }}
+            </div>
+            <div class="col-sm-9 comment-form">
+                <button type="submit" class="btn btn-lg btn-info">{{'btn_add_comment'|trans({}, 'SonataNewsBundle') }}</button>
+            </div>
+        </div>
+    {{ form_end(form) }}
+</div>
