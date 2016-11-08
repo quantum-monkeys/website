@@ -1,16 +1,15 @@
-<div class="comments-sec"><!--comments-sec-->
+{% trans_default_domain 'blog' %}
+
+<div class="comments-sec">
     <div class="comments-title">
-        <h3>{{ pager.count }} Comment to “San Francisco Should Always Have a Subway Under Construction”</h3>
+        <h3>{{ 'comments.list.title'|transchoice(pager.count) }}</h3>
     </div>
     {% for comment in pager.results %}
         <div class="col-xs-8 col-sm-10 col-md-10">
             <div class="bloger-comments">
                 <span>{{ comment.createdAt|localizeddate('medium', 'short') }}</span>
                 <h3>
-                    <a href="mailto:{{ comment.email }}" target="new" rel="nofollow">
-                        {{ comment.name }}
-                    </a>
-                    says:
+                    {{ 'comments.list.author'|trans({ '%author%': '<a href="mailto:' ~ comment.email ~ '" target="new" rel="nofollow">' ~ comment.name ~ '</a>' })|raw }}
                 </h3>
             </div>
             <div class="comments-reply">
@@ -18,6 +17,6 @@
             </div>
         </div>
     {% else %}
-        <p>{{ 'no_comments_available'|trans({}, 'SonataNewsBundle') }}</p>
+        <p>{{ 'comments.list.no_comments'|trans }}</p>
     {% endfor %}
 </div>

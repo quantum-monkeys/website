@@ -212,3 +212,7 @@
 .blogpost .blogs {
     border: none;
 }
+
+.comments-sec a {
+    color: #ff8a00;
+}
