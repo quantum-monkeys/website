@@ -1,0 +1,9 @@
+homepage: /
+service_list: /services
+training_list: /formations
+event_list: /evenements
+event_show: /evenements/{id}
+about_us: /a-propos
+sonata_news_home: /blogue
+sonata_news_view: /blogue/{permalink}.{_format}
+sonata_news_archive: /blogue/archive

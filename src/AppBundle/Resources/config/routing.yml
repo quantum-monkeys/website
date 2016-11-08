@@ -38,9 +38,11 @@ contact:
     methods: POST
     defaults:
         _controller: AppBundle:AboutUs:contact
+    options: { i18n: false }
 
 newsletter:
     path: /newsletter
     methods: POST
     defaults:
         _controller: AppBundle:AboutUs:newsletter
+    options: { i18n: false }
