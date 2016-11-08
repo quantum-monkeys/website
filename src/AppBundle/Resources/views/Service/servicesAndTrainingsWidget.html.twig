@@ -5,7 +5,6 @@
         <div class="coaching_area">
             <div class="coaching_main_title">
                 <h1>{{ 'services.title'|trans }}</h1>
-                <p>{{ 'services.subtitle'|trans }}</p>
             </div>
             <div class="coaching_boxes_area">
                 {% for i in 1..4 %}
@@ -22,14 +21,13 @@
         <div class="formation_area">
             <div class="formaion_main_title">
                 <h1>{{ 'trainings.title'|trans }}</h1>
-                <p>{{ 'trainings.subtitle'|trans }}</p>
             </div>
             <div class="formaion_boxes_area">
                 {% for i in 1..4 %}
                     <div class="formaion_box{{ i }}">
                         <div class="formaion_box1_icon_area"><img src="/images/formation_img{{ i }}.png" alt="image description"></div>
                         <div class="formaion_box2_text_area">
-                            <p>{{ ('trainings.training' ~ i)|trans }}</p>
+                            <p>{{ ('trainings.training_' ~ i)|trans }}</p>
                         </div>
                     </div>
                 {% endfor %}

@@ -156,12 +156,7 @@
     color: #fff;
     text-transform: uppercase;
 
-    text-shadow:
-            -1px -1px 1px #000,
-            1px -1px 1px #000,
-            -1px 1px 1px #000,
-            1px 1px 1px #000;
-    letter-spacing: 0.5em;
+    letter-spacing: 0.3em;
     font: 700 32px/38px 'Antonio-Bold', Arial, helvetica, sans-serif;
 }
 
@@ -215,4 +210,19 @@
 
 .comments-sec a {
     color: #ff8a00;
+}
+
+.testimonial_contanear {
+    background-image: none;
+    background-color: #ff8a00;
+}
+
+.how_do_we {
+    background: url(../images/wallpaper-1531107_1920-grey.jpg) top center no-repeat;
+    min-height: 940px;
+}
+
+.formaion_boxes_area,
+.coaching_boxes_area {
+    margin-top: 40px;
 }
