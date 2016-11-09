@@ -68,7 +68,7 @@ class EventOccurrence
     {
         $this->costs = new ArrayCollection();
         $this->speakers = new ArrayCollection();
-        $this->languages = new ArrayCollection();
+        $this->languages = [];
     }
 
     /**
