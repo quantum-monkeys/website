@@ -87,6 +87,7 @@ lexik_translation:
     use_yml_tree: true
     auto_cache_clean: true
     auto_cache_clean_interval: 600  # number of seconds to wait before trying to check if translations have changed in the database.
+    grid_input_type: textarea
 
 white_october_breadcrumbs:
     separator: null

@@ -15,7 +15,7 @@
                     <div class="mission-heading">
                         <h3>{{ 'title'|trans }}</h3>
                     </div>
-                    <p>{{ 'description'|trans }}</p>
+                    <p>{{ 'description'|trans|nl2br }}</p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,13 @@
             {% for person in people %}
                 <div class="col-md-4">
                     <div class="team-memb">
-                        <figure><img class="img-rounded img-responsive img-center" src="/images/client_img-1.png" alt="Brandon Copperfield" /></figure>
+                        <figure>
+                            {% media person.picture, 'person_about' with {
+                                attr: {
+                                    class: 'img-rounded img-responsive img-center'
+                                }
+                            } %}
+                        </figure>
                     </div>
                     <div class="designation_title">
                         <h4>{{ person.displayName }}</h4>
