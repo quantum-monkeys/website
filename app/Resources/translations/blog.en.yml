@@ -1,33 +1,30 @@
 list:
-  tags: __list.tags
-  no_tags: __list.no_tags
-  read_more: __list.read_more
-  no_post_found: __list.no_post_found
+  tags: Tags
+  no_tags: 'No tags'
+  read_more: 'Read more'
+  no_post_found: 'No post found'
   links:
-    previous_page: __list.links.previous_page
-    next_page: __list.links.next_page
-
+    previous_page: 'Previous Page'
+    next_page: 'Next Page'
 view:
-  tags: __view.tags
-  no_tags: __view.no_tags
-  comments_are_closed: __view.comments_are_closed
-
+  tags: Tags
+  no_tags: 'No tags'
+  comments_are_closed: 'Comments are closed'
 comments:
   list:
     title: '{0} No comment|{1} 1 comment|]1,Inf[ %count% comments'
     author: '%author% says:'
-    no_comments: __comments.list.no_comments
-
+    no_comments: 'No comments'
 comment:
   form:
-    title: __comment.form.title
+    title: Comment
     name:
-      placeholder: __comment.form.name.placeholder
+      placeholder: Name
     email:
-      placeholder: __comment.form.email.placeholder
+      placeholder: Email
     website:
-      placeholder: __comment.form.website.placeholder
+      placeholder: Website
     comment:
-      placeholder: __comment.form.comment.placeholder
+      placeholder: Comment
     submit:
-      label: __comment.form.submit.label
+      label: Submit

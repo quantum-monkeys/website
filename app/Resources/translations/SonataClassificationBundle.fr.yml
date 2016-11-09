@@ -1,0 +1,8 @@
+form:
+  label_category: Catégorie
+  label_collection: Collection
+  label_tag: Tag
+  label_title: Titre
+no_collections_found: 'Aucune collection trouvée.'
+no_categories_found: 'Aucune catégorie trouvée.'
+no_tags_found: 'Aucun tag trouvé'

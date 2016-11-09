@@ -7,18 +7,18 @@ services:
   title: Services
   subtitle: Sous-titre
   see_all: 'Tout montrer'
-  service_1: __services.service_1
-  service_2: __services.service_2
-  service_3: __services.service_3
-  service_4: __services.service_4
+  service_1: Coaching
+  service_2: 'Service conseil'
+  service_3: Facilitateur
+  service_4: 'Intervention d''un expert'
 trainings:
   title: Formation
   subtitle: Sous-titre
   see_all: 'Tout montrer'
-  training_1: __trainings.training_1
-  training_2: __trainings.training_2
-  training_3: __trainings.training_3
-  training_4: __trainings.training_4
+  training_1: Présentations
+  training_2: Ateliers
+  training_3: 'Power trainings'
+  training_4: 'Cheminement d''apprentissage'
 testimonials:
   title: Témoignages
   at: __testimonials.at

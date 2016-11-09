@@ -1,0 +1,16 @@
+sonata_seo_share_by_email: 'Partager par courriel'
+sonata:
+  seo.block:
+    email:
+      share_button: 'Partager par courriel'
+    facebook:
+      like_box: 'Facebook - Boîte J''aime'
+      like_button: 'Facebook - Bouton J''aime'
+      send_button: 'Facebook - Envoyer'
+      share_button: 'Facebook - Partager'
+    twitter:
+      share_button: 'Twitter - Partager'
+      follow_button: 'Twitter - Suivre'
+      hashtag_button: 'Twitter - Hashtag'
+      mention_button: 'Twitter - Mentionner'
+      embed: 'Twitter - Intégration'

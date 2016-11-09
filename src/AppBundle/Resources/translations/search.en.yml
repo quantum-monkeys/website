@@ -1,11 +1,11 @@
 form:
   city:
-    label: ''
+    label: City
   language:
-    label: ''
+    label: Language
   free:
-    label: ''
+    label: Free
   submit:
-    label: ''
+    label: Submit
   reset:
-    label: ''
+    label: Reset

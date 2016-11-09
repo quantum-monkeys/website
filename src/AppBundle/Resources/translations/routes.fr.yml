@@ -2,7 +2,7 @@ homepage: /
 service_list: /services
 training_list: /formations
 event_list: /evenements
-event_show: /evenements/{id}
+event_show: '/evenements/{id}'
 about_us: /a-propos
 blog: /blogue
-blog_view: /blogue/{permalink}.{_format}
+blog_view: '/blogue/{permalink}.{_format}'

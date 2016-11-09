@@ -1,33 +1,30 @@
 list:
-  tags: __list.tags
-  no_tags: __list.no_tags
-  read_more: __list.read_more
-  no_post_found: __list.no_post_found
+  tags: Tags
+  no_tags: 'Aucun tag'
+  read_more: 'Lire plus'
+  no_post_found: 'Aucun résultat trouvé'
   links:
-    previous_page: __list.links.previous_page
-    next_page: __list.links.next_page
-
+    previous_page: 'Page précédente'
+    next_page: 'Page suivante'
 view:
-  tags: __view.tags
-  no_tags: __view.no_tags
-  comments_are_closed: __view.comments_are_closed
-
+  tags: Tags
+  no_tags: 'Aucun tag'
+  comments_are_closed: 'Les commentaires sont désactivés'
 comments:
   list:
-    title: '{0} No comment|{1} 1 comment|]1,Inf[ %count% comments'
-    author: '%author% says:'
-    no_comments: __comments.list.no_comments
-
+    title: '{0} Aucun commentaire|{1} 1 commentaire|]1,Inf[ %count% comments'
+    author: '%L''auteur% dit:'
+    no_comments: 'Aucun commentaire'
 comment:
   form:
-    title: __comment.form.title
+    title: Commentaire
     name:
-      placeholder: __comment.form.name.placeholder
+      placeholder: Nom
     email:
-      placeholder: __comment.form.email.placeholder
+      placeholder: Courriel
     website:
-      placeholder: __comment.form.website.placeholder
+      placeholder: 'Site web'
     comment:
-      placeholder: __comment.form.comment.placeholder
+      placeholder: Commentaire
     submit:
-      label: __comment.form.submit.label
+      label: Soumettre

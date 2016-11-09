@@ -51,16 +51,16 @@ services:
   pretitle: __services.pretitle
   title: __services.title
   service1:
-    title: __services.service1.title
+    title: 'Team coaching'
     description: __services.service1.description
   service2:
-    title: __services.service2.title
+    title: 'Individual coaching'
     description: __services.service2.description
   service3:
-    title: __services.service3.title
+    title: Facilitator
     description: __services.service3.description
   service4:
-    title: __services.service4.title
+    title: Expert
     description: __services.service4.description
   service5:
     title: __services.service5.title

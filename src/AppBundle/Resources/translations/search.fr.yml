@@ -1,11 +1,11 @@
 form:
   city:
-    label: ''
+    label: Ville
   language:
-    label: ''
+    label: Langue
   free:
-    label: ''
+    label: Gratuit
   submit:
-    label: ''
+    label: Soumettre
   reset:
-    label: ''
+    label: Réinitialiser
