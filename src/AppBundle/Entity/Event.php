@@ -2,13 +2,14 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Interfaces\TranslatableInterface;
 use Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Event
  */
-abstract class Event
+abstract class Event implements TranslatableInterface
 {
     /**
      * @var int

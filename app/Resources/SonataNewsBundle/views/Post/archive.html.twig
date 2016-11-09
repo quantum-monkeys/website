@@ -4,17 +4,6 @@
 
 {% block body %}
     <div class="container">
-        {% block sonata_page_breadcrumb %}
-            <div class="row-fluid clearfix">
-                {{ sonata_block_render_event('breadcrumb', {
-                    'context': 'news_archive',
-                    'collection': collection,
-                    'tag': tag,
-                    'current_uri': app.request.requestUri
-                }) }}
-            </div>
-        {% endblock %}
-
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 {% for post in pager.getResults() %}
@@ -54,7 +43,7 @@
                                     </li>
                                     <li><i class="fa fa-pencil" aria-hidden="true"></i> {{ post.author }}</li>
                                     <li>
-                                        <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">
+                                        <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">
                                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                             <span>{{ 'list.read_more'|trans }}</span>
                                         </a>

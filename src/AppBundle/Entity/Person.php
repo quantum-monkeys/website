@@ -2,10 +2,11 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Interfaces\TranslatableInterface;
 use Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Person
+class Person implements TranslatableInterface
 {
     /**
      * @var int

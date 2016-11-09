@@ -15,6 +15,8 @@ class AboutUsController extends Controller
 {
     public function indexAction()
     {
+        $this->get('app.manager.breadcrumb_generator')->generateAboutUs();
+
         $people = $this->get('doctrine')->getRepository('AppBundle:Person')->findBy(
             [
                 'quantumMonkeysMember' => true,

@@ -35,7 +35,8 @@
         "accord/mandrill-swiftmailer-bundle": "^1.1",
         "ahmedsamy/hype-mailchimp-bundle": "^1.2",
         "sonata-project/seo-bundle": "^2.0",
-        "lexik/translation-bundle": "^3.1"
+        "lexik/translation-bundle": "^3.1",
+        "whiteoctober/breadcrumbs-bundle": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

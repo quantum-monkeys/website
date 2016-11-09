@@ -47,6 +47,8 @@ class AppKernel extends Kernel
 
             new Hype\MailchimpBundle\HypeMailchimpBundle(),
 
+            new WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle(),
+
             new AppBundle\AppBundle(),
         );
 

@@ -1,86 +1,21 @@
 {% extends 'AppBundle::base.html.twig' %}
 
+{% trans_default_domain 'about' %}
+
 {% block body %}
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-                <ol class="breadcrumb">
-                    <li><a href="index.thml">Home</a></li>
-                    <li>about</li>
-                </ol>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="left-slider">
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner custom_slider" role="listbox">
-                            <div class="item active"> <img src="/images/banner-1.jpg" alt="Chania" width="460" height="345"> </div>
-                            <div class="item"> <img src="/images/banner-1.jpg" alt="Chania" width="460" height="345"> </div>
-                            <div class="item"> <img src="/images/banner-1.jpg" alt="Flower" width="460" height="345"> </div>
-                            <div class="item"> <img src="/images/banner-1.jpg" alt="Flower" width="460" height="345"> </div>
-                        </div>
-                    </div>
+                    <img src="http://lorempixel.com/output/animals-q-c-565-287-7.jpg">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="over-cont">
                     <div class="mission-heading">
-                        <h3>Company overview</h3>
+                        <h3>{{ 'title'|trans }}</h3>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</p>
-                    <p>In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis.</p>
-                    <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="mission-heading">
-                    <h3>Our mission</h3>
-                </div>
-                <div class="mission-para">
-                    <h4>Our renowed coaching programs will allow you to.</h4>
-                    <ul class="mis-content">
-                        <li><img src="images/dot.png">
-                            <p>Work fewer hours & make more money</p>
-                        </li>
-                        <li><img src="images/dot.png">
-                            <p>Attarct & retain ,quality high paying customers</p>
-                        </li>
-                        <li><img src="images/dot.png">
-                            <p>Manage your time so, you;ll get more done in less time</p>
-                        </li>
-                        <li><img src="images/dot.png">
-                            <p>Hone sharp leadership skills to manage your team</p>
-                        </li>
-                        <li><img src="images/dot.png">
-                            <p>Cut expenses without sacrificing quality</p>
-                        </li>
-                        <li><img src="images/dot.png">
-                            <p>Automate your business so, you can leave for days,weeks or even months at a time</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mission-heading">
-                    <h3>How we work</h3>
-                </div>
-                <div class="working_method">
-                    <iframe width="550" height="350" src="https://www.youtube.com/embed/nfP5N9Yc72A" style="border:transparent;"></iframe>
+                    <p>{{ 'description'|trans }}</p>
                 </div>
             </div>
         </div>
@@ -91,7 +26,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="team-heading">
-                    <h3>Our team list</h3>
+                    <h3>{{ 'team'|trans }}</h3>
                 </div>
             </div>
 
@@ -102,10 +37,9 @@
                     </div>
                     <div class="designation_title">
                         <h4>{{ person.displayName }}</h4>
-                        <p class="desig">{{ translate(person.translations, 'position') }}</p>
-                        <p>{{ translate(person.translations, 'description') }}</p>
+                        <p class="desig">{{ translate(person, 'position') }}</p>
+                        <p>{{ translate(person, 'description') }}</p>
                     </div>
-                    <button class="view-profile" type="button">View Profile <i class="fa fa-angle-right" aria-hidden="true"></i></button>
                 </div>
                 {% if loop.index % 3 == 0 or loop.last %}
         </div>

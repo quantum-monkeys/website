@@ -12,6 +12,8 @@ class EventController extends Controller
 {
     public function indexAction(Request $request)
     {
+        $this->get('app.manager.breadcrumb_generator')->generateEvents();
+
         $searchEngine = $this->get('app.manager.search_engine');
         $eventSearch = $searchEngine->getEventSearch($request);
         $events = $searchEngine->getResults($eventSearch);
@@ -33,6 +35,8 @@ class EventController extends Controller
      */
     public function showAction(EventOccurrence $eventOccurrence)
     {
+        $this->get('app.manager.breadcrumb_generator')->generateEvent($eventOccurrence);
+
         $gMapSearch = '';
         $gMapSearch .= $eventOccurrence->getLocation()->getStreetNumber() . ' ' . $eventOccurrence->getLocation()->getStreetName();
         $gMapSearch .= ', ' . $eventOccurrence->getLocation()->getCity();

@@ -2,15 +2,6 @@
 
 {% block body %}
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
-                <ol class="breadcrumb">
-                    <li><a href="index.thml">Home</a></li>
-                    <li>Services</li>
-                </ol>
-            </div>
-        </div>
-
         {% for service in services %}
             <div class="row">
                 {% if loop.index % 2 == 1 %}
@@ -25,11 +16,11 @@
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="over-cont">
                         <div class="mission-heading">
-                            <h3>{{ translate(service.translations, 'name') }}</h3>
+                            <h3>{{ translate(service, 'name') }}</h3>
                         </div>
-                        <p>{{ translate(service.translations, 'description')|nl2br }}</p>
+                        <p>{{ translate(service, 'description')|nl2br }}</p>
                         <span class="amazings-text">
-                            <h3>{{ translate(service.translations, 'specifications') }}</h3>
+                            <h3>{{ translate(service, 'specifications') }}</h3>
                         </span>
                     </div>
                 </div>

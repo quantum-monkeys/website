@@ -16,7 +16,7 @@
                         <div class="testimonial_prof_details">
                             <h2>{{ testimonial.person.displayName }}</h2>
                             <p>
-                                <span>{{ translate(testimonial.person.translations, 'position') }}</span>
+                                <span>{{ translate(testimonial.person, 'position') }}</span>
                                 {% if testimonial.person.company %}
                                     <span>{{ 'testimonials.at'|trans({ company: testimonial.person.company }) }}</span>
                                 {% endif %}

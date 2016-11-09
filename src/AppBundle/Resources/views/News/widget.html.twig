@@ -11,7 +11,7 @@
             <p><span>{{ post.publicationDateStart|localizeddate('full', 'none') }}</span><br> {{ post.title }}</p>
             {{ post.abstract|truncate(120, true, '...') }}
             <div class="plus_icon">
-                <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">
+                <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">
                     <img src="/images/plus.png" alt="image description">
                 </a>
             </div>

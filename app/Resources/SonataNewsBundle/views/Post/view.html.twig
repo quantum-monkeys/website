@@ -4,16 +4,6 @@
 
 {% block body %}
     <div class="container">
-        {% block sonata_page_breadcrumb %}
-            <div class="row-fluid clearfix">
-                {{ sonata_block_render_event('breadcrumb', {
-                    'context': 'news_post',
-                    'post': post,
-                    'current_uri': app.request.requestUri
-                }) }}
-            </div>
-        {% endblock %}
-
         <div class="row blogpost">
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <div class="blog-img-detail">

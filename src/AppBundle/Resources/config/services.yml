@@ -9,6 +9,16 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
 
+    app.manager.breadcrumb_generator:
+        class: AppBundle\Manager\BreadcrumbsGenerator
+        arguments:
+            - '@white_october_breadcrumbs'
+            - '@app.twig.object_translator'
+
+    app.twig.object_translator:
+        class: AppBundle\Manager\ObjectTranslator
+        arguments: ["@request_stack"]
+
     app.twig.locale_extension:
         class: AppBundle\Twig\LocaleExtension
         arguments: [ "@router" ]
@@ -17,7 +27,7 @@ services:
 
     app.twig.translate_extension:
         class: AppBundle\Twig\TranslateExtension
-        arguments: ["@request_stack"]
+        arguments: ["@app.twig.object_translator"]
         tags:
             - { name : twig.extension }
 

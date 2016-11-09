@@ -10,6 +10,21 @@ use Symfony\Component\HttpFoundation\Request;
 
 class NewsController extends PostController
 {
+    public function archiveAction(Request $request = null)
+    {
+        $this->get('app.manager.breadcrumb_generator')->generateBlog();
+
+        return parent::archiveAction($request);
+    }
+
+    public function viewAction($permalink)
+    {
+        $post = $this->getPostManager()->findOneByPermalink($permalink, $this->getBlog());
+
+        $this->get('app.manager.breadcrumb_generator')->generateBlogPost($post);
+
+        return parent::viewAction($permalink);
+    }
 
     public function widgetAction(Request $request)
     {

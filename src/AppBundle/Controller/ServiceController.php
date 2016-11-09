@@ -12,6 +12,7 @@ class ServiceController extends Controller
 {
     public function indexAction(Request $request)
     {
+        $this->get('app.manager.breadcrumb_generator')->generateServices();
         $services = $this->get('doctrine')->getRepository('AppBundle:Service')->findAll();
 
         return $this->render(

@@ -7,11 +7,23 @@
             {% media event.event.picture, 'event_widget' %}
         </div>
         <div class="whats_happening_box_right">
-            <p><span>{{ translate(event.event.translations, 'name')|truncate(30, true, '...') }}</span></p>
-            <div class="events_small_panel"><img src="/images/events-icon1.png" alt="image description"> {{ event.location.city }}, {{ event.location.country }}</div>
-            <div class="events_small_panel"><img src="/images/events-icon2.png" alt="image description"> {{ event.begin|localizeddate('short', 'none') }} {{ event.begin|localizeddate('none', 'short') }}</div>
-            <div class="events_small_panel"><img src="/images/events-icon3.png" alt="image description">{% for language in event.languages %}{{ languageName(language) }}{% if not loop.last %}, {% endif %}{% endfor %}</div>
-            <div class="events_small_panel"><img src="/images/events-icon4.png" alt="image description"> {{ 'event.remaining_seats'|transchoice(event.remainingSeats) }}</div>
+            <p><span>{{ translate(event.event, 'name')|truncate(30, true, '...') }}</span></p>
+            <div class="events_small_panel">
+                <img src="/images/events-icon1.png" alt="image description">
+                {{ event.location.city }}, {{ event.location.country }}
+            </div>
+            <div class="events_small_panel">
+                <img src="/images/events-icon2.png" alt="image description">
+                {{ event.begin|localizeddate('short', 'none') }} {{ event.begin|localizeddate('none', 'short') }}
+            </div>
+            <div class="events_small_panel">
+                <img src="/images/events-icon3.png" alt="image description">
+                {% for language in event.languages %}{{ languageName(language) }}{% if not loop.last %}, {% endif %}{% endfor %}
+            </div>
+            <div class="events_small_panel">
+                <img src="/images/events-icon4.png" alt="image description">
+                {{ 'event.remaining_seats'|transchoice(event.remainingSeats) }}
+            </div>
         </div>
     </div>
 {% endfor %}

@@ -82,6 +82,18 @@
     </div>
     <!--end_top_nav_and_slider_contanear-->
 
+    {% block preBody %}{% endblock %}
+
+    {% block breadcrumb %}
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-ld-12">
+                    {{ wo_render_breadcrumbs() }}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+
     {% block body %}{% endblock %}
 
     <div class="footer">

@@ -1,8 +1,8 @@
 <?php
 namespace AppBundle\Twig;
 
-use Symfony\Component\PropertyAccess\PropertyAccess;
-use Symfony\Component\HttpFoundation\RequestStack;
+use AppBundle\Interfaces\TranslatableInterface;
+use AppBundle\Manager\ObjectTranslator;
 
 class TranslateExtension extends \Twig_Extension
 {
@@ -20,18 +20,13 @@ class TranslateExtension extends \Twig_Extension
 
     /**
      *
-     * @var \Symfony\Component\PropertyAccess\PropertyAccessor
+     * @var ObjectTranslator
      */
-    protected $propertyAccessor;
+    protected $objectTranslator;
 
-    public function __construct(RequestStack $requestStack)
+    public function __construct(ObjectTranslator $objectTranslator)
     {
-        if ($requestStack->getMasterRequest()) {
-            $this->locale = $requestStack->getMasterRequest()->getLocale();
-            $this->defaultLocale = $requestStack->getMasterRequest()->getDefaultLocale();
-        }
-
-        $this->propertyAccessor = PropertyAccess::createPropertyAccessor();
+        $this->objectTranslator = $objectTranslator;
     }
 
     public function getFunctions()
@@ -41,21 +36,9 @@ class TranslateExtension extends \Twig_Extension
         );
     }
 
-    public function translate($array, $key)
+    public function translate(TranslatableInterface $object, $key)
     {
-        if (!is_array($array) && method_exists($array, 'toArray')) {
-            $array = $array->toArray();
-        } elseif (!is_array($array)) {
-            throw new \Exception('Translation need an array or an object wich implements "toArray"');
-        }
-        if (isset($array[$this->locale])) {
-            return $this->propertyAccessor->getValue($array[$this->locale], $key);
-        }
-        if (isset($array[$this->defaultLocale])) {
-            return $this->propertyAccessor->getValue($array[$this->defaultLocale], $key);
-        } else {
-            throw new \Exception('Object key "'.$key.'" not translated');
-        }
+        return $this->objectTranslator->translate($object, $key);
     }
 
     public function getName()

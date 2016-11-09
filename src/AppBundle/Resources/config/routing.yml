@@ -28,10 +28,18 @@ about_us:
     defaults:
         _controller: AppBundle:AboutUs:index
 
-old_homepage:
-    path: /old
+blog:
+    path: /blog
     defaults:
-        _controller: AppBundle:Home:oldIndex
+        _controller: AppBundle:News:archive
+
+blog_view:
+    path: /blog/{permalink}.{_format}
+    defaults:
+        _controller: AppBundle:News:view
+        _format: html
+    requirements:
+        permalink: '.+?'
 
 contact:
     path: /contact

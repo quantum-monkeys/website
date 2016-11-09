@@ -12,6 +12,7 @@ class TrainingController extends Controller
 {
     public function indexAction(Request $request)
     {
+        $this->get('app.manager.breadcrumb_generator')->generateTrainings();
         $trainings = $this->get('doctrine')->getRepository('AppBundle:Event')->findAll();
 
         return $this->render(
