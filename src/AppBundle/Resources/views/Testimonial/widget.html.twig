@@ -1,39 +1,43 @@
 {% trans_default_domain 'widget' %}
 
-<div class="testimonial_main_title">
-    <h2>{{ 'testimonials.title'|trans }}</h2>
-</div>
-<div id="w">
-    <div class="crsl-items" data-navigation="navbtns">
-        <div class="crsl-wrap">
-            {% for testimonial in testimonials %}
-                <div class="crsl-item">
-                    <div class="testimonial_main_area">
-                        <div class="testimonial_text_area">
-                            <p>{{ testimonial.content }}</p>
+{% if testimonials|length %}
+    <div class="testimonial_contanear">
+        <div class="testimonial_main_title">
+            <h2>{{ 'testimonials.title'|trans }}</h2>
+        </div>
+        <div id="w">
+            <div class="crsl-items" data-navigation="navbtns">
+                <div class="crsl-wrap">
+                    {% for testimonial in testimonials %}
+                        <div class="crsl-item">
+                            <div class="testimonial_main_area">
+                                <div class="testimonial_text_area">
+                                    <p>{{ testimonial.content }}</p>
+                                </div>
+                                <div class="testimonial_img_area">{% media testimonial.person.picture, 'testimonial_widget' %}</div>
+                                <div class="testimonial_prof_details">
+                                    <h2>{{ testimonial.person.displayName }}</h2>
+                                    <p>
+                                        <span>{{ translate(testimonial.person, 'position') }}</span>
+                                        {% if testimonial.person.company %}
+                                            <span>{{ 'testimonials.at'|trans({ company: testimonial.person.company }) }}</span>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="testimonial_img_area">{% media testimonial.person.picture, 'testimonial_widget' %}</div>
-                        <div class="testimonial_prof_details">
-                            <h2>{{ testimonial.person.displayName }}</h2>
-                            <p>
-                                <span>{{ translate(testimonial.person, 'position') }}</span>
-                                {% if testimonial.person.company %}
-                                    <span>{{ 'testimonials.at'|trans({ company: testimonial.person.company }) }}</span>
-                                {% endif %}
-                            </p>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
-        </div>
-        <!-- @end .crsl-wrap -->
-    </div>
-    <!-- @end .crsl-items -->
+                <!-- @end .crsl-wrap -->
+            </div>
+            <!-- @end .crsl-items -->
 
-    <nav class="slidernav">
-        <div id="navbtns" class="clearfix">
-            <a href="#" class="previous"><img src="/images/left_arrow.png" alt="image description"></a>
-            <a href="#" class="next"><img src="/images/right_arrow.png" alt="image description"></a>
+            <nav class="slidernav">
+                <div id="navbtns" class="clearfix">
+                    <a href="#" class="previous"><img src="/images/left_arrow.png" alt="image description"></a>
+                    <a href="#" class="next"><img src="/images/right_arrow.png" alt="image description"></a>
+                </div>
+            </nav>
         </div>
-    </nav>
-</div>
+    </div>
+{% endif %}

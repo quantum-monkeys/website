@@ -152,7 +152,7 @@ class Person implements TranslatableInterface
     /**
      * @param boolean $quantumMonkeysMember
      */
-    public function setQuantumMonkeysMember(bool $quantumMonkeysMember)
+    public function setQuantumMonkeysMember($quantumMonkeysMember)
     {
         $this->quantumMonkeysMember = $quantumMonkeysMember;
     }
@@ -173,7 +173,7 @@ class Person implements TranslatableInterface
         $this->picture = $picture;
     }
 
-    public function __toString(): string
+    public function __toString()
     {
         return $this->getDisplayName();
     }
