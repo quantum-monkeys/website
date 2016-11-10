@@ -8,7 +8,7 @@
                 {% media event.picture|default(event.event.picture), 'event_widget' %}
             </div>
             <div class="whats_happening_box_right">
-                <p><span>{{ translate(event.event, 'name')|truncate(30, true, '...') }}</span></p>
+                <p><span>{{ translate(event, 'name')|default(translate(event.event, 'name'))|truncate(30, true, '...') }}</span></p>
                 <div class="events_small_panel">
                     <img src="/images/events-icon1.png" alt="image description">
                     {{ event.location.city }}, {{ event.location.country }}
