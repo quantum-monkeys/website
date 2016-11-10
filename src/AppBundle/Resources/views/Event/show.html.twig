@@ -18,7 +18,7 @@
                 <div class="discription-section">
                     <ul role="tablist">
                         <li role="presentation"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">{{ 'view.description'|trans }}</a></li>
-                        <li role="presentation"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">{{ 'view.tickets'|trans }}</a></li>
+                        {#<li role="presentation"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">{{ 'view.tickets'|trans }}</a></li>#}
                     </ul>
                     <div role="tabpanel" class="discription-content" id="description">
                         <p>
@@ -40,11 +40,11 @@
                     <h3>{{ eventOccurrence.location.name }} - {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h3>
                     <p>
                         <img src="/images/calender-img.png" alt="img" />
-                        <span>{{ 'view.start_from'|trans({ date: eventOccurrence.begin|localizeddate('short', 'none') }) }}</span>
+                        <span>{{ 'view.start_from'|trans({ '%date%': eventOccurrence.begin|localizeddate('short', 'none') }) }}</span>
                     </p>
                     <p>
                         <img src="/images/speaker-img.png" alt="img" />
-                        <span>{{ 'view.start_at'|trans({ date: eventOccurrence.begin|localizeddate('none', 'short') }) }}</span>
+                        <span>{{ 'view.start_at'|trans({ '%time%': eventOccurrence.begin|localizeddate('none', 'short') }) }}</span>
                     </p>
                     <p>{{ translate(eventOccurrence.event, 'intro') }}</p>
                 </div>

@@ -20,7 +20,7 @@
                                     <p>
                                         <span>{{ translate(testimonial.person, 'position') }}</span>
                                         {% if testimonial.person.company %}
-                                            <span>{{ 'testimonials.at'|trans({ company: testimonial.person.company }) }}</span>
+                                            <span>{{ 'testimonials.at'|trans({ '%company%': testimonial.person.company }) }}</span>
                                         {% endif %}
                                     </p>
                                 </div>
