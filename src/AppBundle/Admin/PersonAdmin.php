@@ -26,6 +26,11 @@ class PersonAdmin extends Admin
                 'context' => 'default',
                 'provider' => 'sonata.media.provider.image',
             ])
+            ->add('pictureSquare', 'sonata_media_type', [
+                'required' => false,
+                'context' => 'default',
+                'provider' => 'sonata.media.provider.image',
+            ])
             ->add('translations', 'sonata_type_collection', [
                 'by_reference' => false,
             ], [

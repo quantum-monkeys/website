@@ -29,6 +29,12 @@ AppBundle\Entity\Person:
             cascade:
                 - "persist"
                 - "remove"
+        pictureSquare:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
     oneToMany:
         translations:
             targetEntity: AppBundle\Entity\PersonTranslation

@@ -119,6 +119,15 @@ services:
               group: Don't touch !
               label: EventTranslation
 
+    admin.event_occurrence_translation:
+        class: AppBundle\Admin\EventOccurrenceTranslationAdmin
+        arguments: [~, AppBundle\Entity\EventOccurrenceTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: EventOccurrenceTranslation
+
     admin.service_translation:
         class: AppBundle\Admin\ServiceTranslationAdmin
         arguments: [~, AppBundle\Entity\ServiceTranslation, ~]

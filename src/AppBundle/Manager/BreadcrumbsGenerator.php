@@ -51,7 +51,7 @@ class BreadcrumbsGenerator
     {
         $this->generateEvents();
         $this->breadcrumbs->addRouteItem(
-            $this->objectTranslator->translate($eventOccurrence->getEvent(), 'name'),
+            $this->objectTranslator->translate($eventOccurrence, 'name') ?? $this->objectTranslator->translate($eventOccurrence->getEvent(), 'name'),
             'event_show',
             [
                 'id' => $eventOccurrence->getId(),

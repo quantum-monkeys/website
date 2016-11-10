@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="blog-img-detail">
-                    {% media eventOccurrence.event.picture, 'event_big' with {
+                    {% media eventOccurrence.picture|default(eventOccurrence.event.picture), 'event_big' with {
                         'class': 'img-responsive'
                     } %}
                 </div>
@@ -21,7 +21,13 @@
                         <li role="presentation"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">{{ 'view.tickets'|trans }}</a></li>
                     </ul>
                     <div role="tabpanel" class="discription-content" id="description">
-                        <p>{{ translate(eventOccurrence.event, 'description')|nl2br }}</p>
+                        <p>
+                            {% if translate(eventOccurrence, 'description') %}
+                                {{ translate(eventOccurrence, 'description')|nl2br }}
+                            {% else %}
+                                {{ translate(eventOccurrence.event, 'description')|nl2br }}
+                            {% endif %}
+                        </p>
                     </div>
                     {#<div role="tabpanel" class="discription-content" id="tickets">#}
                         {#Test#}
@@ -30,7 +36,7 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <div class="age-section">
-                    <h4 class="age-title">{{ translate(eventOccurrence.event, 'name') }}</h4>
+                    <h4 class="age-title">{{ translate(eventOccurrence, 'name')|default(translate(eventOccurrence.event, 'name')) }}</h4>
                     <h3>{{ eventOccurrence.location.name }} - {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h3>
                     <p>
                         <img src="/images/calender-img.png" alt="img" />
@@ -40,16 +46,18 @@
                         <img src="/images/speaker-img.png" alt="img" />
                         <span>{{ 'view.start_at'|trans({ date: eventOccurrence.begin|localizeddate('none', 'short') }) }}</span>
                     </p>
-                    <p>{{ translate(eventOccurrence.event, 'description') }}</p>
+                    <p>{{ translate(eventOccurrence.event, 'intro') }}</p>
                 </div>
-                <div class="calender-regular col-sm-2 col-md-2 col-lg-2">
-                    {% for eventCost in eventOccurrence.costs %}
-                        <div class="cost">
-                            <div class="name">{{ eventCost.name }}</div>
-                            <div class="price">{{ eventCost.cost|localizedcurrency(eventCost.currency) }}</div>
-                        </div>
-                    {% endfor %}
-                </div>
+                {% if eventOccurrence.costs|length %}
+                    <div class="calender-regular col-sm-2 col-md-2 col-lg-2">
+                        {% for eventCost in eventOccurrence.costs %}
+                            <div class="cost">
+                                <div class="name">{{ eventCost.name }}</div>
+                                <div class="price">{{ eventCost.cost|localizedcurrency(eventCost.currency) }}</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <div class="location col-sm-10 col-md-10 col-lg-10">
                     <p>
                         <img src="/images/location.png" alt="loaction img" />
@@ -60,31 +68,35 @@
                         </span>
                     </p>
                 </div>
-                <div class="feature-speaker">
-                    <div class="blog-title-form">
-                        <h3>{{ 'view.speakers'|trans }}</h3>
-                    </div>
-                    <!--End-->
-                    <div class="blog-post-list">
-                        <ul>
-                            {% for speaker in eventOccurrence.speakers %}
-                                <li>
-                                    <div class="row">
-                                        <div class="col-xs-6 col-sm-6 blog-list-img">
-                                            {% media speaker.picture, 'person_event' %}
-                                        </div>
-                                        <div class="col-xs-6 col-sm-6">
-                                            <div class="blog-list-content">
-                                                <h3>{{ speaker.displayName }}</h3>
-                                                <p>{{ translate(speaker, 'description') }}</p>
+                {% if eventOccurrence.speakers|length %}
+                    <div class="feature-speaker">
+                        <div class="blog-title-form">
+                            <h3>{{ 'view.speakers'|trans }}</h3>
+                        </div>
+                        <!--End-->
+                        <div class="blog-post-list">
+                            <ul>
+                                {% for speaker in eventOccurrence.speakers %}
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-sm-6 blog-list-img">
+                                                {% media speaker.picture, 'person_event' with {
+                                                    'height': 'auto'
+                                                } %}
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6">
+                                                <div class="blog-list-content">
+                                                    <h3>{{ speaker.displayName }}</h3>
+                                                    <p>{{ translate(speaker, 'description') }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
-                </div>
+                {% endif %}
             </div>
         </div>
     </div>

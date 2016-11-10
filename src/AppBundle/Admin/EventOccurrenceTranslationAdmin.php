@@ -7,13 +7,12 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class EventTranslationAdmin extends Admin
+class EventOccurrenceTranslationAdmin extends Admin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
             ->add('name', 'text')
-            ->add('intro', 'textarea')
             ->add('description', 'textarea')
             ->add('locale', 'language', [
                 'choices' => [

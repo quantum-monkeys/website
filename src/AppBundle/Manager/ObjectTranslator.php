@@ -44,13 +44,15 @@ class ObjectTranslator
         } elseif (!is_array($array)) {
             throw new \Exception('Translation need an array or an object wich implements "toArray"');
         }
+
         if (isset($array[$this->locale])) {
             return $this->propertyAccessor->getValue($array[$this->locale], $key);
         }
+
         if (isset($array[$this->defaultLocale])) {
             return $this->propertyAccessor->getValue($array[$this->defaultLocale], $key);
-        } else {
-            throw new \Exception('Object key "'.$key.'" not translated');
         }
+
+        return null;
     }
 }

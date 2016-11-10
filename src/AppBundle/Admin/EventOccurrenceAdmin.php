@@ -49,6 +49,18 @@ class EventOccurrenceAdmin extends Admin
                 'multiple' => true,
                 'expanded'=> true,
             ])
+            ->add('translations', 'sonata_type_collection', [
+                'by_reference' => false,
+            ], [
+                'edit' => 'inline',
+                'inline' => 'table',
+                'admin_code' => 'admin.event_occurrence_translation',
+            ])
+            ->add('picture', 'sonata_media_type', [
+                'required' => false,
+                'context' => 'default',
+                'provider' => 'sonata.media.provider.image',
+            ])
         ;
     }
 
@@ -64,7 +76,7 @@ class EventOccurrenceAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('id')
-            ->addIdentifier('event.name')
+            ->addIdentifier('name')
         ;
     }
 

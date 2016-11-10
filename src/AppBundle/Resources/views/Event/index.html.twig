@@ -77,19 +77,21 @@
             {% for event in events %}
                 <article class="event-box">
                     <div class="box">
-                        <div class="image-holder">
-                            {% media event.event.picture, 'event_list' %}
-                        </div>
-                        <time class="date" datetime="{{ event.begin|localizeddate('short', 'none') }}">
-                            {{ event.begin|localizeddate('short', 'none') }}
-                        </time>
+                        <a href="{{ path('event_show', { id: event.id }) }}">
+                            <div class="image-holder">
+                                {% media event.picture|default(event.event.picture), 'event_list' %}
+                            </div>
+                            <h1 class="date">{{ translate(event, 'name')|default(translate(event.event, 'name')) }}</h1>
+                        </a>
                         <div class="info-box">
                             <strong class="title">
                                 <a href="{{ path('event_show', { id: event.id }) }}">
                                     {{ event.location.name }} - {{ event.location.city }}, {{ event.location.region }}
                                 </a>
                             </strong>
-                            <time>@ {{ event.begin|localizeddate('none', 'short') }}</time>
+                            <time datetime="{{ event.begin|localizeddate('short', 'none') }}">
+                                {{ event.begin|localizeddate('short', 'none') }} @ {{ event.begin|localizeddate('none', 'short') }}
+                            </time>
                             <p>{{ translate(event.event, 'description')|truncate(50, true, '...') }}</p>
                             <div class="buttons">
                                 <div class="btn-holder">

@@ -2,9 +2,7 @@
 
 namespace AppBundle\Entity;
 
-use Application\Sonata\MediaBundle\Entity\Media;
-
-class EventTranslation
+class EventOccurrenceTranslation
 {
     /**
      * @var int
@@ -17,19 +15,14 @@ class EventTranslation
     private $locale;
 
     /**
-     * @var Event
+     * @var EventOccurrence
      */
-    private $event;
+    private $eventOccurrence;
 
     /**
      * @var string
      */
     private $name;
-
-    /**
-     * @var string
-     */
-    private $intro;
 
     /**
      * @var string
@@ -58,22 +51,22 @@ class EventTranslation
     }
 
     /**
-     * @return Event
+     * @return EventOccurrence
      */
-    public function getEvent()
+    public function getEventOccurrence()
     {
-        return $this->event;
+        return $this->eventOccurrence;
     }
 
     /**
-     * @param Event $event
+     * @param EventOccurrence $eventOccurrence
      */
-    public function setEvent(Event $event)
+    public function setEventOccurrence(EventOccurrence $eventOccurrence)
     {
-        $this->event = $event;
+        $this->eventOccurrence = $eventOccurrence;
     }
 
-    public function setName(string $name) : EventTranslation
+    public function setName(string $name) : EventOccurrenceTranslation
     {
         $this->name = $name;
 
@@ -91,27 +84,11 @@ class EventTranslation
     }
 
     /**
-     * @return string
-     */
-    public function getIntro()
-    {
-        return $this->intro;
-    }
-
-    /**
-     * @param string $intro
-     */
-    public function setIntro(string $intro)
-    {
-        $this->intro = $intro;
-    }
-
-    /**
      * Set description
      *
      * @param string $description
      *
-     * @return EventTranslation
+     * @return EventOccurrenceTranslation
      */
     public function setDescription($description)
     {

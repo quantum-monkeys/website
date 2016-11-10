@@ -39,6 +39,11 @@ class Person implements TranslatableInterface
     private $picture;
 
     /**
+     * @var Media
+     */
+    private $pictureSquare;
+
+    /**
      * @var PersonTranslation[]
      */
     private $translations;
@@ -171,6 +176,22 @@ class Person implements TranslatableInterface
     public function setPicture(Media $picture)
     {
         $this->picture = $picture;
+    }
+
+    /**
+     * @return Media
+     */
+    public function getPictureSquare()
+    {
+        return $this->pictureSquare;
+    }
+
+    /**
+     * @param Media $pictureSquare
+     */
+    public function setPictureSquare(Media $pictureSquare)
+    {
+        $this->pictureSquare = $pictureSquare;
     }
 
     public function __toString()

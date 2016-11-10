@@ -50,8 +50,8 @@ sonata_media:
                 event_big: { width: 565 , quality: 70}
                 testimonial_widget: { width: 123 , quality: 70}
                 service_big: { width: 565 , quality: 70}
-                person_event: { width: 312, height: 234, quality: 70}
-                person_about: { width: 367, height: 261, quality: 70}
+                person_event: { width: 312, quality: 70}
+                person_about: { width: 367, quality: 70}
                 big:   { width: 500 , quality: 70}
         events:
             providers:

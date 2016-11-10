@@ -30,6 +30,12 @@ AppBundle\Entity\EventOccurrence:
         location:
             targetEntity: AppBundle\Entity\Location
             fetch: EAGER
+        picture:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
     oneToMany:
         costs:
             targetEntity: AppBundle\Entity\EventOccurrenceCost
@@ -37,6 +43,14 @@ AppBundle\Entity\EventOccurrence:
             cascade:
                 - "persist"
                 - "remove"
+        translations:
+            targetEntity: AppBundle\Entity\EventOccurrenceTranslation
+            mappedBy: eventOccurrence
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
     manyToMany:
         speakers:
             targetEntity: AppBundle\Entity\Person

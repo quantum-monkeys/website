@@ -1,7 +1,7 @@
-AppBundle\Entity\EventTranslation:
+AppBundle\Entity\EventOccurrenceTranslation:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\EventTranslationRepository
+    repositoryClass: AppBundle\Repository\EventOccurrenceTranslationRepository
     id:
         id:
             type: integer
@@ -15,14 +15,12 @@ AppBundle\Entity\EventTranslation:
         name:
             type: string
             length: 255
-        intro:
-            type: text
         description:
             type: text
 
     manyToOne:
-        event:
-            targetEntity: AppBundle\Entity\Event
+        eventOccurrence:
+            targetEntity: AppBundle\Entity\EventOccurrence
             inversedBy: translations
             cascade:
                 - "persist"
