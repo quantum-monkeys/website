@@ -21,7 +21,7 @@ abstract class EventAdmin extends Admin
                 'by_reference' => false,
             ], [
                 'edit' => 'inline',
-                'inline' => 'table',
+                'inline' => 'standard',
                 'admin_code' => 'admin.event_translation',
             ])
         ;

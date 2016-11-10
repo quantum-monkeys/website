@@ -18,7 +18,7 @@
                         <div class="mission-heading">
                             <h3>{{ translate(training, 'name') }}</h3>
                         </div>
-                        <p>{{ translate(training, 'description')|nl2br }}</p>
+                        <p>{{ translate(training, 'description')|markdown }}</p>
                     </div>
                 </div>
                 {% if loop.index % 2 == 0 %}

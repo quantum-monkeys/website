@@ -12,7 +12,7 @@
                         <div class="crsl-item">
                             <div class="testimonial_main_area">
                                 <div class="testimonial_text_area">
-                                    <p>{{ testimonial.content }}</p>
+                                    <p>{{ testimonial.content|markdown }}</p>
                                 </div>
                                 <div class="testimonial_img_area">{% media testimonial.person.pictureSquare, 'testimonial_widget' %}</div>
                                 <div class="testimonial_prof_details">

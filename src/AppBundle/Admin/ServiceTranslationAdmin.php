@@ -13,8 +13,12 @@ class ServiceTranslationAdmin extends Admin
     {
         $formMapper
             ->add('name', 'text')
-            ->add('description', 'textarea')
-            ->add('specifications', 'textarea')
+            ->add('description', 'sonata_simple_formatter_type', array(
+                'format' => 'markdown',
+            ))
+            ->add('specifications', 'sonata_simple_formatter_type', array(
+                'format' => 'markdown',
+            ))
             ->add('locale', 'language', [
                 'choices' => [
                     'English' => 'en',

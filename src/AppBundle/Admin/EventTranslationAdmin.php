@@ -13,8 +13,12 @@ class EventTranslationAdmin extends Admin
     {
         $formMapper
             ->add('name', 'text')
-            ->add('intro', 'textarea')
-            ->add('description', 'textarea')
+            ->add('intro', 'sonata_simple_formatter_type', array(
+                'format' => 'markdown',
+            ))
+            ->add('description', 'sonata_simple_formatter_type', array(
+                'format' => 'markdown',
+            ))
             ->add('locale', 'language', [
                 'choices' => [
                     'English' => 'en',

@@ -42,7 +42,7 @@
                     <div class="designation_title">
                         <h4>{{ person.displayName }}</h4>
                         <p class="desig">{{ translate(person, 'position') }}</p>
-                        <p>{{ translate(person, 'description') }}</p>
+                        <p>{{ translate(person, 'description')|markdown }}</p>
                     </div>
                 </div>
                 {% if loop.index % 3 == 0 or loop.last %}

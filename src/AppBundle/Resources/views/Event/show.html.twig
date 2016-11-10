@@ -23,9 +23,9 @@
                     <div role="tabpanel" class="discription-content" id="description">
                         <p>
                             {% if translate(eventOccurrence, 'description') %}
-                                {{ translate(eventOccurrence, 'description')|nl2br }}
+                                {{ translate(eventOccurrence, 'description')|markdown }}
                             {% else %}
-                                {{ translate(eventOccurrence.event, 'description')|nl2br }}
+                                {{ translate(eventOccurrence.event, 'description')|markdown }}
                             {% endif %}
                         </p>
                     </div>
@@ -46,7 +46,7 @@
                         <img src="/images/speaker-img.png" alt="img" />
                         <span>{{ 'view.start_at'|trans({ '%time%': eventOccurrence.begin|localizeddate('none', 'short') }) }}</span>
                     </p>
-                    <p>{{ translate(eventOccurrence.event, 'intro') }}</p>
+                    <p>{{ translate(eventOccurrence.event, 'intro')|markdown }}</p>
                 </div>
                 {% if eventOccurrence.costs|length %}
                     <div class="calender-regular col-sm-2 col-md-2 col-lg-2">

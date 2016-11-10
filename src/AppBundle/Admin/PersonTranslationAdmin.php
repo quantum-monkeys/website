@@ -13,7 +13,9 @@ class PersonTranslationAdmin extends Admin
     {
         $formMapper
             ->add('position', 'text')
-            ->add('description', 'textarea')
+            ->add('description', 'sonata_simple_formatter_type', array(
+                'format' => 'markdown',
+            ))
             ->add('locale', 'language', [
                 'choices' => [
                     'English' => 'en',

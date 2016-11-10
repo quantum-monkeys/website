@@ -17,7 +17,9 @@ class TestimonialAdmin extends Admin
                 'class' => 'AppBundle\Entity\Person',
                 'choice_label' => 'displayName',
             ])
-            ->add('content', 'textarea')
+            ->add('content', 'sonata_simple_formatter_type', array(
+                'format' => 'markdown',
+            ))
         ;
     }
 

@@ -13,7 +13,7 @@ class TrainingController extends Controller
     public function indexAction(Request $request)
     {
         $this->get('app.manager.breadcrumb_generator')->generateTrainings();
-        $trainings = $this->get('doctrine')->getRepository('AppBundle:Event')->findAll();
+        $trainings = $this->get('doctrine')->getRepository('AppBundle:Events\Seminar')->findAll();
 
         return $this->render(
             'AppBundle:Training:index.html.twig',

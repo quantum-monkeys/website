@@ -230,3 +230,22 @@
 .formaion_box2_text_area p {
     margin-top: 35px;
 }
+
+.how_can_help_text h1,
+.how_can_help_text h2,
+.how_do_we_main_title h1,
+.coaching_main_title h1,
+.formaion_main_title h1,
+.whats_happening_panel h2,
+.testimonial_main_title h2 {
+    font-family: Antonio-Bold,Arial,helvetica,sans-serif;
+}
+
+.how_can_help_text h2 {
+    font-size: 2em;
+}
+
+.how_do_we_main_title h1,
+.testimonial_main_title h2 {
+    text-transform: uppercase;
+}
