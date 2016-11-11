@@ -22,6 +22,9 @@ AppBundle\Entity\Person:
             nullable: true
         quantumMonkeysMember:
             type: boolean
+        position:
+            type: integer
+            nullable: true
     manyToOne:
         picture:
             targetEntity: Application\Sonata\MediaBundle\Entity\Media

@@ -1,22 +1,19 @@
 <h3><img src="/images/blog-icon.png" alt="image description"> <span>{{ 'blog.title'|trans }}</span></h3>
 
 {% for post in pager.getResults() %}
-    <div class="whats_happening_box">
-        <div class="whats_happening_box_left">
-            {% media post.image, 'wide' with {
-                class: 'img-responsive'
-            } %}
-        </div>
-        <div class="whats_happening_box_right">
-            <p><span>{{ post.publicationDateStart|localizeddate('full', 'none') }}</span><br> {{ post.title }}</p>
-            {{ post.abstract|truncate(120, true, '...') }}
-            <div class="plus_icon">
-                <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">
-                    <img src="/images/plus.png" alt="image description">
-                </a>
+    <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">
+        <div class="whats_happening_box">
+            <div class="whats_happening_box_left">
+                {% media post.image, 'wide' with {
+                    class: 'img-responsive'
+                } %}
+            </div>
+            <div class="whats_happening_box_right">
+                <p><span>{{ post.publicationDateStart|localizeddate('full', 'none') }}</span><br> {{ post.title }}</p>
+                {{ post.abstract|truncate(120, true, '...') }}
             </div>
         </div>
-    </div>
+    </a>
 {% endfor %}
 
-<a href="{{ path('sonata_news_home') }}">{{ 'blog.go_to'|trans }}</a>
+<a href="{{ path('sonata_news_home') }}" class="see_all_but">{{ 'blog.go_to'|trans }}</a>

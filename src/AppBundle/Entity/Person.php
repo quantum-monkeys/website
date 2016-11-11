@@ -14,6 +14,11 @@ class Person implements TranslatableInterface
     private $id;
 
     /**
+     * @var int
+     */
+    private $position;
+
+    /**
      * @var string
      */
     private $firstName;
@@ -61,6 +66,22 @@ class Person implements TranslatableInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param int $position
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
     }
 
     /**

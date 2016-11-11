@@ -312,3 +312,23 @@
 .events_small_panel {
     vertical-align: top;
 }
+
+.see_all_but1:hover,
+.see_all_but2:hover {
+    color: #ff8a00;
+}
+
+.see_all_but {
+    display: block;
+    float: right;
+    background: #ff8a00;
+    text-align: center;
+    font-size: 1.2em;
+    color: #FFF;
+    padding: 0.5em;
+}
+
+.see_all_but:hover {
+    background: #000;
+    color: #ff8a00;
+}

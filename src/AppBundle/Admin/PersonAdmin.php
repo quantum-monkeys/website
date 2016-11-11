@@ -15,6 +15,9 @@ class PersonAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('position', 'number', [
+                'required' => false
+            ])
             ->add('firstName', 'text')
             ->add('lastName', 'text')
             ->add('company', 'text')

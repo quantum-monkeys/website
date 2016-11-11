@@ -20,8 +20,12 @@ class AboutUsController extends Controller
         $people = $this->get('doctrine')->getRepository('AppBundle:Person')->findBy(
             [
                 'quantumMonkeysMember' => true,
+            ],
+            [
+                'position' => 'asc'
             ]
         );
+
         return $this->render(
             'AppBundle:AboutUs:index.html.twig',
             [
