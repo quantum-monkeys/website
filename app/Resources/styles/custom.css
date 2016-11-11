@@ -250,6 +250,10 @@
     text-transform: uppercase;
 }
 
+.events-holder {
+    margin: 0;
+}
+
 .event {
     display: inline-block;
     float: none;
@@ -260,6 +264,10 @@
     padding: 0;
     border: none;
     border-radius: 0;
+}
+
+.event .thumbnail img {
+    width: 100%;
 }
 
 .event .thumbnail .caption {
