@@ -1,6 +1,10 @@
 {% trans_default_domain 'widget' %}
 
-<h3><img src="/images/upcomming-icon.png" alt="image description" height="50px"/> <span>{{ 'events.title'|trans }}</span></h3>
+<h3>
+    <img src="/images/upcomming-icon.png" alt="image description" height="50px"/>
+    <span>{{ 'events.title'|trans }}</span>
+</h3>
+
 {% for event in events %}
     <a href="{{ path('event_show', { id: event.id }) }}">
         <div class="whats_happening_box">
@@ -11,7 +15,7 @@
                 <p><span>{{ translate(event, 'name')|default(translate(event.event, 'name'))|truncate(30, true, '...') }}</span></p>
                 <div class="events_small_panel">
                     <img src="/images/events-icon1.png" alt="image description">
-                    {{ event.location.city }}, {{ event.location.country }}
+                    Saint-Basile-le-grand, QC {#{{ event.location.city }}, {{ event.location.country }}#}
                 </div>
                 <div class="events_small_panel">
                     <img src="/images/events-icon2.png" alt="image description">
@@ -29,4 +33,5 @@
         </div>
     </a>
 {% endfor %}
+
 <a href="{{ path('event_list') }}">{{ 'events.see_all'|trans }}</a>
