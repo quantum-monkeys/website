@@ -15,7 +15,7 @@
                 <p><span>{{ translate(event, 'name')|default(translate(event.event, 'name'))|truncate(30, true, '...') }}</span></p>
                 <div class="events_small_panel">
                     <img src="/images/events-icon1.png" alt="image description">
-                    Saint-Basile-le-grand, QC {#{{ event.location.city }}, {{ event.location.country }}#}
+                    {{ event.location.city }}, {{ event.location.country }}
                 </div>
                 <div class="events_small_panel">
                     <img src="/images/events-icon2.png" alt="image description">
