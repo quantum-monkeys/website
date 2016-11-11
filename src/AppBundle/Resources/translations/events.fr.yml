@@ -5,6 +5,6 @@ list:
 view:
   description: Description
   tickets: Billets
-  start_from: 'Commence de'
-  start_at: 'Commence à'
-  speakers: Participants
+  start_from: 'Commence le : %date%'
+  start_at: 'Présentation @ %time%'
+  speakers: Orateurs

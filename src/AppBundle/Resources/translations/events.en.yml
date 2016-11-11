@@ -5,6 +5,6 @@ list:
 view:
   description: Description
   tickets: Tickets
-  start_from: 'Start from'
-  start_at: 'Start at'
+  start_from: 'Start from: %date%'
+  start_at: 'Start @ %time%'
   speakers: Speakers

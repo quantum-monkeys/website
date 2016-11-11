@@ -2,7 +2,7 @@ events:
   title: 'Upcoming events'
   see_all: 'See all'
 event:
-  remaining_seats: 'Remaining seats'
+  remaining_seats: '{0} FULL|{1} 1 remaining seat|]1,Inf[ %count% remaining seats'
 services:
   title: Services
   subtitle: Subtitle
@@ -12,16 +12,16 @@ services:
   service_3: Facilitator
   service_4: 'Expert intervention'
 trainings:
-  title: Trainings
+  title: Academy
   subtitle: Subtitle
   see_all: 'See all'
   training_1: Presentations
   training_2: Workshops
   training_3: 'Power trainings'
-  training_4: 'Learning path'
+  training_4: Certifications
 testimonials:
   title: Testimonials
-  at: __testimonials.at
+  at: 'from %company%'
 contact:
   message:
     success: 'Message successfully sent'

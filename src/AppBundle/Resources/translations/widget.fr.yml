@@ -2,26 +2,26 @@ events:
   title: 'Événements à venir'
   see_all: 'Tout montrer'
 event:
-  remaining_seats: 'Places disponibles'
+  remaining_seats: '{0} COMPLET|{1} 1 place restante|]1,Inf[ %count% places restantes'
 services:
   title: Services
   subtitle: Sous-titre
   see_all: 'Tout montrer'
   service_1: Coaching
-  service_2: 'Service conseil'
+  service_2: 'Services conseil'
   service_3: Facilitateur
-  service_4: 'Intervention d''un expert'
+  service_4: Expert
 trainings:
-  title: Formation
+  title: Académie
   subtitle: Sous-titre
   see_all: 'Tout montrer'
   training_1: Présentations
   training_2: Ateliers
   training_3: 'Power trainings'
-  training_4: 'Cheminement d''apprentissage'
+  training_4: Certifications
 testimonials:
   title: Témoignages
-  at: __testimonials.at
+  at: 'de %company%'
 contact:
   message:
     success: 'Message envoyé avec succès'

@@ -3,8 +3,8 @@ blog: Blog
 contact_us: 'Contact Us'
 events: Events
 home: Home
-services: 'Coaching Services'
-trainings: Trainings
+services: Services
+trainings: Academy
 lang_switch:
   fr: FR
   en: EN
