@@ -15,6 +15,7 @@ class EventTranslationAdmin extends Admin
             ->add('name', 'text')
             ->add('intro', 'sonata_simple_formatter_type', array(
                 'format' => 'markdown',
+                'required' => false,
             ))
             ->add('description', 'sonata_simple_formatter_type', array(
                 'format' => 'markdown',

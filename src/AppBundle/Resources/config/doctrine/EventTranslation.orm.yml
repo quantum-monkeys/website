@@ -17,6 +17,7 @@ AppBundle\Entity\EventTranslation:
             length: 255
         intro:
             type: text
+            nullable: true
         description:
             type: text
 
