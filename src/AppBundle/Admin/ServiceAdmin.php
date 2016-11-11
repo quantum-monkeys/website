@@ -13,6 +13,9 @@ class ServiceAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('position', 'number', [
+                'required' => false
+            ])
             ->add('picture', 'sonata_media_type', [
                 'required' => false,
                 'context' => 'default',

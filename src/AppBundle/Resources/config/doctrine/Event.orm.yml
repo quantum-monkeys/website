@@ -21,6 +21,11 @@ AppBundle\Entity\Event:
             generator:
                 strategy: AUTO
 
+    fields:
+        position:
+            type: integer
+            nullable: true
+
     manyToOne:
         picture:
             targetEntity: Application\Sonata\MediaBundle\Entity\Media

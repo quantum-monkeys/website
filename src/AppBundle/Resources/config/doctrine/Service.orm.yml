@@ -8,6 +8,12 @@ AppBundle\Entity\Service:
             id: true
             generator:
                 strategy: AUTO
+
+    fields:
+        position:
+            type: integer
+            nullable: true
+
     manyToOne:
         picture:
             targetEntity: Application\Sonata\MediaBundle\Entity\Media
@@ -15,6 +21,7 @@ AppBundle\Entity\Service:
             cascade:
                 - "persist"
                 - "remove"
+
     oneToMany:
         translations:
             targetEntity: AppBundle\Entity\ServiceTranslation
@@ -24,4 +31,5 @@ AppBundle\Entity\Service:
                 - "persist"
                 - "remove"
             indexBy: locale
+
     lifecycleCallbacks: {  }
