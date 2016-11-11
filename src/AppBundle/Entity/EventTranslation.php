@@ -101,7 +101,7 @@ class EventTranslation
     /**
      * @param string $intro
      */
-    public function setIntro(string $intro)
+    public function setIntro($intro)
     {
         $this->intro = $intro;
     }
