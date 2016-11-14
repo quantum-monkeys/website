@@ -21,13 +21,11 @@
                         {#<li role="presentation"><a href="#tickets" aria-controls="tickets" role="tab" data-toggle="tab">{{ 'view.tickets'|trans }}</a></li>#}
                     </ul>
                     <div role="tabpanel" class="discription-content" id="description">
-                        <p>
-                            {% if translate(eventOccurrence, 'description') %}
-                                {{ translate(eventOccurrence, 'description')|markdown }}
-                            {% else %}
-                                {{ translate(eventOccurrence.event, 'description')|markdown }}
-                            {% endif %}
-                        </p>
+                        {% if translate(eventOccurrence, 'description') %}
+                            {{ translate(eventOccurrence, 'description')|markdown }}
+                        {% else %}
+                            {{ translate(eventOccurrence.event, 'description')|markdown }}
+                        {% endif %}
                     </div>
                     {#<div role="tabpanel" class="discription-content" id="tickets">#}
                         {#Test#}
