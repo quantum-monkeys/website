@@ -21,6 +21,12 @@ security:
                     kpilon:
                         password: quantum2016
                         roles: 'ROLE_ADMIN'
+                    jduggan:
+                        password: quantum2016
+                        roles: 'ROLE_ADMIN'
+                    proux:
+                        password: quantum2016
+                        roles: 'ROLE_ADMIN'
 
     acl:
         connection: default
