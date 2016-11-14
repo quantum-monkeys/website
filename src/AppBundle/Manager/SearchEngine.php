@@ -35,7 +35,7 @@ class SearchEngine
         return $eventSearch;
     }
 
-    public function getResults(EventSearch $eventSearch)
+    public function getResults(EventSearch $eventSearch, int $limit = 20)
     {
         $qb = $this->eventOccurenceRepository->createQueryBuilder('eo');
         $qb->andWhere($qb->expr()->gt('eo.begin', ':now'));
@@ -62,6 +62,7 @@ class SearchEngine
         }
 
         $qb->orderBy('eo.begin', 'ASC');
+        $qb->setMaxResults($limit);
 
         return $qb->getQuery()->getResult();
     }

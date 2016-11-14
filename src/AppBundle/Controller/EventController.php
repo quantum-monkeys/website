@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\EventOccurrence;
 use AppBundle\Form\Type\EventSearchType;
+use AppBundle\Objects\EventSearch;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
@@ -55,13 +56,9 @@ class EventController extends Controller
 
     public function widgetAction()
     {
-        $events = $this->get('doctrine')->getRepository('AppBundle:EventOccurrence')->findBy(
-            [],
-            [
-                'begin' => 'ASC'
-            ],
-            4
-        );
+        $searchEngine = $this->get('app.manager.search_engine');
+        $eventSearch = new EventSearch();
+        $events = $searchEngine->getResults($eventSearch, 4);
 
         return $this->render(
             'AppBundle:Event:widget.html.twig',

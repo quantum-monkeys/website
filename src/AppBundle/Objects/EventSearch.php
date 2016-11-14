@@ -43,7 +43,7 @@ class EventSearch
         return $this;
     }
 
-    public function isFree(): bool
+    public function isFree()
     {
         return $this->free;
     }
