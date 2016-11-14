@@ -370,6 +370,12 @@
     color: grey;
 }
 
+.blog-details-content img,
+.blog-details-content iframe {
+    margin: 2em auto;
+    display: block;
+}
+
 .nav_main_area ul li a {
     padding: 42px 10px;
 }
