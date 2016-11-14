@@ -26,3 +26,6 @@ contact:
   message:
     success: 'Message envoyé avec succès'
     error: 'Erreur lors de l''envoi du message'
+blog:
+  title: 'Dernières publications'
+  go_to: 'Voir plus'

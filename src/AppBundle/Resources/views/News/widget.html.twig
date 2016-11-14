@@ -1,3 +1,5 @@
+{% trans_default_domain 'widget' %}
+
 <h3><img src="/images/blog-icon.png" alt="image description"> <span>{{ 'blog.title'|trans }}</span></h3>
 
 {% for post in pager.getResults() %}

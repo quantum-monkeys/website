@@ -26,3 +26,7 @@ contact:
   message:
     success: 'Message successfully sent'
     error: 'Contact error'
+blog:
+  title: 'Latest blog post'
+  go_to: 'See all'
+
