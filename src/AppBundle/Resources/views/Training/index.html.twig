@@ -1,8 +1,17 @@
 {% extends 'AppBundle::base.html.twig' %}
 
+{% trans_default_domain 'trainings' %}
+
 {% block body %}
     <div class="container">
+        <h2 class="academy-title">{{ 'title'|trans }}</h2>
+        <div class="academy-description">
+            {{ 'description'|trans|markdown }}
+        </div>
+
         {% for training in trainings %}
+            <hr>
+
             <div class="row">
                 {% if loop.index % 2 == 1 %}
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -29,10 +38,6 @@
                     </div>
                 {% endif %}
             </div>
-
-            {% if not loop.last %}
-                <hr>
-            {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

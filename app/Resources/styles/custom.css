@@ -156,6 +156,12 @@
     color: #fff;
     text-transform: uppercase;
 
+    text-shadow:
+            -1px -1px 1px #000,
+            1px -1px 1px #000,
+            -1px 1px 1px #000,
+            1px 1px 1px #000;
+
     letter-spacing: 0.3em;
     font: 700 32px/38px 'Antonio-Bold', Arial, helvetica, sans-serif;
 }
@@ -331,4 +337,61 @@
 .see_all_but:hover {
     background: #000;
     color: #ff8a00;
+}
+
+.academy-description,
+.over-cont {
+    font-family: "Open Sans";
+    font-size: 13px;
+    color: grey;
+}
+
+.academy-description {
+    margin: 40px;
+}
+
+.academy-title {
+    font-family: Antonio-Bold,Arial,helvetica,sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: #fc8700;
+    text-transform: uppercase;
+}
+
+.amazings-text h3 {
+    text-align: right;
+    font-size: 18px;
+}
+
+.blog-details-content,
+.blog-details-content p {
+    font-family: "Open Sans";
+    font-size: 1.1em;
+    color: grey;
+}
+
+.nav_main_area ul li a {
+    padding: 42px 10px;
+}
+
+.how_can_help_text_area p {
+    font-size: 2em;
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    .how_can_help_text_area p {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 737px) and (max-width: 900px) {
+    .how_can_help_text_area p {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 736px) {
+    .how_can_help_text_area p {
+        font-size: 2em;
+    }
 }
