@@ -85,4 +85,4 @@ contactus:
       message: Message
 blog:
   title: 'Dernières publications'
-  go_to: __blog.go_to
+  go_to: 'Voir plus'

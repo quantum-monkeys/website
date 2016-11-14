@@ -1,12 +1,12 @@
 events:
   title: 'Événements à venir'
-  see_all: 'Tout montrer'
+  see_all: 'Voir tout'
 event:
   remaining_seats: '{0} COMPLET|{1} 1 place restante|]1,Inf[ %count% places restantes'
 services:
   title: Services
   subtitle: Sous-titre
-  see_all: 'Tout montrer'
+  see_all: 'Voir tout'
   service_1: Coaching
   service_2: 'Services conseil'
   service_3: Facilitateur
@@ -14,7 +14,7 @@ services:
 trainings:
   title: Académie
   subtitle: Sous-titre
-  see_all: 'Tout montrer'
+  see_all: 'Voir tout'
   training_1: Présentations
   training_2: Ateliers
   training_3: 'Power trainings'
