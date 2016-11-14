@@ -3,7 +3,7 @@ form:
     firstname: 'First Name'
     lastname: 'Last Name'
     email: Email
-    project: Project
+    project: Needs
     message: Message
   label:
     submit: Submit

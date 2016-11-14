@@ -401,3 +401,11 @@
         font-size: 2em;
     }
 }
+
+.footer_top img {
+    padding: 0;
+    border: none;
+    vertical-align: inherit;
+    display: block;
+    margin: 15px 0;
+}

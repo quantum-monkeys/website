@@ -58,15 +58,14 @@ class AboutUsController extends Controller
             $data = $form->getData();
 
             $message = \Swift_Message::newInstance()
-                ->setSubject($data['subject'])
-                ->setFrom($data['email'], $data['name'])
+                ->setSubject('Message from: ' . $data['firstName'] . ' ' . $data['lastName'])
+                ->setFrom($data['email'], $data['firstName'] . ' ' . $data['lastName'])
                 ->setTo('company@quantummonkeys.com')
                 ->setBody(
                     $this->renderView(
                         'AppBundle:Emails:contact.html.twig',
                         [
-                            'name' => $data['name'],
-                            'message' => $data['message']
+                            'data' => $data
                         ]
                     ),
                     'text/html'
@@ -75,8 +74,7 @@ class AboutUsController extends Controller
                     $this->renderView(
                         'AppBundle:Emails:contact.txt.twig',
                         [
-                            'name' => $data['name'],
-                            'message' => $data['message']
+                            'data' => $data
                         ]
                     ),
                     'text/plain'
