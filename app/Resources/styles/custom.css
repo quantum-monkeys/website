@@ -409,3 +409,14 @@
     display: block;
     margin: 15px 0;
 }
+
+.footer .hello {
+    text-transform: uppercase;
+    font-size: 2.7em;
+    font-family: Antonio-Bold,Arial,helvetica,sans-serif;
+    margin: 0;
+}
+
+.footer .hello span {
+    color: #ff8a00;
+}
