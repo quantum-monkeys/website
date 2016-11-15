@@ -8,6 +8,11 @@ service_list:
     defaults:
         _controller: AppBundle:Service:index
 
+discount_list:
+    path: /discounts
+    defaults:
+        _controller: AppBundle:Discount:index
+
 training_list:
     path: /trainings
     defaults:

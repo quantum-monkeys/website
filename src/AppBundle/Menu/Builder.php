@@ -14,6 +14,7 @@ class Builder
         $menu->addChild('services', ['route' => 'service_list'])->setExtra('translation_domain', 'menu');
         $menu->addChild('trainings', ['route' => 'training_list'])->setExtra('translation_domain', 'menu');
         $menu->addChild('events', ['route' => 'event_list'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('discounts', ['route' => 'discount_list'])->setExtra('translation_domain', 'menu');
         $menu->addChild('about_us', ['route' => 'about_us'])->setExtra('translation_domain', 'menu');
         $menu->addChild('blog', ['route' => 'blog'])->setExtra('translation_domain', 'menu');
         $menu->addChild('contact_us', ['uri' => '#contact-us'])->setExtra('translation_domain', 'menu');

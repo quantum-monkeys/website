@@ -1,0 +1,122 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use AppBundle\Interfaces\TranslatableInterface;
+use Application\Sonata\MediaBundle\Entity\Media;
+use Doctrine\Common\Collections\ArrayCollection;
+
+class Discount implements TranslatableInterface
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var int
+     */
+    private $position;
+
+    /**
+     * @var Media
+     */
+    private $picture;
+
+    /**
+     * @var DiscountTranslation[]
+     */
+    private $translations;
+
+    public function __construct()
+    {
+        $this->translations = new ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * @param int $position
+     */
+    public function setPosition($position)
+    {
+        $this->position = $position;
+    }
+
+    /**
+     * @return Media
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param Media $picture
+     */
+    public function setPicture(Media $picture)
+    {
+        $this->picture = $picture;
+    }
+
+
+    public function addTranslation(DiscountTranslation $serviceTranslation)
+    {
+        $serviceTranslation->setDiscount($this);
+        $this->translations[] = $serviceTranslation;
+
+        return $this;
+    }
+
+    public function setTranslations($serviceTranslations)
+    {
+        $this->translations = $serviceTranslations;
+
+        /** @var DiscountTranslation $translation */
+        foreach ($serviceTranslations as $translation) {
+            $translation->setDiscount($this);
+        }
+    }
+
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+
+    public function getName()
+    {
+        if ($this->getTranslations()->count() === 0) {
+            return "Not translated";
+        }
+
+        foreach ($this->getTranslations() as $translation) {
+            if ($translation->getLocale() === 'en') {
+                return $translation->getName();
+            }
+        }
+
+        return $this->getTranslations()->first()->getName();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
+}
+

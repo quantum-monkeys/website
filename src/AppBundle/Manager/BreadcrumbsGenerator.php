@@ -35,6 +35,12 @@ class BreadcrumbsGenerator
         $this->breadcrumbs->addItem('services', 'service_list');
     }
 
+    public function generateDiscounts()
+    {
+        $this->generateHomepage();
+        $this->breadcrumbs->addItem('discounts', 'discount_list');
+    }
+
     public function generateTrainings()
     {
         $this->generateHomepage();
