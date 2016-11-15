@@ -74,6 +74,15 @@ services:
               group: Services
               label: Service
 
+    admin.discounts:
+        class: AppBundle\Admin\DiscountAdmin
+        arguments: [~, AppBundle\Entity\Discount, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Discounts
+              label: Discount
+
     admin.person:
         class: AppBundle\Admin\PersonAdmin
         arguments: [~, AppBundle\Entity\Person, ~]
@@ -136,3 +145,12 @@ services:
               manager_type: orm
               group: Don't touch !
               label: ServiceTranslation
+
+    admin.discount_translation:
+        class: AppBundle\Admin\DiscountTranslationAdmin
+        arguments: [~, AppBundle\Entity\DiscountTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: DiscountTranslation
