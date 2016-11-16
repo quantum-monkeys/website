@@ -508,8 +508,42 @@ header.visual-area {
 }
 
 @media (max-width: 1200px) {
+    .top_contanear {
+        height: 30px;
+    }
+    .top_heade_right_area {
+        height: 30px;
+    }
+    .top_heade_right_area p {
+        line-height: 30px;
+    }
+    header {
+        min-height: 11em;
+    }
+    .navbar {
+        height: 3em;
+    }
     .navbar-header {
         float: none;
+    }
+    .navbar .container .navbar-brand {
+        width: 12em;
+        height: 5.2em;
+    }
+    .shape {
+        width: 9em;
+        background-color: #FF8A00;
+        padding: 0.1em 1.2em;
+        left: 1.5em;
+    }
+    .left-shape {
+        border-right: 1em solid #ce6f00;
+    }
+    .right-shape {
+        border-left: 1em solid #ce6f00;
+    }
+    .navbar .container .navbar-brand .shape img {
+        height: 5em;
     }
     .navbar-left,.navbar-right {
         float: none !important;
@@ -517,7 +551,7 @@ header.visual-area {
     }
     .navbar-toggle {
         display: block;
-        margin-top: 2.2em;
+        margin-top: 0.6em;
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
@@ -580,5 +614,10 @@ header.visual-area {
     .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .home-hero {
+        overflow: inherit;
+        font: 700 1em/1em 'Antonio-Bold', Arial, helvetica, sans-serif;
     }
 }

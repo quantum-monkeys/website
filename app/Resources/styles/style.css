@@ -3462,7 +3462,6 @@ input[type="search"].ExpInput {
 	}
 }
 @media screen and ( max-width:991px ) {
-	.visual-area { padding: 100px 0 80px; }
 	.event-box .date {
 		padding: 5px 10px;
 		font: 400 16px/22px Arial, helvetica, sans-serif;
@@ -3501,10 +3500,6 @@ input[type="search"].ExpInput {
 		margin: 0 5px;
 	}
 	.container { padding: 0; }
-	.visual-area {
-		padding: 10px 0 50px;
-		font-size: 14px;
-	}
 	.visual-area p { margin: 0 0 10px; }
 	.event-box { width: 50%; }
 	.breadcrumb {
