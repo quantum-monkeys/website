@@ -522,7 +522,7 @@ header {
     }
     .navbar-nav {
         float: none!important;
-        margin-top: 7.5px;
+        margin-top: 0;
     }
     .navbar-nav>li {
         float: none;
@@ -564,4 +564,9 @@ header {
         height: inherit;
         z-index: 1000;
     }
+}
+
+.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+    margin-left: 0;
+    margin-right: 0;
 }
