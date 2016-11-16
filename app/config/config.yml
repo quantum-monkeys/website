@@ -92,3 +92,9 @@ lexik_translation:
 white_october_breadcrumbs:
     separator: null
     translation_domain: menu
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
