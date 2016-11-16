@@ -5,6 +5,7 @@ events: Events
 home: Home
 services: Services
 trainings: Academy
+discounts: Discounts
 lang_switch:
   fr: FR
   en: EN
