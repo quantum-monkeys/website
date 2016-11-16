@@ -48,42 +48,35 @@
     </div>
     <!--end_top_contanear-->
 
-    <!--start_mob_logo_area-->
-    <div class="mob_logo_area"> <img src="/images/logo-m.png" alt="image description"> </div>
-    <!--end_mob_logo_area-->
+    <header{% block hero_style %} style="background-image: url(/images/topbg.jpg);"{% endblock hero_style %}>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <div class="left-shape"></div>
+                        <div class="shape">
+                            <img alt="Brand" src="/images/logo-white.png">
+                        </div>
+                        <div class="right-shape"></div>
+                    </a>
+                </div>
 
-    <!--start_mob_nav_contanear-->
-    <div class="mob_nav_contanear">
-        <div class="contanear">
-            <div class="small_manu">
-                <a style="display: inline-block;" class="toggleMenu active" href="#">
-                    <span><img src="/images/small_nav_icon.png" align="right"/></span>
-                </a>
-                {{ knp_menu_render('AppBundle:Builder:mainMenu', { template: 'AppBundle:Menu:knp_menu_mobile.html.twig' } ) }}
-            </div>
-        </div>
-    </div>
-    <!--end_mob_nav_contanear-->
-
-    <!--start_top_nav_and_slider_contanear-->
-    <div class="top_nav_and_slider_contanear">
-
-        {% block hero %}
-            <div class="top_slider_contanear">
-                <img src="/images/topbg.jpg" alt="" />
-            </div>
-        {% endblock hero %}
-
-        <div class="top_nav_contanear">
-            <div class="contanear">
-                <div class="logo_area"><a href="{{ url('homepage') }}"><img src="/images/logo.png" alt="image description"></a></div>
-                <div class="nav_main_area">
-                    {{ knp_menu_render('AppBundle:Builder:mainMenu', { template: 'AppBundle:Menu:knp_menu.html.twig' } ) }}
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    {{ knp_menu_render('AppBundle:Builder:mainMenu', {
+                        template: 'AppBundle:Menu:knp_menu.html.twig'
+                    } ) }}
                 </div>
             </div>
-        </div>
-    </div>
-    <!--end_top_nav_and_slider_contanear-->
+        </nav>
+
+        {% block hero %}{% endblock hero %}
+    </header>
 
     {% block preBody %}{% endblock %}
 

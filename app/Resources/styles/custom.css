@@ -5,11 +5,6 @@
     padding-top: 10px;
 }
 
-.current {
-    background: #FF8A00;
-    padding: 42px 15px;
-}
-
 .search-form .reset {
     border: 0;
     padding: 13px;
@@ -147,7 +142,7 @@
 .home-hero {
     overflow: hidden;
     position: relative;
-    padding: 480px 0 110px;
+    padding: 7em 0 2em;
     background-repeat: no-repeat;
     background-position: center top;
     -webkit-background-size: cover;
@@ -290,6 +285,10 @@
     font: 400 24px/28px Arial,helvetica,sans-serif;
 }
 
+.event .thumbnail .caption h3 a {
+    color: #fff;
+}
+
 .event .thumbnail .caption .info-box a {
     color: #fff;
 }
@@ -419,4 +418,150 @@
 
 .footer .hello span {
     color: #ff8a00;
+}
+
+header {
+    min-height: 16em;
+    position: relative;
+    padding-top: 4em;
+    font-family: 'Antonio-Bold';
+    font-size: 18px;
+}
+
+.navbar {
+    background: rgba(0,0,0,.75);
+    border: none;
+    height: 6em;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li.current > a,
+.navbar-default .navbar-nav > li:hover > a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 7em;
+    margin: -0.5em 0;
+    padding: 3em 0.5em;
+}
+
+.navbar-default .navbar-nav > li.current > a,
+.navbar-default .navbar-nav > li:hover > a {
+    background-color: #FF8A00;
+}
+
+.navbar .container .navbar-brand {
+    position: relative;
+    width: 15em;
+    height: 8.2em;
+    margin: -1.1em 0;
+    padding: 0;
+}
+
+.navbar .container .navbar-brand .shape img {
+    height: 7.5em;
+    display: inline-block;
+    margin: auto;
+}
+
+.left-shape,
+.right-shape,
+.shape {
+    position: absolute;
+    top: 0;
+    width: 1.5em;
+    height: 100%;
+}
+
+.shape {
+    width: 12em;
+    background-color: #FF8A00;
+    padding: 0.3em 1em;
+    left: 1.5em;
+}
+
+.left-shape {
+    left: 0;
+    border-right: 1.5em solid #ce6f00;
+    border-top: 1.2em solid transparent;
+    border-bottom: 1.2em solid transparent;
+}
+
+.right-shape {
+    right: 0;
+    border-left: 1.5em solid #ce6f00;
+    border-top: 1.2em solid transparent;
+    border-bottom: 1.2em solid transparent;
+}
+
+@media (max-width: 1200px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+        background-color: white;
+    }
+    .navbar-toggle {
+        display: block;
+        margin-top: 2.2em;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+        background-color: transparent;
+    }
+
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+        display:block !important;
+    }
+
+    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+        border: none;
+        z-index: 1000;
+    }
+
+    .navbar-default .navbar-nav > li {
+        background-color: white;
+        border: 1px solid grey;
+        border-collapse: collapse;
+        z-index: 1000;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color:grey;
+        text-align: center;
+        margin: 0;
+        padding: 1em;
+        height: inherit;
+        z-index: 1000;
+    }
+
+    .navbar-default .navbar-nav > li.current > a,
+    .navbar-default .navbar-nav > li:hover > a {
+        color:white;
+        margin: 0;
+        padding: 1em;
+        height: inherit;
+        z-index: 1000;
+    }
 }

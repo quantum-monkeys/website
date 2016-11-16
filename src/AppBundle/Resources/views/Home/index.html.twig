@@ -2,8 +2,10 @@
 
 {% trans_default_domain 'home' %}
 
+{% block hero_style %} style="background-image: url(/images/doors-1690423_1920-orange.jpg); background-position: center center;"{% endblock hero_style %}
+
 {% block hero %}
-    <div class="home-hero" style="background-image: url(/images/doors-1690423_1920-orange.jpg);">
+    <div class="home-hero">
         <h2>{{ 'hero.title'|trans|raw }}</h2>
         <h3>{{ 'hero.subtitle'|trans|raw }}</h3>
     </div>

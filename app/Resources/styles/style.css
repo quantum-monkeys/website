@@ -233,7 +233,6 @@ p.desig {
 }
 .top_contanear {
 	display: block;
-	float: left;
 	width: 100%;
 	height: 46px;
 	background: url(../images/top_social_bg2.jpg) top center repeat-y;
@@ -507,14 +506,12 @@ p.desig {
 
 .how_can_help_contanear {
 	display: block;
-	float: left;
 	width: 100%;
 	padding: 50px 0;
 	background: #efefef;
 }
 .how_can_help_text {
 	display: block;
-	float: left;
 	width: 100%;
 	text-align: center;
 }
@@ -529,14 +526,12 @@ p.desig {
 }
 .how_can_help_box_area {
 	display: block;
-	float: left;
 	width: 100%;
 	margin-top: 40px;
 }
 .how_can_help_box1 {
-	display: block;
-	float: left;
-	width: 33%;
+	display: inline-block;
+	width: 32%;
 	position: relative;
 	margin: 0 .1%
 }
@@ -1679,7 +1674,7 @@ p.desig {
 .visual-area {
 	overflow: hidden;
 	position: relative;
-	padding: 280px 0 110px;
+	/*padding: 280px 0 110px;*/
 	background-repeat: no-repeat;
 	background-position: center top;
 	-webkit-background-size: cover;
@@ -1765,11 +1760,11 @@ p.desig {
 	background: #fff;
 	color: #ff8a00;
 }
-.container {
-	width: 94%;
-	max-width: 1190px;
-	margin: 0 auto;
-}
+/*.container {*/
+	/*width: 94%;*/
+	/*max-width: 1190px;*/
+	/*margin: 0 auto;*/
+/*}*/
 
 /* time menu styles */
 .search-block {
