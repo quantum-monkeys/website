@@ -428,11 +428,16 @@ header {
     font-size: 18px;
 }
 
+header.visual-area {
+    height: 0;
+}
+
 .navbar {
     background: rgba(0,0,0,.75);
     border: none;
     height: 6em;
     border-radius: 0;
+    z-index: 2;
 }
 
 .navbar-default .navbar-nav > li > a,
@@ -457,12 +462,19 @@ header {
     height: 8.2em;
     margin: -1.1em 0;
     padding: 0;
+    z-index: 10;
 }
 
 .navbar .container .navbar-brand .shape img {
     height: 7.5em;
     display: inline-block;
     margin: auto;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-toggle
+{
+    z-index: 2;
 }
 
 .left-shape,
@@ -564,9 +576,9 @@ header {
         height: inherit;
         z-index: 1000;
     }
-}
 
-.container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-    margin-left: 0;
-    margin-right: 0;
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

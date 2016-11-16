@@ -1672,7 +1672,7 @@ p.desig {
 
 /* visual-area styles 30-10-16 */
 .visual-area {
-	overflow: hidden;
+	/*overflow: hidden;*/
 	position: relative;
 	/*padding: 280px 0 110px;*/
 	background-repeat: no-repeat;
@@ -1682,7 +1682,7 @@ p.desig {
 	text-align: center;
 	color: #fff;
 	text-transform: uppercase;
-	font: 16px/18px Arial, helvetica, sans-serif;
+	/*font: 16px/18px Arial, helvetica, sans-serif;*/
 }
 .visual-area:after {
 	top: 0;
@@ -1693,10 +1693,6 @@ p.desig {
 	content: "";
 	position: absolute;
 	background: rgba(0, 0, 0, 0.65);
-}
-.visual-area * {
-	position: relative;
-	z-index: 9;
 }
 .visual-area h1 {
 	color: #fff;
@@ -3116,9 +3112,7 @@ input[type="search"].ExpInput {
 	.codecon_half { display: none; }
 	.top_contanear {
 		width: 100%;
-		height: auto;
 		background: #000000;
-		padding: 3px 0 0 0;
 	}
 	.welcome_visitor_area {
 		line-height: normal;
