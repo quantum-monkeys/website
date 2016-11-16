@@ -74,7 +74,7 @@ class BreadcrumbsGenerator
     public function generateBlog()
     {
         $this->generateHomepage();
-        $this->breadcrumbs->addRouteItem('blog', 'sonata_news_home');
+        $this->breadcrumbs->addRouteItem('blog', 'blog');
     }
 
     public function generateBlogPost(Post $post)
