@@ -28,11 +28,6 @@ academy_learningpath:
     defaults:
         _controller: AppBundle:Academy:learningPath
 
-training_list:
-    path: /trainings
-    defaults:
-        _controller: AppBundle:Training:index
-
 event_list:
     path: /events
     defaults:
