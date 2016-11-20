@@ -1,5 +1,6 @@
 homepage: /
 service_list: /services
+discount_list: /discounts
 academy_index: /academie
 academy_workshop: '/academie/workshop/{id}'
 academy_learningpath: '/academie/learningpath/{id}'
