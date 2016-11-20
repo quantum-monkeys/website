@@ -45,30 +45,32 @@
             </article>
         {% endfor %}
 
-        <hr>
+        {% if workshops|length %}
+            <hr>
 
-        <h2>{{ 'academy.workshops'|trans }}</h2>
+            <h2>{{ 'academy.workshops'|trans }}</h2>
 
-        {% for workshop in workshops %}
-            <article class="training row {% if loop.index % 2 == 1 %}left{% else %}right{% endif %}">
-                <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4{% if loop.index % 2 == 0 %} hidden-lg hidden-md hidden-sm{% endif %}">
-                    {% media workshop.picture, 'service_big' with {
-                        'height': 'auto'
-                    } %}
-                </picture>
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                    <h3>{{ translate(workshop, 'name') }}</h3>
-                    <p>{{ translate(workshop, 'abstract')|markdown }}</p>
-                    <a href="{{ path('academy_workshop', { id: workshop.id }) }}" class="btn btn-default">
-                        {{ 'training.learn_more'|trans }}
-                    </a>
-                </div>
-                <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs{% if loop.index % 2 == 1 %}  hidden-lg hidden-md hidden-sm{% endif %}">
-                    {% media workshop.picture, 'service_big' with {
-                        'height': 'auto'
-                    } %}
-                </picture>
-            </article>
-        {% endfor %}
+            {% for workshop in workshops %}
+                <article class="training row {% if loop.index % 2 == 1 %}left{% else %}right{% endif %}">
+                    <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4{% if loop.index % 2 == 0 %} hidden-lg hidden-md hidden-sm{% endif %}">
+                        {% media workshop.picture, 'service_big' with {
+                            'height': 'auto'
+                        } %}
+                    </picture>
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                        <h3>{{ translate(workshop, 'name') }}</h3>
+                        <p>{{ translate(workshop, 'abstract')|markdown }}</p>
+                        <a href="{{ path('academy_workshop', { id: workshop.id }) }}" class="btn btn-default">
+                            {{ 'training.learn_more'|trans }}
+                        </a>
+                    </div>
+                    <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs{% if loop.index % 2 == 1 %}  hidden-lg hidden-md hidden-sm{% endif %}">
+                        {% media workshop.picture, 'service_big' with {
+                            'height': 'auto'
+                        } %}
+                    </picture>
+                </article>
+            {% endfor %}
+        {% endif %}
     </div>
 {% endblock %}

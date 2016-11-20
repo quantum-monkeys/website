@@ -22,9 +22,6 @@ AppBundle\Entity\EventOccurrenceTranslation:
         eventOccurrence:
             targetEntity: AppBundle\Entity\EventOccurrence
             inversedBy: translations
-            cascade:
-                - "persist"
-                - "remove"
             joinColumn:
                 nullable: false
                 onDelete: cascade

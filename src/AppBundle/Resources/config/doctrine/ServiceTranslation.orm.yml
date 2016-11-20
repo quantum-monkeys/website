@@ -23,9 +23,6 @@ AppBundle\Entity\ServiceTranslation:
         service:
             targetEntity: AppBundle\Entity\Service
             inversedBy: translations
-            cascade:
-                - "persist"
-                - "remove"
             joinColumn:
                 nullable: false
                 onDelete: cascade

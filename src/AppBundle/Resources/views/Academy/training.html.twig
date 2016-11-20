@@ -38,57 +38,62 @@
                     </div>
                 </div>
 
-                <div class="sessions">
-                    <h4>{{ 'training.sessions'|trans }}</h4>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th><i class="fa fa-calendar" aria-hidden="true"></i> {{ 'training.sessions.begin'|trans }}</th>
-                                <th><i class="fa fa-language" aria-hidden="true"></i> {{ 'training.sessions.language'|trans }}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for session in training.sessions %}
+                {% if training.sessions|length %}
+                    <div class="sessions">
+                        <h4>{{ 'training.sessions'|trans }}</h4>
+
+                        <table class="table table-striped">
+                            <thead>
                                 <tr>
-                                    <td>{{ session.begin|localizeddate('medium', 'none') }}</td>
-                                    <td>{{ languageName(session.language) }}</td>
+                                    <th><i class="fa fa-calendar" aria-hidden="true"></i> {{ 'training.sessions.begin'|trans }}</th>
+                                    <th><i class="fa fa-language" aria-hidden="true"></i> {{ 'training.sessions.language'|trans }}</th>
                                 </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                {% for session in training.sessions %}
+                                    <tr>
+                                        <td>{{ session.begin|localizeddate('medium', 'none') }}</td>
+                                        <td>{{ languageName(session.language) }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
 
                 <a class="btn btn-default btn-large pull-right" href="#contact-us">
                     {{ 'training.book'|trans }}
                 </a>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6 col-md-6 col-lg-6">
-                {% block modules %}{% endblock %}
-            </div>
-            <div class="col-sm-6 col-md-6 col-lg-6">
-                {% if training.trainers|length %}
-                    <h3>{{ 'training.trainers'|trans }}</h3>
-                    <ul class="trainers">
-                        {% for trainer in training.trainers %}
-                            <li>
-                                <div class="row">
-                                    <picture class="col-xs-12 col-sm-6">
-                                        {% media trainer.picture, 'person_event' with {
-                                            'height': 'auto'
-                                        } %}
-                                    </picture>
-                                    <div class="col-xs-12 col-sm-6">
-                                        <h3>{{ trainer.displayName }}</h3>
-                                        <p>{{ translate(trainer, 'description') }}</p>
+        {% if training.trainers|length or training.modules is defined and training.modules|length %}
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    {% block modules %}{% endblock %}
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    {% if training.trainers|length %}
+                        <h3>{{ 'training.trainers'|trans }}</h3>
+                        <ul class="trainers">
+                            {% for trainer in training.trainers %}
+                                <li>
+                                    <div class="row">
+                                        <picture class="col-xs-12 col-sm-6">
+                                            {% media trainer.picture, 'person_event' with {
+                                                'height': 'auto'
+                                            } %}
+                                        </picture>
+                                        <div class="col-xs-12 col-sm-6">
+                                            <h3>{{ trainer.displayName }}</h3>
+                                            <p>{{ translate(trainer, 'description') }}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
             </div>
-        </div>
+        {% endif %}
     </div>
 {% endblock %}
