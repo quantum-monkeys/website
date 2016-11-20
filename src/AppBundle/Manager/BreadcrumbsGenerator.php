@@ -3,6 +3,8 @@
 namespace AppBundle\Manager;
 
 use AppBundle\Entity\EventOccurrence;
+use AppBundle\Entity\Trainings\LearningPath;
+use AppBundle\Entity\Trainings\Workshop;
 use Application\Sonata\NewsBundle\Entity\Post;
 use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
@@ -45,6 +47,36 @@ class BreadcrumbsGenerator
     {
         $this->generateHomepage();
         $this->breadcrumbs->addRouteItem('trainings', 'training_list');
+    }
+
+    public function generateAcademy()
+    {
+        $this->generateHomepage();
+        $this->breadcrumbs->addRouteItem('academy', 'academy_index');
+    }
+
+    public function generateWorkshop(Workshop $workshop)
+    {
+        $this->generateAcademy();
+        $this->breadcrumbs->addRouteItem(
+            $this->objectTranslator->translate($workshop, 'name'),
+            'academy_workshop',
+            [
+                'id' => $workshop->getId(),
+            ]
+        );
+    }
+
+    public function generateLearningPath(LearningPath $learningPath)
+    {
+        $this->generateAcademy();
+        $this->breadcrumbs->addRouteItem(
+            $this->objectTranslator->translate($learningPath, 'name'),
+            'academy_learningpath',
+            [
+                'id' => $learningPath->getId(),
+            ]
+        );
     }
 
     public function generateEvents()

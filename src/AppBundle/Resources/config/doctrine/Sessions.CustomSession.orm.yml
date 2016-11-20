@@ -1,0 +1,18 @@
+AppBundle\Entity\Sessions\CustomSession:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Sessions\CustomSessionRepository
+
+    manyToMany:
+      modules:
+        targetEntity: AppBundle\Entity\Trainings\Module
+        joinTable:
+          name: custom_session_module
+          joinColumns:
+            session_id:
+              referencedColumnName: id
+          inverseJoinColumns:
+            module_id:
+              referencedColumnName: id
+
+    lifecycleCallbacks: {  }

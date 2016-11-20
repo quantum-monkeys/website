@@ -1,3 +1,10 @@
+@media screen and (max-width: 767px) {
+    .breadcrumb {
+        padding: 1em 1.4em;
+        font-size: .8em;
+    }
+}
+
 .codecon_half {
     float: right;
     width: 400px;
@@ -336,25 +343,6 @@
 .see_all_but:hover {
     background: #000;
     color: #ff8a00;
-}
-
-.academy-description,
-.over-cont {
-    font-family: "Open Sans";
-    font-size: 13px;
-    color: grey;
-}
-
-.academy-description {
-    margin: 40px;
-}
-
-.academy-title {
-    font-family: Antonio-Bold,Arial,helvetica,sans-serif;
-    text-align: center;
-    font-size: 50px;
-    color: #fc8700;
-    text-transform: uppercase;
 }
 
 .amazings-text h3 {

@@ -1,0 +1,253 @@
+.academy h2 {
+    font-size: 3em;
+    text-align: center;
+    font-family: Antonio-Bold, Arial, helvetica, sans-serif;
+    color: #FF8A00;
+    margin-bottom: 1em;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.academy picture img {
+    width: 80%;
+    margin: 2em auto;
+    display: block;
+}
+
+.academy-description {
+    font-family: "Open Sans";
+    font-size: 1em;
+    color: grey;
+}
+
+.academy-description {
+    padding-top: 3em;
+}
+
+.academy .training.left {
+    text-align: left;
+}
+
+.academy .training.right {
+    text-align: right;
+}
+
+.academy .training .certification i.fa {
+    font-size: 2em;
+}
+
+.academy .training .certification span {
+    line-height: 2em;
+    font-size: 1em;
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    .academy .training .certification span {
+        line-height: 2em;
+        font-size: 1.5em;
+    }
+
+    .academy .training .certification i.fa {
+        font-size: 3em;
+    }
+}
+
+.academy .row,
+.training .row {
+    padding: 0 15px;
+}
+
+.training h2 {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    color: #FF8A00;
+}
+
+.training picture img {
+    width: 100%;
+}
+
+.training {
+    font-family: 'Open Sans', Arial;
+    color: grey;
+}
+
+.training .tags {
+    margin-bottom: 1em;
+}
+
+.training .tags .label {
+    font-size: 1em;
+}
+
+.training p {
+    font-size: 1em;
+}
+
+.training i.fa {
+    font-size: 3em;
+}
+
+.training .fa-certificate {
+    color: gold;
+}
+
+.training .certification {
+    margin: 2em 0;
+}
+
+.training .certification i {
+    display: inline-block;
+}
+
+.training .certification span {
+    vertical-align: top;
+    display: inline-block;
+    width: 70%;
+    margin-left: 1em;
+}
+
+.training .session {
+    margin: 2em 1em;
+}
+
+.training .price {
+    padding: 0 1.5em;
+    color: #FF8A00;
+    display: inline-block;
+}
+
+.training .price span {
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 1em;
+    line-height: 3em;
+}
+
+.training .price span {
+    font-size: 2em;
+    line-height: 1.5em;
+    margin-left: 0.7em;
+}
+
+.training .discounts {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+
+.training .discounts a {
+    color: #FF8A00;
+}
+
+.training .sessions > h4 {
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 2em 0 1em;
+}
+
+.training .sessions .fa {
+    font-size: 1.5em;
+    margin-right: 0.5em;
+}
+
+.btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    margin: 1em 0;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default.active,
+.btn-default.active:hover,
+.btn-default:active {
+    color: #fff;
+    background-color: #FF8A00;
+    border-color: #FF8A00;
+    box-shadow: none;
+}
+
+.training h3 {
+    text-transform: uppercase;
+    font-family: 'Open Sans', Arial;
+    font-size: 1.8em;
+    font-weight: 700;
+    padding: 1em 0;
+    margin: 0;
+}
+
+.training .trainers {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.training .trainers li {
+    margin-bottom: 1em;
+}
+
+.training .trainers h3 {
+    font-family: 'Open Sans', Arial;
+    font-weight: 400;
+    margin: 0.5em 0;
+    padding: 0;
+    text-transform: none;
+}
+
+.training .trainers p {
+    text-align: justify;
+}
+
+.modules .module {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.modules .module+.module {
+    margin: 0;
+}
+
+.modules .module .panel-heading {
+    color: #fff;
+    background-color: #131313;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 1em 2em;
+}
+
+.modules .module .panel-heading .panel-title {
+    font-family: 'Open Sans', Arial;
+    font-size: 1.4em;
+}
+
+.modules .module .panel-heading .panel-title a {
+    color: #FF8A00;
+    text-decoration: none;
+}
+
+.modules .module .panel-heading .panel-title a.collapsed {
+    color: #fff;
+}
+
+.modules .module .panel-body {
+    color: #fff;
+    background-color: grey;
+    border-left: 1px solid #131313;
+    border-right: 1px solid #131313;
+}
+.modules.panel-group .panel-heading+.panel-collapse>.list-group,
+.modules.panel-group .panel-heading+.panel-collapse>.panel-body {
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .training .certification span {
+        width: 80%;
+    }
+}

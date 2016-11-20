@@ -1,0 +1,16 @@
+AppBundle\Entity\Sessions\WorkshopSession:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Sessions\WorkshopSessionRepository
+
+    manyToOne:
+        workshop:
+            targetEntity: AppBundle\Entity\Trainings\Workshop
+            inversedBy: sessions
+            cascade:
+                - "persist"
+                - "remove"
+            joinColumn:
+                onDelete: cascade
+
+    lifecycleCallbacks: {  }
