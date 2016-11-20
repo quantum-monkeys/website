@@ -27,9 +27,6 @@ AppBundle\Entity\Trainings\TrainingTranslation:
         training:
             targetEntity: AppBundle\Entity\Trainings\Training
             inversedBy: translations
-            cascade:
-                - "persist"
-                - "remove"
             joinColumn:
                 nullable: false
                 onDelete: cascade

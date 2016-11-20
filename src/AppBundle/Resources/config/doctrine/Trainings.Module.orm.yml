@@ -13,9 +13,6 @@ AppBundle\Entity\Trainings\Module:
         learningPath:
             targetEntity: AppBundle\Entity\Trainings\LearningPath
             inversedBy: modules
-            cascade:
-                - "persist"
-                - "remove"
             joinColumn:
                 nullable: false
                 onDelete: cascade

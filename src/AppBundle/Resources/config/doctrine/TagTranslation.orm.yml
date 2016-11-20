@@ -20,9 +20,6 @@ AppBundle\Entity\TagTranslation:
         tag:
             targetEntity: AppBundle\Entity\Tag
             inversedBy: translations
-            cascade:
-                - "persist"
-                - "remove"
             joinColumn:
                 nullable: false
                 onDelete: cascade

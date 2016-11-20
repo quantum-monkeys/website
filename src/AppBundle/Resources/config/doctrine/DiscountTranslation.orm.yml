@@ -21,9 +21,6 @@ AppBundle\Entity\DiscountTranslation:
         discount:
             targetEntity: AppBundle\Entity\Discount
             inversedBy: translations
-            cascade:
-                - "persist"
-                - "remove"
             joinColumn:
                 nullable: false
                 onDelete: cascade
