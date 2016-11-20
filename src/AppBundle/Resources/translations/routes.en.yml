@@ -1,6 +1,8 @@
 homepage: /
 service_list: /services
-training_list: /trainings
+academy_index: /academie
+academy_workshop: '/academie/workshop/{id}'
+academy_learningpath: '/academie/learningpath/{id}'
 event_list: /events
 event_show: '/events/{id}'
 about_us: /about-us
