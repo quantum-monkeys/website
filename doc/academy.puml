@@ -1,0 +1,84 @@
+@startuml
+
+namespace Trainings {
+    class Training {
+        - name : string
+        - description : string
+        - abstract : string
+        - picture : Media
+    }
+
+    class LearningPath {
+      - modules : Module[]
+    }
+    Training <|-- LearningPath
+    LearningPath o-- Module
+
+    class Workshop
+    Training <|-- Workshop
+
+    class Module {
+        - name : string
+        - description : string
+    }
+}
+
+namespace Sessions {
+    abstract class Session {
+        - attendees : SessionAttendance[]
+        - language : string
+        - courses : Course[]
+    }
+    Session o-- Course
+
+    class WorkshopSession {
+        - workshop : Trainings.Workshop
+    }
+    Session <|-- WorkshopSession
+    WorkshopSession o-- Trainings.Workshop
+
+    class LearningPathSession {
+        - learningPath : Trainings.LearningPath
+    }
+    Session <|-- LearningPathSession
+    LearningPathSession o-- Trainings.LearningPath
+
+    class CustomSession {
+        - modules: Trainings.Module[]
+    }
+    Session <|-- CustomSession
+    CustomSession o-- Trainings.Module
+
+    class Course {
+        - begin : date
+        - end : date
+        - modules : Module[]
+        - trainers : Person[]
+    }
+    Course o-- Trainings.Module
+    QM.Person --o Course
+}
+
+namespace Attendances {
+    class SessionAttendance {
+        - session: Session
+        - attendee: Attendee
+        - paid: boolean
+    }
+    SessionAttendance o-- Sessions.Session
+    SessionAttendance o-- Attendee
+
+    class Attendee {
+        - firstName : string
+        - lastName : string
+        - email : string
+        - phoneNumber : string
+        - attendances : SessionAttendance[]
+    }
+}
+
+namespace QM {
+    class Person
+}
+
+@enduml

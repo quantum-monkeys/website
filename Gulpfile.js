@@ -23,13 +23,6 @@ gulp.task('css', () => {
     gulp.src([
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
-            // 'node_modules/jcf/css/jcf.css',
-            // 'app/Resources/styles/vendors/simple-line-icons.css',
-            // 'app/Resources/styles/vendors/yamm/yamm.css',
-            // 'app/Resources/styles/vendors/yamm/menu.css',
-            // 'app/Resources/styles/vendors/masterslider/masterslider.css',
-            // 'app/Resources/styles/vendors/masterslider/skin/style.css',
-            // 'app/Resources/styles/vendors/masterslider/style.css'
         ])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
@@ -40,8 +33,7 @@ gulp.task('css', () => {
 
     return gulp.src([
             'app/Resources/styles/style.css',
-            // 'app/Resources/styles/reset.css',
-            // 'app/Resources/styles/orange.css',
+            'app/Resources/styles/academy.css',
             'app/Resources/styles/custom.css'
         ])
         .pipe(cleanCSS({debug: true}, function(details) {
@@ -62,18 +54,13 @@ gulp.task('fonts', () => {
 
 gulp.task('js', () => {
     gulp.src([
-        'node_modules/jquery/dist/jquery.js',
-        'node_modules/bootstrap/dist/js/bootstrap.js',
-        'node_modules/jcf/dist/js/jcf.js',
-        'node_modules/jcf/dist/js/jcf.select.js',
-        'node_modules/jcf/dist/js/jcf.checkbox.js',
-        'node_modules/jquery-form/jquery.form.js',
-        'app/Resources/scripts/vendors/responsiveCarousel.min.js',
-            // 'app/Resources/scripts/vendors/masterslider/jquery.easing.min.js',
-            // 'app/Resources/scripts/vendors/masterslider/masterslider.min.js',
-            // 'app/Resources/scripts/vendors/yamm/sticky.js',
-            // 'app/Resources/scripts/vendors/scrolltotop/totop.js',
-            // 'app/Resources/scripts/vendors/jquery.form.js'
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/bootstrap/dist/js/bootstrap.js',
+            'node_modules/jcf/dist/js/jcf.js',
+            'node_modules/jcf/dist/js/jcf.select.js',
+            'node_modules/jcf/dist/js/jcf.checkbox.js',
+            'node_modules/jquery-form/jquery.form.js',
+            'app/Resources/scripts/vendors/responsiveCarousel.min.js',
         ])
         .pipe(concat('vendors.min.js'))
         .pipe(uglify())

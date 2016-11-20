@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Sessions\Course;
 use AppBundle\Interfaces\TranslatableInterface;
 use Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -53,9 +54,15 @@ class Person implements TranslatableInterface
      */
     private $translations;
 
+    /**
+     * @var Course[]
+     */
+    protected $courses;
+
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+        $this->courses = new ArrayCollection();
     }
 
     /**
@@ -241,6 +248,22 @@ class Person implements TranslatableInterface
     public function getTranslations()
     {
         return $this->translations;
+    }
+
+    /**
+     * @return Course[]
+     */
+    public function getCourses()
+    {
+        return $this->courses;
+    }
+
+    /**
+     * @param Course[] $courses
+     */
+    public function setCourses($courses)
+    {
+        $this->courses = $courses;
     }
 }
 

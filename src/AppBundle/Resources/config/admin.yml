@@ -16,13 +16,82 @@ services:
               group: Events
               label: Location
 
+
+    admin.trainings.workshop:
+        class: AppBundle\Admin\Trainings\WorkshopAdmin
+        arguments: [~, AppBundle\Entity\Trainings\Workshop, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Trainings
+              label: Workshop
+    admin.trainings.learning_path:
+        class: AppBundle\Admin\Trainings\LearningPathAdmin
+        arguments: [~, AppBundle\Entity\Trainings\LearningPath, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Trainings
+              label: LearningPath
+    admin.trainings.module:
+        class: AppBundle\Admin\Trainings\ModuleAdmin
+        arguments: [~, AppBundle\Entity\Trainings\Module, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Trainings
+              label: Module
+    admin.trainings.tag:
+        class: AppBundle\Admin\TagAdmin
+        arguments: [~, AppBundle\Entity\Tag, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Trainings
+              label: Tag
+
+
+    admin.sessions.workshop_session:
+        class: AppBundle\Admin\Sessions\WorkshopSessionAdmin
+        arguments: [~, AppBundle\Entity\Sessions\WorkshopSession, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Sessions
+              label: Workshop
+    admin.sessions.learning_path_session:
+        class: AppBundle\Admin\Sessions\LearningPathSessionAdmin
+        arguments: [~, AppBundle\Entity\Sessions\LearningPathSession, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Sessions
+              label: Learning Path
+    admin.sessions.custom_session:
+        class: AppBundle\Admin\Sessions\CustomSessionAdmin
+        arguments: [~, AppBundle\Entity\Sessions\CustomSession, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Sessions
+              label: Custom
+    admin.sessions.course:
+        class: AppBundle\Admin\Sessions\CourseAdmin
+        arguments: [~, AppBundle\Entity\Sessions\Course, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Sessions
+              label: Course
+
+
     admin.conference:
         class: AppBundle\Admin\Events\ConferenceAdmin
         arguments: [~, AppBundle\Entity\Events\Conference, ~]
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Training
+              group: Events
               label: Conference
     admin.meet_a_coach:
         class: AppBundle\Admin\Events\MeetACoachAdmin
@@ -30,7 +99,7 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Training
+              group: Events
               label: Meet a coach
     admin.power_training:
         class: AppBundle\Admin\Events\PowerTrainingAdmin
@@ -38,7 +107,7 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Training
+              group: Events
               label: PowerTraining
     admin.seminar:
         class: AppBundle\Admin\Events\SeminarAdmin
@@ -46,7 +115,7 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Training
+              group: Events
               label: Seminar
     admin.workshop:
         class: AppBundle\Admin\Events\WorkshopAdmin
@@ -54,7 +123,7 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Training
+              group: Events
               label: Workshop
     admin.other:
         class: AppBundle\Admin\Events\OtherAdmin
@@ -62,7 +131,7 @@ services:
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Training
+              group: Events
               label: Other
 
     admin.services:
@@ -154,3 +223,28 @@ services:
               manager_type: orm
               group: Don't touch !
               label: DiscountTranslation
+
+    admin.training_translation:
+        class: AppBundle\Admin\Trainings\TrainingTranslationAdmin
+        arguments: [~, AppBundle\Entity\Trainings\TrainingTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: TrainingTranslation
+    admin.module_translation:
+        class: AppBundle\Admin\Trainings\ModuleTranslationAdmin
+        arguments: [~, AppBundle\Entity\Trainings\ModuleTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: ModuleTranslation
+    admin.tag_translation:
+        class: AppBundle\Admin\TagTranslationAdmin
+        arguments: [~, AppBundle\Entity\TagTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: TagTranslation

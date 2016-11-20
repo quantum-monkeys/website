@@ -13,6 +13,21 @@ discount_list:
     defaults:
         _controller: AppBundle:Discount:index
 
+academy_index:
+    path: /academy
+    defaults:
+        _controller: AppBundle:Academy:index
+
+academy_workshop:
+    path: /academy/workshop/{id}
+    defaults:
+        _controller: AppBundle:Academy:workshop
+
+academy_learningpath:
+    path: /academy/learningPath/{id}
+    defaults:
+        _controller: AppBundle:Academy:learningPath
+
 training_list:
     path: /trainings
     defaults:

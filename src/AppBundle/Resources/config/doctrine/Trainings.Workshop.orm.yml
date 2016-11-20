@@ -1,0 +1,16 @@
+AppBundle\Entity\Trainings\Workshop:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Trainings\WorkshopRepository
+
+    oneToMany:
+        sessions:
+            targetEntity: AppBundle\Entity\Sessions\WorkshopSession
+            mappedBy: workshop
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }

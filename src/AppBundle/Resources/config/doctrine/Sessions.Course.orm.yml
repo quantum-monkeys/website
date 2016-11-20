@@ -1,0 +1,44 @@
+AppBundle\Entity\Sessions\Course:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Sessions\CourseRepository
+
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        begin:
+            type: datetime
+        end:
+            type: datetime
+
+    manyToMany:
+        modules:
+          targetEntity: AppBundle\Entity\Trainings\Module
+          joinTable:
+            name: course_module
+            joinColumns:
+              course_id:
+                referencedColumnName: id
+            inverseJoinColumns:
+              module_id:
+                referencedColumnName: id
+        trainers:
+            targetEntity: AppBundle\Entity\Person
+            fetch: EAGER
+            joinTable:
+                name: course_trainer
+                joinColumns:
+                    workshop_session_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    speaker_id:
+                        referencedColumnName: id
+        sessions:
+          targetEntity: AppBundle\Entity\Sessions\Session
+          mappedBy: courses
+    lifecycleCallbacks: {  }

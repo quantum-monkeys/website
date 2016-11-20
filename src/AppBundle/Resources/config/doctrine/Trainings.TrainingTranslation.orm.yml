@@ -1,0 +1,36 @@
+AppBundle\Entity\Trainings\TrainingTranslation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TrainingTranslationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        locale:
+            type: string
+            length: 5
+        name:
+            type: string
+            length: 255
+        certification:
+            type: string
+            length: 255
+        abstract:
+            type: text
+            nullable: true
+        description:
+            type: text
+    manyToOne:
+        training:
+            targetEntity: AppBundle\Entity\Trainings\Training
+            inversedBy: translations
+            cascade:
+                - "persist"
+                - "remove"
+            joinColumn:
+                nullable: false
+                onDelete: cascade
+    lifecycleCallbacks: {  }

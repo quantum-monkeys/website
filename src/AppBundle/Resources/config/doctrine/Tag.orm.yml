@@ -1,0 +1,22 @@
+AppBundle\Entity\Tag:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\TagRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\TagTranslation
+            mappedBy: tag
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }

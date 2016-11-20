@@ -47,4 +47,10 @@ AppBundle\Entity\Person:
                 - "persist"
                 - "remove"
             indexBy: locale
+
+    manyToMany:
+        courses:
+          targetEntity: AppBundle\Entity\Sessions\Course
+          mappedBy: trainers
+
     lifecycleCallbacks: {  }

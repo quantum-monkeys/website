@@ -1,0 +1,16 @@
+AppBundle\Entity\Sessions\LearningPathSession:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Sessions\LearningPathSessionRepository
+
+    manyToOne:
+        learningPath:
+            targetEntity: AppBundle\Entity\Trainings\LearningPath
+            inversedBy: sessions
+            cascade:
+                - "persist"
+                - "remove"
+            joinColumn:
+                onDelete: cascade
+
+    lifecycleCallbacks: {  }

@@ -1,0 +1,20 @@
+AppBundle\Entity\Trainings\LearningPath:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Trainings\LearningPathRepository
+
+    oneToMany:
+        modules:
+            targetEntity: AppBundle\Entity\Trainings\Module
+            mappedBy: learningPath
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+        sessions:
+            targetEntity: AppBundle\Entity\Sessions\LearningPathSession
+            mappedBy: learningPath
+            fetch: EAGER
+
+    lifecycleCallbacks: {  }
