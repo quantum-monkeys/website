@@ -1,6 +1,6 @@
 training:
-  free_test: One free test attempt is included in the package.
-  discounts: Eligible for up to 75% rebate! Check our <a href="%discounts_url%">PROMOTIONS page</a>
+  free_test: 'Une participation au test permettant l''obtention de la certification est incluse dans le parcours.'
+  discounts: 'Éligible à un rabais atteignant jusqu''à 75% ! Consulter notre <a href="%discounts_url%">page PROMOTIONS </a>'
   book: S'inscrire
   trainers: Formateurs
   modules: Modules
@@ -12,5 +12,5 @@ training:
 
 academy:
   description: "Si vous voulez en apprendre plus sur l’Agilité, la culture d’entreprise ou les modèles organisationnels modernes, vous êtes à la bonne place. Quantum Académie a pour mission de transmettre des compétences adaptées au monde du travail d’aujourd’hui.\n\nNous offrons des ateliers et différents parcours menant à une certification sur des sujets tels que :\n\n- L’Agilité d’équipe;\n- L’Agilité organisationnel;\n- L’Agilité d’affaires;\n- Les entreprises connectées et les modèles populaires;\n- L’auto-organisation;\n- Les méthodes de management émergentes.\n\nNos clients corporatifs apprécient notre formule qui permet de dispenser les cours à même leurs locaux. Notre approche modulaire permet aussi aux formations d’êtres offertes en plusieurs sessions de manière à accommoder leurs horaires. Elle permet aussi de créer des formations sur mesure en choisissant les modules désirés.\n\nNous avons aussi une offre destinée aux entrepreneurs, aux communautés et aux étudiants. Plusieurs de nos formations sont offertes dans nos locaux pour permettre à des individus d’y participer sur une base individuelle. Consultez notre page PROMOTIONS pour savoir comment vous pouvez accumuler plusieurs rabais qui vous permettront de suivre la formation appropriée à un prix abordable !"
-  learning_paths: Chemin d'apprentissage
+  learning_paths: Chemins d'apprentissage
   workshops: Ateliers
