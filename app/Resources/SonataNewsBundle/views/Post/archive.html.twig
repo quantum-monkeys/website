@@ -2,6 +2,9 @@
 
 {% trans_default_domain 'blog' %}
 
+{% block description %}{{ 'meta.description'|trans }}{% endblock %}
+{% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}
+
 {% block body %}
     <div class="container">
         <div class="row">

@@ -2,6 +2,9 @@
 
 {% trans_default_domain 'academy' %}
 
+{% block description %}{{ 'meta.description'|trans }}{% endblock %}
+{% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}
+
 {% block body %}
     <div class="training workshop container">
         <div class="row">

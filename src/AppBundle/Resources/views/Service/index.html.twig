@@ -1,5 +1,10 @@
 {% extends 'AppBundle::base.html.twig' %}
 
+{% trans_default_domain 'services' %}
+
+{% block description %}{{ 'meta.description'|trans }}{% endblock %}
+{% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}
+
 {% block body %}
     <div class="container">
         {% for service in services %}

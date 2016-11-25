@@ -28,3 +28,5 @@ comment:
       placeholder: Comment
     submit:
       label: Submit
+meta:
+  description: 'Discover our articles on modern management practices development!'

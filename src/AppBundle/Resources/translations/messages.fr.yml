@@ -13,6 +13,10 @@ contact:
     email:
       title: Courriel
       value: company@quantummonkeys.com
+meta:
+  title: 'Coaching corporatif et formations - Quantum Monkeys'
+  description: 'Coaching corporatif et formations dispensées par des experts permettant d''accompagner la transition des organisations vers des organisations vers des modes de gestion modernes (Agile, Lean, Podularity)'
+  keywords: 'Montréal corporatif coaching Agile Lean Podularité transition consultation services'
 menu:
   home: Accueil
   about_us: __menu.about_us
