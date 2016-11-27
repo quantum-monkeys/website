@@ -1,0 +1,105 @@
+.services {
+    color: grey;
+}
+
+.services .service.left {
+    text-align: left;
+}
+
+.services .service.right {
+    text-align: right;
+}
+
+.services .row {
+    padding: 0 15px;
+}
+
+.services picture img {
+    width: 100%;
+}
+
+.services .price_table_container{
+    text-align:center;
+    color:#666;
+    margin-top:35px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #ddd;
+}
+
+.services .price_table_heading{
+    font-size: 1.5em;
+    padding: 0.5em;
+    background: #EEE;
+}
+
+
+.services .price_table_row {
+    padding: 0.7em;
+    background: #FFF;
+}
+
+.services .cost{
+    padding: 0.5em;
+    font-size: 1.5em;
+    background:#FF8A00;
+    color:#FFF;
+    margin: 0;
+}
+.services .cost span{
+    font-size: 0.5em;
+}
+
+.services .price_table_row:nth-of-type(even) {
+    background: #F8F8F8;
+}
+.services .packages .btn {
+    border-radius: 0;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.services .recommended{
+    /*USER DEFINED COLOUR*/
+    background:#FF3A3A;
+    color:#FFF;
+    /*USER DEFINED COLOUR*/
+    padding:3px 0 3px 0;
+    margin-top:10px;
+    text-align:center;
+    margin-bottom:-35px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.services .spacer{width:100%;height:50px;}
+
+.row-centered {
+    text-align: center;
+}
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right: -4px;
+}
+
+.services h3 {
+    text-transform: uppercase;
+    font-family: 'Open Sans', Arial;
+    font-size: 1.8em;
+    font-weight: 700;
+    padding: 1em 0;
+    margin: 0;
+}
+
+.btn-info,
+.btn-info:hover,
+.btn-info.active,
+.btn-info.active:hover,
+.btn-info:active {
+    color: #fff;
+    background-color: #bbb;
+    border-color: #aaa;
+    box-shadow: none;
+}

@@ -1,2 +1,18 @@
 meta:
   description: 'Corporate coaching and consulting services offered by experts of new management practices (Agile, Lean, Podularity).'
+
+contact_us: Contact us
+
+package:
+  per_month: '/ month'
+  location:
+    by_phone: By phone
+    or: or
+    on_site: On site
+  duration:
+    hours: '%count%h'
+    minutes: '%count%min'
+  emergency_calls: '{0} -|]0,Inf[ %count% x 15 min'
+  emails: '{0} -|{1} email|]1, 100] %count% emails|]100,Inf[ ∞'
+  minimal_engagement: '{0} -|{1} 1 month|]1,Inf[ %count% months'
+  more: 'Learn more'

@@ -1,0 +1,26 @@
+@startuml
+
+namespace Services {
+    class Service {
+        - name : string
+        - description : string
+        - packages : array
+        - price : float
+    }
+
+    class Package {
+      - position : integer
+      - service : Service
+      - name : string
+      - remote : boolean
+      - onSite : boolean
+      - duration : time
+      - emergencyCalls : integer
+      - emails : string
+      - minimalEngagement : integer
+      - price : float
+    }
+    Service o-- Package
+}
+
+@enduml

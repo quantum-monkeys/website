@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Admin;
+namespace AppBundle\Admin\Services;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -14,9 +14,6 @@ class ServiceTranslationAdmin extends Admin
         $formMapper
             ->add('name', 'text')
             ->add('description', 'sonata_simple_formatter_type', array(
-                'format' => 'markdown',
-            ))
-            ->add('specifications', 'sonata_simple_formatter_type', array(
                 'format' => 'markdown',
             ))
             ->add('locale', 'language', [

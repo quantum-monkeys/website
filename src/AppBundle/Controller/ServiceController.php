@@ -13,7 +13,7 @@ class ServiceController extends Controller
     public function indexAction(Request $request)
     {
         $this->get('app.manager.breadcrumb_generator')->generateServices();
-        $services = $this->get('doctrine')->getRepository('AppBundle:Service')->findBy(
+        $services = $this->get('doctrine')->getRepository('AppBundle:Services\Service')->findBy(
             [],
             [
                 'position' => 'asc'
@@ -30,7 +30,7 @@ class ServiceController extends Controller
 
     public function servicesAndTrainingsWidgetAction(Request $request)
     {
-        $services = $this->get('doctrine')->getRepository('AppBundle:Service')->findAll();
+        $services = $this->get('doctrine')->getRepository('AppBundle:Services\Service')->findAll();
 
         return $this->render(
             'AppBundle:Service:servicesAndTrainingsWidget.html.twig',

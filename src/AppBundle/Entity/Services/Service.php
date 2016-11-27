@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace AppBundle\Entity\Services;
 
 use AppBundle\Interfaces\TranslatableInterface;
 use Application\Sonata\MediaBundle\Entity\Media;
@@ -11,26 +11,37 @@ class Service implements TranslatableInterface
     /**
      * @var int
      */
-    private $id;
+    protected $id;
 
     /**
      * @var int
      */
-    private $position;
+    protected $position;
 
     /**
      * @var Media
      */
-    private $picture;
+    protected $picture;
+
+    /**
+     * @var Package[]
+     */
+    protected $packages;
+
+    /**
+     * @var float
+     */
+    protected $price;
 
     /**
      * @var ServiceTranslation[]
      */
-    private $translations;
+    protected $translations;
 
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+        $this->packages = new ArrayCollection();
     }
 
     /**
@@ -60,20 +71,6 @@ class Service implements TranslatableInterface
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Service
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
      * @return Media
      */
     public function getPicture()
@@ -89,6 +86,45 @@ class Service implements TranslatableInterface
         $this->picture = $picture;
     }
 
+    /**
+     * @return Package[]
+     */
+    public function getPackages()
+    {
+        return $this->packages;
+    }
+
+    /**
+     * @param Package[] $packages
+     */
+    public function setPackages($packages)
+    {
+        $this->packages = $packages;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasPackage()
+    {
+        return count($this->packages) > 0;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
 
     public function addTranslation(ServiceTranslation $serviceTranslation)
     {
