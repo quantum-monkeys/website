@@ -8,7 +8,7 @@
 {% block body %}
     <div class="container services">
         {% for service in services %}
-            <div class="row service {% if loop.index % 2 == 1 %}left{% else %}right{% endif %}">
+            <div class="row service">
                 <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4{% if loop.index % 2 == 0 %} hidden-lg hidden-md hidden-sm{% endif %}">
                     {% media service.picture, 'service_big' with {
                         'height': 'auto'
