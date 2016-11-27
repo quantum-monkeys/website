@@ -135,13 +135,21 @@ services:
               label: Other
 
     admin.services:
-        class: AppBundle\Admin\ServiceAdmin
-        arguments: [~, AppBundle\Entity\Service, ~]
+        class: AppBundle\Admin\Services\ServiceAdmin
+        arguments: [~, AppBundle\Entity\Services\Service, ~]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: Services
               label: Service
+    admin.packages:
+        class: AppBundle\Admin\Services\PackageAdmin
+        arguments: [~, AppBundle\Entity\Services\Package, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Services
+              label: Package
 
     admin.discounts:
         class: AppBundle\Admin\DiscountAdmin
@@ -207,13 +215,21 @@ services:
               label: EventOccurrenceTranslation
 
     admin.service_translation:
-        class: AppBundle\Admin\ServiceTranslationAdmin
-        arguments: [~, AppBundle\Entity\ServiceTranslation, ~]
+        class: AppBundle\Admin\Services\ServiceTranslationAdmin
+        arguments: [~, AppBundle\Entity\Services\ServiceTranslation, ~]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: Don't touch !
               label: ServiceTranslation
+    admin.package_translation:
+        class: AppBundle\Admin\Services\PackageTranslationAdmin
+        arguments: [~, AppBundle\Entity\Services\PackageTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: PackageTranslation
 
     admin.discount_translation:
         class: AppBundle\Admin\DiscountTranslationAdmin

@@ -1,0 +1,51 @@
+AppBundle\Entity\Services\Package:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Services\PackageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        position:
+            type: integer
+            nullable: true
+        remote:
+            type: boolean
+        onSite:
+            type: boolean
+        duration:
+            type: time
+        emergencyCalls:
+            type: integer
+        emails:
+            type: integer
+        minimalEngagement:
+            type: integer
+        price:
+            type: decimal
+            precision: 10
+            scale: 2
+
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\Services\PackageTranslation
+            mappedBy: package
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+
+    manyToOne:
+        service:
+            targetEntity: AppBundle\Entity\Services\Service
+            inversedBy: packages
+            joinColumn:
+                name: service_id
+                referencedColumnName: id
+
+    lifecycleCallbacks: {  }

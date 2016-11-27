@@ -1,7 +1,7 @@
-AppBundle\Entity\Service:
+AppBundle\Entity\Services\Service:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\ServiceRepository
+    repositoryClass: AppBundle\Repository\Services\ServiceRepository
     id:
         id:
             type: integer
@@ -13,6 +13,11 @@ AppBundle\Entity\Service:
         position:
             type: integer
             nullable: true
+        price:
+            type: decimal
+            precision: 10
+            scale: 2
+            nullable: true
 
     manyToOne:
         picture:
@@ -23,8 +28,12 @@ AppBundle\Entity\Service:
                 - "remove"
 
     oneToMany:
+        packages:
+            targetEntity: AppBundle\Entity\Services\Package
+            mappedBy: service
+
         translations:
-            targetEntity: AppBundle\Entity\ServiceTranslation
+            targetEntity: AppBundle\Entity\Services\ServiceTranslation
             mappedBy: service
             fetch: EAGER
             cascade:
