@@ -10,9 +10,9 @@ package:
     or: ou
     on_site: En personne
   duration:
-    hours: '%count%h'
-    minutes: '%count%min'
-  emergency_calls: '{0} -|]0,Inf[ %count% x 15 min'
-  emails: '{0} -|{1} courriel|]1, 100] %count% courriels|]100,Inf[ ∞'
-  minimal_engagement: '{0} -|]0,Inf[ %count% mois'
+    hours: '%count% h / semaine'
+    minutes: '%count% min / semaine'
+  emergency_calls: '{0} -|]0,Inf[ %count% appels en urgence (15 min)'
+  emails: '{0} -|{1} courriel par semaine|]1, 100] %count% courriels par semaine|]100,Inf[ Courriels illimités'
+  minimal_engagement: '{0} -|]0,Inf[ Engagement minimum de %count% mois'
   more: 'En savoir plus'
