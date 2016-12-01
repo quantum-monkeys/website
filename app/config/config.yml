@@ -76,11 +76,6 @@ jms_i18n_routing:
     locales: [en, fr]
     strategy: prefix_except_default
 
-hype_mailchimp:
-    api_key: 6e639e2ed35e339033c8c2c5c1539cd3-us13
-    default_list: 5e1038db89
-    ssl: true #optional configuring curl connection
-
 lexik_translation:
     fallback_locale: [en]         # (required) default locale(s) to use
     managed_locales: [en, fr] # (required) locales that the bundle have to manage
@@ -98,3 +93,11 @@ doctrine_migrations:
     namespace: Application\Migrations
     table_name: migration_versions
     name: Application Migrations
+
+csa_guzzle:
+    clients:
+        mailchimp_api:
+            config:
+                base_uri: https://us13.api.mailchimp.com
+                timeout: 2.0
+                auth: ['test', '%newsletter_api_key%', 'basic']

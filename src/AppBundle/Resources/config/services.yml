@@ -17,7 +17,14 @@ services:
 
     app.twig.object_translator:
         class: AppBundle\Manager\ObjectTranslator
-        arguments: ["@request_stack"]
+        arguments: ['@request_stack']
+
+    app.manager.newsletter:
+        class: AppBundle\Manager\NewsletterManager
+        arguments:
+          - '@request_stack'
+          - '@csa_guzzle.client.mailchimp_api'
+          - '%newsletter_list_id%'
 
     app.twig.locale_extension:
         class: AppBundle\Twig\LocaleExtension

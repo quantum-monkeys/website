@@ -43,6 +43,12 @@ class BreadcrumbsGenerator
         $this->breadcrumbs->addItem('discounts', 'discount_list');
     }
 
+    public function generateNewsletter()
+    {
+        $this->generateHomepage();
+        $this->breadcrumbs->addItem('newsletter', 'newsletter');
+    }
+
     public function generateTrainings()
     {
         $this->generateHomepage();

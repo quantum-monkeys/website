@@ -1,0 +1,26 @@
+{#{{ form(form) }}#}
+
+{% form_theme form '@App/Newsletter/newsletterFormTheme.html.twig' %}
+
+{{ form_start(form) }}
+    <div class="row">
+        <div class="form-group col-md-6">
+            {{ form_widget(form.firstName) }}
+        </div>
+        <div class="form-group col-md-6">
+            {{ form_widget(form.lastName) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12">
+            {{ form_widget(form.email) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-12 submit-group">
+            {{ form_widget(form.submit) }}
+        </div>
+    </div>
+{{ form_end(form) }}

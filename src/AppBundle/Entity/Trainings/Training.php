@@ -7,7 +7,7 @@ use AppBundle\Interfaces\TranslatableInterface;
 use Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Training implements TranslatableInterface
+abstract class Training implements TranslatableInterface
 {
     /**
      * @var int

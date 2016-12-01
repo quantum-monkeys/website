@@ -1,0 +1,15 @@
+title: Subscribe to the newsletter
+description: In order to be notice for our events and activity, subscribe to the newsletter to stay in touch!
+form:
+  first_name:
+    placeholder: First name
+  last_name:
+    placeholder: Last name
+  email:
+    placeholder: Email
+  submit:
+    placeholder: Subscribe
+result:
+  success: You are now a member of the Quantum Monkeys community. Thank you for your support.
+  already_subscribed: You have already subscribe to our newsletter. Thank you for your double support!
+  error: An error occured. Try again later and if the problem persist, contact us. Sorry for that.
