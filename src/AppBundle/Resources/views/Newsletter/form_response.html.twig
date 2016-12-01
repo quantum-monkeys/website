@@ -1,0 +1,13 @@
+{% trans_default_domain 'newsletter' %}
+
+<div class="alert
+    {% if result == 'success' %}
+        alert-success
+    {% elseif result == 'already_subscribed' %}
+        alert-warning
+    {% else %}
+        alert-danger
+    {% endif %}
+">
+    {{ ('result.' ~ result)|trans }}
+</div>

@@ -1,0 +1,13 @@
+{% extends '@App/base.html.twig' %}
+
+{% trans_default_domain 'newsletter' %}
+
+{% block body %}
+    <div class="container newsletter">
+        <h2>{{ 'title'|trans }}</h2>
+        <p>{{ 'description'|trans }}</p>
+        {% include '@App/Newsletter/form.html.twig' with {
+            form: form
+        } %}
+    </div>
+{% endblock body %}

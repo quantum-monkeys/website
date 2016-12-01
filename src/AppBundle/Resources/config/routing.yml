@@ -65,7 +65,13 @@ contact:
 
 newsletter:
     path: /newsletter
+    methods: GET
+    defaults:
+        _controller: AppBundle:Newsletter:index
+
+newsletter_submit:
+    path: /newsletter/submit
     methods: POST
     defaults:
-        _controller: AppBundle:AboutUs:newsletter
+        _controller: AppBundle:Newsletter:submit
     options: { i18n: false }

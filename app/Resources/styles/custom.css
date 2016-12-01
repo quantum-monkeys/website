@@ -7,7 +7,6 @@
 
 .codecon_half {
     float: right;
-    width: 400px;
     text-align: right;
     padding-top: 10px;
 }
@@ -495,6 +494,21 @@ header.visual-area {
     border-bottom: 1.2em solid transparent;
 }
 
+.top_heade_right_area {
+    float: none;
+}
+
+.newsletter_subscription {
+    float: left;
+    padding-top: 10px;
+}
+
+.newsletter_subscription a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
 @media (max-width: 1200px) {
     .top_contanear {
         height: 30px;
@@ -505,6 +519,16 @@ header.visual-area {
     .top_heade_right_area p {
         line-height: 30px;
     }
+
+    .codecon_half {
+        padding-top: 3px;
+    }
+
+    .newsletter_subscription {
+        padding-top: 3px;
+        padding-left: 1em;
+    }
+
     header {
         min-height: 11em;
     }
@@ -608,4 +632,31 @@ header.visual-area {
         overflow: inherit;
         font: 700 1em/1em 'Antonio-Bold', Arial, helvetica, sans-serif;
     }
+}
+
+
+
+.newsletter {
+    color: grey;
+    padding: 1em;
+}
+
+.newsletter h2,
+.newsletter h4 {
+    text-transform: uppercase;
+    font-family: 'Open Sans',Arial;
+    font-weight: 700;
+}
+.newsletter h2 {
+    font-size: 1.8em;
+    padding: 1em 0;
+    margin: 0;
+}
+
+.newsletter form {
+    margin-top: 2em;
+}
+
+.newsletter .submit-group {
+    text-align: right;
 }

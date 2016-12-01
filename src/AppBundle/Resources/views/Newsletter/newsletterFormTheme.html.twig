@@ -1,0 +1,25 @@
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    {%- set attr = attr|merge({'class': 'form-control' }) -%}
+    <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+    {% for attrname,attrvalue in attr %}
+        {% if attrname == 'help' %}
+            <span class="help-block">{{ attrvalue|trans({}, form.vars.translation_domain) }}</span>
+        {% endif %}
+    {% endfor %}
+{%- endblock form_widget_simple -%}
+
+{%- block button_widget -%}
+    {%- if label is empty -%}
+        {%- if label_format is not empty -%}
+            {% set label = label_format|replace({
+                '%name%': name,
+                '%id%'  : id,
+            }) %}
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {%- endif -%}
+    {%- set attr = attr|merge({'class': 'btn btn-default' }) -%}
+    <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</button>
+{%- endblock button_widget -%}

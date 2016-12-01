@@ -1,0 +1,15 @@
+title: 'Souscrire à l''infolettre'
+description: Pour être averti de nos évènements et activités, souscrivez à notre infolettre et restons en contact!
+form:
+  first_name:
+    placeholder: Prénom
+  last_name:
+    placeholder: Nom
+  email:
+    placeholder: Courriel
+  submit:
+    placeholder: Souscrire
+result:
+  success: Vous êtes dorénavant un membre de la communauté des Quantum Monkeys. Merci de votre soutien.
+  already_subscribed: Vous avez déjà souscrit à notre infolettre. Merci de votre double soutien !
+  error: 'Une erreur est survenue. Veuillez réessayer plus tard. Si le problème persiste, n''hésitez pas à nous contacter. Excusez-nous pour le désagrément.'

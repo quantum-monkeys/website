@@ -6,6 +6,8 @@ home: Home
 services: Services
 academy: Académie
 discounts: Discounts
+newsletter: Newsletter
+subscribe: 'Subscribe to the newsletter'
 lang_switch:
   fr: FR
   en: EN

@@ -71,6 +71,7 @@ gulp.task('js', () => {
             'app/Resources/scripts/script.js',
             'app/Resources/scripts/functions.js',
             'app/Resources/scripts/contact.js',
+            'app/Resources/scripts/newsletter.js',
         ])
         .pipe(concat('app.min.js'))
         .pipe(uglify())

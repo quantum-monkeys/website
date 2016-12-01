@@ -37,8 +37,8 @@
 
     <!--start_top_contanear-->
     <div class="top_contanear">
-        <div class="contanear">
-            <div class="top_heade_right_area">
+        <div class="container">
+            <div class="top_heade_right_area"">
                 <div class="top_social_area">
                     <p>
                         <a href="https://www.facebook.com/quantummonkeys"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -50,6 +50,12 @@
                 <div class="codecon_half">
                     <a href="{{ localeSwitch(sNewLocale, requestAttributes) }}" class="langSwitcher">
                         {{ ('lang_switch.'~sNewLocale)|trans({}, 'menu') }}
+                    </a>
+                </div>
+                <div class="newsletter_subscription">
+                    <a href="#" data-toggle="modal" data-target="#newsletterModal">
+                        <i class="fa fa-envelope"></i>
+                        {{ 'subscribe'|trans({}, 'menu') }}
                     </a>
                 </div>
             </div>
@@ -141,6 +147,8 @@
     <div class="footer_bottom">
         <div class="contanear">{{ 'copyright'|trans }}</div>
     </div>
+
+    {{ render(controller('AppBundle:Newsletter:popup')) }}
 
     {% block javascripts %}
         <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
