@@ -27,16 +27,4 @@ class ServiceController extends Controller
             ]
         );
     }
-
-    public function servicesAndTrainingsWidgetAction(Request $request)
-    {
-        $services = $this->get('doctrine')->getRepository('AppBundle:Services\Service')->findAll();
-
-        return $this->render(
-            'AppBundle:Service:servicesAndTrainingsWidget.html.twig',
-            [
-                'services' => $services
-            ]
-        );
-    }
 }

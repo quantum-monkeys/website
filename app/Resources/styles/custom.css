@@ -435,7 +435,7 @@ header.visual-area {
     font-weight: bold;
     height: 7em;
     margin: -0.5em 0;
-    padding: 3em 0.5em;
+    padding: 3em 1em;
 }
 
 .navbar-default .navbar-nav > li.current > a,
