@@ -403,7 +403,8 @@
     margin: 0;
 }
 
-.footer .hello span {
+.footer .hello span,
+.footer .footer_mainpanel_left a {
     color: #ff8a00;
 }
 
