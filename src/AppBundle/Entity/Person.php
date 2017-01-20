@@ -54,15 +54,9 @@ class Person implements TranslatableInterface
      */
     private $translations;
 
-    /**
-     * @var Course[]
-     */
-    protected $courses;
-
     public function __construct()
     {
         $this->translations = new ArrayCollection();
-        $this->courses = new ArrayCollection();
     }
 
     /**
@@ -248,22 +242,6 @@ class Person implements TranslatableInterface
     public function getTranslations()
     {
         return $this->translations;
-    }
-
-    /**
-     * @return Course[]
-     */
-    public function getCourses()
-    {
-        return $this->courses;
-    }
-
-    /**
-     * @param Course[] $courses
-     */
-    public function setCourses($courses)
-    {
-        $this->courses = $courses;
     }
 }
 

@@ -11,32 +11,6 @@ class HomeController extends Controller
 {
     public function indexAction()
     {
-        $contactForm = $this->createForm(ContactType::class, null, [
-            'action' => $this->generateUrl('contact'),
-        ]);
-        $newsletterForm = $this->createForm(NewsletterType::class, null, [
-            'action' => $this->generateUrl('newsletter'),
-        ]);
-
-        return $this->render(
-            'AppBundle:Home:index.html.twig',
-            [
-                'contactForm' => $contactForm->createView(),
-                'newsletterForm' => $newsletterForm->createView()
-            ]
-        );
+        return $this->render('AppBundle:Home:index.html.twig', []);
     }
-
-    public function oldIndexAction()
-    {
-        $form = $this->createForm(ContactType::class);
-
-        return $this->render(
-            'AppBundle:Home:old_index.html.twig',
-            [
-                'form' => $form->createView()
-            ]
-        );
-    }
-
 }

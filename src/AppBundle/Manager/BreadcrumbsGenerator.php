@@ -37,12 +37,6 @@ class BreadcrumbsGenerator
         $this->breadcrumbs->addItem('services', 'service_list');
     }
 
-    public function generateDiscounts()
-    {
-        $this->generateHomepage();
-        $this->breadcrumbs->addItem('discounts', 'discount_list');
-    }
-
     public function generateNewsletter()
     {
         $this->generateHomepage();
@@ -59,30 +53,6 @@ class BreadcrumbsGenerator
     {
         $this->generateHomepage();
         $this->breadcrumbs->addRouteItem('academy', 'academy_index');
-    }
-
-    public function generateWorkshop(Workshop $workshop)
-    {
-        $this->generateAcademy();
-        $this->breadcrumbs->addRouteItem(
-            $this->objectTranslator->translate($workshop, 'name'),
-            'academy_workshop',
-            [
-                'id' => $workshop->getId(),
-            ]
-        );
-    }
-
-    public function generateLearningPath(LearningPath $learningPath)
-    {
-        $this->generateAcademy();
-        $this->breadcrumbs->addRouteItem(
-            $this->objectTranslator->translate($learningPath, 'name'),
-            'academy_learningpath',
-            [
-                'id' => $learningPath->getId(),
-            ]
-        );
     }
 
     public function generateEvents()
