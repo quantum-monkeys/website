@@ -10,3 +10,4 @@ about_us: /a-propos
 blog: /blogue
 blog_view: '/blogue/{permalink}.{_format}'
 newsletter: /infolettre
+training_list: /formations

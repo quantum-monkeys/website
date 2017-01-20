@@ -10,3 +10,4 @@ about_us: /about-us
 blog: /blog
 blog_view: '/blog/{permalink}.{_format}'
 newsletter: /newsletter
+training_list: /trainings
