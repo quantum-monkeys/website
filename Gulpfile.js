@@ -6,7 +6,23 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 
 gulp.task('image-min', () => {
-    return gulp.src('app/Resources/images/**/*')
+    gulp.src([
+            'node_modules/fancybox/dist/img/**/*',
+        ])
+        .pipe(imagemin({
+            progressive: true,
+            optimizationLevel: 3,
+            svgoPlugins: [
+                {removeViewBox: false},
+                {cleanupIDs: false}
+            ],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('web/img'));
+
+    return gulp.src([
+            'app/Resources/images/**/*',
+        ])
         .pipe(imagemin({
             progressive: true,
             optimizationLevel: 3,
@@ -23,6 +39,7 @@ gulp.task('css', () => {
     gulp.src([
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
+            'node_modules/fancybox/dist/css/jquery.fancybox.css',
         ])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
@@ -62,7 +79,7 @@ gulp.task('js', () => {
             'node_modules/jcf/dist/js/jcf.select.js',
             'node_modules/jcf/dist/js/jcf.checkbox.js',
             'node_modules/jquery-form/jquery.form.js',
-            'app/Resources/scripts/vendors/responsiveCarousel.min.js',
+            'node_modules/fancybox/dist/js/jquery.fancybox.js',
         ])
         .pipe(concat('vendors.min.js'))
         .pipe(uglify())

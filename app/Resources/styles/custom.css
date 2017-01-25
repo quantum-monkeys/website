@@ -148,7 +148,7 @@
 .home-hero {
     overflow: hidden;
     position: relative;
-    padding: 7em 0 2em;
+    padding: 1.5em 0 2em;
     background-repeat: no-repeat;
     background-position: center top;
     -webkit-background-size: cover;
@@ -157,13 +157,6 @@
     color: #fff;
     text-transform: uppercase;
 
-    text-shadow:
-            -1px -1px 1px #000,
-            1px -1px 1px #000,
-            -1px 1px 1px #000,
-            1px 1px 1px #000;
-
-    letter-spacing: 0.3em;
     font: 700 32px/38px 'Antonio-Bold', Arial, helvetica, sans-serif;
 }
 
@@ -173,6 +166,32 @@
 
 .home-hero h3 {
     font: 700 1em/1em 'Antonio-Bold', Arial, helvetica, sans-serif;
+}
+
+.home-hero h2,
+.home-hero h3 {
+    letter-spacing: 0.3em;
+    text-shadow:
+        -1px -1px 1px #000,
+        1px -1px 1px #000,
+        -1px 1px 1px #000,
+        1px 1px 1px #000;
+}
+
+.home-hero .video-cta {
+    width: 2em;
+    height: 2em;
+    font-size: 1.5em;
+    border-radius: 5em;
+    background-color: #ff8a00;
+    display: inline-block;
+    color: white;
+    margin-top: 0.5em;
+}
+
+.home-hero .video-cta i {
+    line-height: 2em;
+    text-indent: 0.2em;
 }
 
 .home-hero h2 span,

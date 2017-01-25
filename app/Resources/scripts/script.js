@@ -7,7 +7,7 @@ $(document).ready(function() {
 			$(this).addClass("parent");
 		};
 	})
-	
+
 	$(".toggleMenu").click(function(e) {
 		e.preventDefault();
 		$(this).toggleClass("active");
@@ -35,7 +35,7 @@ var adjustMenu = function() {
 			e.preventDefault();
 			$(this).parent("li").toggleClass("hover");
 		});
-	} 
+	}
 	else if (ww >=999) {
 		$(".toggleMenu").css("display", "none");
 		$(".nav2").show();
@@ -48,3 +48,11 @@ var adjustMenu = function() {
 	}
 }
 
+$(document).ready(function() {
+    $(".video-cta").fancybox({
+        fitToView	: true,
+        autoSize	: true,
+        openEffect	: 'fade',
+        closeEffect	: 'fade'
+    });
+});
