@@ -6,54 +6,39 @@
 {% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="aboutus container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="left-slider">
-                    <img src="/images/logo-big.png">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                <div class="over-cont">
-                    <div class="mission-heading">
-                        <h3>{{ 'title'|trans }}</h3>
-                    </div>
-                    <p>{{ 'description'|trans|nl2br }}</p>
-                </div>
+            <picture class="col-sm-12 col-md-6 col-lg-6">
+                <img src="{{ asset('images/logo-big.png') }}">
+            </picture>
+            <div class="col-sm-12 col-md-6 col-lg-6 aboutus-description">
+                {{ 'description'|trans|markdown }}
             </div>
         </div>
-    </div>
 
-    <section id="team_sec" class="container">
         <hr>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="team-heading">
-                    <h3>{{ 'team'|trans }}</h3>
-                </div>
-            </div>
+            <h2>Our team</h2>
 
             {% for person in people %}
-                <div class="col-md-4">
-                    <div class="team-memb">
-                        <figure>
-                            {% media person.picture, 'person_about' with {
-                                'class': 'img-rounded img-responsive img-center'
-                            } %}
-                        </figure>
-                    </div>
-                    <div class="designation_title">
+                <div class="team-member col-sm-12 col-md-4">
+                    <figure>
+                        {% media person.picture, 'person_about' with {
+                            'class': 'img-rounded img-responsive'
+                        } %}
+                    </figure>
+                    <div class="informations">
                         <h4>{{ person.displayName }}</h4>
-                        <p class="desig">{{ translate(person, 'position') }}</p>
-                        <p>{{ translate(person, 'description')|markdown }}</p>
+                        <p class="position">{{ translate(person, 'position') }}</p>
+                        <p class="description">{{ translate(person, 'description')|markdown }}</p>
                     </div>
                 </div>
-                {% if loop.index % 3 == 0 or loop.last %}
+            {% if loop.index % 3 == 0 or loop.last %}
         </div>
-        <hr>
+        <hr class="visible-md visible-lg">
         <div class="row">
                 {% endif %}
             {% endfor %}
         </div>
-    </section>
+    </div>
 {% endblock %}

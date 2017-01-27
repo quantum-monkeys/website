@@ -164,66 +164,6 @@ body {
 	width: 93%;
 	float: left;
 }
-/** team css **/
-#team_sec { margin-bottom: 30px; }
-#team-member-list { margin-top: 14px; }
-#team_sec #team-list .img-rounded {
-	width: 450px;
-	border-radius: 0px;
-}
-.team-memb figure img {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-}
-.team-memb figure:hover img {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
-}
-.designation_title h4 {
-	font-size: 22px;
-	font-weight: 600;
-	color: #565656;
-}
-.designation_title p {
-	font-size: 15px;
-	font-weight: 600;
-	text-align: justify;
-	color: #929292;
-	font-family: open sans;
-}
-p.desig {
-	font-size: 20px;
-	font-weight: 500;
-	color: #929292;
-	font-family: open sans;
-}
-.view-profile {
-	color: #656565;
-	padding: 7px 41px;
-	font-size: 16px;
-	font-weight: 500;
-	background: transparent;
-	border: 2px solid #808080;
-}
-.view-profile:hover {
-	background: #ff8a00;
-	color: #fff;
-	border: 2px solid #fff;
-}
-.team-heading h3 {
-	color: #ff8a00;
-	font-family: open sans;
-	margin: 0px 0px;
-}
-.team-heading {
-	width: 100%;
-	float: left;
-	margin-top: 0px
-}
-#team-list { margin: 10px 0px 25px 0px; }
-/************************/
 
 .contanear {
 	display: block;
@@ -3499,7 +3439,6 @@ input[type="search"].ExpInput {
 		vertical-align: middle;
 		margin: 0 5px;
 	}
-	.container { padding: 0; }
 	.visual-area p { margin: 0 0 10px; }
 	.event-box { width: 50%; }
 	.breadcrumb {
