@@ -1,0 +1,60 @@
+.aboutus h2 {
+    font-size: 3em;
+    text-align: center;
+    font-family: Antonio-Bold, Arial, helvetica, sans-serif;
+    color: #FF8A00;
+    margin-bottom: 1em;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.aboutus picture img {
+    width: 80%;
+    margin: 2em auto;
+    display: block;
+}
+
+.aboutus-description {
+    font-family: "Open Sans";
+    font-size: 1em;
+    color: grey;
+    padding-top: 3em;
+}
+
+.aboutus .team-member {
+    margin-bottom: 3em;
+}
+
+.aboutus .team-member figure img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    display: block;
+    margin: auto;
+}
+.aboutus .team-member figure:hover img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+.aboutus .team-member .informations h4 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #565656;
+    text-align: center;
+}
+.aboutus .team-member .informations p {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: justify;
+    color: #929292;
+    font-family: open sans;
+}
+.aboutus .team-member .informations p.position {
+    font-size: 20px;
+    font-weight: 500;
+    color: #929292;
+    font-family: open sans;
+    text-align: center;
+}
