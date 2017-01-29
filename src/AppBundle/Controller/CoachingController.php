@@ -8,12 +8,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Intl\Intl;
 
-class ServiceController extends Controller
+class CoachingController extends Controller
 {
-    public function indexAction(Request $request)
+    public function indexAction()
     {
         $this->get('app.manager.breadcrumb_generator')->generateServices();
-        $services = $this->get('doctrine')->getRepository('AppBundle:Services\Service')->findBy(
+        $services = $this->get('doctrine')->getRepository('AppBundle:Coaching\Service')->findBy(
             [],
             [
                 'position' => 'asc'
@@ -21,7 +21,7 @@ class ServiceController extends Controller
         );
 
         return $this->render(
-            'AppBundle:Service:index.html.twig',
+            'AppBundle:Coaching:index.html.twig',
             [
                 'services' => $services
             ]

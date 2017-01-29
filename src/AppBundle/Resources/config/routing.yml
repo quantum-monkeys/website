@@ -3,10 +3,10 @@ homepage:
     defaults:
         _controller: AppBundle:Home:index
 
-service_list:
-    path: /services
+coaching_list:
+    path: /coaching
     defaults:
-        _controller: AppBundle:Service:index
+        _controller: AppBundle:Coaching:index
 
 discount_list:
     path: /discounts

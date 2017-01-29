@@ -34,7 +34,7 @@ class BreadcrumbsGenerator
     public function generateServices()
     {
         $this->generateHomepage();
-        $this->breadcrumbs->addItem('services', 'service_list');
+        $this->breadcrumbs->addItem('coaching', 'coaching_list');
     }
 
     public function generateNewsletter()

@@ -67,21 +67,21 @@ services:
               label: Other
 
     admin.services:
-        class: AppBundle\Admin\Services\ServiceAdmin
-        arguments: [~, AppBundle\Entity\Services\Service, ~]
+        class: AppBundle\Admin\Coaching\ServiceAdmin
+        arguments: [~, AppBundle\Entity\Coaching\Service, ~]
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Services
-              label: Service
+              group: Coaching
+              label: Services
     admin.packages:
-        class: AppBundle\Admin\Services\PackageAdmin
-        arguments: [~, AppBundle\Entity\Services\Package, ~]
+        class: AppBundle\Admin\Coaching\PackageAdmin
+        arguments: [~, AppBundle\Entity\Coaching\Package, ~]
         tags:
             - name: sonata.admin
               manager_type: orm
-              group: Services
-              label: Package
+              group: Coaching
+              label: Packages
 
     admin.person:
         class: AppBundle\Admin\PersonAdmin
@@ -138,16 +138,16 @@ services:
               label: EventOccurrenceTranslation
 
     admin.service_translation:
-        class: AppBundle\Admin\Services\ServiceTranslationAdmin
-        arguments: [~, AppBundle\Entity\Services\ServiceTranslation, ~]
+        class: AppBundle\Admin\Coaching\ServiceTranslationAdmin
+        arguments: [~, AppBundle\Entity\Coaching\ServiceTranslation, ~]
         tags:
             - name: sonata.admin
               manager_type: orm
               group: Don't touch !
               label: ServiceTranslation
     admin.package_translation:
-        class: AppBundle\Admin\Services\PackageTranslationAdmin
-        arguments: [~, AppBundle\Entity\Services\PackageTranslation, ~]
+        class: AppBundle\Admin\Coaching\PackageTranslationAdmin
+        arguments: [~, AppBundle\Entity\Coaching\PackageTranslation, ~]
         tags:
             - name: sonata.admin
               manager_type: orm
