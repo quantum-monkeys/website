@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBundle\Entity\Services;
+namespace AppBundle\Entity\Coaching;
 
-class ServiceTranslation
+class PackageTranslation
 {
     /**
      * @var int
@@ -15,9 +15,9 @@ class ServiceTranslation
     private $locale;
 
     /**
-     * @var Service
+     * @var Package
      */
-    private $service;
+    private $package;
 
     /**
      * @var string
@@ -56,19 +56,19 @@ class ServiceTranslation
     }
 
     /**
-     * @return Service
+     * @return Package
      */
-    public function getService()
+    public function getPackage()
     {
-        return $this->service;
+        return $this->package;
     }
 
     /**
-     * @param Service $service
+     * @param Package $package
      */
-    public function setService(Service $service)
+    public function setPackage(Package $package)
     {
-        $this->service = $service;
+        $this->package = $package;
     }
 
     /**
@@ -76,7 +76,7 @@ class ServiceTranslation
      *
      * @param string $name
      *
-     * @return ServiceTranslation
+     * @return PackageTranslation
      */
     public function setName($name)
     {
@@ -100,7 +100,7 @@ class ServiceTranslation
      *
      * @param string $description
      *
-     * @return ServiceTranslation
+     * @return PackageTranslation
      */
     public function setDescription($description)
     {

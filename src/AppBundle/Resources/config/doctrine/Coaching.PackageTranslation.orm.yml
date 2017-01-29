@@ -1,7 +1,7 @@
-AppBundle\Entity\Services\PackageTranslation:
+AppBundle\Entity\Coaching\PackageTranslation:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\Services\PackageTranslationRepository
+    repositoryClass: AppBundle\Repository\Coaching\PackageTranslationRepository
     id:
         id:
             type: integer
@@ -19,7 +19,7 @@ AppBundle\Entity\Services\PackageTranslation:
             type: text
     manyToOne:
         package:
-            targetEntity: AppBundle\Entity\Services\Package
+            targetEntity: AppBundle\Entity\Coaching\Package
             inversedBy: translations
             joinColumn:
                 nullable: false

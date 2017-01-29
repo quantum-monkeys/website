@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Admin\Services;
+namespace AppBundle\Admin\Coaching;
 
 use AppBundle\Entity\EventOccurrenceCost;
 use Sonata\AdminBundle\Admin\Admin;
@@ -8,7 +8,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class ServiceAdmin extends Admin
+class PackageAdmin extends Admin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
@@ -16,19 +16,25 @@ class ServiceAdmin extends Admin
             ->add('position', 'number', [
                 'required' => false
             ])
-            ->add('picture', 'sonata_media_type', [
-                'required' => false,
-                'context' => 'default',
-                'provider' => 'sonata.media.provider.image',
-            ])
             ->add('price', 'number', [
                 'required' => false,
             ])
+            ->add('service')
+            ->add('remote', null, [
+                'required' => false,
+            ])
+            ->add('onSite', null, [
+                'required' => false,
+            ])
+            ->add('duration')
+            ->add('emergencyCalls')
+            ->add('emails')
+            ->add('minimalEngagement')
             ->add('translations', 'sonata_type_collection', [
                 'by_reference' => false,
             ], [
                 'edit' => 'inline',
-                'admin_code' => 'admin.service_translation',
+                'admin_code' => 'admin.package_translation',
             ])
         ;
     }

@@ -1,7 +1,7 @@
-AppBundle\Entity\Services\Service:
+AppBundle\Entity\Coaching\Service:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\Services\ServiceRepository
+    repositoryClass: AppBundle\Repository\Coaching\ServiceRepository
     id:
         id:
             type: integer
@@ -29,11 +29,11 @@ AppBundle\Entity\Services\Service:
 
     oneToMany:
         packages:
-            targetEntity: AppBundle\Entity\Services\Package
+            targetEntity: AppBundle\Entity\Coaching\Package
             mappedBy: service
 
         translations:
-            targetEntity: AppBundle\Entity\Services\ServiceTranslation
+            targetEntity: AppBundle\Entity\Coaching\ServiceTranslation
             mappedBy: service
             fetch: EAGER
             cascade:

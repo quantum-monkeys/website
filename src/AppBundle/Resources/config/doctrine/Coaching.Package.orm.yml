@@ -1,7 +1,7 @@
-AppBundle\Entity\Services\Package:
+AppBundle\Entity\Coaching\Package:
     type: entity
     table: null
-    repositoryClass: AppBundle\Repository\Services\PackageRepository
+    repositoryClass: AppBundle\Repository\Coaching\PackageRepository
     id:
         id:
             type: integer
@@ -32,7 +32,7 @@ AppBundle\Entity\Services\Package:
 
     oneToMany:
         translations:
-            targetEntity: AppBundle\Entity\Services\PackageTranslation
+            targetEntity: AppBundle\Entity\Coaching\PackageTranslation
             mappedBy: package
             fetch: EAGER
             cascade:
@@ -42,7 +42,7 @@ AppBundle\Entity\Services\Package:
 
     manyToOne:
         service:
-            targetEntity: AppBundle\Entity\Services\Service
+            targetEntity: AppBundle\Entity\Coaching\Service
             inversedBy: packages
             joinColumn:
                 name: service_id

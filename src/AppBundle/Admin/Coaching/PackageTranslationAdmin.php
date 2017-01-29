@@ -1,13 +1,13 @@
 <?php
 
-namespace AppBundle\Admin\Services;
+namespace AppBundle\Admin\Coaching;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class ServiceTranslationAdmin extends Admin
+class PackageTranslationAdmin extends Admin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {

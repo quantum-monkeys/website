@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity\Services;
+namespace AppBundle\Entity\Coaching;
 
 use AppBundle\Interfaces\TranslatableInterface;
 use Doctrine\Common\Collections\ArrayCollection;
