@@ -9,7 +9,7 @@
     <meta property="og:site_name" content="{% block ogsitename %}{{ 'meta.title'|trans }}{% endblock %}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.quantummonkeys.com" />
-    <meta property="og:image" content="http://www.quantummonkeys.com/images/logo-big.png" />
+    <meta property="og:image" content="{% block ogimage %}http://www.quantummonkeys.com/images/logo-big.png{% endblock %}" />
     <meta property="og:description" content="{% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="UTF-8" />

@@ -2,8 +2,11 @@
 
 {% trans_default_domain 'blog' %}
 
-{% block description %}{{ 'meta.description'|trans }}{% endblock %}
-{% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}
+{% block description %}{{ post.abstract }}{% endblock %}
+{% block ogdescription %}{{ post.abstract }}{% endblock %}
+{% block title %}{{ post.title}}{% endblock %}
+{% block ogtitle %}{{ post.title }}{% endblock %}
+{% block ogimage %}{% path post.image, 'wide' %}{% endblock %}
 
 {% block body %}
     <div class="container">
