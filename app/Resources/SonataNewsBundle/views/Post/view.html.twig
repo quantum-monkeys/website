@@ -8,8 +8,9 @@
 {% block ogtitle %}{{ post.title }}{% endblock %}
 {% block ogimage %}{% path post.image, 'wide' %}{% endblock %}
 {% block twitter %}
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@quantummonkeys" />
+    <meta name="twitter:creator" content="@quantummonkeys" />
     <meta name="twitter:title" content="{{ post.title }}" />
     <meta name="twitter:description" content="{{ post.abstract }}" />
     <meta name="twitter:image" content="{% path post.image, 'wide' %}" />
