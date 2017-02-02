@@ -1,7 +1,5 @@
-description: "When you need to learn about any aspect of Agility, company culture or modern organizational models, there is no better place than Quantum Academy! Get skills adapted to the modern world.\n\nWe offer workshops and certification paths on a variety of subjects such as:\n\n- Team Agility\n- Organizational Agility\n- Business Agility\n- Networked companies and popularity models\n- Self-organization\n- Emerging management approaches\n\nOur corporate clients appreciate that we deliver our training right in their offices, and that our modular approach allows that training to be split into several sessions to fit their schedule. The same modular approach can be used to create custom trainings by picking and choosing only the modules they need; a great option for refresher courses!\n\nWe are now also catering to smaller entrepreneurs, communities and students! Most of our trainings are also offered in our offices allowing individuals to attend. Check our PROMOTIONS page to see how you can pile up rebates to get the education you need at a price you can afford!\n"
-
+description: "If you have a software development project and need a workforce to join your team, Quantum Monkeys Studio is for you.\n\nQuantum Monkeys Studio is composed of full stack developers specialized in various languages (JavaScript, PHP/JS, others on demand). Our squad consists of at least one senior developper, many intermediate developers and a maximum of one junior developer. They all have work experience with modern Agile, Lean and DevOps practices.\n\n- A self-managed team with lots of skills\n- A team that comes with his own equipment, as well as his own system of integration and continuous development \n- No space needed in your premises\n- Always in contact with the you via a video communication system\n- A flat fee charged every week \n- Simple contracts of a period of 2 weeks, renewable\n\nFees are calculated ont a 35 hours basis.\nThe teams are self-managed, but if desired by the client, a dedicated manager can be added to the team to facilitate communications between all parties and liberate development time."
 contact_us: 'Contact us'
-
 package:
   per_week: 'Per week'
   extra_per_week: 'Extra per week'
@@ -10,11 +8,10 @@ package:
   juniors: '{0} No junior|{1} 1 junior|]1,Inf[ %count% juniors'
   minimal_engagement: '{0} -|{1} Engagement as low as 1 week|]1,Inf[ Engagement of %count% weeks'
   more: 'Learn more'
-
 packages:
   basic:
     title: 'Basic packages'
     description: 'The size of the teams can vary depending on the scale of your projects.'
   addons:
-    title: 'Addons'
+    title: Addons
     description: 'The facilitator is an intermediate between the client and the team. He is taking care of the communications between all the parties and manage the team to make sure the project is on the right track.'

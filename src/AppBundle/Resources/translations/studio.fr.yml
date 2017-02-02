@@ -1,7 +1,5 @@
-description: "When you need to learn about any aspect of Agility, company culture or modern organizational models, there is no better place than Quantum Academy! Get skills adapted to the modern world.\n\nWe offer workshops and certification paths on a variety of subjects such as:\n\n- Team Agility\n- Organizational Agility\n- Business Agility\n- Networked companies and popularity models\n- Self-organization\n- Emerging management approaches\n\nOur corporate clients appreciate that we deliver our training right in their offices, and that our modular approach allows that training to be split into several sessions to fit their schedule. The same modular approach can be used to create custom trainings by picking and choosing only the modules they need; a great option for refresher courses!\n\nWe are now also catering to smaller entrepreneurs, communities and students! Most of our trainings are also offered in our offices allowing individuals to attend. Check our PROMOTIONS page to see how you can pile up rebates to get the education you need at a price you can afford!\n"
-
-contact_us: 'Contactez-nous'
-
+description: "Vous avez un projet de développement logiciel mais vous manquez d’effectifs?\_ Quantum Monkeys Studio met à votre service une équipe entière de mercenaires DevOps !\n\nCette équipe est full stack et spécialisée dans divers langages (JavaScript, PHP/JS, autres sur demande). Elle est composée d’au moins un programmeur sénior, de programmeurs intermédiaires et d’au maximum un programmeur junior. Ces derniers sont tous formés aux pratiques Agile, Lean et DevOps modernes.\n\n- Une équipe de DevOps auto-gérée, avec un large éventail de compétences\n- Fournie avec son propre équipement, système d’intégration et de développement continu\n- Ne nécessite aucun espace dans vos locaux\n- En contact avec vous en permanence grâce à notre système de communication vidéo\n- Un prix fixe, simple, à la semaine\n- Contrats simples, d’une durée de deux semaines, renouvelables au besoin\n\nLes tarifs sont calculés sur une base de 35h.\nLes équipes sont auto-gérées, mais si désiré par le client, un gestionnaire dédié peut être attribué à l’équipe pour faciliter la relation avec le client et donc libérer du temps de développement."
+contact_us: Contactez-nous
 package:
   per_week: 'par semaine'
   extra_per_week: 'en plus par semaine'
@@ -10,11 +8,10 @@ package:
   juniors: '{0} Aucun junior|{1} 1 junior|]1,Inf[ %count% juniors'
   minimal_engagement: '{0} -|{1} Engagement d''aussi peu qu''1 semaine|]1,Inf[ Engagement de %count% semaines'
   more: 'En savoir plus'
-
 packages:
   basic:
     title: 'Forfaits de base'
     description: 'La taille des équipes peut varier en fonction de l’ampleur de votre projet.'
   addons:
-    title: 'Ajout'
+    title: Ajout
     description: 'Le facilitateur joue le rôle d’intermédiaire entre le client et l’équipe. Il assure les communications entre les deux partis et prend en charge l’équipe de façon à s’assurer que le projet est dans la bonne direction.'

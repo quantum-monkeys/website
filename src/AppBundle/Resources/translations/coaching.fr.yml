@@ -1,14 +1,12 @@
+contact_us: Contactez-nous
 meta:
   description: 'Coaching corporatif et service conseil offerts par des experts des nouveaux modes de gestion (Agile, Lean, Podularity).'
-
-contact_us: Contactez-nous
-
 package:
   per_month: '/ mois'
   location:
-    by_phone: Par téléphone
+    by_phone: 'Par téléphone'
     or: ou
-    on_site: En personne
+    on_site: 'En personne'
   duration:
     hours: '%count% h / semaine'
     minutes: '%count% min / semaine'
