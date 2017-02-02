@@ -1,11 +1,20 @@
 description: "When you need to learn about any aspect of Agility, company culture or modern organizational models, there is no better place than Quantum Academy! Get skills adapted to the modern world.\n\nWe offer workshops and certification paths on a variety of subjects such as:\n\n- Team Agility\n- Organizational Agility\n- Business Agility\n- Networked companies and popularity models\n- Self-organization\n- Emerging management approaches\n\nOur corporate clients appreciate that we deliver our training right in their offices, and that our modular approach allows that training to be split into several sessions to fit their schedule. The same modular approach can be used to create custom trainings by picking and choosing only the modules they need; a great option for refresher courses!\n\nWe are now also catering to smaller entrepreneurs, communities and students! Most of our trainings are also offered in our offices allowing individuals to attend. Check our PROMOTIONS page to see how you can pile up rebates to get the education you need at a price you can afford!\n"
-meta:
-  description: 'Hands on trainings to develop knowledge and skills on modern management practices (Agile, Lean, Podularity).'
 
-workshops:
-  title: 'Workshops'
-  description: 'description'
+contact_us: 'Contactez-nous'
 
-elearning:
-  title: 'E-learning'
-  description: 'description'
+package:
+  per_week: 'par semaine'
+  extra_per_week: 'en plus par semaine'
+  seniors: '{0} Aucun senior|{1} 1 senior|]1,Inf[ %count% seniors'
+  mediums: '{0} Aucun intermédiaire|{1} 1 intermédiaire|]1,Inf[ %count% intermédiaires'
+  juniors: '{0} Aucun junior|{1} 1 junior|]1,Inf[ %count% juniors'
+  minimal_engagement: '{0} -|{1} Engagement d''aussi peu qu''1 semaine|]1,Inf[ Engagement de %count% semaines'
+  more: 'En savoir plus'
+
+packages:
+  basic:
+    title: 'Forfaits de base'
+    description: 'La taille des équipes peut varier en fonction de l’ampleur de votre projet.'
+  addons:
+    title: 'Ajout'
+    description: 'Le facilitateur joue le rôle d’intermédiaire entre le client et l’équipe. Il assure les communications entre les deux partis et prend en charge l’équipe de façon à s’assurer que le projet est dans la bonne direction.'

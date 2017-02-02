@@ -11,8 +11,9 @@ class Builder
         $menu = $factory->createItem('root');
 
         $menu->addChild('home', ['route' => 'homepage'])->setExtra('translation_domain', 'menu');
-        $menu->addChild('coaching', ['route' => 'coaching_list'])->setExtra('translation_domain', 'menu');
-        $menu->addChild('academy', ['route' => 'academy_index'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('coaching', ['route' => 'coaching'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('academy', ['route' => 'academy'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('studio', ['route' => 'studio'])->setExtra('translation_domain', 'menu');
         $menu->addChild('events', ['route' => 'event_list'])->setExtra('translation_domain', 'menu');
         $menu->addChild('about_us', ['route' => 'about_us'])->setExtra('translation_domain', 'menu');
         $menu->addChild('blog', ['route' => 'blog'])->setExtra('translation_domain', 'menu');

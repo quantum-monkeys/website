@@ -10,12 +10,28 @@
     text-align: right;
 }
 
-.services .row {
-    padding: 0 15px;
+.services .service img {
+    width: 100%;
 }
 
-.services picture img {
-    width: 100%;
+.services h2 {
+    font-size: 3em;
+    text-align: center;
+    font-family: Antonio-Bold, Arial, helvetica, sans-serif;
+    color: #FF8A00;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+}
+
+.services.studio h2,
+.services.academy h2 {
+    margin-bottom: 0.5em;
+}
+
+.services .row {
+    padding: 0 15px;
 }
 
 .services .price_table_container{
@@ -106,4 +122,9 @@
     background-color: #bbb;
     border-color: #aaa;
     box-shadow: none;
+}
+
+.services .division {
+    text-align: center;
+    margin-bottom: 5em;
 }

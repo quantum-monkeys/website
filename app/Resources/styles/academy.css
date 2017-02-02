@@ -9,12 +9,6 @@
     text-transform: uppercase;
 }
 
-.academy picture img {
-    width: 80%;
-    margin: 2em auto;
-    display: block;
-}
-
 .academy-description {
     font-family: "Open Sans";
     font-size: 1em;
