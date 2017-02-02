@@ -1,0 +1,33 @@
+AppBundle\Entity\Services\ExtraDevelopmentPackage:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Services\ExtraDevelopmentPackageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        position:
+            type: integer
+            nullable: true
+        minimalEngagement:
+            type: integer
+        price:
+            type: decimal
+            precision: 10
+            scale: 2
+
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\Services\ExtraDevelopmentPackageTranslation
+            mappedBy: package
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }

@@ -1,0 +1,59 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% trans_default_domain 'services' %}
+
+{% block body %}
+    <div class="container services">
+        <div class="row">
+            <h2>{{ 'title'|trans }}</h2>
+            <div class="division col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                <div class="row">
+                    <picture class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1">
+                        <img src="{{ asset('images/logos/QM-Generic.png') }}" class="img-responsive">
+                    </picture>
+                </div>
+                <div class="row">
+                    <h3>{{ 'coaching.title'|trans }}</h3>
+                </div>
+                <div class="row">
+                    <p>{{ 'coaching.description'|trans }}</p>
+                </div>
+                <div class="row">
+                    <a href="{{ path('coaching') }}" class="btn btn-default">{{ 'link.learn_more'|trans }}</a>
+                </div>
+            </div>
+            <div class="division col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                <div class="row">
+                    <picture class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1">
+                        <img src="{{ asset('images/logos/QM-Academie.png') }}" class="img-responsive">
+                    </picture>
+                </div>
+                <div class="row">
+                    <h3>{{ 'academy.title'|trans }}</h3>
+                </div>
+                <div class="row">
+                    <p>{{ 'academy.description'|trans }}</p>
+                </div>
+                <div class="row">
+                    <a href="{{ path('academy') }}" class="btn btn-default">{{ 'link.learn_more'|trans }}</a>
+                </div>
+            </div>
+            <div class="division col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                <div class="row">
+                    <picture class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-1">
+                        <img src="{{ asset('images/logos/QM-Studio.png') }}" class="img-responsive">
+                    </picture>
+                </div>
+                <div class="row">
+                    <h3>{{ 'studio.title'|trans }}</h3>
+                </div>
+                <div class="row">
+                    <p>{{ 'studio.description'|trans }}</p>
+                </div>
+                <div class="row">
+                    <a href="{{ path('studio') }}" class="btn btn-default">{{ 'link.learn_more'|trans }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

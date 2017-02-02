@@ -1,0 +1,42 @@
+{% trans_default_domain 'studio' %}
+
+<div class="col-md-4 col-sm-6 col-xs-12 col-centered float-shadow">
+    <div class="price_table_container">
+        <div class="price_table_heading">{{ translate(package, 'name') }}</div>
+        <div class="price_table_body">
+            <div class="price_table_row cost primary-bg">
+                <strong>{{ package.price|number_format(0) }} $</strong>
+                <span>{{ 'package.per_week'|trans }}</span>
+            </div>
+            <div class="price_table_row">
+                <p>
+                    {% if package.seniorDevelopersCount != 0 %}
+                        {{ 'package.seniors'|transchoice(package.seniorDevelopersCount) }}
+                    {% endif %}
+                </p>
+                <p>
+                    {% if package.mediumDevelopersCount != 0 %}
+                        {{ 'package.mediums'|transchoice(package.mediumDevelopersCount) }}
+                    {% endif %}
+                </p>
+                <p>
+                    {% if package.juniorDevelopersCount != 0 %}
+                        {{ 'package.juniors'|transchoice(package.juniorDevelopersCount) }}
+                    {% endif %}
+                </p>
+            </div>
+            <div class="price_table_row">
+                <i class="fa fa-handshake-o"></i>
+                {{ 'package.minimal_engagement'|transchoice(package.minimalEngagement) }}
+            </div>
+            <div class="price_table_row">
+                <a tabindex="{{ loop.index }}" role="button" class="more"
+                   data-toggle="popover" data-trigger="focus" data-placement="top"
+                   data-content="{{ translate(package, 'description') }}">
+                    {{ 'package.more'|trans }}
+                </a>
+            </div>
+        </div>
+        <a href="#contact-us" class="btn btn-default btn-lg btn-block">{{ 'contact_us'|trans }}</a>
+    </div>
+</div>

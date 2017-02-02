@@ -1,0 +1,30 @@
+AppBundle\Entity\Services\ExtraDevelopmentPackageTranslation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Services\ExtraDevelopmentPackageTranslationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        locale:
+            type: string
+            length: 5
+        name:
+            type: string
+            length: 255
+        profile:
+            type: string
+            length: 255
+        description:
+            type: text
+    manyToOne:
+        package:
+            targetEntity: AppBundle\Entity\Services\ExtraDevelopmentPackage
+            inversedBy: translations
+            joinColumn:
+                nullable: false
+                onDelete: cascade
+    lifecycleCallbacks: {  }

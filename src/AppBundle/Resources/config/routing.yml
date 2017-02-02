@@ -3,20 +3,25 @@ homepage:
     defaults:
         _controller: AppBundle:Home:index
 
-coaching_list:
+services_index:
+    path: /services
+    defaults:
+        _controller: AppBundle:Services:index
+
+coaching:
     path: /coaching
     defaults:
-        _controller: AppBundle:Coaching:index
+        _controller: AppBundle:Services:coaching
 
-discount_list:
-    path: /discounts
-    defaults:
-        _controller: AppBundle:Discount:index
-
-academy_index:
+academy:
     path: /academy
     defaults:
-        _controller: AppBundle:Academy:index
+        _controller: AppBundle:Services:academy
+
+studio:
+    path: /studio
+    defaults:
+        _controller: AppBundle:Services:studio
 
 event_list:
     path: /events

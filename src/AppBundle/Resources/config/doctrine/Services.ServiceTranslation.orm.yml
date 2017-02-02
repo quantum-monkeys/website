@@ -1,0 +1,27 @@
+AppBundle\Entity\Services\ServiceTranslation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Services\ServiceTranslationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        locale:
+            type: string
+            length: 5
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+    manyToOne:
+        service:
+            targetEntity: AppBundle\Entity\Services\Service
+            inversedBy: translations
+            joinColumn:
+                nullable: false
+                onDelete: cascade
+    lifecycleCallbacks: {  }

@@ -34,7 +34,13 @@ class BreadcrumbsGenerator
     public function generateServices()
     {
         $this->generateHomepage();
-        $this->breadcrumbs->addItem('coaching', 'coaching_list');
+        $this->breadcrumbs->addItem('services', 'services');
+    }
+
+    public function generateCoaching()
+    {
+        $this->generateHomepage();
+        $this->breadcrumbs->addItem('coaching', 'coaching');
     }
 
     public function generateNewsletter()
@@ -43,16 +49,16 @@ class BreadcrumbsGenerator
         $this->breadcrumbs->addItem('newsletter', 'newsletter');
     }
 
-    public function generateTrainings()
-    {
-        $this->generateHomepage();
-        $this->breadcrumbs->addRouteItem('trainings', 'training_list');
-    }
-
     public function generateAcademy()
     {
         $this->generateHomepage();
-        $this->breadcrumbs->addRouteItem('academy', 'academy_index');
+        $this->breadcrumbs->addRouteItem('academy', 'academy');
+    }
+
+    public function generateStudio()
+    {
+        $this->generateHomepage();
+        $this->breadcrumbs->addRouteItem('studio', 'studio');
     }
 
     public function generateEvents()

@@ -1,0 +1,42 @@
+AppBundle\Entity\Services\DevelopmentPackage:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Services\DevelopmentPackageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    fields:
+        position:
+            type: integer
+            nullable: true
+        seniorDevelopersCount:
+            type: integer
+            nullable: true
+        mediumDevelopersCount:
+            type: integer
+            nullable: true
+        juniorDevelopersCount:
+            type: integer
+            nullable: true
+        minimalEngagement:
+            type: integer
+        price:
+            type: decimal
+            precision: 10
+            scale: 2
+
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\Services\DevelopmentPackageTranslation
+            mappedBy: package
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }

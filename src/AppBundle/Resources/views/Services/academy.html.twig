@@ -1,0 +1,36 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% trans_default_domain 'academy' %}
+
+{% block description %}{{ 'meta.description'|trans }}{% endblock %}
+{% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="services academy container">
+        <div class="row">
+            <picture class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-1">
+                <img src="{{ asset('images/logos/QM-Academie.png') }}" class="img-responsive">
+            </picture>
+            <div class="col-xs-12 col-md-6 col-md-offset-1 col-lg-6">
+                {{ 'description'|trans|markdown }}
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row packages row-centered">
+            <h2>{{ 'workshops.title'|trans }}</h2>
+
+            <p>{{ 'workshops.description'|trans }}</p>
+        </div>
+
+        <hr>
+
+        <div class="row packages row-centered">
+            <h2>{{ 'elearning.title'|trans }}</h2>
+
+            <p>{{ 'elearning.description'|trans }}</p>
+        </div>
+
+    </div>
+{% endblock %}
