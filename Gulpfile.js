@@ -50,7 +50,6 @@ gulp.task('css', () => {
 
     return gulp.src([
             'app/Resources/styles/style.css',
-            'app/Resources/styles/academy.css',
             'app/Resources/styles/aboutus.css',
             'app/Resources/styles/services.css',
             'app/Resources/styles/custom.css'

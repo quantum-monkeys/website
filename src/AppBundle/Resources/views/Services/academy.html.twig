@@ -11,26 +11,34 @@
             <picture class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-1">
                 <img src="{{ asset('images/logos/QM-Academie.png') }}" class="img-responsive">
             </picture>
-            <div class="col-xs-12 col-md-6 col-md-offset-1 col-lg-6">
+            <div class="col-xs-12 col-md-6 col-md-offset-1">
                 {{ 'description'|trans|markdown }}
             </div>
         </div>
 
-        <hr>
-
-        <div class="row packages row-centered">
+        <div class="row">
             <h2>{{ 'workshops.title'|trans }}</h2>
 
-            <p>{{ 'workshops.description'|trans }}</p>
+            <picture class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-0">
+                <img src="{{ asset('images/workshop.jpg') }}" class="img-responsive">
+            </picture>
+            <div class="col-xs-12 col-md-8">
+                {{ 'workshops.description'|trans|markdown }}
+            </div>
+        </div>
+
+        <div class="row">
+            <h2>{{ 'elearning.title'|trans }}</h2>
+
+            <picture class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-0">
+                <img src="{{ asset('images/elearning.jpg') }}" class="img-responsive">
+            </picture>
+            <div class="col-xs-12 col-md-8">
+                {{ 'elearning.description'|trans|markdown }}
+            </div>
         </div>
 
         <hr>
-
-        <div class="row packages row-centered">
-            <h2>{{ 'elearning.title'|trans }}</h2>
-
-            <p>{{ 'elearning.description'|trans }}</p>
-        </div>
 
     </div>
 {% endblock %}

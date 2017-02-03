@@ -688,3 +688,21 @@ header.visual-area {
 .newsletter .submit-group {
     text-align: right;
 }
+
+.btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 1em 2em;
+    margin: 1em 0;
+}
+
+.btn-default,
+.btn-default:hover,
+.btn-default.active,
+.btn-default.active:hover,
+.btn-default:active {
+    color: #fff;
+    background-color: #FF8A00;
+    border-color: #FF8A00;
+    box-shadow: none;
+}

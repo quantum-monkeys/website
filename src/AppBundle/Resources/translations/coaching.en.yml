@@ -1,14 +1,12 @@
+contact_us: 'Contact us'
 meta:
   description: 'Corporate coaching and consulting services offered by experts of new management practices (Agile, Lean, Podularity).'
-
-contact_us: Contact us
-
 package:
   per_month: '/ month'
   location:
-    by_phone: By phone
+    by_phone: 'By phone'
     or: or
-    on_site: On site
+    on_site: 'On site'
   duration:
     hours: '%count% h / week'
     minutes: '%count% min / week'

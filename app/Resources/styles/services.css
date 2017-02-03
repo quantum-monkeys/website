@@ -27,7 +27,7 @@
 
 .services.studio h2,
 .services.academy h2 {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
 }
 
 .services .row {
@@ -127,4 +127,12 @@
 .services .division {
     text-align: center;
     margin-bottom: 5em;
+}
+
+.services.academy .row {
+    margin-bottom: 5em;
+}
+
+.services.academy .row picture {
+    margin-bottom: 2em;
 }
