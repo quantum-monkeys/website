@@ -12,9 +12,11 @@
                 {% for post in pager.getResults() %}
                     <div class="post">
                         <div class="blog-img-detail">
-                            {% media post.image, 'wide' with {
-                                class: 'img-responsive'
-                            } %}
+                            <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">
+                                {% media post.image, 'wide' with {
+                                    class: 'img-responsive'
+                                } %}
+                            </a>
                         </div>
 
                         <div class="blog-title">

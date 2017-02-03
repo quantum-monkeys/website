@@ -76,7 +76,7 @@ sonata_media:
                 wide:  { width: 763 , quality: 90}
     cdn:
         server:
-            path: /uploads/media # http://media.sonata-project.org/
+            path: "%base_domain%/uploads/media"
 
     filesystem:
         local:
