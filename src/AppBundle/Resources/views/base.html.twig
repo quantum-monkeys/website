@@ -149,8 +149,8 @@
     {{ render(controller('AppBundle:Newsletter:popup')) }}
 
     {% block javascripts %}
-        <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
-        <script type="application/javascript" src="{{ asset('js/app.min.js') }}"></script>
+        <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}" async></script>
+        <script type="application/javascript" src="{{ asset('js/app.min.js') }}" async></script>
 
         {% if app.environment == 'prod' %}
             <script>
