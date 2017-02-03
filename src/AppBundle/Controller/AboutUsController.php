@@ -59,7 +59,7 @@ class AboutUsController extends Controller
 
             $message = \Swift_Message::newInstance()
                 ->setSubject('Message from: ' . $data['firstName'] . ' ' . $data['lastName'])
-                ->setFrom($data['email'], $data['firstName'] . ' ' . $data['lastName'])
+                ->setFrom('company@quantummonkeys.com')
                 ->setTo('company@quantummonkeys.com')
                 ->setBody(
                     $this->renderView(
