@@ -20,3 +20,5 @@ parameters:
 
     newsletter_list_id: null
     newsletter_api_key: null
+
+    base_domain:        null
