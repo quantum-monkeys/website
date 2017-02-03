@@ -15,13 +15,6 @@
                 <i class="fa fa-handshake-o"></i>
                 {{ 'package.minimal_engagement'|transchoice(package.minimalEngagement) }}
             </div>
-            <div class="price_table_row">
-                <a tabindex="{{ loop.index }}" role="button" class="more"
-                   data-toggle="popover" data-trigger="focus" data-placement="top"
-                   data-content="{{ translate(package, 'description') }}">
-                    {{ 'package.more'|trans }}
-                </a>
-            </div>
         </div>
         <a href="#contact-us" class="btn btn-default btn-lg btn-block">{{ 'contact_us'|trans }}</a>
     </div>

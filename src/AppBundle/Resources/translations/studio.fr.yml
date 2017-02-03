@@ -11,7 +11,7 @@ package:
 packages:
   basic:
     title: 'Forfaits de base'
-    description: 'La taille des équipes peut varier en fonction de l’ampleur de votre projet.'
+    description: 'La taille des équipes peut varier en fonction de l’ampleur de votre projet. L''expertise de l''équipe couvre le développement front-end, back-end, les opérations et sa propre gestion.'
   addons:
     title: Ajouts
     description: 'Le facilitateur joue le rôle d’intermédiaire entre le client et l’équipe. Il assure les communications entre les deux partis et prend en charge l’équipe de façon à s’assurer que le projet est dans la bonne direction.'
