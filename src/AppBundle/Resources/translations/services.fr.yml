@@ -1,0 +1,12 @@
+title: 'Nos services'
+link:
+  learn_more: 'En savoir plus'
+studio:
+  title: Construire
+  description: 'Pour vos projets de développement logiciel, avec une équipe autonome de développeurs'
+academy:
+  title: Apprendre
+  description: 'Pour développer et mettre à jour des compétences, avec de la formation en ligne et des ateliers sur place'
+coaching:
+  title: Coach
+  description: 'Pour comprendre une problématique et appliquer des compétences, avec de la consultation et du coaching'

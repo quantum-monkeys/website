@@ -11,7 +11,7 @@ package:
 packages:
   basic:
     title: 'Basic packages'
-    description: 'The size of the teams can vary depending on the scale of your projects. The area of expertise of the team covers front-end, back-end, operations and their own management.'
+    description: 'The size of the teams can vary depending on the scale of your projects. The areas of expertise of the team cover front-end, back-end, operations and its own management.'
   addons:
     title: Addons
     description: 'The facilitator is an intermediate between the client and the team. He is taking care of the communications between all the parties and manage the team to make sure the project is on the right track.'

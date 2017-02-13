@@ -1,12 +1,12 @@
 title: 'Our services'
 coaching:
   title: Coach
-  description: 'Pour comprendre une problématique et appliquer des compétences, avec de la consultation et du coaching'
+  description: 'Coaching and consultation to help you to understand a problematic and apply new skills'
 academy:
   title: Learn
-  description: 'Pour développer et mettre à jour des compétences, avec de la formation en ligne et des ateliers sur place'
+  description: 'To acquire and update skills through e-learning and workshops'
 studio:
   title: Build
-  description: 'Pour vos projets de développement logiciel, avec une équipe autonome de développeurs'
+  description: 'A team of autonomous developers for your software development projects'
 link:
   learn_more: 'Learn more'
