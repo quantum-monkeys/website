@@ -14,15 +14,26 @@
     width: 100%;
 }
 
+.services.widget {
+    padding: 3em 0;
+}
+
 .services h2 {
-    font-size: 3em;
-    text-align: center;
     font-family: Antonio-Bold, Arial, helvetica, sans-serif;
     color: #FF8A00;
-    font-weight: 700;
-    letter-spacing: .2em;
     text-transform: uppercase;
     margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.services.page h2 {
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: .2em;
+}
+
+.services.widget h2 {
+    font-size: 3.5em;
 }
 
 .services.studio h2,

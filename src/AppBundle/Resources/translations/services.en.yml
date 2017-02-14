@@ -1,4 +1,6 @@
-title: 'Our services'
+title:
+  widget: 'How can we help you?'
+  page: 'Our services'
 coaching:
   title: Coach
   description: 'Coaching and consultation to help you to understand a problematic and apply new skills'
