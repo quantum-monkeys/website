@@ -1,4 +1,6 @@
-title: 'Nos services'
+title:
+  widget: 'Comment pouvons-nous vous aider ?'
+  page: 'Nos services'
 link:
   learn_more: 'En savoir plus'
 studio:
