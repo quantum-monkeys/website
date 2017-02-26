@@ -1,6 +1,4 @@
 contact_us: Contactez-nous
-meta:
-  description: 'Coaching corporatif et service conseil offerts par des experts des nouveaux modes de gestion (Agile, Lean, Podularity).'
 package:
   per_month: '/ mois'
   location:
@@ -14,3 +12,8 @@ package:
   emails: '{0} -|{1} courriel par semaine|]1, 100] %count% courriels par semaine|]100,Inf[ Courriels illimités'
   minimal_engagement: '{0} -|]0,Inf[ Engagement minimum de %count% mois'
   more: 'En savoir plus'
+
+meta:
+  title: 'Coaching corporatif et consultation Agile - Quantum Monkeys'
+  keywords: 'Agile, consultation, coaching, expert, Agilité'
+  description: 'Coaching corporatif et consultation Agile offerts par des experts des méthodes de gestion modernes'

@@ -1,20 +1,10 @@
 <!DOCTYPE html>
 <html {{ sonata_seo_html_attributes() }}>
 <head {{ sonata_seo_head_attributes() }}>
-    <title>{% block title %}{{ 'meta.title'|trans }}{% endblock %}</title>
-    <meta name="keywords" content="{% block keywords %}{{ 'meta.keywords'|trans }}{% endblock %}" />
-    <meta name="description" content="{% block description %}{{ 'meta.description'|trans }}{% endblock %}" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="{% block ogtitle %}{{ 'meta.title'|trans }}{% endblock %}" />
-    <meta property="og:site_name" content="{% block ogsitename %}{{ 'meta.title'|trans }}{% endblock %}" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.quantummonkeys.com" />
-    <meta property="og:image" content="{% block ogimage %}http://www.quantummonkeys.com/images/logo-big.png{% endblock %}" />
-    <meta property="og:description" content="{% block ogdescription %}{{ 'meta.description'|trans }}{% endblock %}" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="UTF-8" />
-
-    {% block twitter %}{% endblock %}
+    {{ sonata_seo_title() }}
+    {{ sonata_seo_metadatas() }}
+    {{ sonata_seo_link_canonical() }}
+    {{ sonata_seo_lang_alternates() }}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
@@ -40,7 +30,7 @@
     <!--start_top_contanear-->
     <div class="top_contanear">
         <div class="container">
-            <div class="top_heade_right_area"">
+            <div class="top_heade_right_area">
                 <div class="top_social_area">
                     <p>
                         <a href="https://www.facebook.com/quantummonkeys"><i class="fa fa-facebook" aria-hidden="true"></i></a>

@@ -8,5 +8,8 @@ view:
   start_from: 'Start from: %date%'
   start_at: 'Start @ %time%'
   speakers: Speakers
+
 meta:
-  description: 'Quantum Monkeys organizes various events related to new management practices (Agile, Lean, Podularity) every month !'
+  title: 'Events - Quantum Monkeys'
+  keywords: ''
+  description: 'We frequently organize events related to Agility !'
