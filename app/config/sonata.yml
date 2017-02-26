@@ -157,21 +157,19 @@ sonata_admin:
 sonata_seo:
     encoding:         UTF-8
     page:
-        default:          sonata.seo.page.default
-        title:            Quantum Monkeys
+        title:            Agile Coaching and Trainings - Quantum Monkeys
         metas:
             name:
-                keywords:             Consulting Agile PLA Pragmatic Lean Coaching Automation Continuous Integration Deployment Symfony Nodejs
-                description:          Agile think tank that allows us to explore the themes of making organizations and people more dynamic, more efficient and just plain awesome.
+                keywords:             Agile, transformation, consultation, coaching, trainings, Agility
+                description:          At Quantum Monkeys, we are Agile transformation specialists. We can help you adopt new practices based on Agility.
                 robots:               index, follow
 
             property:
-                'og:title':           Quantum Monkeys
-                'og:site_name':       Quantum Monkeys
-                'og:type':            "website"
-                'og:url':             "http://www.quantummonkeys.com"
-                'og:image':           "http://www.quantummonkeys.com/images/qm/logo.png"
-                'og:description':     Agile think tank that allows us to explore the themes of making organizations and people more dynamic, more efficient and just plain awesome.
+                'og:site_name': Quantum Monkeys
+                'og:type': website
+
+                'twitter:card': summary
+                'twitter:site': '@quantummonkeys'
 
             http-equiv:
                 'Content-Type':         text/html; charset=utf-8

@@ -9,6 +9,11 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
 
+    app.manager.media_manager:
+        class: AppBundle\Manager\MediaManager
+        arguments:
+            - '@sonata.media.pool'
+
     app.manager.breadcrumb_generator:
         class: AppBundle\Manager\BreadcrumbsGenerator
         arguments:
@@ -42,3 +47,19 @@ services:
         class: Twig_Extensions_Extension_Intl
         tags:
             - { name: twig.extension }
+
+    app.listener.metadata_subscriber:
+        class:     AppBundle\EventListener\MetadataSubscriber
+        arguments:
+          - '@request_stack'
+          - '@translator'
+          - '@router'
+          - '@templating.helper.assets'
+          - '@sonata.seo.page'
+          - '@doctrine.orm.entity_manager'
+          - '@app.twig.object_translator'
+          - '@app.manager.media_manager'
+          - '@sonata.news.manager.post'
+          - '@sonata.news.blog'
+        tags:
+            - { name: "kernel.event_subscriber", priority: 100 }

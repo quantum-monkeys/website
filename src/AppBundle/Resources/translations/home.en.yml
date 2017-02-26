@@ -16,3 +16,8 @@ what:
 activities:
   title: 'What''s happening with us now'
   subtitle: Subtitle
+
+meta:
+  title: 'Agile Coaching and Trainings - Quantum Monkeys'
+  keywords: 'Agile, transformation, consultation, coaching, trainings, Agility'
+  description: 'At Quantum Monkeys, we are Agile transformation specialists. We can help you adopt new practices based on Agility.'

@@ -16,3 +16,8 @@ what:
 activities:
   title: 'Ce que nous faisons en ce moment'
   subtitle: Sous-titre
+
+meta:
+  title: 'Coaching et formations Agile - Quantum Monkeys'
+  keywords: 'AAgile, transformation, consultation, coaching, formations, Agilité'
+  description: 'Chez Quantum Monkeys, nous sommes des spécialistes des transformations Agile. Nous pouvons vous aider à adopter de nouvelles pratiques en lien avec l''Agilité.'

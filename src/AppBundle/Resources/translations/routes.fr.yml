@@ -1,7 +1,8 @@
 homepage: /
-service_list: /services
-discount_list: /promotions
-academy_index: /academie
+services_index: /services
+coaching: /coaching
+academy: /academie
+studio: /studio
 event_list: /evenements
 event_show: '/evenements/{id}'
 about_us: /a-propos

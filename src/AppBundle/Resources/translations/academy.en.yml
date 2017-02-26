@@ -1,9 +1,12 @@
 description: "Agile is complex, but it doesn't need be complicated.\nWhether you need to learn about Agility, company culture, or modern organizational models, Quantum Academy will break it all down into easy-to-understand concepts reinforced with real-world examples so you can confidently lead your team into Agility.\n\nWe offer workshops and certification paths on a variety of subjects such as:\n\n- Team Agility\n- Organizational Agility\n- Business Agility\n- Networked companies and popularity models\n- Self-organization\n- Emerging management approaches"
-meta:
-  description: 'Hands on trainings to develop knowledge and skills on modern management practices (Agile, Lean, Podularity).'
 workshops:
   title: Workshops
   description: "Give your team the robust wealth of knowledge and experience in order to thrive. Designed to maximize learning and retention, our workshops are a potent blend of theory and practice. In just 3 hours, your team can skillfully incorporate a new dimension of Agile into their work.\n\nSome workshops can be adapted to the specific context of your organization. If needed, they can even be build around one of your project. This may required a preliminary work on your side. Depending on your needs, the workshop can also be distributed on an entire day, which will lead to additional fees.\n\nThe workshops are created to accommodate 5 to 15 people for a flat fee. It is possible to organize two workshops in the same day. For travel outside Montreal area, a minimum of two workshops or of a full-day workshop is required."
 elearning:
   title: E-learning
   description: "You would like to keep your employees knowledge up to date or to integrate rapidly a new employee? You want to avoid the fees related to employees’ gathering in order to provide them proper training? The teletraining service of Quantum Académie is a solution that adresses these needs.\n\nQuantum Académie offers many trainings of a duration of 2 to 10 hours on various subjects such as Agility, management and software development. The trainings are accessible at all times via workstations, mobile telephones and tablets. Each training is divided lectures. They all include a test and leads to a certificate of achievement.\n \nIt is possible to develop a personalized cursus, adapted to your company’s context, for your employees. A specific attestation, created in the name of your organization, will be delivered to the employees that complete successfully their cursus. For more information, contact us.\n\nThe teletraining offered by Quantum Academia is an affordable solution destined to businesses. Upon purchasing, the training can be followed by the student at its own pace."
+
+meta:
+  title: 'Agile trainings - Quantum Académie'
+  keywords: 'Agile, trainings, workshops, e-learning, Agility'
+  description: 'Agile trainings, workshops and e-learning offered by Agility experts'
