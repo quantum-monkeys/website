@@ -101,3 +101,6 @@ csa_guzzle:
                 base_uri: https://us13.api.mailchimp.com
                 timeout: 2.0
                 auth: ['test', '%newsletter_api_key%', 'basic']
+
+presta_sitemap:
+    timetolive: 3600
