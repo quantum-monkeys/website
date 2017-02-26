@@ -63,3 +63,29 @@ services:
           - '@sonata.news.blog'
         tags:
             - { name: "kernel.event_subscriber", priority: 100 }
+
+    app.sitemap.blog_post_subscriber:
+        class:     AppBundle\EventListener\SitemapBlogPostSubscriber
+        arguments:
+            - "@router"
+            - "@sonata.news.manager.post"
+            - "@sonata.news.blog"
+            - "@app.manager.media_manager"
+        tags:
+            - { name: "kernel.event_subscriber", priority: 100 }
+
+    app.sitemap.static_pages_subscriber:
+        class:     AppBundle\EventListener\SitemapStaticPagesSubscriber
+        arguments:
+            - "@router"
+        tags:
+            - { name: "kernel.event_subscriber", priority: 100 }
+
+    app.sitemap.events_subscriber:
+        class:     AppBundle\EventListener\SitemapEventsSubscriber
+        arguments:
+            - "@router"
+            - "@app.manager.search_engine"
+            - "@app.manager.media_manager"
+        tags:
+            - { name: "kernel.event_subscriber", priority: 100 }

@@ -51,6 +51,8 @@ class AppKernel extends Kernel
 
             new Csa\Bundle\GuzzleBundle\CsaGuzzleBundle(),
 
+            new Presta\SitemapBundle\PrestaSitemapBundle(),
+
             new AppBundle\AppBundle(),
         );
 

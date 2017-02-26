@@ -21,9 +21,9 @@ class SearchEngine
         $this->eventOccurenceRepository = $em->getRepository('AppBundle:EventOccurrence');
     }
 
-    public function getEventSearch(Request $request): EventSearch
+    public function getEventSearch(Request $request = null): EventSearch
     {
-        $searchData = $request->get('event_search');
+        $searchData = $request ? $request->get('event_search') : [];
 
         $eventSearch = new EventSearch();
         $eventSearch
