@@ -13,10 +13,6 @@ contact:
     email:
       title: Email
       value: company@quantummonkeys.com
-meta:
-  title: 'Corporate coaching and trainings - Quantum Monkeys'
-  description: 'Corporate coaching and trainings dispensed by experts to support organizations'' transition toward modern management practices (Agile, Lean, Podularity)'
-  keywords: 'Montreal corporate coaching Agile Lean Podularity transition consulting services'
 menu:
   home: Home
   about_us: __menu.about_us

@@ -28,5 +28,8 @@ comment:
       placeholder: Commentaire
     submit:
       label: Soumettre
+
 meta:
-  description: 'Découvrez nos articles sur les dernières nouveautés en matière de méthodes de gestion modernes !'
+  title: 'Blog - Quantum Monkeys'
+  keywords: ''
+  description: 'Découvrez nos articles sur l''Agilité et les modes de gestion modernes !'

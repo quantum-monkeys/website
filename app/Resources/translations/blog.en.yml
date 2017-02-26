@@ -28,5 +28,8 @@ comment:
       placeholder: Comment
     submit:
       label: Submit
+
 meta:
-  description: 'Discover our articles on modern management practices development!'
+  title: 'Blog - Quantum Monkeys'
+  keywords: ''
+  description: 'Discover our articles on Agility and modern managment practices !'

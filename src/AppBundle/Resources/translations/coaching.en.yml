@@ -1,6 +1,4 @@
 contact_us: 'Contact us'
-meta:
-  description: 'Corporate coaching and consulting services offered by experts of new management practices (Agile, Lean, Podularity).'
 package:
   per_month: '/ month'
   location:
@@ -14,3 +12,8 @@ package:
   emails: '{0} -|{1} email / week|]1, 100] %count% emails / week|]100,Inf[ Unlimited emails'
   minimal_engagement: '{0} -|{1} Minimal engagement of 1 month|]1,Inf[ Minimal engagement of %count% months'
   more: 'Learn more'
+
+meta:
+  title: 'Agile corporate coaching and consulting - Quantum Monkeys'
+  keywords: 'Agile, coaching, consulting, expert, Agility'
+  description: 'Agile corporate coaching and consulting services offered by experts of new management practices'

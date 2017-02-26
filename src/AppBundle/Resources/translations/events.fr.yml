@@ -8,5 +8,8 @@ view:
   start_from: 'Commence le : %date%'
   start_at: 'Présentation @ %time%'
   speakers: Orateurs
+
 meta:
-  description: 'Quantum Monkeys organise plusieurs événements en lien avec les nouveaux modes de gestion (Agile, Lean, Podularity) à chaque mois !'
+  title: 'Événements - Quantum Monkeys'
+  keywords: ''
+  description: 'Nous organisons régulièrement des événements en lien avec l''Agilité !'
