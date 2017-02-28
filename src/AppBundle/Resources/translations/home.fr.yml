@@ -17,6 +17,8 @@ what:
 activities:
   title: 'Ce que nous faisons en ce moment'
   subtitle: Sous-titre
+clients:
+  title: 'Ils nous font confiance'
 
 meta:
   title: 'Coaching et formations Agile - Quantum Monkeys'

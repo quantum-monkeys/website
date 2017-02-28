@@ -17,6 +17,8 @@ what:
 activities:
   title: 'What''s happening with us now'
   subtitle: Subtitle
+clients:
+  title: 'They trust us'
 
 meta:
   title: 'Agile Coaching and Trainings - Quantum Monkeys'
