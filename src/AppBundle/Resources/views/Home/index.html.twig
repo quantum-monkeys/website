@@ -37,5 +37,22 @@
         </div>
     </div>
 
+    <div class="container partners">
+        <div class="row">
+            <h2>They trust us</h2>
+        </div>
+        <div class="row clients">
+            <div class="col-xs-4 client">
+                <img src="{{ asset('images/clients/Logo_Bell_Canada.png') }}" alt="Bell Canada">
+            </div>
+            <div class="col-xs-4 client">
+                <img src="{{ asset('images/clients/Logo_Quebecor_Media.png') }}" alt="Quebecor Media">
+            </div>
+            <div class="col-xs-4 client">
+                <img src="{{ asset('images/clients/appdirect-logo-light-large.png') }}" alt="AppDirect">
+            </div>
+        </div>
+    </div>
+
     {{ render(controller('AppBundle:Testimonial:widget')) }}
 {% endblock %}
