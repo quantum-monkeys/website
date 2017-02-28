@@ -171,55 +171,6 @@ body {
 	max-width: 1190px;
 	margin: 0px auto;
 }
-.top_contanear {
-	display: block;
-	width: 100%;
-	height: 46px;
-	background: url(../images/top_social_bg2.jpg) top center repeat-y;
-	background-size: 100% auto;
-}
-.welcome_visitor_area {
-	display: block;
-	float: left;
-	line-height: 46px;
-}
-.welcome_visitor_area p {
-	font-size: 16px;
-	color: #FFF;
-	font-family: 'Arial-BoldMT';
-}
-.welcome_visitor_area p a {
-	color: #ff8a00;
-	font-family: 'ArialNarrow';
-}
-.welcome_visitor_area p a:hover { color: #FFF; }
-.top_heade_right_area {
-	display: block;
-	float: right;
-	height: 46px;
-	background: #000;
-	position: relative;
-}
-.top_social_area {
-	display: block;
-	float: right;
-	width: auto;
-	height: 46px;
-	background: #ff8a00 url(../images/top_social_bg.jpg) top left no-repeat;
-	background-size: 65px 100%;
-	padding-left: 60px
-}
-.top_social_area p {
-	line-height: 46px;
-	color: #FFF;
-	font-size: 17px;
-}
-.top_social_area p a {
-	color: #FFF;
-	padding: 0 5px;
-}
-.top_social_area p a:hover { color: #000; }
-.codecon_half { float: right; }
 .account_but {
 	display: block;
 	float: right;
@@ -3044,27 +2995,14 @@ input[type="search"].ExpInput {
 	}
 }
 
-@media screen and (max-width:800px) {
-}
-
 @media screen and (max-width:768px) {
 	.account_but { display: none; }
-	.codecon_half { display: none; }
-	.top_contanear {
-		width: 100%;
-		background: #000000;
-	}
 	.welcome_visitor_area {
 		line-height: normal;
 		width: 100%;
 		text-align: center;
 		padding: 5px 0;
 	}
-	.top_social_area {
-		padding-left: 60px;
-		padding-right: 25px;
-	}
-	.top_heade_right_area { margin-right: -3.2%; }
 	.top_nav_contanear { display: none; }
 	.mob_logo_area { display: block; }
 	.mob_nav_contanear { display: block; }

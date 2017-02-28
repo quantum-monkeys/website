@@ -2,15 +2,17 @@
 
 {% trans_default_domain 'home' %}
 
-{% block hero_style %} style="background-image: url(/images/doors-1690423_1920-orange.jpg); background-position: center center;"{% endblock hero_style %}
+{% block hero_classes %} hero-home{% endblock hero_classes %}
+{% block hero_style %} style="background-image: url({{ asset('images/adventure-1807524_1920.jpg') }}); background-position: center center;"{% endblock hero_style %}
 
 {% block hero %}
-    <div class="home-hero">
-        <h2>{{ 'hero.title'|trans|raw }}</h2>
-        <h3>{{ 'hero.subtitle'|trans|raw }}</h3>
+    <div class="hero-content">
         <a class="video-cta fancybox.iframe" href="http://www.youtube.com/embed/tYQDI0JEGNc?autoplay=1">
-            <i class="fa fa-play"></i>
+            <i class="fa fa-youtube"></i>
+            {{ 'hero.video_link'|trans|raw }}
         </a>
+        <h2>{{ 'hero.title'|trans|raw }}</h2>
+        <p class="read-more"><i class="fa fa-angle-down"></i></p>
     </div>
 {% endblock hero %}
 

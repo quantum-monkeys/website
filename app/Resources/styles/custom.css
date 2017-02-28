@@ -145,68 +145,6 @@
     display: block;
 }
 
-.home-hero {
-    overflow: hidden;
-    position: relative;
-    padding: 1.5em 0 2em;
-    background-repeat: no-repeat;
-    background-position: center top;
-    -webkit-background-size: cover;
-    background-size: cover;
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-
-    font: 700 32px/38px 'Antonio-Bold', Arial, helvetica, sans-serif;
-}
-
-.home-hero h2 {
-    font: 700 2em/1.2em 'Antonio-Bold', Arial, helvetica, sans-serif;
-}
-
-.home-hero h3 {
-    font: 700 1em/1em 'Antonio-Bold', Arial, helvetica, sans-serif;
-}
-
-.home-hero h2,
-.home-hero h3 {
-    letter-spacing: 0.3em;
-    text-shadow:
-        -1px -1px 1px #000,
-        1px -1px 1px #000,
-        -1px 1px 1px #000,
-        1px 1px 1px #000;
-    margin-right: -0.3em;
-}
-
-@media (min-width: 500px) {
-    .home-hero h2,
-    .home-hero h3 {
-        margin-right: 0;
-    }
-}
-
-.home-hero .video-cta {
-    width: 2em;
-    height: 2em;
-    font-size: 1.5em;
-    border-radius: 5em;
-    background-color: #ff8a00;
-    display: inline-block;
-    color: white;
-    margin-top: 0.5em;
-}
-
-.home-hero .video-cta i {
-    line-height: 2em;
-    text-indent: 0.2em;
-}
-
-.home-hero h2 span,
-.home-hero h3 span {
-    color: #ff8a00;
-}
-
 .how_can_help_text_area p {
     text-align: right;
 }
@@ -435,235 +373,6 @@
     color: #ff8a00;
 }
 
-header {
-    min-height: 16em;
-    position: relative;
-    padding-top: 4em;
-    font-family: 'Antonio-Bold';
-    font-size: 18px;
-}
-
-header.visual-area {
-    height: 0;
-}
-
-.navbar {
-    background: rgba(0,0,0,.75);
-    border: none;
-    height: 6em;
-    border-radius: 0;
-    z-index: 2;
-}
-
-.navbar-default .navbar-nav > li > a,
-.navbar-default .navbar-nav > li.current > a,
-.navbar-default .navbar-nav > li:hover > a {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    height: 7em;
-    margin: -0.5em 0;
-    padding: 3em 1em;
-}
-
-.navbar-default .navbar-nav > li.current > a,
-.navbar-default .navbar-nav > li:hover > a {
-    background-color: #FF8A00;
-}
-
-.navbar .container .navbar-brand {
-    position: relative;
-    width: 15em;
-    height: 8.2em;
-    margin: -1.1em 0;
-    padding: 0;
-    z-index: 10;
-}
-
-.navbar .container .navbar-brand .shape img {
-    height: 7.5em;
-    display: inline-block;
-    margin: auto;
-}
-
-.navbar-default .navbar-collapse,
-.navbar-toggle
-{
-    z-index: 2;
-}
-
-.left-shape,
-.right-shape,
-.shape {
-    position: absolute;
-    top: 0;
-    width: 1.5em;
-    height: 100%;
-}
-
-.shape {
-    width: 12em;
-    background-color: #FF8A00;
-    padding: 0.3em 1em;
-    left: 1.5em;
-}
-
-.left-shape {
-    left: 0;
-    border-right: 1.5em solid #ce6f00;
-    border-top: 1.2em solid transparent;
-    border-bottom: 1.2em solid transparent;
-}
-
-.right-shape {
-    right: 0;
-    border-left: 1.5em solid #ce6f00;
-    border-top: 1.2em solid transparent;
-    border-bottom: 1.2em solid transparent;
-}
-
-.top_heade_right_area {
-    float: none;
-}
-
-.newsletter_subscription {
-    float: left;
-    padding-top: 10px;
-}
-
-.newsletter_subscription a {
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.2em;
-}
-
-@media (max-width: 1200px) {
-    .top_contanear {
-        height: 30px;
-    }
-    .top_heade_right_area {
-        height: 30px;
-    }
-    .top_heade_right_area p {
-        line-height: 30px;
-    }
-
-    .codecon_half {
-        padding-top: 3px;
-    }
-
-    .newsletter_subscription {
-        padding-top: 3px;
-        padding-left: 1em;
-    }
-
-    header {
-        min-height: 11em;
-    }
-    .navbar {
-        height: 3em;
-    }
-    .navbar-header {
-        float: none;
-    }
-    .navbar .container .navbar-brand {
-        width: 12em;
-        height: 5.2em;
-    }
-    .shape {
-        width: 9em;
-        background-color: #FF8A00;
-        padding: 0.1em 1.2em;
-        left: 1.5em;
-    }
-    .left-shape {
-        border-right: 1em solid #ce6f00;
-    }
-    .right-shape {
-        border-left: 1em solid #ce6f00;
-    }
-    .navbar .container .navbar-brand .shape img {
-        height: 5em;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-        background-color: white;
-    }
-    .navbar-toggle {
-        display: block;
-        margin-top: 0.6em;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-        background-color: transparent;
-    }
-
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 0;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-        display:block !important;
-    }
-
-    .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-        border: none;
-        z-index: 1000;
-    }
-
-    .navbar-default .navbar-nav > li {
-        background-color: white;
-        border: 1px solid grey;
-        border-collapse: collapse;
-        z-index: 1000;
-    }
-
-    .navbar-default .navbar-nav > li > a {
-        color:grey;
-        text-align: center;
-        margin: 0;
-        padding: 1em;
-        height: inherit;
-        z-index: 1000;
-    }
-
-    .navbar-default .navbar-nav > li.current > a,
-    .navbar-default .navbar-nav > li:hover > a {
-        color:white;
-        margin: 0;
-        padding: 1em;
-        height: inherit;
-        z-index: 1000;
-    }
-
-    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .home-hero {
-        overflow: inherit;
-        font: 700 1em/1em 'Antonio-Bold', Arial, helvetica, sans-serif;
-    }
-}
-
-
-
 .newsletter {
     color: grey;
     padding: 1em;
@@ -705,4 +414,121 @@ header.visual-area {
     background-color: #FF8A00;
     border-color: #FF8A00;
     box-shadow: none;
+}
+
+.hero-home {
+    background-size: cover;
+    height: 60em;
+    position: relative;
+}
+
+.navbar {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-header {
+    height: 9em;
+    position: relative;
+}
+
+.navbar-default .navbar-toggle,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    border-color: white;
+    background-color: transparent;
+    position: absolute;
+    right: 0.5em;
+    top: 3em;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-text {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+    color: #ff8a00;
+}
+
+.hero-content {
+    text-align: center;
+    color: #fff;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.hero-content h2 {
+    font: 700 4em/1.2em 'Antonio-Bold', Arial, helvetica, sans-serif;
+    letter-spacing: 0.3em;
+    margin-right: -0.3em;
+    text-transform: uppercase;
+}
+
+.hero-content h2 span {
+    color: #ff8a00;
+}
+
+.hero-content .read-more {
+    font-size: 2em;
+    opacity: 0.2;
+}
+
+@media (min-width: 500px) {
+    .hero-content h2 {
+        margin-right: 0;
+    }
+}
+
+.hero-content .video-cta {
+    background-color: #ff8a00;
+    display: inline-block;
+    color: #fff;
+    padding: 0.2em 1em;
+}
+
+.hero-content .video-cta i {
+    line-height: 2em;
+    text-indent: 0.2em;
+    margin-right: 0.5em;
+}
+
+@media (min-width: 100px) and (max-width: 768px) {
+    .hero-home {
+        height: 30em;
+    }
+
+    .hero-content {
+        bottom: 2%;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .navbar-header {
+        background-color: #333;
+    }
+
+    .navbar-header.collapsed {
+        background-color: transparent;
+    }
+
+    .navbar-default .navbar-collapse {
+        border-color: transparent;
+        background-color: #333;
+    }
+}
+
+@media (min-width: 100px) and (max-width: 1000px) {
+    .nav>li>a {
+        padding: 10px 12px;
+    }
 }

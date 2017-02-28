@@ -2,7 +2,7 @@
 
 namespace AppBundle\Twig;
 
-use Symfony\Component\Routing\Router;
+use AppBundle\Manager\LocaleManager;
 
 /**
  * ImageExtension
@@ -10,46 +10,27 @@ use Symfony\Component\Routing\Router;
 class LocaleExtension extends \Twig_Extension
 {
     /**
-     * @var Router
+     * @var LocaleManager
      */
-    protected $router;
+    protected $localeManager;
 
     /**
-     * @param Router $router
+     * @param LocaleManager $localeManager
      */
-    public function __construct(Router $router) {
-        $this->router = $router;
+    public function __construct(LocaleManager $localeManager) {
+        $this->localeManager = $localeManager;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFunctions()
     {
         return array(
-            'localeSwitch' => new \Twig_Function_Method($this, 'localeSwitch'),
             'languageName' => new \Twig_Function_Method($this, 'getLanguageName'),
         );
     }
 
-    /**
-     * Prepare route parameters for language switch.
-     *
-     * @param $sNewLocale
-     * @param $requestAttributes
-     *
-     * @return array
-     */
-    public function localeSwitch($sNewLocale, $requestAttributes)
-    {
-        $requestAttributes['_route_params']['_locale'] = $sNewLocale;
-
-        return $this->router->generate($requestAttributes['_route'], $requestAttributes['_route_params']);
-    }
-
     public function getLanguageName(string $locale): string
     {
-        return \Locale::getDisplayLanguage($locale);
+        return $this->localeManager->getLanguageName($locale);
     }
 
     /**

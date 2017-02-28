@@ -1,6 +1,7 @@
 hero:
   title: 'Make people <span>awesome</span>'
   subtitle: '<span>Unlock</span> your potential'
+  video_link: 'Meet the Monkeys'
 how:
   title: 'How can we help you?'
   subtitle: 'We have avenues of action adapted for your needs.'
