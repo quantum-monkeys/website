@@ -418,7 +418,7 @@
 
 .hero-home {
     background-size: cover;
-    height: 60em;
+    height: 50em;
     position: relative;
 }
 
@@ -478,7 +478,7 @@
 
 .hero-content .read-more {
     font-size: 2em;
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 @media (min-width: 500px) {
