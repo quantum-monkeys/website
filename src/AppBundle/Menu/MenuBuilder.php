@@ -2,13 +2,28 @@
 
 namespace AppBundle\Menu;
 
+use AppBundle\Manager\LocaleManager;
 use Knp\Menu\FactoryInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
-class Builder
+class MenuBuilder
 {
-    public function mainMenu(FactoryInterface $factory, array $options)
+    private $factory;
+    private $localeManager;
+    private $requestStack;
+
+    public function __construct(FactoryInterface $factory, LocaleManager $localeManager)
     {
-        $menu = $factory->createItem('root');
+        $this->factory = $factory;
+        $this->localeManager = $localeManager;
+    }
+
+    public function createMainMenu(array $options)
+    {
+        $targetLocale = $this->localeManager->getTargetLocale();
+        $reverseUrl = $this->localeManager->generateReverseLocaleUrl();
+
+        $menu = $this->factory->createItem('root');
 
         $menu->addChild('home', ['route' => 'homepage'])->setExtra('translation_domain', 'menu');
         $menu->addChild('coaching', ['route' => 'coaching'])->setExtra('translation_domain', 'menu');
@@ -17,6 +32,7 @@ class Builder
         $menu->addChild('events', ['route' => 'event_list'])->setExtra('translation_domain', 'menu');
         $menu->addChild('about_us', ['route' => 'about_us'])->setExtra('translation_domain', 'menu');
         $menu->addChild('blog', ['route' => 'blog'])->setExtra('translation_domain', 'menu');
+        $menu->addChild('lang_switch.' . $targetLocale, ['uri' => $reverseUrl])->setExtra('translation_domain', 'menu');
 
         return $menu;
     }

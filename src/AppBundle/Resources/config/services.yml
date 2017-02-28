@@ -1,4 +1,12 @@
 services:
+    app.menu_builder:
+        class: AppBundle\Menu\MenuBuilder
+        arguments:
+            - '@knp_menu.factory'
+            - '@app.manager.locale_manager'
+        tags:
+            - { name: knp_menu.menu_builder, method: createMainMenu, alias: main } # The alias is what is used to retrieve the menu
+
     app.manager.location:
         class: AppBundle\Manager\LocationManager
         arguments:
@@ -31,11 +39,18 @@ services:
           - '@csa_guzzle.client.mailchimp_api'
           - '%newsletter_list_id%'
 
+    app.manager.locale_manager:
+        class: AppBundle\Manager\LocaleManager
+        arguments:
+            - '@router'
+            - '@request_stack'
+
     app.twig.locale_extension:
         class: AppBundle\Twig\LocaleExtension
-        arguments: [ "@router" ]
+        arguments:
+            - '@app.manager.locale_manager'
         tags:
-            - { name: twig.extension }
+            - { name : twig.extension }
 
     app.twig.translate_extension:
         class: AppBundle\Twig\TranslateExtension
