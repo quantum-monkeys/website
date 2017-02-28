@@ -532,3 +532,37 @@
         padding: 10px 12px;
     }
 }
+
+.container .row h2 {
+    font-family: Antonio-Bold,Arial,helvetica,sans-serif;
+    color: #FF8A00;
+    text-transform: uppercase;
+    margin-bottom: 1.5em;
+    text-align: center;
+}
+
+.partners {
+    margin: 2em auto;
+    clear: both;
+}
+
+.clients {
+    text-align: center;
+}
+
+.client {
+    height: 6em;
+    padding: 1.5em;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.client:hover {
+    -webkit-filter: none;
+    filter: none;
+}
+
+.client img {
+    max-width: 100%;
+    max-height: 100%;
+}
