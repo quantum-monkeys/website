@@ -492,6 +492,7 @@
     display: inline-block;
     color: #fff;
     padding: 0.2em 1em;
+    font-size: 1.5em;
 }
 
 .hero-content .video-cta i {
@@ -511,6 +512,10 @@
 
     .hero-content h2 {
         font-size: 2em;
+    }
+
+    .hero-content .video-cta {
+        font-size: 1em;
     }
 
     .navbar-header {
