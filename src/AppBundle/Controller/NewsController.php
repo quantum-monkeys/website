@@ -31,7 +31,7 @@ class NewsController extends PostController
         $pager = $this->getPostManager()->getPager(
             [],
             1,
-            4
+            2
         );
 
         $parameters = [

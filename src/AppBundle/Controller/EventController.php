@@ -58,7 +58,7 @@ class EventController extends Controller
     {
         $searchEngine = $this->get('app.manager.search_engine');
         $eventSearch = new EventSearch();
-        $events = $searchEngine->getResults($eventSearch, 4);
+        $events = $searchEngine->getResults($eventSearch, 2);
 
         return $this->render(
             'AppBundle:Event:widget.html.twig',
