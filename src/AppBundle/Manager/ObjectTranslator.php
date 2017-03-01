@@ -8,18 +8,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 
 class ObjectTranslator
 {
-    /**
-     *
-     * @var string
-     */
-    protected $locale;
-
-    /**
-     *
-     * @var string
-     */
-    protected $defaultLocale;
-
+    protected $requestStack;
     /**
      * @var \Symfony\Component\PropertyAccess\PropertyAccessor
      */
@@ -27,16 +16,15 @@ class ObjectTranslator
 
     public function __construct(RequestStack $requestStack)
     {
-        if ($requestStack->getMasterRequest()) {
-            $this->locale = $requestStack->getMasterRequest()->getLocale();
-            $this->defaultLocale = $requestStack->getMasterRequest()->getDefaultLocale();
-        }
-
+        $this->requestStack = $requestStack;
         $this->propertyAccessor = PropertyAccess::createPropertyAccessor();
     }
 
     public function translate(TranslatableInterface $object, $key)
     {
+        $defaultLocale = $this->requestStack->getMasterRequest()->getDefaultLocale();
+        $locale = $this->requestStack->getMasterRequest()->getLocale() ?? $defaultLocale;
+
         $array = $object->getTranslations();
 
         if (!is_array($array) && method_exists($array, 'toArray')) {
@@ -45,12 +33,12 @@ class ObjectTranslator
             throw new \Exception('Translation need an array or an object wich implements "toArray"');
         }
 
-        if (isset($array[$this->locale])) {
-            return $this->propertyAccessor->getValue($array[$this->locale], $key);
+        if (isset($array[$locale])) {
+            return $this->propertyAccessor->getValue($array[$locale], $key);
         }
 
-        if (isset($array[$this->defaultLocale])) {
-            return $this->propertyAccessor->getValue($array[$this->defaultLocale], $key);
+        if (isset($array[$defaultLocale])) {
+            return $this->propertyAccessor->getValue($array[$defaultLocale], $key);
         }
 
         return null;
