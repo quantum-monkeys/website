@@ -1,6 +1,20 @@
 title: 'À propos'
 description: "Vous faites face au besoin de vous adapter à un marché qui s’accélère et à des compétiteurs évoluant rapidement? Vous voulez atteindre votre plein potentiel et voir le monde du travail avec un regard nouveau? Vous avez besoin de développer de nouvelles connaissances et compétences pour opérer dans un environnement Agile?\n\nChez Quantum Monkeys, nous avons pour mandat de débloquer le potentiel des individus et conséquemment de l’entreprise pour lesquels ils travaillent. Que ce soit à titre individuel ou encore en tant qu’équipe ou organisation, nous pouvons vous aider à vous adapter à un nouvel environnement de façon à ce que vous puissiez prendre en charge votre croissance.\n\nQuantum Monkeys offre des services permettant la transition vers Agile. Nous pouvons également vous aider à mettre à jour et à améliorer votre culture d’entreprise, en plus d’encadrer les membres de votre équipe de façon à leur permettre d’atteindre de nouveaux sommets.\n\nNotre division QM Académie offre aux étudiants et aux clients corporatifs une formation Agile composée de cours et d’ateliers. Elle permet également aux adhérents d’obtenir une certification dans un ensemble de compétences abondamment utilisées sur le marché du travail."
 team: 'Les membres de notre équipe'
+values:
+  title: 'Our values'
+  first:
+    title: 'Culture First'
+    text: 'Culture of safety, not immunityHire for culture, expertise will comeFoster a participatory culture'
+  second:
+    title: 'No Bullshit'
+    text: 'Have skin in the gameTransparencySparks must fly'
+  third:
+    title: 'Practical Innovation'
+    text: 'Stay cutting edgeRun controlled experimentsPractical expertise trumps theoritical knowledge'
+  fourth:
+    title: 'Deliberate Evolution'
+    text: 'Know when to pivotDeliberate develop peopleStrive for antifragility'
 
 meta:
   title: 'À propos - Quantum Monkeys'

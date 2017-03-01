@@ -1,6 +1,20 @@
 title: 'About us'
 description: "In today's rapidly complexifying business environment, keeping pace with nimble competitors is no longer a viable option. Success now means staying keen to emerging perspectives, championing new approaches, and unflinching devotion to drive change within yourself, your teams, and your organisation. You know this beyond a doubt, which is why you're here.\n\nAt Quantum Monkeys, we understand your vision for growth and change. Our work is the very act of evolution though ceaseless improvement and reinvention; our art is coaching individuals, teams, and organisations through the holistic transition to the forefront, and keeping them there.\n\nQM Académie is your opportunity to take a pivotal step in the right direction, and you can make it by getting certified in any of our growing list of comprehensive courses."
 team: 'Our team'
+values:
+  title: 'Our values'
+  first:
+    title: 'Culture First'
+    text: 'Culture of safety, not immunityHire for culture, expertise will comeFoster a participatory culture'
+  second:
+    title: 'No Bullshit'
+    text: 'Have skin in the gameTransparencySparks must fly'
+  third:
+    title: 'Practical Innovation'
+    text: 'Stay cutting edgeRun controlled experimentsPractical expertise trumps theoritical knowledge'
+  fourth:
+    title: 'Deliberate Evolution'
+    text: 'Know when to pivotDeliberate develop peopleStrive for antifragility'
 
 meta:
   title: 'About Us - Quantum Monkeys'

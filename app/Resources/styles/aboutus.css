@@ -58,3 +58,57 @@
     font-family: open sans;
     text-align: center;
 }
+
+.aboutus hr {
+    clear: both;
+}
+
+.value {
+    position: relative;
+    height: 18em;
+    padding: 0;
+}
+
+.value picture {
+    background-color: orange;
+    width: 5em;
+    display: inline-block;
+    height: 5em;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-radius: 5em;
+    text-align: center;
+}
+
+.value picture i {
+    color: white;
+    font-size: 3em;
+    padding: 0.3em;
+    line-height: 1em;
+}
+
+.value .thumbnail {
+    border: none;
+    width: 100%;
+}
+
+.value .caption {
+    position: absolute;
+    top: 5em;
+    padding: 1em 3em;
+
+    margin: auto;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+}
+
+.value .caption h3 {
+    text-align: center;
+    font-family: "Open Sans";
+    font-size: 1.5em;
+    font-weight: bold;
+}
