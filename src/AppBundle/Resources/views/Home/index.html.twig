@@ -22,21 +22,6 @@
 
     {% include '@App/Services/widget.html.twig' %}
 
-    <div class="whats_happening_panel">
-        <div class="contanear">
-            <h2>{{ 'activities.title'|trans }}</h2>
-
-            <div class="whats_happening_panel_inner">
-                <div class="whats_happening_panel_inner_left">
-                    {{ render(controller('AppBundle:News:widget')) }}
-                </div>
-                <div class="whats_happening_panel_inner_left">
-                    {{ render(controller('AppBundle:Event:widget')) }}
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="container partners" id="clients">
         <div class="row">
             <h2>{{ 'clients.title'|trans }}</h2>
@@ -53,6 +38,22 @@
             </div>
         </div>
     </div>
+
+    <div class="whats_happening_panel">
+        <div class="contanear">
+            <h2>{{ 'activities.title'|trans }}</h2>
+
+            <div class="whats_happening_panel_inner">
+                <div class="whats_happening_panel_inner_left">
+                    {{ render(controller('AppBundle:News:widget')) }}
+                </div>
+                <div class="whats_happening_panel_inner_left">
+                    {{ render(controller('AppBundle:Event:widget')) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     {{ render(controller('AppBundle:Testimonial:widget')) }}
 {% endblock %}
