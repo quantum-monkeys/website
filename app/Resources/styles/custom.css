@@ -542,12 +542,13 @@
     font-family: Antonio-Bold,Arial,helvetica,sans-serif;
     color: #FF8A00;
     text-transform: uppercase;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     text-align: center;
+    font-size: 3em;
 }
 
 .partners {
-    margin: 0 auto 2em;
+    margin: 0 auto 6em;
     clear: both;
 }
 
@@ -570,4 +571,125 @@
 .client img {
     max-width: 100%;
     max-height: 100%;
+}
+
+/**********************
+ ****** APPROACH ******
+ **********************/
+.approach {
+    padding-top: 3em;
+}
+
+.approach .steps {
+    position: relative;
+}
+
+.approach .step {
+    margin-bottom: 1em;
+}
+
+.approach .step .left,
+.approach .step .right {
+    height: 15em;
+    position: relative;
+    display: table;
+}
+
+.approach .step .left {
+    text-align: right;
+    padding-right: 4em;
+}
+.approach .step .right {
+    text-align: left;
+    padding-left: 4em;
+}
+
+.approach .step .left .description,
+.approach .step .right .description {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .approach .step .left .description.visible-sm,
+    .approach .step .right .description.visible-sm {
+        display: table-cell !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .approach .step .left .description.visible-xs,
+    .approach .step .right .description.visible-xs {
+        display: table-cell !important;
+    }
+}
+
+.approach .step .left picture,
+.approach .step .right picture {
+    background-color: #eee;
+    color: white;
+    border-radius: 11em;
+    width: 11em;
+    height: 11em;
+    margin: 2em auto;
+    display: table;
+}
+
+.approach .step .left picture i,
+.approach .step .right picture i {
+    font-size: 7em;
+    line-height: 1em;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.approach .steps .slider {
+    position: absolute;
+    width: 2em;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.approach .steps .slider .pointer {
+    border: 1px solid orange;
+    background-color: orange;
+    border-radius: 2em;
+    width: 100%;
+    height: 2em;
+    position: absolute;
+    transform: translateY(-50%);
+    -webkit-transition: top 2s ease-in-out;
+    transition: top 1s ease-in-out;
+    z-index: 10;
+}
+
+.approach .steps .slider .path {
+    background-color: #ccc;
+    width: 0.1em;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+.approach .steps .slider .checkpoint {
+    background-color: #ccc;
+    border-radius: 1em;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 992px) {
+    .approach .steps .slider {
+        width: 2em;
+        height: 100%;
+        left: 1em;
+        top: 0;
+    }
 }

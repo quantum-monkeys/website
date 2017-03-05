@@ -20,6 +20,55 @@
 
 {% block body %}
 
+    <div class="container approach">
+        <div class="row">
+            <h2>{{ 'approach.title'|trans }}</h2>
+        </div>
+        <div class="steps">
+            {% set icons = ['heartbeat', 'graduation-cap', 'cogs', 'level-up'] %}
+            {% for i in 0..3 %}
+                <div class="row step">
+                    <div class="col-xs-12 col-md-6 hidden-xs hidden-sm left">
+                        {% if i % 2 == 0 %}
+                            <picture>
+                                <i class="fa fa-{{ icons[i] }}"></i>
+                            </picture>
+                        {% else %}
+                            <div class="description">
+                                <h3>{{ ('approach.step.' ~ (i + 1) ~ '.title')|trans }}</h3>
+                                <p>{{ ('approach.step.' ~ (i + 1) ~ '.description')|trans }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-xs-12 col-md-6 right">
+                        {% if i % 2 == 1 %}
+                            <picture class="hidden-xs hidden-sm">
+                                <i class="fa fa-{{ icons[i] }}"></i>
+                            </picture>
+
+                            <div class="description visible-xs visible-sm">
+                                <h3>{{ ('approach.step.' ~ (i + 1) ~ '.title')|trans }}</h3>
+                                <p>{{ ('approach.step.' ~ (i + 1) ~ '.description')|trans }}</p>
+                            </div>
+                        {% else %}
+                            <div class="description">
+                                <h3>{{ ('approach.step.' ~ (i + 1) ~ '.title')|trans }}</h3>
+                                <p>{{ ('approach.step.' ~ (i + 1) ~ '.description')|trans }}</p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="slider">
+                <div class="path"></div>
+                <div class="pointer"></div>
+                {% for i in 0..3 %}
+                    <div class="checkpoint checkpoint-{{ i }}"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
     {% include '@App/Services/widget.html.twig' %}
 
     <div class="container partners" id="clients">
@@ -56,4 +105,103 @@
 
 
     {{ render(controller('AppBundle:Testimonial:widget')) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="application/javascript">
+        $(document).ready(function () {
+            var checkpoints = [];
+            var $pointer = $('.approach .slider .pointer');
+            var $path = $('.approach .slider .path');
+
+            var refreshCheckPoints = function() {
+                checkpoints = [];
+                $('.approach .step').each(function () {
+                    let elementOffset = $(this).offset().top;
+                    let parentOffset = $(this).parent().offset().top;
+                    let relativeOffset = elementOffset - parentOffset;
+                    let elementHeight = $(this).outerHeight();
+
+                    checkpoints.push({
+                        absolute: elementOffset + elementHeight / 2,
+                        relative: relativeOffset + elementHeight / 2
+                    });
+                });
+            };
+
+            var display = function computeOffset(pointerPosition) {
+                $pointer.css({ 'top': pointerPosition.relative});
+            };
+            var getNearestCheckpoint = function() {
+                let centerOfScreen = $(document).scrollTop() + $(window).height() / 2;
+                let nearest = null;
+
+                for (var i in checkpoints) {
+                    if (nearest == null) {
+                        nearest = checkpoints[i];
+                        continue;
+                    }
+
+                    let nearestDistance = Math.abs(centerOfScreen - nearest.absolute);
+                    let currentDistance = Math.abs(centerOfScreen - checkpoints[i].absolute);
+
+                    if (nearestDistance > currentDistance) {
+                        nearest = checkpoints[i];
+                    }
+                }
+
+                return nearest;
+            };
+
+            var updatePath = function() {
+                let top = null;
+                let bottom = null;
+
+                for (var i in checkpoints) {
+                    if (top == null) {
+                        top = checkpoints[i].relative;
+                    }
+                    if (top > checkpoints[i].relative) {
+                        top = checkpoints[i].relative;
+                    }
+
+                    if (bottom == null) {
+                        bottom = checkpoints[i].relative;
+                    }
+                    if (bottom < checkpoints[i].relative) {
+                        bottom = checkpoints[i].relative;
+                    }
+                }
+                $path.css({
+                    height: bottom - top,
+                    top: top
+                });
+            };
+
+            var displayCheckpoints = function() {
+                for (var i in checkpoints) {
+                    $('.approach .slider .checkpoint-' + i).css({
+                        top: checkpoints[i].relative
+                    })
+                }
+            };
+
+            refreshCheckPoints();
+            display(getNearestCheckpoint());
+            updatePath();
+            displayCheckpoints();
+
+            $(window).resize(function() {
+                refreshCheckPoints();
+                display(getNearestCheckpoint());
+                updatePath();
+                displayCheckpoints();
+            });
+
+            $(document).scroll(function() {
+                display(getNearestCheckpoint());
+            })
+        });
+    </script>
 {% endblock %}
