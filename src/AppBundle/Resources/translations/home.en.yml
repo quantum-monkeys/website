@@ -19,6 +19,21 @@ activities:
   subtitle: Subtitle
 clients:
   title: 'They trust us'
+approach:
+  title: 'Our approach'
+  step:
+    1:
+      title: Diagnostic
+      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
+    2:
+      title: 'Courses / Training'
+      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
+    3:
+      title: Setup
+      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
+    4:
+      title: Coaching
+      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
 
 meta:
   title: 'Agile Coaching and Trainings - Quantum Monkeys'
