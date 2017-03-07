@@ -15,7 +15,6 @@ packages:
   addons:
     title: Addons
     description: 'The facilitator is an intermediate between the client and the team. He is taking care of the communications between all the parties and manage the team to make sure the project is on the right track.'
-
 meta:
   title: 'Software Development Studio - Quantum Monkeys'
   keywords: 'Studio, development, software, nodejs, reactjs, php'

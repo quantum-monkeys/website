@@ -15,7 +15,6 @@ packages:
   addons:
     title: Ajouts
     description: 'Le facilitateur joue le rôle d’intermédiaire entre le client et l’équipe. Il assure les communications entre les deux partis et prend en charge l’équipe de façon à s’assurer que le projet est dans la bonne direction.'
-
 meta:
   title: 'Studio de développement logiciel - Quantum Monkeys'
   keywords: 'Studio, développement, logiciel, nodejs, reactjs, php'

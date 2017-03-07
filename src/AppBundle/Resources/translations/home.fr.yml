@@ -20,22 +20,21 @@ activities:
 clients:
   title: 'Ils nous font confiance'
 approach:
-  title: 'Our approach'
+  title: 'Notre approche'
   step:
     1:
       title: Diagnostic
-      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
+      description: 'Pour mieux comprendre votre contexte de façon à proposer des approches adaptées à vos besoins particuliers. Cette étape permet de procéder à l’analyse de votre culture d’entreprise et d’identifier les enjeux menaçant l’organisation de façon à proposer un plan d’action adéquat.'
     2:
-      title: 'Courses / Training'
-      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
+      title: 'Formations et ateliers'
+      description: 'Pour initier les employés aux concepts, valeurs et pratiques Agile, mais aussi d’autres approches de gestion telles que Lean, Management 3.0 et Podularity. Ils posséderont ainsi les connaissances nécessaires pour évoluer dans un nouvel environnement de travail.'
     3:
-      title: Setup
-      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
+      title: Décollage
+      description: "Mise en place d’une nouvelle structure Agile ou d’améliorations à la structure existante permettant la création culture d’entreprise forte basée sur les valeurs Agile modernes.\nMentorat de l’individu à la charge de l’équipe pour qu’il puisse développer des compétences et devenir progressivement autonome."
     4:
       title: Coaching
-      description: 'Biltong swine pork andouille pastrami strip steak meatball ground round short loin shoulder bacon rump. Cupim turducken pancetta swine. Strip steak rump kielbasa, pork shankle ham hock corned beef fatback brisket ham. Picanha frankfurter ribeye venison, tenderloin pork pork loin chicken sausage meatloaf brisket doner kevin bacon.'
-
+      description: 'Accompagnement et suivi des individus ou équipes sur une période déterminée visant à faciliter l’atteinte de résultats concrets et mesurables. Rôle de soutien permettant de faire face à des enjeux apparaissant en cours de route ou lors de nouvelles expérimentations.'
 meta:
   title: 'Coaching et formations Agile - Quantum Monkeys'
-  keywords: 'AAgile, transformation, consultation, coaching, formations, Agilité'
+  keywords: 'Agile, transformation, consultation, coaching, formations, Agilité'
   description: 'Chez Quantum Monkeys, nous sommes des spécialistes des transformations Agile. Nous pouvons vous aider à adopter de nouvelles pratiques en lien avec l''Agilité.'

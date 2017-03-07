@@ -8,7 +8,6 @@ view:
   start_from: 'Start from: %date%'
   start_at: 'Start @ %time%'
   speakers: Speakers
-
 meta:
   title: 'Events - Quantum Monkeys'
   keywords: ''

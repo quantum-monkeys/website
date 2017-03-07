@@ -5,17 +5,16 @@ values:
   title: 'Our values'
   first:
     title: 'Culture First'
-    text: 'Culture of safety, not immunityHire for culture, expertise will comeFoster a participatory culture'
+    text: "Culture of safety, not immunity\nHire for culture, expertise will come\nFoster a participatory culture"
   second:
     title: 'No Bullshit'
-    text: 'Have skin in the gameTransparencySparks must fly'
+    text: "Have skin in the game\nTransparency\nSparks must fly"
   third:
     title: 'Practical Innovation'
-    text: 'Stay cutting edgeRun controlled experimentsPractical expertise trumps theoritical knowledge'
+    text: "Stay cutting edge\nRun controlled experiments\nPractical expertise trumps theoritical knowledge"
   fourth:
     title: 'Deliberate Evolution'
-    text: 'Know when to pivotDeliberate develop peopleStrive for antifragility'
-
+    text: "Know when to pivot\nDeliberately develop people\nStrive for antifragility"
 meta:
   title: 'About Us - Quantum Monkeys'
   keywords: 'Agile, Agility, specialist, expert, transformation, consultation'

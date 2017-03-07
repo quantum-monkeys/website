@@ -28,7 +28,6 @@ comment:
       placeholder: Comment
     submit:
       label: Submit
-
 meta:
   title: 'Blog - Quantum Monkeys'
   keywords: ''
