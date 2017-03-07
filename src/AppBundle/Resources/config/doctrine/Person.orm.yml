@@ -48,4 +48,17 @@ AppBundle\Entity\Person:
                 - "remove"
             indexBy: locale
 
+
+    manyToMany:
+        certifications:
+            targetEntity: AppBundle\Entity\Certification
+            joinTable:
+                name: persons_certifications
+                joinColumns:
+                    person_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    certification_id:
+                        referencedColumnName: id
+
     lifecycleCallbacks: {  }

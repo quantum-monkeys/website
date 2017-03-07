@@ -79,10 +79,19 @@
                     <div class="informations">
                         <h4>{{ person.displayName }}</h4>
                         <p class="position">{{ translate(person, 'position') }}</p>
-                        <p class="description">{{ translate(person, 'description')|markdown }}</p>
+                        <p class="description">{{ translate(person, 'description') }}</p>
+
+                        {% if person.certifications|length > 0 %}
+                            <h5><i class="fa fa-certificate"></i> Certifications</h5>
+                            <ul class="certifications">
+                                {% for certification in person.certifications %}
+                                    <li class="certification">{{ certification.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </div>
                 </div>
-            {% if loop.index % 3 == 0 or loop.last %}
+                {% if loop.index % 3 == 0 or loop.last %}
         </div>
         <hr class="visible-md visible-lg">
         <div class="row">

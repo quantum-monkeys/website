@@ -38,12 +38,42 @@
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
 }
+.aboutus .team-member .informations {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.aboutus .team-member .informations h4,
+.aboutus .team-member .informations h5 {
+    font-family: 'Open Sans', sans-serif;
+    color: #565656;
+    font-weight: 600;
+}
 .aboutus .team-member .informations h4 {
     font-size: 22px;
-    font-weight: 600;
-    color: #565656;
     text-align: center;
 }
+
+.aboutus .team-member .informations h5 {
+    font-size: 1.2em;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.aboutus .team-member .informations h5 i {
+    color: orange;
+    margin-right: 0.6em;
+}
+
+.aboutus .team-member .informations .certifications {
+    list-style: none;
+    color: #929292;
+    margin-left: 2em;
+}
+.aboutus .team-member .informations .certifications .certification {
+    line-height: 2em;
+    font-weight: 600;
+}
+
 .aboutus .team-member .informations p {
     font-size: 15px;
     font-weight: 600;
