@@ -54,9 +54,15 @@ class Person implements TranslatableInterface
      */
     private $translations;
 
+    /**
+     * @var Certification[]
+     */
+    private $certifications;
+
     public function __construct()
     {
         $this->translations = new ArrayCollection();
+        $this->certifications = new ArrayCollection();
     }
 
     /**
@@ -242,6 +248,22 @@ class Person implements TranslatableInterface
     public function getTranslations()
     {
         return $this->translations;
+    }
+
+    /**
+     * @return Certification[]
+     */
+    public function getCertifications()
+    {
+        return $this->certifications;
+    }
+
+    /**
+     * @param Certification[] $certifications
+     */
+    public function setCertifications($certifications)
+    {
+        $this->certifications = $certifications;
     }
 }
 

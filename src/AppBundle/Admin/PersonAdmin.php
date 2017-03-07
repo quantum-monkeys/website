@@ -24,6 +24,11 @@ class PersonAdmin extends Admin
             ->add('quantumMonkeysMember', 'checkbox', [
                 'required' => false,
             ])
+            ->add('certifications', 'sonata_type_model', [
+                'multiple' => true,
+                'expanded' => true,
+                'by_reference' => false
+            ])
             ->add('picture', 'sonata_media_type', [
                 'required' => false,
                 'context' => 'default',

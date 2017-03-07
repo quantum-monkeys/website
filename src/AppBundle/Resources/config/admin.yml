@@ -110,6 +110,15 @@ services:
               group: Community Management
               label: People
 
+    admin.certification:
+        class: AppBundle\Admin\CertificationAdmin
+        arguments: [~, AppBundle\Entity\Certification, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Community Management
+              label: Certifications
+
     admin.testimonials:
         class: AppBundle\Admin\TestimonialAdmin
         arguments: [~, AppBundle\Entity\Testimonial, ~]
@@ -118,6 +127,7 @@ services:
               manager_type: orm
               group: Community Management
               label: Testimonial
+
 
     admin.event_occurrence_cost:
         class: AppBundle\Admin\EventOccurrenceCostAdmin
