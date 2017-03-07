@@ -1,6 +1,9 @@
 {% trans_default_domain 'widget' %}
 
-<h3><img src="/images/blog-icon.png" alt="image description"> <span>{{ 'blog.title'|trans }}</span></h3>
+<h3>
+    <img src="/images/blog-icon.png" alt="image description">
+    <span><a href="{{ path('blog') }}">{{ 'blog.title'|trans }}</a></span>
+</h3>
 
 {% for post in pager.getResults() %}
     <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">

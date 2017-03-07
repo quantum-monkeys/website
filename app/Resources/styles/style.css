@@ -971,6 +971,9 @@ body {
 	display: inline-block;
 	text-decoration: underline;
 }
+.whats_happening_panel_inner_left h3 span a {
+	color: black;
+}
 .whats_happening_panel_inner_left .whats_happening_box {
 	float: left;
 	width: 100%;

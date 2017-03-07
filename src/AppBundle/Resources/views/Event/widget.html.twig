@@ -2,7 +2,7 @@
 
 <h3>
     <img src="/images/upcomming-icon.png" alt="image description" height="50px"/>
-    <span>{{ 'events.title'|trans }}</span>
+    <span><a href="{{ path('event_list') }}">{{ 'events.title'|trans }}</a></span>
 </h3>
 
 {% for event in events %}
