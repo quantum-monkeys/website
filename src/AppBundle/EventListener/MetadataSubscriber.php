@@ -114,12 +114,15 @@ class MetadataSubscriber implements EventSubscriberInterface
 
     protected function generateEventMetadatas($eventId)
     {
-        $eventOccurence = $this->objectManager->getRepository('AppBundle:EventOccurrence')->findOneBy([ 'id' => $eventId]);
+        if ($eventId !== null) {
+            $eventOccurrence = $this->objectManager->getRepository('AppBundle:EventOccurrence')->findOneBy(
+                ['id' => $eventId]
+            );
+            $this->setTitle($this->objectTranslator->translate($eventOccurrence, 'name').' - Quantum Monkeys');
+            $this->setDescription($this->objectTranslator->translate($eventOccurrence, 'description'));
 
-        $this->setTitle($eventOccurence->getName() . ' - Quantum Monkeys');
-        $this->setDescription($this->objectTranslator->translate($eventOccurence, 'description'));
-
-        $this->setImage($this->mediaManager->getPublicPath($eventOccurence->getPicture(), 'event_big'));
+            $this->setImage($this->mediaManager->getPublicPath($eventOccurrence->getPicture(), 'event_big'));
+        }
     }
 
     protected function generateArticleMetadatas($permalink)
