@@ -21,6 +21,7 @@ class PersonAdmin extends Admin
             ->add('firstName', 'text')
             ->add('lastName', 'text')
             ->add('company', 'text')
+            ->add('linkedInProfile', 'text')
             ->add('quantumMonkeysMember', 'checkbox', [
                 'required' => false,
             ])

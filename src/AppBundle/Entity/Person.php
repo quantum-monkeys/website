@@ -59,6 +59,11 @@ class Person implements TranslatableInterface
      */
     private $certifications;
 
+    /**
+     * @var string
+     */
+    protected $linkedInProfile;
+
     public function __construct()
     {
         $this->translations = new ArrayCollection();
@@ -264,6 +269,22 @@ class Person implements TranslatableInterface
     public function setCertifications($certifications)
     {
         $this->certifications = $certifications;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLinkedInProfile()
+    {
+        return $this->linkedInProfile;
+    }
+
+    /**
+     * @param string $linkedInProfile
+     */
+    public function setLinkedInProfile($linkedInProfile)
+    {
+        $this->linkedInProfile = $linkedInProfile;
     }
 }
 
