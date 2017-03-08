@@ -624,6 +624,10 @@
     }
 }
 
+.approach .step .description h3 {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .approach .step .left picture,
 .approach .step .right picture {
     background-color: #eee;
