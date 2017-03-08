@@ -118,7 +118,8 @@
 .aboutus .team-member .informations .certifications {
     list-style: none;
     color: #929292;
-    margin-left: 2em;
+    margin: 0;
+    padding: 0;
 }
 .aboutus .team-member .informations .certifications .certification {
     line-height: 2em;
