@@ -25,6 +25,9 @@ AppBundle\Entity\Person:
         position:
             type: integer
             nullable: true
+        linkedInProfile:
+            type: string
+            length: 255
     manyToOne:
         picture:
             targetEntity: Application\Sonata\MediaBundle\Entity\Media

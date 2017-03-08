@@ -75,6 +75,14 @@
                         {% media person.picture, 'person_about' with {
                             'class': 'img-rounded img-responsive'
                         } %}
+                        <div class="popover-sn">
+                            <div class="overlay"></div>
+                            <ul class="social-networks">
+                                <li>
+                                    <a href="{{ person.linkedInProfile }}"><i class="fa fa-linkedin"></i></a>
+                                </li>
+                            </ul>
+                        </div>
                     </figure>
                     <div class="informations">
                         <h4>{{ person.displayName }}</h4>
