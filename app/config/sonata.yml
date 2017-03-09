@@ -45,14 +45,15 @@ sonata_media:
                 - sonata.media.provider.vimeo
 
             formats:
-                event_widget: { width: 200 , quality: 70}
-                event_list: { width: 369 , quality: 70}
-                event_big: { width: 565 , quality: 70}
-                testimonial_widget: { width: 123 , quality: 70}
-                service_big: { width: 565 , quality: 70}
-                person_event: { width: 312, quality: 70}
-                person_about: { width: 367, quality: 70}
-                big:   { width: 500 , quality: 70}
+                event_widget: { width: 200 , quality: 70 }
+                event_list: { width: 369 , quality: 70 }
+                event_big: { width: 565 , quality: 70 }
+                testimonial_widget: { width: 123 , quality: 70 }
+                service_big: { width: 565 , quality: 70 }
+                person_event: { width: 312, quality: 70 }
+                person_about: { width: 367, quality: 70 }
+                big: { width: 500 , quality: 70 }
+                landing_page_main: { width: 390 , quality: 90 }
         events:
             providers:
                 - sonata.media.provider.dailymotion
@@ -62,8 +63,8 @@ sonata_media:
                 - sonata.media.provider.vimeo
 
             formats:
-                small: { width: 200 , quality: 70}
-                big:   { width: 500 , quality: 70}
+                small: { width: 200 , quality: 70 }
+                big:   { width: 500 , quality: 70 }
 
         news:
             providers:
@@ -72,8 +73,8 @@ sonata_media:
                 - sonata.media.provider.image
 
             formats:
-                small: { width: 150 , quality: 95}
-                wide:  { width: 763 , quality: 90}
+                small: { width: 150 , quality: 95 }
+                wide:  { width: 763 , quality: 90 }
     cdn:
         server:
             path: "%base_domain%/uploads/media"

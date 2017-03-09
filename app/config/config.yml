@@ -104,3 +104,10 @@ csa_guzzle:
 
 presta_sitemap:
     timetolive: 3600
+
+stof_doctrine_extensions:
+    default_locale: "%locale%"
+    translation_fallback: true
+    orm:
+        default:
+            sluggable: true
