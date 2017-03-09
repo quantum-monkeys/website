@@ -37,7 +37,8 @@
         "lexik/translation-bundle": "^3.1",
         "whiteoctober/breadcrumbs-bundle": "^1.2",
         "doctrine/doctrine-migrations-bundle": "^1.2",
-        "presta/sitemap-bundle": "^1.5"
+        "presta/sitemap-bundle": "^1.5",
+        "stof/doctrine-extensions-bundle": "^1.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

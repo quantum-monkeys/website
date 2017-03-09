@@ -70,3 +70,8 @@ newsletter_submit:
     defaults:
         _controller: AppBundle:Newsletter:submit
     options: { i18n: false }
+
+landing_page:
+    path: /{slug}
+    defaults:
+        _controller: AppBundle:LandingPage:index

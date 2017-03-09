@@ -129,6 +129,16 @@ services:
               label: Testimonial
 
 
+    admin.landing_page:
+        class: AppBundle\Admin\LandingPageAdmin
+        arguments: [~, AppBundle\Entity\LandingPage, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Marketing
+              label: Landing Pages
+
+
     admin.event_occurrence_cost:
         class: AppBundle\Admin\EventOccurrenceCostAdmin
         arguments: [~, AppBundle\Entity\EventOccurrenceCost, ~]
@@ -197,3 +207,12 @@ services:
               manager_type: orm
               group: Don't touch !
               label: ExtraDevelopmentPackageTranslation
+
+    admin.landing_page_translation:
+        class: AppBundle\Admin\LandingPageTranslationAdmin
+        arguments: [~, AppBundle\Entity\LandingPageTranslation, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: LandingPageTranslation

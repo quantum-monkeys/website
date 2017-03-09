@@ -1,0 +1,22 @@
+AppBundle\Entity\LandingPage:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\LandingPageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\LandingPageTranslation
+            mappedBy: landingPage
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }
