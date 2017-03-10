@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Application\Sonata\MediaBundle\Entity\Media;
+use Doctrine\Common\Collections\ArrayCollection;
 
 class LandingPageTranslation
 {
@@ -44,6 +45,11 @@ class LandingPageTranslation
     /**
      * @var string
      */
+    protected $successMessage;
+
+    /**
+     * @var string
+     */
     protected $formTitle;
 
     /**
@@ -55,6 +61,16 @@ class LandingPageTranslation
      * @var string
      */
     protected $mailChimpListId;
+
+    /**
+     * @var LandingPageContact[]
+     */
+    protected $contacts;
+
+    public function __construct()
+    {
+        $this->contacts = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -77,7 +93,7 @@ class LandingPageTranslation
     /**
      * @param string $locale
      */
-    public function setLocale(string $locale)
+    public function setLocale($locale)
     {
         $this->locale = $locale;
     }
@@ -165,6 +181,22 @@ class LandingPageTranslation
     /**
      * @return string
      */
+    public function getSuccessMessage()
+    {
+        return $this->successMessage;
+    }
+
+    /**
+     * @param string $successMessage
+     */
+    public function setSuccessMessage($successMessage)
+    {
+        $this->successMessage = $successMessage;
+    }
+
+    /**
+     * @return string
+     */
     public function getFormTitle()
     {
         return $this->formTitle;
@@ -208,6 +240,27 @@ class LandingPageTranslation
     public function setMailChimpListId($mailChimpListId)
     {
         $this->mailChimpListId = $mailChimpListId;
+    }
+
+    /**
+     * @return LandingPageContact[]
+     */
+    public function getContacts()
+    {
+        return $this->contacts;
+    }
+
+    /**
+     * @param LandingPageContact[] $contacts
+     */
+    public function setContacts($contacts)
+    {
+        $this->contacts = $contacts;
+    }
+
+    public function __toString()
+    {
+        return $this->getTitle();
     }
 }
 

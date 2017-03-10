@@ -141,6 +141,17 @@ services:
               manager_type: orm
               group: Marketing
               label: Landing Pages
+    admin.landing_page_contact:
+        class: AppBundle\Admin\LandingPageContactAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\LandingPageContact
+            - ~
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Marketing
+              label: Contacts
 
 
     admin.event_occurrence_cost:

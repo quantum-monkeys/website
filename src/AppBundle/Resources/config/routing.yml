@@ -75,3 +75,8 @@ landing_page:
     path: /{slug}
     defaults:
         _controller: AppBundle:LandingPage:index
+
+landing_page_success:
+    path: /{slug}/success
+    defaults:
+        _controller: AppBundle:LandingPage:success
