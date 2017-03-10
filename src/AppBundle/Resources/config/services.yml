@@ -32,12 +32,20 @@ services:
         class: AppBundle\Manager\ObjectTranslator
         arguments: ['@request_stack']
 
-    app.manager.newsletter:
-        class: AppBundle\Manager\NewsletterManager
+    app.manager.mailchimp_newsletter:
+        class: AppBundle\Manager\MailchimpListManager
         arguments:
           - '@request_stack'
           - '@csa_guzzle.client.mailchimp_api'
+          - '@translator'
           - '%newsletter_list_id%'
+
+    app.manager.mailchimp_list:
+        class: AppBundle\Manager\MailchimpListManager
+        arguments:
+          - '@request_stack'
+          - '@csa_guzzle.client.mailchimp_api'
+          - '@translator'
 
     app.manager.locale_manager:
         class: AppBundle\Manager\LocaleManager
