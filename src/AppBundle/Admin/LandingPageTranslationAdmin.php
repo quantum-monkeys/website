@@ -24,6 +24,7 @@ class LandingPageTranslationAdmin extends Admin
             ))
             ->add('formTitle', 'text')
             ->add('submitButtonLabel', 'text')
+            ->add('successMessage', 'text')
             ->add('locale', 'language', [
                 'choices' => [
                     'English' => 'en',

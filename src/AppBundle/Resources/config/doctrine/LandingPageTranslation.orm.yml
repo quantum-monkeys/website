@@ -27,6 +27,9 @@ AppBundle\Entity\LandingPageTranslation:
         submitButtonLabel:
             type: string
             length: 255
+        successMessage:
+            type: string
+            length: 255
         formTitle:
             type: string
             length: 255
@@ -48,5 +51,13 @@ AppBundle\Entity\LandingPageTranslation:
             joinColumn:
                 nullable: false
                 onDelete: cascade
+
+    oneToMany:
+        contacts:
+            targetEntity: AppBundle\Entity\LandingPageContact
+            mappedBy: landingPageTranslation
+            cascade:
+                - "persist"
+            indexBy: locale
 
     lifecycleCallbacks: {  }

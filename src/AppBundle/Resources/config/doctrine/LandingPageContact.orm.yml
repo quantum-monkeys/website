@@ -1,0 +1,34 @@
+AppBundle\Entity\LandingPageContact:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\LandingPageContactRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+            nullable: true
+        company:
+            type: string
+            length: 255
+            nullable: true
+        email:
+            type: string
+            length: 255
+
+    manyToOne:
+        landingPageTranslation:
+            targetEntity: AppBundle\Entity\LandingPageTranslation
+            inversedBy: contacts
+            joinColumn:
+                onDelete: SET NULL
+
+    lifecycleCallbacks: {  }

@@ -2,6 +2,10 @@
     padding: 1em 0;
 }
 
+.landing-page .row .bg-success {
+    padding: 1em 2em;
+}
+
 .landing-page .row picture img {
     width: 100%;
 }
