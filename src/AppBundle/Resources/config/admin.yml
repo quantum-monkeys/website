@@ -131,7 +131,11 @@ services:
 
     admin.landing_page:
         class: AppBundle\Admin\LandingPageAdmin
-        arguments: [~, AppBundle\Entity\LandingPage, ~]
+        arguments:
+            - ~
+            - AppBundle\Entity\LandingPage
+            - ~
+            - '@app.manager.mailchimp_list'
         tags:
             - name: sonata.admin
               manager_type: orm
@@ -210,7 +214,10 @@ services:
 
     admin.landing_page_translation:
         class: AppBundle\Admin\LandingPageTranslationAdmin
-        arguments: [~, AppBundle\Entity\LandingPageTranslation, ~]
+        arguments:
+            - ~
+            - AppBundle\Entity\LandingPageTranslation
+            - ~
         tags:
             - name: sonata.admin
               manager_type: orm

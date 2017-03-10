@@ -2,13 +2,8 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Form\Type\ContactType;
 use AppBundle\Form\Type\NewsletterType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class NewsletterController extends Controller
@@ -21,7 +16,7 @@ class NewsletterController extends Controller
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $result = $this->get('app.manager.newsletter')->subscribe(
+            $result = $this->get('app.manager.mailchimp_newsletter')->subscribe(
                 $data['email'],
                 $data['firstName'],
                 $data['lastName']

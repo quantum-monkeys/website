@@ -49,7 +49,12 @@ class LandingPageTranslation
     /**
      * @var Media
      */
-    private $picture;
+    protected $picture;
+
+    /**
+     * @var string
+     */
+    protected $mailChimpListId;
 
     /**
      * Get id
@@ -187,6 +192,22 @@ class LandingPageTranslation
     public function setPicture($picture)
     {
         $this->picture = $picture;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMailChimpListId()
+    {
+        return $this->mailChimpListId;
+    }
+
+    /**
+     * @param string $mailChimpListId
+     */
+    public function setMailChimpListId($mailChimpListId)
+    {
+        $this->mailChimpListId = $mailChimpListId;
     }
 }
 

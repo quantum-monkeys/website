@@ -30,6 +30,9 @@ AppBundle\Entity\LandingPageTranslation:
         formTitle:
             type: string
             length: 255
+        mailChimpListId:
+            type: string
+            length: 255
 
     manyToOne:
         picture:
