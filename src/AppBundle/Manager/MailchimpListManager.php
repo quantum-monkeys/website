@@ -65,11 +65,13 @@ class MailchimpListManager extends MailchimpManager
         }
     }
 
-    public function subscribe(string $email, string $firstName, string $lastName)
+    public function subscribe(string $email, string $firstName, string $lastName, string $listId = null)
     {
         try {
+            $listId = $listId === null ? $this->listId : $listId;
+
             $this->mailChimpClient->post(
-                sprintf('/3.0/lists/%s/members', $this->listId),
+                sprintf('/3.0/lists/%s/members', $listId),
                 [
                     'json' => [
                         'email_address' => $email,
