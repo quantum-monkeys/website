@@ -28,6 +28,14 @@ services:
             - '@white_october_breadcrumbs'
             - '@app.twig.object_translator'
 
+    app.manager.emails:
+        class: AppBundle\Manager\EmailManager
+        arguments:
+            - '@mailer'
+            - '@templating'
+            - '%emails.general%'
+            - '%emails.admin%'
+
     app.twig.object_translator:
         class: AppBundle\Manager\ObjectTranslator
         arguments: ['@request_stack']
