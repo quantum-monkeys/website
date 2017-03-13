@@ -36,7 +36,7 @@ class LandingPageAdmin extends Admin
                 'by_reference' => false,
             ], [
                 'edit' => 'inline',
-                'inline' => 'table',
+                'inline' => 'standard',
                 'admin_code' => 'admin.landing_page_translation',
             ])
         ;

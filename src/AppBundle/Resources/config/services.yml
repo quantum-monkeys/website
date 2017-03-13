@@ -36,6 +36,13 @@ services:
             - '%emails.general%'
             - '%emails.admin%'
 
+    app.manager.landing_page:
+        class: AppBundle\Manager\LandingPageManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.manager.emails'
+            - '@app.manager.mailchimp_list'
+
     app.twig.object_translator:
         class: AppBundle\Manager\ObjectTranslator
         arguments: ['@request_stack']
@@ -71,6 +78,12 @@ services:
     app.twig.translate_extension:
         class: AppBundle\Twig\TranslateExtension
         arguments: ["@app.twig.object_translator"]
+        tags:
+            - { name : twig.extension }
+
+    app.twig.media_extension:
+        class: AppBundle\Twig\MediaExtension
+        arguments: ["@app.manager.media_manager"]
         tags:
             - { name : twig.extension }
 
@@ -120,3 +133,12 @@ services:
             - "@app.manager.media_manager"
         tags:
             - { name: "kernel.event_subscriber", priority: 100 }
+
+
+    app.command.test_email:
+        class: AppBundle\Command\TestEmailCommand
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@app.manager.emails"
+        tags:
+            - { name: console.command }

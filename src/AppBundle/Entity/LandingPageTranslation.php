@@ -40,6 +40,11 @@ class LandingPageTranslation
     /**
      * @var string
      */
+    protected $formTitle;
+
+    /**
+     * @var string
+     */
     protected $submitButtonLabel;
 
     /**
@@ -50,7 +55,12 @@ class LandingPageTranslation
     /**
      * @var string
      */
-    protected $formTitle;
+    protected $emailSubject;
+
+    /**
+     * @var string
+     */
+    protected $emailContent;
 
     /**
      * @var Media
@@ -66,6 +76,11 @@ class LandingPageTranslation
      * @var LandingPageContact[]
      */
     protected $contacts;
+
+    /**
+     * @var Media
+     */
+    protected $document;
 
     public function __construct()
     {
@@ -165,6 +180,22 @@ class LandingPageTranslation
     /**
      * @return string
      */
+    public function getFormTitle()
+    {
+        return $this->formTitle;
+    }
+
+    /**
+     * @param string $formTitle
+     */
+    public function setFormTitle($formTitle)
+    {
+        $this->formTitle = $formTitle;
+    }
+
+    /**
+     * @return string
+     */
     public function getSubmitButtonLabel()
     {
         return $this->submitButtonLabel;
@@ -197,17 +228,33 @@ class LandingPageTranslation
     /**
      * @return string
      */
-    public function getFormTitle()
+    public function getEmailSubject()
     {
-        return $this->formTitle;
+        return $this->emailSubject;
     }
 
     /**
-     * @param string $formTitle
+     * @param string $emailSubject
      */
-    public function setFormTitle($formTitle)
+    public function setEmailSubject($emailSubject)
     {
-        $this->formTitle = $formTitle;
+        $this->emailSubject = $emailSubject;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmailContent()
+    {
+        return $this->emailContent;
+    }
+
+    /**
+     * @param string $emailContent
+     */
+    public function setEmailContent($emailContent)
+    {
+        $this->emailContent = $emailContent;
     }
 
     /**
@@ -256,6 +303,22 @@ class LandingPageTranslation
     public function setContacts($contacts)
     {
         $this->contacts = $contacts;
+    }
+
+    /**
+     * @return Media
+     */
+    public function getDocument()
+    {
+        return $this->document;
+    }
+
+    /**
+     * @param Media $document
+     */
+    public function setDocument($document)
+    {
+        $this->document = $document;
     }
 
     public function __toString()

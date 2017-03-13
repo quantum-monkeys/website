@@ -84,6 +84,17 @@ sonata_media:
             directory:  "%kernel.root_dir%/../web/uploads/media"
             create:     false
 
+    providers:
+        file:
+            service:    sonata.media.provider.file
+            resizer:    false
+            filesystem: sonata.media.filesystem.local
+            cdn:        sonata.media.cdn.server
+            generator:  sonata.media.generator.default
+            thumbnail:  sonata.media.thumbnail.format
+            allowed_extensions: ['pdf', 'txt', 'rtf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pttx', 'odt', 'odg', 'odp', 'ods', 'odc', 'odf', 'odb', 'csv', 'xml', 'mp4', 'mkv', 'avi', 'mov']
+            allowed_mime_types: ['application/pdf', 'application/x-pdf', 'application/rtf', 'text/html', 'text/rtf', 'text/plain', 'video/mp4', 'video/quicktime', 'video/x-msvideo', 'video/webm']
+
 sonata_news:
     title:        Sonata Project
     link:         https://sonata-project.org

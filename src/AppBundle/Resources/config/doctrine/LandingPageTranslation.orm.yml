@@ -24,15 +24,20 @@ AppBundle\Entity\LandingPageTranslation:
                         - title
         intro:
             type: text
+        formTitle:
+            type: string
+            length: 255
         submitButtonLabel:
             type: string
             length: 255
         successMessage:
             type: string
             length: 255
-        formTitle:
+        emailSubject:
             type: string
             length: 255
+        emailContent:
+            type: text
         mailChimpListId:
             type: string
             length: 255
@@ -51,6 +56,12 @@ AppBundle\Entity\LandingPageTranslation:
             joinColumn:
                 nullable: false
                 onDelete: cascade
+
+        document:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            fetch: EAGER
+            cascade:
+                - "persist"
 
     oneToMany:
         contacts:

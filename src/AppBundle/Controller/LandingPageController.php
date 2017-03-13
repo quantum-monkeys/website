@@ -4,14 +4,13 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\LandingPageContact;
 use AppBundle\Form\Type\LandingPageContactType;
-use AppBundle\Manager\MailchimpListManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class LandingPageController extends Controller
 {
-    public function indexAction(string $slug, Request $request)
+    protected function getLandingPageTranslation(string $slug, Request $request)
     {
         $landingPageTranslation = $this->get('doctrine')->getRepository('AppBundle:LandingPageTranslation')->findOneBy([
             'locale' => $request->getLocale(),
@@ -21,6 +20,13 @@ class LandingPageController extends Controller
         if ($landingPageTranslation === null) {
             throw new NotFoundHttpException();
         }
+
+        return $landingPageTranslation;
+    }
+
+    public function indexAction(string $slug, Request $request)
+    {
+        $landingPageTranslation = $this->getLandingPageTranslation($slug, $request);
 
         $landingPageContact = new LandingPageContact();
         $landingPageContact->setLandingPageTranslation($landingPageTranslation);
@@ -35,25 +41,7 @@ class LandingPageController extends Controller
             /** @var LandingPageContact $landingPageContact */
             $landingPageContact = $form->getData();
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($landingPageContact);
-            $em->flush();
-
-            $returnCode = $this->get('app.manager.mailchimp_list')->subscribe(
-                $landingPageContact->getEmail(),
-                $landingPageContact->getFirstName(),
-                $landingPageContact->getLastName(),
-                $landingPageContact->getLandingPageTranslation()->getMailChimpListId()
-            );
-
-            if ($returnCode === MailchimpListManager::UNKNOWN_ERROR) {
-                $this->get('app.manager.emails')->sendDebugEmail([
-                    'message' => 'Enregistrement à Mailchimp qui fail pour '
-                        . $landingPageContact->getFirstName() . ' ' . $landingPageContact->getLastName()
-                        . ' (' . $landingPageContact->getEmail() . ') pour la liste '
-                        . $landingPageContact->getLandingPageTranslation()->getTitle() ,
-                ]);
-            }
+            $this->get('app.manager.landing_page')->processContact($landingPageContact);
 
             return $this->redirect($this->generateUrl('landing_page_success', [ 'slug' => $landingPageTranslation->getSlug() ]));
         }
@@ -66,10 +54,7 @@ class LandingPageController extends Controller
 
     public function successAction(string $slug, Request $request)
     {
-        $landingPageTranslation = $this->get('doctrine')->getRepository('AppBundle:LandingPageTranslation')->findOneBy([
-            'locale' => $request->getLocale(),
-            'slug' => $slug
-        ]);
+        $landingPageTranslation = $this->getLandingPageTranslation($slug, $request);
 
         return $this->render('AppBundle:LandingPage:success.html.twig', [
             'landingPageTranslation' => $landingPageTranslation

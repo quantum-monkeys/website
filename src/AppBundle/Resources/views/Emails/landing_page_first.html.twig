@@ -1,0 +1,7 @@
+{{ contact.landingPageTranslation.emailContent|replace({
+    '%firstname%': contact.firstName,
+    '%lastname%': contact.lastName,
+    '%email%': contact.email,
+    '%company%': contact.company,
+    '%document_url%': absolute_path(contact.landingPageTranslation.document, 'reference')
+})|markdown }}

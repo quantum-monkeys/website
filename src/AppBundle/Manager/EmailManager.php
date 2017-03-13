@@ -2,6 +2,7 @@
 
 namespace AppBundle\Manager;
 
+use AppBundle\Entity\LandingPageContact;
 use Symfony\Bridge\Twig\TwigEngine;
 
 class EmailManager
@@ -62,6 +63,21 @@ class EmailManager
         return $this->send($message);
     }
 
+    public function sendLandingPageFirstEmail(LandingPageContact $contact)
+    {
+        $message = $this->createToSomeoneMessage($contact->getEmail())
+            ->setSubject($contact->getLandingPageTranslation()->getEmailSubject());
+
+        $this->render(
+            $message,
+            'AppBundle:Emails:landing_page_first.html.twig',
+            'AppBundle:Emails:landing_page_first.txt.twig',
+            [ 'contact' => $contact ]
+        );
+
+        return $this->send($message);
+    }
+
     protected function send($message)
     {
         try {
@@ -86,6 +102,12 @@ class EmailManager
     {
         return $this->createGenericMessage()
             ->setTo($this->generalEmailAddress);
+    }
+
+    protected function createToSomeoneMessage(string $emailAddress)
+    {
+        return $this->createGenericMessage()
+            ->setTo($emailAddress);
     }
 
     protected function createGenericMessage()
