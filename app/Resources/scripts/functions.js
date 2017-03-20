@@ -10,7 +10,7 @@ $(function(){
 
 // custom form
 $(function() {
-	jcf.replaceAll();
+	jcf.replaceAll('.search-form');
 });
 
 // count down function

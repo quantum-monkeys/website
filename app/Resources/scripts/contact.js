@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var $form = $('form[name=contact]');
+    var $form = $('form#contact');
     $form.ajaxForm({
         dataType: 'json',
         success: function(data) {

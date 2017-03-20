@@ -1,0 +1,29 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% block body %}
+    <div class="container landing-page">
+        <div class="row">
+            <div class="hidden-xs col-sm-4">
+                <picture>
+                    {% media campaignTranslation.mainPicture, 'landing_page_main' with {
+                        'class': 'img-responsive'
+                    } %}
+                </picture>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <h2>{{ campaignTranslation.title }}</h2>
+
+                {{ campaignTranslation.mainContent|markdown }}
+
+                <p class="bg-success">{{ campaignTranslation.mainSuccessMessage }}</p>
+            </div>
+            <div class="visible-xs col-xs-12">
+                <picture>
+                    {% media campaignTranslation.mainPicture, 'landing_page_main' with {
+                        'class': 'img-responsive'
+                    } %}
+                </picture>
+            </div>
+        </div>
+    </div>
+{% endblock %}

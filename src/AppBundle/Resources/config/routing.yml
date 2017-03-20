@@ -70,3 +70,23 @@ newsletter_submit:
     defaults:
         _controller: AppBundle:Newsletter:submit
     options: { i18n: false }
+
+campaign:
+    path: /{slug}
+    defaults:
+        _controller: AppBundle:Marketing:index
+
+campaign_success:
+    path: /{slug}/success
+    defaults:
+        _controller: AppBundle:Marketing:success
+
+campaign_contact:
+    path: /{slug}/contact
+    defaults:
+        _controller: AppBundle:Marketing:contact
+
+campaign_contact_success:
+    path: /{slug}/contact/success
+    defaults:
+        _controller: AppBundle:Marketing:contactSuccess

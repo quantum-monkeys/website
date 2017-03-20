@@ -1,0 +1,46 @@
+@startuml
+
+start
+
+split
+
+:Come to the landing page;
+
+if (Subscribe to campain) then (yes)
+    :Registered in QM database;
+    :Subscribe to the MailChimp list;
+    :Success message;
+    :Receive email;
+else  (no)
+    stop
+endif
+
+split again
+    :Someone send him the document;
+end split
+
+:Open Document;
+
+if (Click on link in document) then (yes)
+    :Page with full form, not prefilled;
+else (no)
+endif
+
+if (Has received document by email) then (yes)
+    while (Has not click on link in email)
+        :Send reminder;
+
+        if (3rd email ?) then (yes)
+            stop
+        else (no)
+        endif
+    endwhile
+
+    :Page with full form, prefilled;
+else (no)
+    stop
+endif
+
+end
+
+@enduml

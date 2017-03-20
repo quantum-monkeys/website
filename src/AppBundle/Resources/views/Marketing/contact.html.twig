@@ -1,0 +1,107 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% form_theme form '@App/Form/checkbox_form_theme.html.twig' %}
+
+{% block body %}
+    <div class="container landing-page">
+        <div class="row">
+            <div class="hidden-xs col-sm-4">
+                <picture>
+                    {% media campaignTranslation.mainPicture, 'landing_page_main' with {
+                        'class': 'img-responsive'
+                    } %}
+                </picture>
+            </div>
+            <div class="col-xs-12 col-sm-8">
+                <h2>{{ campaignTranslation.title }}</h2>
+
+                {{ campaignTranslation.contactContent|markdown }}
+
+                <h3>{{ campaignTranslation.contactFormTitle }}</h3>
+
+                {{ form_start(form, {
+                    'attr' : {
+                        'class': 'form-horizontal'
+                    }
+                }) }}
+                    <div class="row">
+                        <div class="col-xs-6">
+                            {{ form_widget(form.firstName, {
+                                'attr' : {
+                                    'class': 'form-control'
+                                }
+                            }) }}
+                        </div>
+                        <div class="col-xs-6">
+                            {{ form_widget(form.lastName, {
+                                'attr' : {
+                                    'class': 'form-control'
+                                }
+                            }) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {{ form_widget(form.email, {
+                                'attr' : {
+                                    'class': 'form-control'
+                                }
+                            }) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {{ form_widget(form.jobTitle, {
+                                'attr' : {
+                                    'class': 'form-control'
+                                }
+                            }) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {{ form_widget(form.company.name, {
+                                'attr' : {
+                                    'class': 'form-control'
+                                }
+                            }) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {{ form_label(form.contactReason) }}
+                            {{ form_widget(form.contactReason) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {{ form_widget(form.message, {
+                                'attr' : {
+                                    'class': 'form-control',
+                                    'rows': 5
+                                }
+                            }) }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            {{ form_widget(form.submit, {
+                                'label': campaignTranslation.contactSubmitButtonLabel,
+                                'attr' : {
+                                    'class': 'btn btn-default'
+                                }
+                            }) }}
+                        </div>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+            <div class="visible-xs col-xs-12">
+                <picture>
+                    {% media campaignTranslation.mainPicture, 'landing_page_main' with {
+                        'class': 'img-responsive'
+                    } %}
+                </picture>
+            </div>
+        </div>
+    </div>
+{% endblock %}

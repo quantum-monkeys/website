@@ -1,0 +1,42 @@
+@startuml
+
+class Campaign {
+    - title: string
+    - translations: LandingPageTranslation[]
+}
+Campaign o-- CampaignTranslation
+
+class CampaignTranslation {
+    - title: string
+    - slug: string
+    - intro: string
+    - formTitle: string
+    - submitButtonLabel: string
+    - successMessage: string
+    - emailSubject: string
+    - emailContent: string
+    - picture: Media
+    - mailChimpListId: string
+    - contacts: Contact[]
+    - document: Media
+}
+
+class Contact {
+    - firstName: string
+    - lastName: string
+    - email: string
+    - company: Company
+    - campaignTranslation: CampaignTranslation
+    - contactReason: string
+    - message: string
+}
+Contact o-- CampaignTranslation
+Contact o-- Company
+
+class Company {
+    - name: string
+    - size: string
+    - methodology: string
+}
+
+@enduml

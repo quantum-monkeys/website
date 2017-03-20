@@ -4,9 +4,6 @@ namespace AppBundle\Controller;
 
 use AppBundle\Form\Type\ContactType;
 use AppBundle\Form\Type\NewsletterType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -34,7 +31,7 @@ class AboutUsController extends Controller
         );
     }
 
-    public function contactWidgetAction(Request $request)
+    public function contactWidgetAction()
     {
         $contactForm = $this->createForm(ContactType::class, null, [
             'action' => $this->generateUrl('contact'),
@@ -57,39 +54,7 @@ class AboutUsController extends Controller
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $message = \Swift_Message::newInstance()
-                ->setSubject('Message from: ' . $data['firstName'] . ' ' . $data['lastName'])
-                ->setFrom('company@quantummonkeys.com')
-                ->setTo('company@quantummonkeys.com')
-                ->setBody(
-                    $this->renderView(
-                        'AppBundle:Emails:contact.html.twig',
-                        [
-                            'data' => $data
-                        ]
-                    ),
-                    'text/html'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'AppBundle:Emails:contact.txt.twig',
-                        [
-                            'data' => $data
-                        ]
-                    ),
-                    'text/plain'
-                )
-            ;
-
-            try {
-                $recipients = $this->get('mailer')->send($message);
-
-                if ($recipients > 0) {
-                    $success = true;
-                }
-            } catch(\Exception $e) {
-            }
-        } else {
+            $success = $this->get('app.manager.emails')->sendContactEmail($data);
         }
 
         return new JsonResponse([

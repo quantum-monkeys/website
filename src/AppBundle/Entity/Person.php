@@ -2,7 +2,6 @@
 
 namespace AppBundle\Entity;
 
-use AppBundle\Entity\Sessions\Course;
 use AppBundle\Interfaces\TranslatableInterface;
 use Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\Common\Collections\ArrayCollection;

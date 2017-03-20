@@ -1,0 +1,47 @@
+AppBundle\Entity\Marketing\Contact:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Marketing\ContactRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+        jobTitle:
+            type: string
+            length: 255
+            nullable: true
+        contactReason:
+            type: simple_array
+            nullable: true
+        message:
+            type: text
+            nullable: true
+
+    manyToOne:
+        campaignTranslation:
+            targetEntity: AppBundle\Entity\Marketing\CampaignTranslation
+            inversedBy: contacts
+            joinColumn:
+                onDelete: SET NULL
+        company:
+            targetEntity: AppBundle\Entity\Marketing\Company
+            inversedBy: contacts
+            fetch: EAGER
+            cascade:
+                - "persist"
+            joinColumn:
+                onDelete: SET NULL
+
+    lifecycleCallbacks: {  }

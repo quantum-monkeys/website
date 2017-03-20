@@ -2,7 +2,9 @@
 
 <div class="alert alert-success">{{ 'contact.message.success'|trans }}</div>
 <div class="alert alert-danger">{{ 'contact.message.error'|trans }}</div>
-{{ form_start(form) }}
+{{ form_start(form, {
+    'attr': { 'id': 'contact' }
+}) }}
     {{ form_widget(form.firstName, {
         'attr': {
             'class': 'footer_mainpanel_right_input'

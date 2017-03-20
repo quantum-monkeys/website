@@ -1,0 +1,33 @@
+AppBundle\Entity\Marketing\Company:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Marketing\CompanyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: true
+        size:
+            type: string
+            length: 255
+            nullable: true
+        methodology:
+            type: string
+            length: 255
+            nullable: true
+
+    oneToMany:
+        contacts:
+            targetEntity: AppBundle\Entity\Marketing\Contact
+            mappedBy: company
+            cascade:
+                - "persist"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }

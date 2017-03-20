@@ -1,0 +1,15 @@
+{%- block choice_widget_expanded -%}
+    <div {{ block('widget_container_attributes') }}>
+        {%- for child in form %}
+            {% if child.vars.label is empty -%}
+                {% set label = child.vars.name|humanize %}
+            {%- endif -%}
+            <div class="checkbox col-xs-12 col-md-6">
+                <label>
+                    {{- form_widget(child) -}}
+                    {{ translation_domain is same as(false) ? child.vars.label : child.vars.label|trans({}, translation_domain) }}
+                </label>
+            </div>
+        {% endfor -%}
+    </div>
+{%- endblock choice_widget_expanded -%}
