@@ -23,6 +23,9 @@ DirectoryIndex app.php
     RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
     RewriteRule .* ? [F,L]
 
+    RewriteCond %{HTTP_HOST} ^159\.203\.60\.101
+    RewriteRule (.*) http://www.yourdomain.com/$1 [R=301,L]
+
     RewriteCond %{HTTP_HOST} !^www.quantummonkeys.com$ [NC]
     RewriteRule ^(.*)$ http://www.quantummonkeys.com/$1 [L,R=301]
 
