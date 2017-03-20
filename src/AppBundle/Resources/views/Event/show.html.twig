@@ -37,11 +37,11 @@
                     <h4 class="age-title">{{ translate(eventOccurrence, 'name')|default(translate(eventOccurrence.event, 'name')) }}</h4>
                     <h3>{{ eventOccurrence.location.name }} - {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}</h3>
                     <p>
-                        <img src="/images/calender-img.png" alt="img" />
+                        <img src="/images/calender-img.png" alt="calendar icon" />
                         <span>{{ 'view.start_from'|trans({ '%date%': eventOccurrence.begin|localizeddate('short', 'none') }) }}</span>
                     </p>
                     <p>
-                        <img src="/images/speaker-img.png" alt="img" />
+                        <img src="/images/speaker-img.png" alt="speaker icon" />
                         <span>{{ 'view.start_at'|trans({ '%time%': eventOccurrence.begin|localizeddate('none', 'short') }) }}</span>
                     </p>
                     <p>{{ translate(eventOccurrence.event, 'intro')|markdown }}</p>
@@ -58,7 +58,7 @@
                 {% endif %}
                 <div class="location col-sm-10 col-md-10 col-lg-10">
                     <p>
-                        <img src="/images/location.png" alt="loaction img" />
+                        <img src="/images/location.png" alt="location icon" />
                         <span>
                             {{ eventOccurrence.location.name }}<br />
                             {{ eventOccurrence.location.city }}, {{ eventOccurrence.location.region }}<br />

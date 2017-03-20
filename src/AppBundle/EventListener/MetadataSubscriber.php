@@ -148,7 +148,7 @@ class MetadataSubscriber implements EventSubscriberInterface
         $this->page->addMeta('property', 'twitter:title', $title);
     }
 
-    protected function setDescription(string $description)
+    protected function setDescription(string $description = null)
     {
         $this->page->addMeta('name', 'description', $description);
         $this->page->addMeta('property', 'og:description', $description);

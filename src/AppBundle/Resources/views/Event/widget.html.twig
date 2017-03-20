@@ -1,7 +1,7 @@
 {% trans_default_domain 'widget' %}
 
 <h3>
-    <img src="/images/upcomming-icon.png" alt="image description" height="50px"/>
+    <img src="/images/upcomming-icon.png" alt="upcoming events icon" height="50px"/>
     <span><a href="{{ path('event_list') }}">{{ 'events.title'|trans }}</a></span>
 </h3>
 
@@ -14,19 +14,19 @@
             <div class="whats_happening_box_right">
                 <p><span>{{ translate(event, 'name')|default(translate(event.event, 'name'))|truncate(30, true, '...') }}</span></p>
                 <div class="events_small_panel">
-                    <img src="/images/events-icon1.png" alt="image description">
+                    <img src="/images/events-icon1.png" alt="location icon">
                     {{ event.location.city }}, {{ event.location.country }}
                 </div>
                 <div class="events_small_panel">
-                    <img src="/images/events-icon2.png" alt="image description">
+                    <img src="/images/events-icon2.png" alt="date icon">
                     {{ event.begin|localizeddate('short', 'none') }} {{ event.begin|localizeddate('none', 'short') }}
                 </div>
                 <div class="events_small_panel">
-                    <img src="/images/events-icon3.png" alt="image description">
+                    <img src="/images/events-icon3.png" alt="lang icon">
                     {% for language in event.languages %}{{ languageName(language) }}{% if not loop.last %}, {% endif %}{% endfor %}
                 </div>
                 <div class="events_small_panel">
-                    <img src="/images/events-icon4.png" alt="image description">
+                    <img src="/images/events-icon4.png" alt="remaining seats icon">
                     {{ 'event.remaining_seats'|transchoice(event.remainingSeats) }}
                 </div>
             </div>

@@ -6,7 +6,7 @@
     <div class="aboutus container">
         <div class="row">
             <picture class="col-sm-12 col-md-6 col-lg-6">
-                <img src="{{ asset('images/logo-big.png') }}">
+                <img src="{{ asset('images/logo-big.png') }}" alt="quantum monkeys logo">
             </picture>
             <div class="col-sm-12 col-md-6 col-lg-6 aboutus-description">
                 {{ 'description'|trans|markdown }}
@@ -70,7 +70,7 @@
             <h2>{{ 'team'|trans }}</h2>
 
             {% for person in people %}
-                <div class="team-member col-sm-12 col-md-4">
+                <div class="team-member col-sm-12 col-md-4" itemscope itemtype="http://schema.org/Person">
                     <figure>
                         {% media person.picture, 'person_about' with {
                             'class': 'img-rounded img-responsive'
@@ -85,7 +85,7 @@
                         </div>
                     </figure>
                     <div class="informations">
-                        <h4>{{ person.displayName }}</h4>
+                        <h4 itemprop="name">{{ person.displayName }}</h4>
                         <p class="position">{{ translate(person, 'position') }}</p>
                         <p class="description">{{ translate(person, 'description') }}</p>
 

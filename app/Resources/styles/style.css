@@ -515,11 +515,6 @@ body {
 	text-align: center;
 	margin-bottom: 40px;
 }
-.how_do_we_main_title h1 {
-	font-size: 53px;
-	color: #FFF;
-	font-family: 'Neuton', Arial, helvetica, sans-serif;
-}
 .how_do_we_main_title h2 {
 	font-size: 26px;
 	color: #a0a0a0;
@@ -1588,73 +1583,6 @@ body {
 	position: absolute;
 	background: rgba(0, 0, 0, 0.65);
 }
-.visual-area h1 {
-	color: #fff;
-	margin: 0 0 10px;
-	text-transform: uppercase;
-	font: 54px/60px 'Neuton', Arial, helvetica, sans-serif;
-}
-.visual-area h1 span, .visual-area p span { color: #ff8a00; }
-.visual-area p { margin: 0 0 20px; }
-/* count down styles */
-#clockdiv {
-	color: #fff;
-	overflow: hidden;
-	text-align: center;
-	padding: 0 0 30px;
-	position: relative;
-}
-#clockdiv:before, #clockdiv:after {
-	display: inline-block;
-	vertical-align: middle;
-	background: #fff;
-	width: 50px;
-	height: 2px;
-	content: "";
-	margin: 40px 0 0;
-}
-#clockdiv > div {
-	padding: 10px 20px 15px;
-	margin: 0 5px;
-	min-width: 120px;
-	display: inline-block;
-	vertical-align: top;
-	border: solid 1px #fff;
-}
-
-#clockdiv div .title, #clockdiv div .smalltext {
-	display: block;
-	color: #fff;
-	text-transform: uppercase;
-	font: 700 32px/38px 'Antonio-Bold', Arial, helvetica, sans-serif;
-}
-#clockdiv div .smalltext {
-	color: #ff8a00;
-	font: 400 16px/18px 'Antonio-Bold', Arial, helvetica, sans-serif;
-}
-.btn-booknow {
-	padding: 10px 15px;
-	color: #a8a8a8;
-	background-color: #ff8a00;
-	font-size: 19px;
-	color: #fff;
-	-webkit-transition: all .5s;
-	-moz-transition: all .5s;
-	-ms-transition: all .5s;
-	-o-transition: all .5s;
-	transition: all .5s;
-	transition-timing-function: ease-out;
-	font: 16px/18px Arial, helvetica, sans-serif;
-}
-.btn-booknow:hover {
-	background: #fff;
-	color: #ff8a00;
-}
-/*.container {*/
-	/*width: 94%;*/
-	/*max-width: 1190px;*/
-	/*margin: 0 auto;*/
-/*}*/
 
 /* time menu styles */
 .search-block {

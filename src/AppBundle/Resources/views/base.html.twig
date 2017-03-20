@@ -16,14 +16,8 @@
     <link rel="stylesheet" media="screen" href="{{ asset('css/app.min.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
-    <link rel="stylesheet" href="http://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
 </head>
 <body>
-    {#<a href="#" data-toggle="modal" data-target="#newsletterModal">#}
-        {#<i class="fa fa-envelope"></i>#}
-        {#{{ 'subscribe'|trans({}, 'menu') }}#}
-    {#</a>#}
-
     <header class="hero{% block hero_classes %}{% endblock hero_classes %}" {% block hero_style %} style="background-image: url(/images/topbg.jpg);"{% endblock hero_style %}>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -36,6 +30,7 @@
                     </button>
                     <a class="navbar-brand" href="{{ path('homepage') }}">
                         <img alt="Brand" src="{{ asset('images/logo-white.png') }}" height="100">
+                        <h1>Quantum Monkeys</h1>
                     </a>
                 </div>
 
@@ -69,20 +64,20 @@
             <div class="footer_top">
                 <p class="hello">{{ 'contact.title'|trans|raw }}</p>
             </div>
-            <div class="footer_mainpanel_left">
-                <div class="footer_mainpanel_left_inner"> <img src="/images/address-icon.png" alt="image description">
+            <div class="footer_mainpanel_left company">
+                <div class="footer_mainpanel_left_inner"> <img src="/images/address-icon.png" alt="address icon">
                     <p>
                         <span>{{ 'contact.informations.address.title'|trans }}</span><br>
                         {{ 'contact.informations.address.value'|trans }}
                     </p>
                 </div>
-                <div class="footer_mainpanel_left_inner"> <img src="/images/phone-icon.png" alt="image description">
+                <div class="footer_mainpanel_left_inner"> <img src="/images/phone-icon.png" alt="phone icon">
                     <p>
                         <span>{{ 'contact.informations.phone.title'|trans }}</span><br>
                         <a href="tel:{{ 'contact.informations.phone.value'|trans }}">{{ 'contact.informations.phone.value'|trans }}</a>
                     </p>
                 </div>
-                <div class="footer_mainpanel_left_inner"> <img src="/images/message-icon.png" alt="image description">
+                <div class="footer_mainpanel_left_inner"> <img src="/images/message-icon.png" alt="email icon">
                     <p>
                         <span>{{ 'contact.informations.email.title'|trans }}</span><br>
                         <a href="mailto:{{ 'contact.informations.email.value'|trans }}">{{ 'contact.informations.email.value'|trans }}</a>

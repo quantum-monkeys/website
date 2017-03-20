@@ -20,6 +20,12 @@ DirectoryIndex app.php
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
+    RewriteCond %{HTTP_USER_AGENT} libwww-perl.*
+    RewriteRule .* ? [F,L]
+
+    RewriteCond %{HTTP_HOST} !^www.quantummonkeys.com$ [NC]
+    RewriteRule ^(.*)$ http://www.quantummonkeys.com/$1 [L,R=301]
+
     # Determine the RewriteBase automatically and set it as environment variable.
     # If you are using Apache aliases to do mass virtual hosting or installed the
     # project in a subdirectory, the base path will be prepended to allow proper
