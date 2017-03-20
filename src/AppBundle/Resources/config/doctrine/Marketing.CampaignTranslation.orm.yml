@@ -1,0 +1,84 @@
+AppBundle\Entity\Marketing\CampaignTranslation:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Marketing\CampaignTranslationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        locale:
+            type: string
+            length: 5
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 128
+            gedmo:
+                slug:
+                    fields:
+                        - title
+        mainContent:
+            type: text
+        mainFormTitle:
+            type: string
+            length: 255
+        mainSubmitButtonLabel:
+            type: string
+            length: 255
+        mainSuccessMessage:
+            type: string
+        contactContent:
+            type: text
+        contactFormTitle:
+            type: string
+            length: 255
+        contactSubmitButtonLabel:
+            type: string
+            length: 255
+        contactSuccessMessage:
+            type: string
+            length: 255
+        firstEmailSubject:
+            type: string
+            length: 255
+        firstEmailContent:
+            type: text
+        mailChimpListId:
+            type: string
+            length: 255
+
+    manyToOne:
+        mainPicture:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+
+        campaign:
+            targetEntity: AppBundle\Entity\Marketing\Campaign
+            inversedBy: translations
+            joinColumn:
+                nullable: false
+                onDelete: cascade
+
+        document:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            fetch: EAGER
+            cascade:
+                - "persist"
+
+    oneToMany:
+        contacts:
+            targetEntity: AppBundle\Entity\Marketing\Contact
+            mappedBy: campaignTranslation
+            cascade:
+                - "persist"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }

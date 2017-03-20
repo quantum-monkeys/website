@@ -1,0 +1,4 @@
+mailchimp:
+  address: "605 Avenue Atwater"
+  city: Montréal
+  permission_reminder: "Vous recevez ce courriel car vous avez souscrit à %list_name%"

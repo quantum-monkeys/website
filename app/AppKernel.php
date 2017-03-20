@@ -53,6 +53,8 @@ class AppKernel extends Kernel
 
             new Presta\SitemapBundle\PrestaSitemapBundle(),
 
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+
             new AppBundle\AppBundle(),
         );
 

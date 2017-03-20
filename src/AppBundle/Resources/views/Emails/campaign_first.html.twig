@@ -1,0 +1,8 @@
+{{ contact.campaignTranslation.firstEmailContent|replace({
+    '%firstname%': contact.firstName,
+    '%lastname%': contact.lastName,
+    '%email%': contact.email,
+    '%company%': contact.company,
+    '%document_url%': absolute_path(contact.campaignTranslation.document, 'reference'),
+    '%contact_url%': url('campaign_contact', { 'slug': contact.campaignTranslation.slug, 'contactId': contact.id })
+})|markdown }}

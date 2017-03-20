@@ -24,3 +24,6 @@ parameters:
     base_domain:        null
     router.request_context.host: null
     router.request_context.scheme: http
+
+    emails.general: company@quantummonkeys.com
+    emails.admin: axel@quantummonkeys.com

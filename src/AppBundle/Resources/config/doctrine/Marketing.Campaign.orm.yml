@@ -1,0 +1,26 @@
+AppBundle\Entity\Marketing\Campaign:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\Marketing\CampaignRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+
+    oneToMany:
+        translations:
+            targetEntity: AppBundle\Entity\Marketing\CampaignTranslation
+            mappedBy: campaign
+            fetch: EAGER
+            cascade:
+                - "persist"
+                - "remove"
+            indexBy: locale
+
+    lifecycleCallbacks: {  }

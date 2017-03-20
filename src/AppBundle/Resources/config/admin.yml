@@ -129,6 +129,31 @@ services:
               label: Testimonial
 
 
+    admin.marketing.campaign:
+        class: AppBundle\Admin\Marketing\CampaignAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\Marketing\Campaign
+            - ~
+            - '@app.manager.mailchimp_list'
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Marketing
+              label: Campaigns
+    admin.marketing.contact:
+        class: AppBundle\Admin\Marketing\ContactAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\Marketing\Contact
+            - ~
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Marketing
+              label: Contacts
+
+
     admin.event_occurrence_cost:
         class: AppBundle\Admin\EventOccurrenceCostAdmin
         arguments: [~, AppBundle\Entity\EventOccurrenceCost, ~]
@@ -197,3 +222,15 @@ services:
               manager_type: orm
               group: Don't touch !
               label: ExtraDevelopmentPackageTranslation
+
+    admin.marketing.campaign_translation:
+        class: AppBundle\Admin\Marketing\CampaignTranslationAdmin
+        arguments:
+            - ~
+            - AppBundle\Entity\Marketing\CampaignTranslation
+            - ~
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: Don't touch !
+              label: CampaignTranslationTranslation

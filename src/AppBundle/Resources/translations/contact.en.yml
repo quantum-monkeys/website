@@ -5,5 +5,32 @@ form:
     email: Email
     project: Needs
     message: Message
+    job_title: Job title
+    company:
+      name: Company
+      name_facultative: Company (facultative)
   label:
     submit: Submit
+    contact_reason: Contact motivation
+  methodology:
+    placeholders:
+      waterfall: Waterfall
+      agile: Agile
+      lean: Lean
+  size:
+    placeholders:
+      1-10: Less that 10 people
+      10-20: Between 10 and 20 people
+      20-50: Between 20 and 50 people
+      50-100: Between 50 and 100 people
+      100-200: Between 100 and 200 people
+      200-500: Between 200 and 500 people
+      500-more: More than 500 people
+  reason:
+    placeholders:
+      people_development: Employee development
+      reorganization: Reorganization
+      transition_lean_agile: Transition Lean Agile
+      coaching: Coaching
+      improve_culture: Improve organizational culture
+      other: Other

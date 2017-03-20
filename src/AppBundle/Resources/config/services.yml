@@ -28,16 +28,40 @@ services:
             - '@white_october_breadcrumbs'
             - '@app.twig.object_translator'
 
+    app.manager.emails:
+        class: AppBundle\Manager\EmailManager
+        arguments:
+            - '@mailer'
+            - '@templating'
+            - '@request_stack'
+            - '%emails.general%'
+            - '%emails.admin%'
+
+    app.manager.marketing.campaign:
+        class: AppBundle\Manager\CampaignManager
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@app.manager.emails'
+            - '@app.manager.mailchimp_list'
+
     app.twig.object_translator:
         class: AppBundle\Manager\ObjectTranslator
         arguments: ['@request_stack']
 
-    app.manager.newsletter:
-        class: AppBundle\Manager\NewsletterManager
+    app.manager.mailchimp_newsletter:
+        class: AppBundle\Manager\MailchimpListManager
         arguments:
           - '@request_stack'
           - '@csa_guzzle.client.mailchimp_api'
+          - '@translator'
           - '%newsletter_list_id%'
+
+    app.manager.mailchimp_list:
+        class: AppBundle\Manager\MailchimpListManager
+        arguments:
+          - '@request_stack'
+          - '@csa_guzzle.client.mailchimp_api'
+          - '@translator'
 
     app.manager.locale_manager:
         class: AppBundle\Manager\LocaleManager
@@ -55,6 +79,12 @@ services:
     app.twig.translate_extension:
         class: AppBundle\Twig\TranslateExtension
         arguments: ["@app.twig.object_translator"]
+        tags:
+            - { name : twig.extension }
+
+    app.twig.media_extension:
+        class: AppBundle\Twig\MediaExtension
+        arguments: ["@app.manager.media_manager"]
         tags:
             - { name : twig.extension }
 
@@ -104,3 +134,21 @@ services:
             - "@app.manager.media_manager"
         tags:
             - { name: "kernel.event_subscriber", priority: 100 }
+
+    app.sitemap.campaigns_subscriber:
+        class:     AppBundle\EventListener\SitemapCampaignsSubscriber
+        arguments:
+            - "@router"
+            - "@doctrine.orm.entity_manager"
+            - "@app.manager.media_manager"
+        tags:
+            - { name: "kernel.event_subscriber", priority: 100 }
+
+
+    app.command.test_email:
+        class: AppBundle\Command\TestEmailCommand
+        arguments:
+            - "@doctrine.orm.entity_manager"
+            - "@app.manager.emails"
+        tags:
+            - { name: console.command }
