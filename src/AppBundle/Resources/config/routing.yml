@@ -3,7 +3,7 @@ homepage:
     defaults:
         _controller: AppBundle:Home:index
 
-services_index:
+services:
     path: /services
     defaults:
         _controller: AppBundle:Services:index

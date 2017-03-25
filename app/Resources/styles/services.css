@@ -120,7 +120,7 @@
     font-family: 'Open Sans', Arial;
     font-size: 1.8em;
     font-weight: 700;
-    padding: 1em 0;
+    padding: 0 0 1em;
     margin: 0;
 }
 
@@ -133,6 +133,10 @@
     background-color: #bbb;
     border-color: #aaa;
     box-shadow: none;
+}
+
+.btn.price {
+    cursor: default;
 }
 
 .services .division {
@@ -153,4 +157,62 @@
 .services.studio .studio-description,
 .services.academy .academy-description {
     margin-top: 2em;
+}
+
+.services .intro {
+    text-align: center;
+    margin: 5em 0;
+}
+
+.services .intro .quote {
+    font-size: 2em;
+    width: 20em;
+    text-align: right;
+    margin: auto;
+    color: #ff8a00;
+}
+
+.services .intro .author {
+    font-size: 1.2em;
+    text-align: right;
+    width: 33em;
+    margin: auto;
+}
+
+.services .intro .text {
+    text-align: justify;
+    width: 50em;
+    margin: 2em auto;
+}
+
+.services hr {
+    margin-bottom: 3em;
+}
+
+.services .service .content {
+    text-align: justify;
+}
+
+@media (max-width: 991px) {
+    .services .intro {
+        margin: 2em 0;
+    }
+
+    .services .intro .quote,
+    .services .intro .author,
+    .services .intro .text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .services .service .content {
+        margin-top: 1em;
+    }
+}
+
+@media (max-width: 346px) {
+    .services .service .content .btn {
+        display: block;
+    }
 }

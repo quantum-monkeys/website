@@ -435,6 +435,20 @@
     position: relative;
 }
 
+.navbar-header .navbar-brand {
+    margin-left: 1em;
+    height: 6.5em;
+    background-color: white;
+}
+
+.navbar-header .navbar-brand:hover {
+    background-color: white;
+}
+
+.navbar-header .navbar-brand img {
+    height: 5em;
+}
+
 .navbar-default .navbar-toggle,
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -469,14 +483,18 @@
 }
 
 .hero-content h2 {
-    font: 700 4em/1.2em 'Antonio-Bold', Arial, helvetica, sans-serif;
-    letter-spacing: 0.3em;
+    font: 700 3em/1.2em 'Antonio-Bold', Arial, helvetica, sans-serif;
+    letter-spacing: 0.05em;
     margin-right: -0.3em;
     text-transform: uppercase;
 }
 
 .hero-content h2 span {
     color: #ff8a00;
+    display: block;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    margin-top: 0.3em;
 }
 
 .hero-content .read-more {
@@ -484,24 +502,14 @@
     opacity: 0.5;
 }
 
+.hero-content .read-more a {
+    color: white;
+}
+
 @media (min-width: 500px) {
     .hero-content h2 {
         margin-right: 0;
     }
-}
-
-.hero-content .video-cta {
-    background-color: #ff8a00;
-    display: inline-block;
-    color: #fff;
-    padding: 0.2em 1em;
-    font-size: 1.5em;
-}
-
-.hero-content .video-cta i {
-    line-height: 2em;
-    text-indent: 0.2em;
-    margin-right: 0.5em;
 }
 
 @media (min-width: 100px) and (max-width: 768px) {
@@ -515,10 +523,6 @@
 
     .hero-content h2 {
         font-size: 2em;
-    }
-
-    .hero-content .video-cta {
-        font-size: 1em;
     }
 
     .navbar-header {
@@ -551,7 +555,7 @@
 }
 
 .partners {
-    margin: 2em auto 6em;
+    margin: 6em auto;
     clear: both;
 }
 
@@ -698,5 +702,29 @@
         height: 100%;
         left: 1em;
         top: 0;
+    }
+}
+
+.youtube {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.youtube iframe {
+    height: 24em;
+    width: 43em;
+}
+
+@media (max-width: 400px) {
+    .youtube iframe {
+        height: 11em;
+        width: 20em;
+    }
+}
+
+@media (max-width: 700px)and (min-width: 401px) {
+    .youtube iframe {
+        height: 15em;
+        width: 30em;
     }
 }
