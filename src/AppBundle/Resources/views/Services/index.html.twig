@@ -20,7 +20,7 @@
             </p>
         </div>
 
-        <h2>Our services</h2>
+        <h2>{{ 'title.page'|trans }}</h2>
 
         <div class="row service">
             <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-lg hidden-md hidden-sm">
@@ -30,18 +30,40 @@
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content">
                 <h3>{{ 'general.consulting.title'|trans }}</h3>
                 {{ 'general.consulting.description'|trans|markdown }}
-
-                <span class="btn btn-default price">
-                    {{ 5000|localizedcurrency('CAD') }}
-                </span>
-                <a href="#contact-us" class="btn btn-info">
-                    {{ 'link.contact_us'|trans }}
-                </a>
             </div>
 
             <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs">
                 <img src="{{ asset('images/services/entrepreneur-593362_1920.jpg') }}" alt="expert coach" height="auto" />
             </picture>
+
+            <div class="col-xs-12 features">
+                <div class="row">
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-clock-o"></i>
+                        <div class="description">{{ 'general.consulting.features.time'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-envelope-o"></i>
+                        <div class="description">{{ 'general.consulting.features.communication'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-users"></i>
+                        <div class="description">{{ 'general.consulting.features.team'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-dollar"></i>
+                        <div class="description">{{ 'general.consulting.features.price'|trans({ '%price%': 5000|localizedcurrency('CAD') })|markdown }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 contact">
+                <div class="row">
+                    <a href="#contact-us" class="btn btn-default contact-us">
+                        {{ 'link.contact_us'|trans }}
+                    </a>
+                </div>
+            </div>
         </div>
 
         <hr />
@@ -54,18 +76,40 @@
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content">
                 <h3>{{ 'general.workshops.title'|trans }}</h3>
                 {{ 'general.workshops.description'|trans|markdown }}
-
-                <span class="btn btn-default price">
-                    {{ 3000|localizedcurrency('CAD') }}
-                </span>
-                <a href="#contact-us" class="btn btn-info">
-                    {{ 'link.contact_us'|trans }}
-                </a>
             </div>
 
             <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs hidden-lg hidden-md hidden-sm">
                 <img src="{{ asset('images/services/workshop-1746275_1920.jpg') }}" alt="workshop" height="auto" />
             </picture>
+
+            <div class="col-xs-12 features">
+                <div class="row">
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-clock-o"></i>
+                        <div class="description">{{ 'general.workshops.features.time'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-users"></i>
+                        <div class="description">{{ 'general.workshops.features.attendants'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-map-marker"></i>
+                        <div class="description">{{ 'general.workshops.features.location'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-dollar"></i>
+                        <div class="description">{{ 'general.workshops.features.price'|trans({ '%price%': 3000|localizedcurrency('CAD') })|markdown }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 contact">
+                <div class="row">
+                    <a href="#contact-us" class="btn btn-default contact-us">
+                        {{ 'link.contact_us'|trans }}
+                    </a>
+                </div>
+            </div>
         </div>
 
         <hr />
@@ -78,18 +122,40 @@
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content">
                 <h3>{{ 'general.facilitator.title'|trans }}</h3>
                 {{ 'general.facilitator.description'|trans|markdown }}
-
-                <span class="btn btn-default price">
-                    {{ 50000|localizedcurrency('CAD') }}
-                </span>
-                <a href="#contact-us" class="btn btn-info">
-                    {{ 'link.contact_us'|trans }}
-                </a>
             </div>
 
             <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs">
                 <img src="{{ asset('images/services/startup-593343_1920.jpg') }}" alt="facilitator" height="auto" />
             </picture>
+
+            <div class="col-xs-12 features">
+                <div class="row">
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-clock-o"></i>
+                        <div class="description">{{ 'general.facilitator.features.time'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-users"></i>
+                        <div class="description">{{ 'general.facilitator.features.team'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-compass"></i>
+                        <div class="description">{{ 'general.facilitator.features.plan'|trans|markdown }}</div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 feature">
+                        <i class="fa fa-dollar"></i>
+                        <div class="description">{{ 'general.facilitator.features.price'|trans({ '%price%': 40000|localizedcurrency('CAD') })|markdown }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 contact">
+                <div class="row">
+                    <a href="#contact-us" class="btn btn-default contact-us">
+                        {{ 'link.contact_us'|trans }}
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}

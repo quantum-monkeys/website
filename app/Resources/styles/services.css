@@ -189,6 +189,10 @@
     margin-bottom: 3em;
 }
 
+.services .service {
+    margin-bottom: 4em;
+}
+
 .services .service .content {
     text-align: justify;
 }
@@ -215,4 +219,27 @@
     .services .service .content .btn {
         display: block;
     }
+}
+
+.service .features {
+    margin: 2em 0;
+}
+
+.service .feature {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.service .feature i {
+    display: block;
+    font-size: 3em;
+    color: #ff8a00;
+}
+
+.service .feature .description {
+    margin-top: 1em;
+}
+
+.service .contact {
+    text-align: center;
 }
