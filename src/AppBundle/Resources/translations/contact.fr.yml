@@ -8,10 +8,10 @@ form:
     job_title: Fonction
     company:
       name: Entreprise
-      name_facultative: Entreprise (facultatif)
+      name_facultative: 'Entreprise (facultatif)'
   label:
     submit: Soumettre
-    contact_reason: Motivation du contact
+    contact_reason: 'Motivation du contact'
   methodology:
     placeholders:
       waterfall: Waterfall
@@ -19,18 +19,18 @@ form:
       lean: Lean
   size:
     placeholders:
-      1-10: Moins de 10 personnes
-      10-20: Entre 10 et 20 personnes
-      20-50: Entre 20 et 50 personnes
-      50-100: Entre 50 et 100 personnes
-      100-200: Entre 100 et 200 personnes
-      200-500: Entre 200 et 500 personnes
-      500-more: Plus de 500 personnes
+      1-10: 'Moins de 10 personnes'
+      10-20: 'Entre 10 et 20 personnes'
+      20-50: 'Entre 20 et 50 personnes'
+      50-100: 'Entre 50 et 100 personnes'
+      100-200: 'Entre 100 et 200 personnes'
+      200-500: 'Entre 200 et 500 personnes'
+      500-more: 'Plus de 500 personnes'
   reason:
     placeholders:
-      people_development: Développement de personnel
+      people_development: 'Développement de personnel'
       reorganization: Réorganisation
-      transition_lean_agile: Virement vers Lean/Agile Thinking
+      transition_lean_agile: 'Virement vers Lean/Agile Thinking'
       coaching: Coaching
-      improve_culture: Amélioration de culture organisationnelle
+      improve_culture: 'Amélioration de culture organisationnelle'
       other: Autre
