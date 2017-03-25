@@ -1,6 +1,20 @@
 title:
   widget: 'How can we help you?'
   page: 'Our services'
+general:
+  intro:
+    quote: 'Technology is eating the world, and startups are leading the way!'
+    author: '- Bashir Fancy, Chairman and CEO at CIPS'
+    text: 'Startups are an undeniable force to be reckoned with. These ultra-competitive teams all share several key traits, habits, and mindsets that give them the advantage over the established players in the industry. Give your company the same edge in this innovate-or-die world.'
+  consulting:
+    title: Consulting
+    description: "You want to expand your influence and help your company evolve faster?\n\nYou need to develop your leadership skills, boost you confidence, or to conquer new roles?\n\nYou need to expedite your mastery in Agile, Lean, or  corporate culture?\n\nOur consulting package is a simple yet versatile, all-in-one service. You will get a dedicated senior consultant who will help you and your team address your issues, turbocharge your learning, and reduce your dependance on external consultants. \n\nThe package includes a half-day every week, unlimited emails, and specialized help from Quantum Monkeys other consultants if needed. All that on a monthly basis, with no extended engagement."
+  workshops:
+    title: Workshops
+    description: "Quickly develop your employees’ skills with our customized workshops. Each brisk workshop focuses on one key subject in a very practical manner so your people are proficient and ready to apply an integrative approach to the subject.  \n\nSubjects available includes agile planning, agile and lean work organization, improving the learn and adapt cycle, improving communications, self-organization, and so much more. \n\nOur half-day workshops accommodate up to 15 people."
+  facilitator:
+    title: 'Facilitator 5-4-3'
+    description: "Starting a new team?\n\nNeed to transition an existing team toward Agile or Lean?\n\nOur Facilitator 5-4-3 program will take any team and, over the course of three months, transform them into a self-organized team lead by a freshly-trained in-house facilitator.\n\nThis program includes help setting up a new project, training the team, and mentoring your very own facilitator. This three month program cannot be extended for the same team, an intentional constraint creating a sense of urgency and a need to relentlessly push forward. \n\n- Month 1: Our Facilitator will work 5 days a week to provide the necessary training and guidance the team build their own customized framework.\n\n- Month 2: Our Facilitator will work 4 days a week in close collaboration with your new facilitator and the rest of your team so they are able to continually deliver value using their new framework and build solid self-organization habits.\n\n- Month 3: Our Facilitator will work 3 days a week and coach your new facilitator as they guide the team in its new self-organized journey. This period help build the team’s confidence so they can continue to learn and evolve on their own. \n\nThe program is offered as a single package that include the three months of work, training of the team, and the mentoring of your new facilitator."
 coaching:
   title: Coach
   description: 'Coaching and consultation to help you to understand a problematic and apply new skills'
@@ -12,3 +26,4 @@ studio:
   description: 'A team of autonomous developers for your software development projects'
 link:
   learn_more: 'Learn more'
+  contact_us: 'Contact us'

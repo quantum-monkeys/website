@@ -2,14 +2,7 @@
 
 namespace AppBundle\EventListener;
 
-use Application\Sonata\NewsBundle\Entity\Post;
-use Doctrine\Common\Persistence\ObjectManager;
-use Presta\SitemapBundle\Sitemap\Url\GoogleImage;
-use Presta\SitemapBundle\Sitemap\Url\GoogleImageUrlDecorator;
 use Presta\SitemapBundle\Sitemap\Url\GoogleMultilangUrlDecorator;
-use Presta\SitemapBundle\Sitemap\Url\GoogleNewsUrlDecorator;
-use Sonata\NewsBundle\Model\BlogInterface;
-use Sonata\NewsBundle\Model\PostManagerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Presta\SitemapBundle\Event\SitemapPopulateEvent;
@@ -25,10 +18,10 @@ class SitemapStaticPagesSubscriber implements EventSubscriberInterface
 
     const ROUTES = [
         'homepage',
-        'services_index',
-        'coaching',
-        'academy',
-        'studio',
+        'services',
+//        'coaching',
+//        'academy',
+//        'studio',
         'event_list',
         'about_us',
         'blog',

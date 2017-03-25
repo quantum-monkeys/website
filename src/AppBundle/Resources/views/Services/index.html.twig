@@ -1,7 +1,95 @@
 {% extends 'AppBundle::base.html.twig' %}
 
+{% trans_default_domain 'services' %}
+
 {% block body %}
-    <div class="container services page">
-        {% include '@App/Services/_services.html.twig' %}
+    <div class="container services">
+        <div class="row intro">
+            <p class="quote">
+                <i class="fa fa-quote-left"></i>
+                {{ 'general.intro.quote'|trans }}
+                <i class="fa fa-quote-right"></i>
+            </p>
+
+            <p class="author">
+                {{ 'general.intro.author'|trans }}
+            </p>
+
+            <p class="text">
+                {{ 'general.intro.text'|trans }}
+            </p>
+        </div>
+
+        <h2>Our services</h2>
+
+        <div class="row service">
+            <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-lg hidden-md hidden-sm">
+                <img src="{{ asset('images/services/entrepreneur-593362_1920.jpg') }}" alt="expert coach" height="auto" />
+            </picture>
+
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content">
+                <h3>{{ 'general.consulting.title'|trans }}</h3>
+                {{ 'general.consulting.description'|trans|markdown }}
+
+                <span class="btn btn-default price">
+                    {{ 5000|localizedcurrency('CAD') }}
+                </span>
+                <a href="#contact-us" class="btn btn-info">
+                    {{ 'link.contact_us'|trans }}
+                </a>
+            </div>
+
+            <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs">
+                <img src="{{ asset('images/services/entrepreneur-593362_1920.jpg') }}" alt="expert coach" height="auto" />
+            </picture>
+        </div>
+
+        <hr />
+
+        <div class="row service">
+            <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <img src="{{ asset('images/services/workshop-1746275_1920.jpg') }}" alt="workshop" height="auto" />
+            </picture>
+
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content">
+                <h3>{{ 'general.workshops.title'|trans }}</h3>
+                {{ 'general.workshops.description'|trans|markdown }}
+
+                <span class="btn btn-default price">
+                    {{ 3000|localizedcurrency('CAD') }}
+                </span>
+                <a href="#contact-us" class="btn btn-info">
+                    {{ 'link.contact_us'|trans }}
+                </a>
+            </div>
+
+            <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs hidden-lg hidden-md hidden-sm">
+                <img src="{{ asset('images/services/workshop-1746275_1920.jpg') }}" alt="workshop" height="auto" />
+            </picture>
+        </div>
+
+        <hr />
+
+        <div class="row service">
+            <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-lg hidden-md hidden-sm">
+                <img src="{{ asset('images/services/startup-593343_1920.jpg') }}" alt="facilitator" height="auto" />
+            </picture>
+
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 content">
+                <h3>{{ 'general.facilitator.title'|trans }}</h3>
+                {{ 'general.facilitator.description'|trans|markdown }}
+
+                <span class="btn btn-default price">
+                    {{ 50000|localizedcurrency('CAD') }}
+                </span>
+                <a href="#contact-us" class="btn btn-info">
+                    {{ 'link.contact_us'|trans }}
+                </a>
+            </div>
+
+            <picture class="col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs">
+                <img src="{{ asset('images/services/startup-593343_1920.jpg') }}" alt="facilitator" height="auto" />
+            </picture>
+        </div>
     </div>
 {% endblock %}
