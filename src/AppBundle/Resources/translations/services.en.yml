@@ -12,7 +12,7 @@ general:
     features:
       time: '__1/2 day__ per week'
       communication: '__Unlimited__ email communication'
-      team: '__QM Experts__ if needed'
+      team: '__Additional experts__ if needed'
       price: '__%price%__ per month'
   workshops:
     title: Workshops
