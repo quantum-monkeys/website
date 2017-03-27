@@ -22,7 +22,7 @@ class SitemapStaticPagesSubscriber implements EventSubscriberInterface
 //        'coaching',
 //        'academy',
 //        'studio',
-        'event_list',
+//        'event_list',
         'about_us',
         'blog',
         'newsletter',
