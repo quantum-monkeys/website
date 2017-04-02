@@ -8,6 +8,7 @@ const uglify = require('gulp-uglify');
 gulp.task('image-min', () => {
     gulp.src([
             'node_modules/fancybox/dist/img/**/*',
+            'node_modules/lightslider/dist/img/**/*',
         ])
         .pipe(imagemin({
             progressive: true,
@@ -40,7 +41,8 @@ gulp.task('css', () => {
             'node_modules/bootstrap/dist/css/bootstrap.min.css',
             'node_modules/font-awesome/css/font-awesome.min.css',
             'node_modules/fancybox/dist/css/jquery.fancybox.css',
-        ])
+            'node_modules/lightslider/dist/css/lightslider.css',
+    ])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
             console.log(details.name + ': ' + details.stats.minifiedSize);
@@ -53,7 +55,8 @@ gulp.task('css', () => {
             'app/Resources/styles/aboutus.css',
             'app/Resources/styles/services.css',
             'app/Resources/styles/custom.css',
-            'app/Resources/styles/landing_page.css'
+            'app/Resources/styles/landing_page.css',
+            'app/Resources/styles/testimonials.css'
         ])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
@@ -80,6 +83,7 @@ gulp.task('js', () => {
             'node_modules/jcf/dist/js/jcf.checkbox.js',
             'node_modules/jquery-form/jquery.form.js',
             'node_modules/fancybox/dist/js/jquery.fancybox.js',
+            'node_modules/lightslider/dist/js/lightslider.js',
         ])
         .pipe(concat('vendors.min.js'))
         .pipe(uglify())

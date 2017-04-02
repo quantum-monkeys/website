@@ -121,6 +121,14 @@
                 $('.navbar-toggle').on('click', function () {
                     $(this).parent().toggleClass('collapsed');
                 });
+
+                $("#light-slider").lightSlider({
+//                    auto: true,
+                    item: 1,
+                    slideMargin: 0,
+                    loop: true,
+                    pause: 10000,
+                });
             });
         </script>
 

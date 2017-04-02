@@ -728,3 +728,11 @@
         width: 30em;
     }
 }
+
+.feature-speaker .blog-list-content h3 {
+    margin-bottom: 0.5em;
+}
+
+.feature-speaker img {
+    border-radius: 100%;
+}

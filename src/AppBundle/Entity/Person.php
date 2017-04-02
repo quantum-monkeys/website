@@ -44,11 +44,6 @@ class Person implements TranslatableInterface
     private $picture;
 
     /**
-     * @var Media
-     */
-    private $pictureSquare;
-
-    /**
      * @var PersonTranslation[]
      */
     private $translations;
@@ -210,27 +205,6 @@ class Person implements TranslatableInterface
         $this->picture = $picture;
     }
 
-    /**
-     * @return Media
-     */
-    public function getPictureSquare()
-    {
-        return $this->pictureSquare;
-    }
-
-    /**
-     * @param Media $pictureSquare
-     */
-    public function setPictureSquare(Media $pictureSquare)
-    {
-        $this->pictureSquare = $pictureSquare;
-    }
-
-    public function __toString()
-    {
-        return $this->getDisplayName();
-    }
-
     public function addTranslation(PersonTranslation $personTranslation)
     {
         $personTranslation->setPerson($this);
@@ -284,6 +258,11 @@ class Person implements TranslatableInterface
     public function setLinkedInProfile($linkedInProfile)
     {
         $this->linkedInProfile = $linkedInProfile;
+    }
+
+    public function __toString()
+    {
+        return $this->getDisplayName();
     }
 }
 

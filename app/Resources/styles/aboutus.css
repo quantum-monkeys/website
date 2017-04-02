@@ -19,7 +19,7 @@
     font-family: "Open Sans";
     font-size: 1em;
     color: grey;
-    padding-top: 3em;
+    padding-top: 2em;
 }
 
 .aboutus .team-member {
@@ -29,21 +29,16 @@
 .aboutus .team-member figure {
     position: relative;
     overflow: hidden;
-}
-
-.aboutus .team-member figure img {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-    display: block;
+    width: 70%;
+    max-width: 15em;
     margin: auto;
+    border-radius: 15em;
 }
 
 .aboutus .team-member figure .popover-sn {
     position: absolute;
     bottom: -3em;
-    text-align: right;
+    text-align: center;
     width: 100%;
     transition: bottom 0.5s ease;
 }

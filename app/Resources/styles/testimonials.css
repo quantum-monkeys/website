@@ -1,0 +1,58 @@
+.testimonials {
+    background-color: #ff8a00;
+    color: white;
+    clear: both;
+    padding: 2em;
+}
+
+.testimonials .container .row h2 {
+    color: white;
+}
+
+.testimonials ul {
+    list-style: none;
+}
+
+.testimonial {
+    text-align: center;
+}
+
+.testimonial .content {
+    width: 80%;
+    font-size: 1.5em;
+    margin: auto;
+}
+
+.testimonial .person {
+    width: 100%;
+    margin: 2em auto;
+}
+
+.testimonial .person img {
+    width: 6em;
+    height: auto;
+    border-radius: 6em;
+    margin: auto;
+}
+
+.testimonial .person h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.testimonials .lSSlideOuter .lSPager.lSpg>li.active a,
+.testimonials .lSSlideOuter .lSPager.lSpg>li:hover a {
+    background-color: white;
+}
+
+@media (max-width: 400px) {
+    .testimonial .content {
+        font-size: 1em;
+    }
+
+    .testimonial .person h2 {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1em;
+    }
+}
