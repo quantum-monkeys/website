@@ -439,6 +439,8 @@
     margin-left: 1em;
     height: 6.5em;
     background-color: white;
+    margin-top: 1em;
+    border-radius: 1em;
 }
 
 .navbar-header .navbar-brand:hover {
@@ -735,4 +737,8 @@
 
 .feature-speaker img {
     border-radius: 100%;
+}
+
+.whats_happening_panel {
+    background-color: white;
 }

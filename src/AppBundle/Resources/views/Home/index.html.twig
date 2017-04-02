@@ -86,6 +86,8 @@
         </div>
     </div>
 
+    {{ render(controller('AppBundle:Testimonial:widget')) }}
+
     <div class="whats_happening_panel">
         <div class="contanear">
             <h2>{{ 'activities.title'|trans }}</h2>
@@ -100,8 +102,6 @@
             </div>
         </div>
     </div>
-
-    {{ render(controller('AppBundle:Testimonial:widget')) }}
 {% endblock %}
 
 {% block javascripts %}

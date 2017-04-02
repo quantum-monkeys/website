@@ -1,12 +1,7 @@
 .testimonials {
-    background-color: #ff8a00;
-    color: white;
+    background-color: #f0f0f0;
     clear: both;
     padding: 2em;
-}
-
-.testimonials .container .row h2 {
-    color: white;
 }
 
 .testimonials ul {
@@ -43,7 +38,7 @@
 
 .testimonials .lSSlideOuter .lSPager.lSpg>li.active a,
 .testimonials .lSSlideOuter .lSPager.lSpg>li:hover a {
-    background-color: white;
+    background-color: #ff8a00;
 }
 
 @media (max-width: 400px) {
