@@ -69,9 +69,9 @@ class MetadataSubscriber implements EventSubscriberInterface
                     $this->generateGenericMetadatas('about');
                     $this->generateGenericUrlMetadatas('about_us');
                     break;
-                case 'coaching':
-                    $this->generateGenericMetadatas('coaching');
-                    $this->generateGenericUrlMetadatas('coaching');
+                case 'services':
+                    $this->generateGenericMetadatas('services');
+                    $this->generateGenericUrlMetadatas('services');
                     break;
                 case 'studio':
                     $this->generateGenericMetadatas('studio');
