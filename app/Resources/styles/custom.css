@@ -425,6 +425,7 @@
 .navbar {
     background-color: transparent;
     border: none;
+    min-height: 11em;
 }
 .navbar h1 {
     display: none;
