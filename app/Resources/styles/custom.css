@@ -536,6 +536,10 @@
         background-color: transparent;
     }
 
+    .navbar-header .navbar-brand {
+        border-radius: 0.5em;
+    }
+
     .navbar-default .navbar-collapse {
         border-color: transparent;
         background-color: #333;
