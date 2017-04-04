@@ -13,6 +13,11 @@ AppBundle\Entity\Marketing\Campaign:
             type: string
             length: 255
 
+    manyToOne:
+        author:
+            targetEntity: AppBundle\Entity\Person
+            fetch: EAGER
+
     oneToMany:
         translations:
             targetEntity: AppBundle\Entity\Marketing\CampaignTranslation
