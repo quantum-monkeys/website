@@ -30,6 +30,11 @@ class CampaignTranslation
     /**
      * @var string
      */
+    protected $subTitle;
+
+    /**
+     * @var string
+     */
     protected $slug;
 
     /**
@@ -169,6 +174,26 @@ class CampaignTranslation
     public function setTitle($title)
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubTitle()
+    {
+        return $this->subTitle;
+    }
+
+    /**
+     * @param string $subTitle
+     *
+     * @return CampaignTranslation
+     */
+    public function setSubTitle($subTitle)
+    {
+        $this->subTitle = $subTitle;
 
         return $this;
     }

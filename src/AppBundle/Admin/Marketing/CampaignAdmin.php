@@ -33,6 +33,10 @@ class CampaignAdmin extends Admin
     {
         $formMapper
             ->add('title', 'text')
+            ->add('author', 'entity', [
+                'class' => 'AppBundle\Entity\Person',
+                'choice_label' => 'displayName',
+            ])
             ->add('translations', 'sonata_type_collection', [
                 'by_reference' => false,
             ], [

@@ -10,12 +10,20 @@
     width: 100%;
 }
 
+.landing-page.container .row h2 {
+    margin-bottom: 0;
+}
 .landing-page h3 {
     font-family: Antonio-Bold,Arial,helvetica,sans-serif;
     color: #FF8A00;
     margin-bottom: 1em;
     text-align: center;
     font-size: 2em;
+    margin-top: 2em;
+}
+.landing-page h3.subtitle {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .landing-page .form-horizontal .row {
@@ -29,6 +37,26 @@
     letter-spacing: 0.1em;
 }
 
+.landing-page .author picture {
+    text-align: center;
+}
+
+.landing-page .author picture img {
+    border-radius: 15em;
+    max-height: 10em;
+    width: auto;
+}
+
+.landing-page .author .name {
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.landing-page .author .job-title {
+    font-style: italic;
+}
+
 @media (max-width: 767px) {
     .container.landing-page {
         padding: 2em;
@@ -38,4 +66,10 @@
         width: 50%;
         margin: auto;
     }
+
+    .landing-page .author picture img {
+        width: 100%;
+        max-height: none;
+    }
 }
+

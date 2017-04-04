@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity\Marketing;
 
+use AppBundle\Entity\Person;
 use AppBundle\Interfaces\TranslatableInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -16,6 +17,11 @@ class Campaign implements TranslatableInterface
      * @var string
      */
     protected $title;
+
+    /**
+     * @var Person
+     */
+    protected $author;
 
     /**
      * @var CampaignTranslation[]
@@ -53,6 +59,26 @@ class Campaign implements TranslatableInterface
     public function setTitle($title)
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * @return Person
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @param Person $author
+     *
+     * @return Campaign
+     */
+    public function setAuthor($author)
+    {
+        $this->author = $author;
 
         return $this;
     }

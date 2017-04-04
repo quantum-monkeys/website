@@ -12,6 +12,7 @@ class CampaignTranslationAdmin extends Admin
         $formMapper
             ->with('Landing Page')
                 ->add('title', 'text')
+                ->add('subTitle', 'text')
                 ->add('slug', 'text', [
                     'read_only' => true,
                     'help' => 'Will be automatically generated'

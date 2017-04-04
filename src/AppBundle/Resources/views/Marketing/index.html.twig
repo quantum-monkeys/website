@@ -1,5 +1,7 @@
 {% extends 'AppBundle::base.html.twig' %}
 
+{% trans_default_domain 'landingpage' %}
+
 {% block body %}
     <div class="container landing-page">
         <div class="row">
@@ -12,8 +14,30 @@
             </div>
             <div class="col-xs-12 col-sm-8">
                 <h2>{{ campaignTranslation.title }}</h2>
+                <h3 class="subtitle">{{ campaignTranslation.subTitle }}</h3>
 
                 {{ campaignTranslation.mainContent|markdown }}
+
+                <h3>{{ 'about_the_author'|trans }}</h3>
+
+                <div class="row author">
+                    <picture class="col-xs-4">
+                        {% media campaignTranslation.campaign.author.picture, 'person' with {
+                            'height': 'auto'
+                        } %}
+                    </picture>
+                    <div class="col-xs-8">
+                        <p class="name">{{ campaignTranslation.campaign.author.displayName }}</p>
+                        <p class="job-title">
+                            <span>{{ translate(campaignTranslation.campaign.author, 'position') }}</span>
+                            {% if campaignTranslation.campaign.author.company %}
+                                <span>{{ 'at'|trans({ '%company%': campaignTranslation.campaign.author.company }) }}</span>
+                            {% endif %}
+                        </p>
+                        <p class="description">{{ translate(campaignTranslation.campaign.author, 'description') }}</p>
+                    </div>
+                </div>
+
 
                 <h3>{{ campaignTranslation.mainFormTitle }}</h3>
 
