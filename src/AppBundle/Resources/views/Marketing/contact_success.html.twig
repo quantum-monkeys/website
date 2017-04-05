@@ -14,9 +14,7 @@
                 <h2>{{ campaignTranslation.title }}</h2>
                 <h3 class="subtitle">{{ campaignTranslation.subTitle }}</h3>
 
-                {{ campaignTranslation.contactContent|markdown }}
-
-                <p class="bg-success">{{ campaignTranslation.contactSuccessMessage }}</p>
+                <p class="success">{{ campaignTranslation.contactSuccessMessage|nl2br }}</p>
             </div>
             <div class="visible-xs col-xs-12">
                 <picture>

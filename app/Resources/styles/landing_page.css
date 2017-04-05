@@ -24,6 +24,7 @@
 .landing-page h3.subtitle {
     margin-top: 0;
     padding-top: 0;
+    font-size: 1.7em;
 }
 
 .landing-page .form-horizontal .row {
@@ -55,6 +56,11 @@
 
 .landing-page .author .job-title {
     font-style: italic;
+}
+
+.landing-page .success {
+    text-align: center;
+    margin-top: 4em;
 }
 
 @media (max-width: 767px) {

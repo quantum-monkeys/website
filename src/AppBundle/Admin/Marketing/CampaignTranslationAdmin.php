@@ -29,7 +29,7 @@ class CampaignTranslationAdmin extends Admin
             ->with('Landing Page Form')
                 ->add('mainFormTitle', 'text')
                 ->add('mainSubmitButtonLabel', 'text')
-                ->add('mainSuccessMessage', 'text')
+                ->add('mainSuccessMessage', 'textarea')
             ->end()
             ->with('First Email')
                 ->add('firstEmailSubject', 'text')
@@ -49,7 +49,7 @@ class CampaignTranslationAdmin extends Admin
                 ])
                 ->add('contactFormTitle', 'text')
                 ->add('contactSubmitButtonLabel', 'text')
-                ->add('contactSuccessMessage', 'text')
+                ->add('contactSuccessMessage', 'textarea')
             ->end()
             ->with('Settings')
                 ->add('locale', 'language', [

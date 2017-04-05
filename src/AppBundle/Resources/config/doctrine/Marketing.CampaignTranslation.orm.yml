@@ -34,7 +34,7 @@ AppBundle\Entity\Marketing\CampaignTranslation:
             type: string
             length: 255
         mainSuccessMessage:
-            type: string
+            type: text
         contactContent:
             type: text
         contactFormTitle:
@@ -44,8 +44,7 @@ AppBundle\Entity\Marketing\CampaignTranslation:
             type: string
             length: 255
         contactSuccessMessage:
-            type: string
-            length: 255
+            type: text
         firstEmailSubject:
             type: string
             length: 255
