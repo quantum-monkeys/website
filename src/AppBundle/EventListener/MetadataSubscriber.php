@@ -90,6 +90,12 @@ class MetadataSubscriber implements EventSubscriberInterface
                 case 'event_show':
                     $this->generateEventMetadatas($this->requestStack->getCurrentRequest()->attributes->get('id'));
                     break;
+                case 'campaign':
+                case 'campaign_success':
+                case 'campaign_contact':
+                case 'campaign_contact_success':
+                    $this->generateCampaignMetadatas($this->requestStack->getCurrentRequest()->attributes->get('slug'));
+                    break;
                 case 'blog':
                     $this->generateGenericMetadatas('blog');
                     $this->generateGenericUrlMetadatas('blog');
@@ -136,6 +142,20 @@ class MetadataSubscriber implements EventSubscriberInterface
         $this->setImage($this->mediaManager->getPublicPath($post->getImage(), 'wide'));
     }
 
+    protected function generateCampaignMetadatas($campaignSlug)
+    {
+        if ($campaignSlug !== null) {
+            $campaignTranslation = $this->objectManager->getRepository('AppBundle:Marketing\CampaignTranslation')->findOneBy(
+                ['slug' => $campaignSlug]
+            );
+            $this->setTitle($campaignTranslation->getMetaTitle() . ' - Quantum Monkeys');
+            $this->setDescription($campaignTranslation->getMetaDescription());
+            $this->setKeywords($campaignTranslation->getMetaKeywords());
+
+            $this->setImage($this->mediaManager->getPublicPath($campaignTranslation->getMainPicture(), 'landing_page_main'));
+        }
+    }
+
     protected function generateGenericUrlMetadatas(string $route)
     {
         $this->page->addMeta('property', 'og:url', $this->urlGenerator->generate($route, [], UrlGeneratorInterface::ABSOLUTE_URL));
@@ -153,6 +173,11 @@ class MetadataSubscriber implements EventSubscriberInterface
         $this->page->addMeta('name', 'description', $description);
         $this->page->addMeta('property', 'og:description', $description);
         $this->page->addMeta('property', 'twitter:description', $description);
+    }
+
+    protected function setKeywords(string $keywords = null)
+    {
+        $this->page->addMeta('name', 'keywords', $keywords);
     }
 
     protected function setImage(string $path, bool $absolute = false)

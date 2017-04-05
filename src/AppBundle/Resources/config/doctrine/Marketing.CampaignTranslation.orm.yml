@@ -53,6 +53,15 @@ AppBundle\Entity\Marketing\CampaignTranslation:
         mailChimpListId:
             type: string
             length: 255
+        metaTitle:
+            type: string
+            length: 255
+        metaDescription:
+            type: string
+            length: 255
+        metaKeywords:
+            type: string
+            length: 255
 
     manyToOne:
         mainPicture:

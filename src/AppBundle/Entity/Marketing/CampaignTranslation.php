@@ -107,6 +107,21 @@ class CampaignTranslation
      */
     protected $document;
 
+    /**
+     * @var string
+     */
+    protected $metaTitle;
+
+    /**
+     * @var string
+     */
+    protected $metaDescription;
+
+    /**
+     * @var string
+     */
+    protected $metaKeywords;
+
     public function __construct()
     {
         $this->contacts = new ArrayCollection();
@@ -494,6 +509,66 @@ class CampaignTranslation
     public function setDocument($document)
     {
         $this->document = $document;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        return $this->metaTitle;
+    }
+
+    /**
+     * @param string $metaTitle
+     *
+     * @return CampaignTranslation
+     */
+    public function setMetaTitle($metaTitle)
+    {
+        $this->metaTitle = $metaTitle;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        return $this->metaDescription;
+    }
+
+    /**
+     * @param string $metaDescription
+     *
+     * @return CampaignTranslation
+     */
+    public function setMetaDescription($metaDescription)
+    {
+        $this->metaDescription = $metaDescription;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaKeywords()
+    {
+        return $this->metaKeywords;
+    }
+
+    /**
+     * @param string $metaKeywords
+     *
+     * @return CampaignTranslation
+     */
+    public function setMetaKeywords($metaKeywords)
+    {
+        $this->metaKeywords = $metaKeywords;
 
         return $this;
     }

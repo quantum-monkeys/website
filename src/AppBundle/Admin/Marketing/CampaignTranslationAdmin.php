@@ -52,6 +52,9 @@ class CampaignTranslationAdmin extends Admin
                 ->add('contactSuccessMessage', 'textarea')
             ->end()
             ->with('Settings')
+                ->add('metaTitle', 'text')
+                ->add('metaDescription', 'text')
+                ->add('metaKeywords', 'text')
                 ->add('locale', 'language', [
                     'choices' => [
                         'English' => 'en',
