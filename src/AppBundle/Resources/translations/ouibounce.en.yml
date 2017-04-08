@@ -1,0 +1,15 @@
+title: 'Special Culture Fest Montreal'
+intro: "Bacon ipsum dolor amet pastrami tail ham shankle, short ribs bresaola pig burgdoggen sausage.\n\nStrip steak prosciutto cow, landjaeger turkey pork loin capicola shoulder salami venison chicken biltong t-bone kielbasa. Burgdoggen leberkas jowl, tail ground round sausage prosciutto short ribs doner pork belly corned beef turkey. Short loin ham fatback jowl, chuck tongue turkey tri-tip.\n\nCorned beef kevin cupim, prosciutto andouille boudin short loin shankle. Andouille short loin pork loin spare ribs cupim."
+close: 'No thank.'
+email:
+  subject: 'Special Culture Fest Montreal - Quantum Monkeys'
+  body: "Hello,\n\nFirst of all, thank you to subscribe to our special event.\n\nOne of our monkeys will contact you soon to prepare the details for you conference.\n\nSee you soon!"
+  signature: 'The Quantum Monkeys Team'
+message:
+  success: 'We will treat you demand as soon as possible. Thank you.'
+  error: 'An error as occured. Please call us at 543-543-5435.'
+form:
+  placeholders:
+    email: 'Your email address'
+  label:
+    submit: Submit

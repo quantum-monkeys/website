@@ -36,6 +36,7 @@ services:
             - '@request_stack'
             - '%emails.general%'
             - '%emails.admin%'
+            - '@translator'
 
     app.manager.marketing.campaign:
         class: AppBundle\Manager\CampaignManager

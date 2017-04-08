@@ -71,6 +71,12 @@ newsletter_submit:
         _controller: AppBundle:Newsletter:submit
     options: { i18n: false }
 
+ouibounce_modal_contact_submit:
+    path: /ouibounce/contact
+    methods: POST
+    defaults:
+        _controller: AppBundle:Marketing:ouibounceModalSubmit
+
 campaign:
     path: /{slug}
     defaults:
@@ -90,3 +96,4 @@ campaign_contact_success:
     path: /{slug}/contact/success
     defaults:
         _controller: AppBundle:Marketing:contactSuccess
+

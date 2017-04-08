@@ -5,6 +5,7 @@ namespace AppBundle\Manager;
 use AppBundle\Entity\Marketing\Contact;
 use Symfony\Bridge\Twig\TwigEngine;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Translation\TranslatorInterface;
 
 class EmailManager
 {
@@ -28,15 +29,20 @@ class EmailManager
      * @var string
      */
     protected $adminEmailAddress;
+    /**
+     * @var TranslatorInterface
+     */
+    protected $translator;
 
     public function __construct(\Swift_Mailer $mailer, TwigEngine $twigEngine, RequestStack $requestStack,
-                                string $generalEmailAddress, string $adminEmailAddress)
+                                string $generalEmailAddress, string $adminEmailAddress, TranslatorInterface $translator)
     {
         $this->mailer = $mailer;
         $this->twigEngine = $twigEngine;
         $this->requestStack = $requestStack;
         $this->generalEmailAddress = $generalEmailAddress;
         $this->adminEmailAddress = $adminEmailAddress;
+        $this->translator = $translator;
     }
 
     public function sendDebugEmail(array $debugData)
@@ -67,6 +73,35 @@ class EmailManager
         );
 
         return $this->send($message);
+    }
+
+    public function sendCultureFestEmail(string $email)
+    {
+        $message = $this->createToSomeoneMessage($email)
+            ->setSubject($this->translator->trans('email.subject', [], 'ouibounce'));
+
+        $this->render(
+            $message,
+            'AppBundle:Emails:culture_fest_thanks.html.twig',
+            'AppBundle:Emails:culture_fest_thanks.txt.twig',
+            []
+        );
+
+        $hostMessageSent = $this->send($message);
+
+        $message = $this->createToCompanyMessage()
+            ->setSubject('Culture Fest Promotion: Invitation');
+
+        $this->render(
+            $message,
+            'AppBundle:Emails:culture_fest.html.twig',
+            'AppBundle:Emails:culture_fest.txt.twig',
+            [ 'email' => $email ]
+        );
+
+        $companyMessageSent = $this->send($message);
+
+        return $hostMessageSent && $companyMessageSent;
     }
 
     public function sendCampaignFirstEmail(Contact $contact)

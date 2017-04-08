@@ -111,6 +111,7 @@
     <img style="display: none;" src="https://www.linkedin.com/in/axel-moussard" alt="linkedin pixel" />
 
     {{ render(controller('AppBundle:Newsletter:popup')) }}
+    {{ render(controller('AppBundle:Marketing:ouibounceModal')) }}
 
     {% block javascripts %}
         <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
@@ -128,6 +129,13 @@
                     slideMargin: 0,
                     loop: true,
                     pause: 10000,
+                });
+
+                ouibounce($('#ouibounce-modal')[0], {});
+
+                $('#ouibounce-modal .close-modal').on('click', function(e) {
+                    e.preventDefault();
+                    $('#ouibounce-modal').fadeOut();
                 });
             });
         </script>

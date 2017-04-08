@@ -5,9 +5,11 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Marketing\CampaignTranslation;
 use AppBundle\Entity\Marketing\Company;
 use AppBundle\Entity\Marketing\Contact;
+use AppBundle\Form\Type\EmailContactType;
 use AppBundle\Form\Type\Marketing\FullContactType;
 use AppBundle\Form\Type\Marketing\SimpleContactType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -117,5 +119,36 @@ class MarketingController extends Controller
             ->setCompany(new Company());
 
         return $contact;
+    }
+
+    public function ouibounceModalAction()
+    {
+        $contactForm = $this->createForm(EmailContactType::class, null, [
+            'action' => $this->generateUrl('ouibounce_modal_contact_submit'),
+        ]);
+
+        return $this->render(
+            'AppBundle:Marketing:_ouibounce_modal.html.twig',
+            [
+                'form' => $contactForm->createView(),
+            ]
+        );
+    }
+
+    public function ouibounceModalSubmitAction(Request $request) {
+        $success = false;
+        $form = $this->createForm(EmailContactType::class);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $data = $form->getData();
+
+            $success = $this->get('app.manager.emails')->sendCultureFestEmail($data['email']);
+        }
+
+        return new JsonResponse([
+            'success' => $success,
+        ]);
     }
 }
