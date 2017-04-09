@@ -57,7 +57,7 @@ gulp.task('css', () => {
             'app/Resources/styles/custom.css',
             'app/Resources/styles/landing_page.css',
             'app/Resources/styles/testimonials.css',
-            'app/Resources/styles/ouibounce.css'
+            'app/Resources/styles/event-modal.css'
         ])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);
@@ -85,7 +85,7 @@ gulp.task('js', () => {
             'node_modules/jquery-form/jquery.form.js',
             'node_modules/fancybox/dist/js/jquery.fancybox.js',
             'node_modules/lightslider/dist/js/lightslider.js',
-            'node_modules/ouibounce/build/ouibounce.js',
+            'node_modules/js-cookie/src/js.cookie.js',
         ])
         .pipe(concat('vendors.min.js'))
         .pipe(uglify())

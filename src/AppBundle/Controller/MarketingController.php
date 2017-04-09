@@ -121,21 +121,21 @@ class MarketingController extends Controller
         return $contact;
     }
 
-    public function ouibounceModalAction()
+    public function eventModalAction()
     {
         $contactForm = $this->createForm(EmailContactType::class, null, [
-            'action' => $this->generateUrl('ouibounce_modal_contact_submit'),
+            'action' => $this->generateUrl('event_modal_contact_submit'),
         ]);
 
         return $this->render(
-            'AppBundle:Marketing:_ouibounce_modal.html.twig',
+            'AppBundle:Marketing:_event_modal.html.twig',
             [
                 'form' => $contactForm->createView(),
             ]
         );
     }
 
-    public function ouibounceModalSubmitAction(Request $request) {
+    public function eventModalSubmitAction(Request $request) {
         $success = false;
         $form = $this->createForm(EmailContactType::class);
 

@@ -1,0 +1,60 @@
+#eventModal {
+    font-family: 'Open Sans', sans-serif;
+}
+#eventModal .modal {
+    background-color: #f0f1f2;
+}
+#eventModal .modal-title {
+    font-size: 18px;
+    text-align: center;
+}
+#eventModal h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+#eventModal .modal-body {
+    padding: 20px 35px;
+    font-size: 0.9em;
+}
+
+#eventModal .modal-body .intro {
+    text-align: center;
+}
+
+#eventModal .modal-body .alert {
+    display: none;
+}
+
+#eventModal form {
+    text-align: center;
+    margin-top: 1em;
+}
+#eventModal form input[type=email] {
+    padding: 12px;
+    font-size: 1.2em;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    -webkit-font-smoothing: antialiased;
+}
+#eventModal form button {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 12px;
+    font-size: 1.1em;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #ff8a00;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+}
+#eventModal .modal-footer {
+    text-align: center;
+    width: 100%;
+}
+#eventModal .modal-footer a {
+    text-transform: capitalize;
+    cursor: pointer;
+    color: #aaaaaa;
+}

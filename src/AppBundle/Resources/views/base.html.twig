@@ -111,7 +111,7 @@
     <img style="display: none;" src="https://www.linkedin.com/in/axel-moussard" alt="linkedin pixel" />
 
     {{ render(controller('AppBundle:Newsletter:popup')) }}
-    {{ render(controller('AppBundle:Marketing:ouibounceModal')) }}
+    {{ render(controller('AppBundle:Marketing:eventModal')) }}
 
     {% block javascripts %}
         <script type="application/javascript" src="{{ asset('js/vendors.min.js') }}"></script>
@@ -131,12 +131,12 @@
                     pause: 10000,
                 });
 
-                ouibounce($('#ouibounce-modal')[0], {});
-
-                $('#ouibounce-modal .close-modal').on('click', function(e) {
-                    e.preventDefault();
-                    $('#ouibounce-modal').fadeOut();
-                });
+                if ($('#eventModal').length && Cookies.get('culture-fest-event') !== '1') {
+                    setTimeout(function() {
+                        $('#eventModal').modal('show');
+                        Cookies.set('culture-fest-event', '1', { expires: 7 })
+                    }, 5000);
+                }
             });
         </script>
 
