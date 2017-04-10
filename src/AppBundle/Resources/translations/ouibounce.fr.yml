@@ -1,13 +1,13 @@
-title: 'Spécial Culture Fest Montréal'
-intro: "Bacon ipsum dolor amet pastrami tail ham shankle, short ribs bresaola pig burgdoggen sausage.\n\nStrip steak prosciutto cow, landjaeger turkey pork loin capicola shoulder salami venison chicken biltong t-bone kielbasa. Burgdoggen leberkas jowl, tail ground round sausage prosciutto short ribs doner pork belly corned beef turkey. Short loin ham fatback jowl, chuck tongue turkey tri-tip.\n\nCorned beef kevin cupim, prosciutto andouille boudin short loin shankle. Andouille short loin pork loin spare ribs cupim."
+title: 'Spécial CultureFest Montréal'
+intro: "Célébrer le CultureFest en donnant un un coup de pouce à la culture de votre entreprise avec Quantum Monkeys !\n\nEnregistrez-vous dès aujourd’hui et profiter d’un atelier gratuit d’une durée de 45 minutes, offert dans vos locaux ! Contactez-nous par courriel pour plus d’informations. L’offre est seulement valide pour les 10 premières compagnies qui s’inscriront dans la région du Grand Montréal.\n\nFaites vite, la période d’inscription prend fin le 15 avril à minuit !"
 close: 'Non merci.'
 email:
-  subject: 'Spécial Culture Fest Montréal - Quantum Monkeys'
-  body: "Bonjour,\n\nMerci de vous être inscrit pour cet évènement spécial.\n\nUn de nos singes rentrera bientôt en contact avec vous pour préparer les détails pour votre conférence.\n\nÀ bientôt !"
+  subject: 'Spécial CultureFest Montréal - Quantum Monkeys'
+  body: "Merci pour votre inscription !\n\nUn de nos singes rentrera bientôt en contact avec vous afin de préparer les détails de votre atelier.\n\nÀ bientôt !"
   signature: 'L''Équipe Quantum Monkeys'
 message:
   success: 'Nous allons traiter votre demande dans les plus brefs délais. Merci.'
-  error: 'Une erreur est survenue. Veuillez nous contacter au 432-432-4324.'
+  error: 'Une erreur est survenue. Veuillez nous contacter au (438) 392-7084'
 form:
   placeholders:
     email: 'Votre adresse courriel'

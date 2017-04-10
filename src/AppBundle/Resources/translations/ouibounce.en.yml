@@ -1,13 +1,13 @@
-title: 'Special Culture Fest Montreal'
-intro: "Bacon ipsum dolor amet pastrami tail ham shankle, short ribs bresaola pig burgdoggen sausage.\n\nStrip steak prosciutto cow, landjaeger turkey pork loin capicola shoulder salami venison chicken biltong t-bone kielbasa. Burgdoggen leberkas jowl, tail ground round sausage prosciutto short ribs doner pork belly corned beef turkey. Short loin ham fatback jowl, chuck tongue turkey tri-tip.\n\nCorned beef kevin cupim, prosciutto andouille boudin short loin shankle. Andouille short loin pork loin spare ribs cupim."
-close: 'No thank.'
+title: 'CultureFest Special Montreal'
+intro: "Celebrate CultureFest by giving a boost to your company culture with Quantum Monkeys!\n\nSign up today for a free 45-minutes culture workout in your office for a group of up to 15 participants. Enquire (how) for more information. Offer is only valid for the first 10 companies in the Greater Montreal Area.\n\nRegistration closes midnight April 15th 2017, so act fast!"
+close: 'No thanks.'
 email:
-  subject: 'Special Culture Fest Montreal - Quantum Monkeys'
-  body: "Hello,\n\nFirst of all, thank you to subscribe to our special event.\n\nOne of our monkeys will contact you soon to prepare the details for you conference.\n\nSee you soon!"
+  subject: 'CultureFest Special Montreal - Quantum Monkeys'
+  body: "Thank you for your subscription!\n\nOne of our monkeys will contact you soon in order to prepare the details regarding your workout.\n\nSee you soon!"
   signature: 'The Quantum Monkeys Team'
 message:
   success: 'We will treat you demand as soon as possible. Thank you.'
-  error: 'An error as occured. Please call us at 543-543-5435.'
+  error: 'An error as occured. Please call us at (438) 392-7084'
 form:
   placeholders:
     email: 'Your email address'
