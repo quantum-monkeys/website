@@ -7,6 +7,7 @@ use AppBundle\Form\Type\NewsletterType;
 use Sonata\NewsBundle\Controller\PostController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class NewsController extends PostController
 {
@@ -44,5 +45,18 @@ class NewsController extends PostController
             'AppBundle:News:widget.html.twig',
             $parameters
         );
+    }
+
+    public function feedAction()
+    {
+        $articles = $this->getDoctrine()->getRepository('ApplicationSonataNewsBundle:Post')->findBy(
+            [],
+            [ 'publicationDateStart' => 'DESC' ]
+        );
+
+        $feed = $this->get('eko_feed.feed.manager')->get('article');
+        $feed->addFromArray($articles);
+
+        return new Response($feed->render('rss'));
     }
 }

@@ -11,6 +11,7 @@
 
 namespace Application\Sonata\NewsBundle\Entity;
 
+use Eko\FeedBundle\Item\Writer\RoutedItemInterface;
 use Sonata\NewsBundle\Entity\BasePost as BasePost;
 
 /**
@@ -23,7 +24,7 @@ use Sonata\NewsBundle\Entity\BasePost as BasePost;
  *
  * @author <yourname> <youremail>
  */
-class Post extends BasePost
+class Post extends BasePost implements RoutedItemInterface
 {
     /**
      * @var int $id
@@ -38,5 +39,85 @@ class Post extends BasePost
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * This method returns feed item title.
+     *
+     *
+     * @return string
+     */
+    public function getFeedItemTitle()
+    {
+        return $this->getTitle();
+    }
+
+    /**
+     * This method returns feed item description (or content).
+     *
+     *
+     * @return string
+     */
+    public function getFeedItemDescription()
+    {
+        return $this->getAbstract();
+    }
+
+    /**
+     * This method returns item publication date.
+     *
+     *
+     * @return \DateTime
+     */
+    public function getFeedItemPubDate()
+    {
+        return $this->getPublicationDateStart();
+    }
+
+    /**
+     * This method returns the name of the route.
+     *
+     *
+     * @return string
+     */
+    public function getFeedItemRouteName()
+    {
+        return 'blog_view';
+    }
+
+    /**
+     * This method returns the parameters for the route.
+     *
+     *
+     * @return array
+     */
+    public function getFeedItemRouteParameters()
+    {
+        return [
+            'permalink' => $this->generatePermalink()
+        ];
+    }
+
+    /**
+     * This method returns the anchor to be appended on this item's url.
+     *
+     *
+     * @return string The anchor, without the "#"
+     */
+    public function getFeedItemUrlAnchor()
+    {
+        return '';
+    }
+
+    public function generatePermalink()
+    {
+        $permalinkElements = [
+            $this->getYear(),
+            $this->getMonth(),
+            $this->getDay(),
+            $this->getSlug()
+        ];
+
+        return implode('/', $permalinkElements);
     }
 }

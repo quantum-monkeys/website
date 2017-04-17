@@ -55,6 +55,8 @@ class AppKernel extends Kernel
 
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 
+            new Eko\FeedBundle\EkoFeedBundle(),
+
             new AppBundle\AppBundle(),
         );
 

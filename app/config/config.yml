@@ -111,3 +111,12 @@ stof_doctrine_extensions:
     orm:
         default:
             sluggable: true
+
+eko_feed:
+    feeds:
+        article:
+            title:       'Quantum Monkeys Articles'
+            description: 'Latest articles'
+            link:
+                route_name: homepage
+            encoding:    'utf-8'

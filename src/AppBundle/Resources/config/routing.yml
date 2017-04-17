@@ -43,6 +43,11 @@ blog:
     defaults:
         _controller: AppBundle:News:archive
 
+blog_feed:
+    path: /blog/rss
+    defaults:
+        _controller: AppBundle:News:feed
+
 blog_view:
     path: /blog/{permalink}.{_format}
     defaults:
