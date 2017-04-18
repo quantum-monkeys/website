@@ -1,0 +1,13 @@
+{% trans_default_domain 'blog' %}
+
+<div class="row widget author">
+    <h3>{{ 'widget.author.title'|trans }}</h3>
+
+    <figure>
+        {% media author.picture, 'person' with {
+            class: 'img-responsive'
+        } %}
+    </figure>
+    <span class="name" itemprop="author">{{ author.displayName }}</span>
+    <p class="description">{{ translate(author, 'description') }}</p>
+</div>

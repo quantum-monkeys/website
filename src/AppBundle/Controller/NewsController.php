@@ -2,10 +2,8 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Form\Type\ContactType;
-use AppBundle\Form\Type\NewsletterType;
+use Application\Sonata\UserBundle\Entity\User;
 use Sonata\NewsBundle\Controller\PostController;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -58,5 +56,45 @@ class NewsController extends PostController
         $feed->addFromArray($articles);
 
         return new Response($feed->render('rss'));
+    }
+
+    public function authorWidgetAction(User $author)
+    {
+        $person = $this->getDoctrine()->getRepository('AppBundle:Person')->findOneBy([
+            'firstName' => $author->getFirstname(),
+            'lastName' => $author->getLastname()
+        ]);
+
+        return $this->render(
+            '@App/News/_authorWidget.html.twig',
+            [
+                'author' => $person
+            ]
+        );
+    }
+
+    public function lastPostsWidgetAction($currentArticleId, int $articlesNumber = 3)
+    {
+        $articles = $this->getDoctrine()->getRepository('ApplicationSonataNewsBundle:Post')->findBy(
+            [],
+            [ 'publicationDateStart' => 'DESC' ],
+            $articlesNumber + 1
+        );
+
+        for ($i = 0; $i < count($articles); $i++) {
+            if ($articles[$i]->getId() === $currentArticleId) {
+                array_splice($articles, $i, 1);
+                break;
+            }
+        }
+
+        $articles = array_splice($articles, 0, $articlesNumber);
+
+        return $this->render(
+            '@App/News/_lastArticlesWidget.html.twig',
+            [
+                'articles' => $articles
+            ]
+        );
     }
 }

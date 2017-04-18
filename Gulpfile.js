@@ -57,7 +57,8 @@ gulp.task('css', () => {
             'app/Resources/styles/custom.css',
             'app/Resources/styles/landing_page.css',
             'app/Resources/styles/testimonials.css',
-            'app/Resources/styles/event-modal.css'
+            'app/Resources/styles/event-modal.css',
+            'app/Resources/styles/news.css'
         ])
         .pipe(cleanCSS({debug: true}, function(details) {
             console.log(details.name + ': ' + details.stats.originalSize);

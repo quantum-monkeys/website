@@ -59,7 +59,7 @@ class MetadataSubscriber implements EventSubscriberInterface
 
     public function replaceMetadatas()
     {
-        if ($this->requestStack->getCurrentRequest()->getPathInfo() !== '/_fragment') {
+        if ($this->requestStack->getParentRequest() == null) {
             switch ($this->requestStack->getMasterRequest()->get('_route')) {
                 case 'homepage':
                     $this->generateGenericMetadatas('home');
@@ -94,14 +94,18 @@ class MetadataSubscriber implements EventSubscriberInterface
                 case 'campaign_success':
                 case 'campaign_contact':
                 case 'campaign_contact_success':
-                    $this->generateCampaignMetadatas($this->requestStack->getCurrentRequest()->attributes->get('slug'));
+                    $this->generateCampaignMetadatas(
+                        $this->requestStack->getCurrentRequest()->attributes->get('slug')
+                    );
                     break;
                 case 'blog':
                     $this->generateGenericMetadatas('blog');
                     $this->generateGenericUrlMetadatas('blog');
                     break;
                 case 'blog_view':
-                    $this->generateArticleMetadatas($this->requestStack->getCurrentRequest()->attributes->get('permalink'));
+                    $this->generateArticleMetadatas(
+                        $this->requestStack->getCurrentRequest()->attributes->get('permalink')
+                    );
                     $this->page->addMeta('property', 'twitter:card', 'summary_large_image');
                     break;
                 default:

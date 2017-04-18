@@ -1,0 +1,20 @@
+{% trans_default_domain 'blog' %}
+
+<div class="row widget lasts">
+    <h3>{{ 'widget.latest_articles.title'|trans }}</h3>
+
+    <ul class="articles">
+        {% for article in articles %}
+            <li class="article">
+                <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(article) }) }}">
+                    <figure>
+                        {% media article.image, 'wide' with {
+                            class: 'img-responsive'
+                        } %}
+                    </figure>
+                    <span class="title">{{ article.title }}</span>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

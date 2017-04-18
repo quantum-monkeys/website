@@ -4,47 +4,29 @@
 
 {% block body %}
     <div class="container">
-        <div class="row blogpost">
-            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                <div class="blog-img-detail">
+        <div class="row blogpost" itemscope itemtype="http://schema.org/Article">
+            <article class="col-xs-12 col-sm-8">
+                <div class="row picture" itemprop="sharedContent">
                     {% media post.image, 'wide' with {
                         class: 'img-responsive'
                     } %}
                 </div>
-                <div class="blogs">
-                    <div class="blog-detail-share blogs">
-                        <ul class="col-xs-12 col-sm-12">
-                            <li class="col-xs-6 col-sm-1 col-md-1 col-lg-1">
-                                <i class="fa fa-comments" aria-hidden="true"></i>
-                                <span>{{ post.commentsCount }}</span>
-                            </li>
-                            <li class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                                {{ 'view.tags'|trans }}
-                                {% for tag in post.tags %}
-                                    <a href="{{ url('sonata_news_tag', { 'tag': tag.slug } ) }}">{{ tag.name }}</a>
-                                {% else %}
-                                    {{ 'view.no_tags'|trans }}
-                                {% endfor %}
-                            </li>
-                            <li class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-                                <i class="fa fa-calendar" aria-hidden="true"></i>
-                                <span>{{ post.publicationDateStart|localizeddate('short', 'none') }}</span>
-                            </li>
-                            <li class="col-xs-6 col-sm-4 col-md-4 col-lg-4 author">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                {{ post.author.firstname }} {{ post.author.lastname }}
-                            </li>
-                        </ul>
-                    </div>
+                <div class="row date">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <span>{{ post.publicationDateStart|localizeddate('long', 'none') }}</span>
+                    <meta itemprop="datePublished" content="{{ post.publicationDateStart|localizeddate('short', 'none') }}"/>
                 </div>
 
-                <div class="blog-title">
-                    <h3>{{ post.title }}</h3>
-                </div>
+                <header class="row">
+                    <h1 itemprop="name">{{ post.title }}</h1>
+                    <p>{{ post.abstract }}</p>
+                </header>
 
-                <div class="blog-details-content">
+                <div class="row content" itemprop="articleContent">
                     {{ post.content|raw }}
                 </div>
+
+                <div class="addthis_inline_share_toolbox"></div>
 
                 {% render(controller('SonataNewsBundle:Post:comments', {'postId': post.id})) %}
 
@@ -58,6 +40,17 @@
                         {{ 'view.comments_are_closed'|trans }}
                     </div>
                 {% endif %}
+            </article>
+            <div class="col-xs-12 col-sm-3 col-sm-offset-1 sidebar">
+                {#{{ include('AppBundle:News:_shareWidget.html.twig') }}#}
+                {{ include('AppBundle:News:_newsletterWidget.html.twig') }}
+                {{ render(controller('AppBundle:News:authorWidget', {
+                    'author': post.author
+                })) }}
+                {{ render(controller('AppBundle:News:lastPostsWidget', {
+                    'currentArticleId': post.id,
+                    'articlesNumber': 3
+                })) }}
             </div>
         </div>
     </div>

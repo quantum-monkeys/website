@@ -1,0 +1,158 @@
+.blogpost,
+.blog.archive {
+    margin: 0;
+}
+
+.blogpost article .date {
+    color: darkgrey;
+    font-size: 1.3em;
+    margin-top: 1em;
+}
+
+.blogpost article header {
+    border-bottom: 1px solid lightgrey;
+    margin: 3em -1em;
+}
+
+.blogpost article header h1 {
+    color: #FF8A00;
+    font-family: Antonio-Bold, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.blogpost article header p {
+    color: darkgrey;
+    font-size: 1.2em;
+}
+
+.blogpost article .content {
+    text-align: justify;
+    margin-bottom: 2em;
+}
+
+.blogpost article .content h2 {
+    margin: 2em 0 1em;
+    font-size: 2em;
+}
+
+.blogpost article .content img {
+    margin: auto;
+    display: block;
+}
+
+.sidebar .widget {
+    margin-bottom: 3em;
+}
+
+.sidebar .widget h3 {
+    font-family: Antonio-Bold, Arial, sans-serif;
+    text-transform: uppercase;
+    margin-top: 0;
+    text-align: center;
+}
+
+.sidebar .widget.newsletter {
+    padding: 0;
+}
+
+.sidebar .widget.newsletter .btn {
+    padding: 1em;
+    width: 100%;
+    margin: 0;
+}
+
+.sidebar .widget.author figure {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    max-width: 10em;
+    margin: 2em auto 1em;
+    border-radius: 15em;
+}
+
+.sidebar .widget.author .name {
+    text-align: center;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.sidebar .widget.author .description {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.sidebar .widget.lasts .articles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .widget.lasts .articles .article {
+    margin: 1em 0 2em;
+}
+
+.sidebar .widget.lasts .articles .article a {
+    cursor: pointer;
+}
+
+.sidebar .widget.lasts .articles .article .title {
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.blog.archive hr {
+    border-bottom: 1px solid lightgrey;
+    margin: 1em 0 3em;
+    clear: both;
+}
+
+.blog.archive article .picture {
+    height: 15em;
+    background-size: cover;
+    display: block;
+    background-position: center;
+}
+
+.blog.archive article .details {
+    color: darkgrey;
+    font-size: 1.3em;
+    margin-top: 1em;
+}
+
+.blog.archive article .details .author {
+    text-align: right;
+}
+
+.blog.archive article h1 {
+    font-size: 2em;
+    color: #FF8A00;
+    font-family: Antonio-Bold, Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.blog.archive article h1 a {
+    color: #FF8A00;
+}
+
+.blog.archive article p {
+    color: darkgrey;
+    font-size: 1.2em;
+}
+
+.blog.archive article .content {
+    margin-top: 1em;
+}
+
+.blog.archive article .content .read-more {
+    text-align: right;
+}
+
+.blog.archive article .content .read-more a {
+    color: #FF8A00;
+}
+
+
