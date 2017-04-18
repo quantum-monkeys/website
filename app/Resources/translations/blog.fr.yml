@@ -32,3 +32,10 @@ meta:
   title: 'Blog - Quantum Monkeys'
   keywords: ''
   description: 'Découvrez nos articles sur l''Agilité et les modes de gestion modernes !'
+widget:
+  author:
+    title: L'auteur
+  latest_articles:
+    title: Derniers articles
+  newsletter:
+    subscribe: Inscription à la newsletter

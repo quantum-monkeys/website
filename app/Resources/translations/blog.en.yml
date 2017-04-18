@@ -32,3 +32,10 @@ meta:
   title: 'Blog - Quantum Monkeys'
   keywords: ''
   description: 'Discover our articles on Agility and modern managment practices !'
+widget:
+  author:
+    title: The author
+  latest_articles:
+    title: Latest articles
+  newsletter:
+    subscribe: Subscribe to the newsletter
