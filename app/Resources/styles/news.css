@@ -38,6 +38,7 @@
 .blogpost article .content img {
     margin: auto;
     display: block;
+    width: 100%;
 }
 
 .sidebar .widget {
