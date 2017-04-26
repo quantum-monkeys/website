@@ -38,6 +38,11 @@ class Post extends BasePost implements RoutedItemInterface
     protected $author;
 
     /**
+     * @var string
+     */
+    protected $lang;
+
+    /**
      * Get id
      *
      * @return int $id
@@ -45,6 +50,22 @@ class Post extends BasePost implements RoutedItemInterface
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLang(): string
+    {
+        return $this->lang;
+    }
+
+    /**
+     * @param string $lang
+     */
+    public function setLang(string $lang)
+    {
+        $this->lang = $lang;
     }
 
     /**

@@ -153,6 +153,29 @@ services:
               group: Marketing
               label: Contacts
 
+    sonata.news.admin.post:
+        class: Application\Sonata\NewsBundle\Admin\PostAdmin
+        arguments:
+            - ~
+            - '%sonata.news.admin.post.entity%'
+            - '%sonata.news.admin.post.controller%'
+        calls:
+            - method: setUserManager
+              arguments: ['@fos_user.user_manager']
+            - method: setPoolFormatter
+              arguments: ['@sonata.formatter.pool']
+            - method: addChild
+              arguments: ['@sonata.news.admin.comment']
+            - method: setTranslationDomain
+              arguments: ['%sonata.news.admin.post.translation_domain%']
+            - method: setPermalinkGenerator
+              arguments: ['@sonata.news.permalink.generator']
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: sonata_blog
+              label: Posts
+
 
     admin.event_occurrence_cost:
         class: AppBundle\Admin\EventOccurrenceCostAdmin

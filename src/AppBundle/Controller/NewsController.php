@@ -91,10 +91,17 @@ class NewsController extends PostController
         );
     }
 
-    public function feedAction()
+    public function feedAction(Request $request)
     {
+        $lang = $request->get('lang', null);
+
+        $criteria = [];
+        if ($lang) {
+            $criteria['lang'] = $lang;
+        }
+
         $articles = $this->getDoctrine()->getRepository('ApplicationSonataNewsBundle:Post')->findBy(
-            [],
+            $criteria,
             [ 'publicationDateStart' => 'DESC' ]
         );
 
