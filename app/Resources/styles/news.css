@@ -83,6 +83,12 @@
     margin-top: 1em;
 }
 
+.sidebar .widget.author .articles {
+    text-align: center;
+    color: #ff8a00;
+    display: block;
+}
+
 .sidebar .widget.lasts .articles {
     list-style: none;
     padding: 0;
@@ -103,6 +109,18 @@
     display: block;
     text-align: center;
     font-size: 1.2em;
+}
+
+.sidebar .widget.contributors .author {
+    height: 11em;
+    text-align: center;
+}
+
+.sidebar .widget.contributors .author .name {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-top: 0.2em;
 }
 
 .blog.archive hr {
@@ -126,6 +144,10 @@
 
 .blog.archive article .details .author {
     text-align: right;
+}
+
+.blog.archive article .details .author a {
+    color: #a9a9a9;
 }
 
 .blog.archive article h1 {

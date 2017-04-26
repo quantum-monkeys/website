@@ -1,0 +1,20 @@
+{% trans_default_domain 'blog' %}
+
+<div class="row widget contributors">
+    <h3>{{ 'widget.contributors.title'|trans }}</h3>
+
+    <div class="authors col-xs-12">
+        {% for author in authors %}
+            <div class="author col-xs-6">
+                <a href="{{ url('blog_author', { 'slug': author.slug }) }}">
+                    <figure>
+                        {% media author.picture, 'person' with {
+                            class: 'img-responsive'
+                        } %}
+                    </figure>
+                    <span class="name">{{ author.displayName }}</span>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

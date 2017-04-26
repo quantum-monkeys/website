@@ -153,3 +153,9 @@ services:
             - "@app.manager.emails"
         tags:
             - { name: console.command }
+
+    sonata.news.custom.post_manager:
+        class: Application\Sonata\NewsBundle\Entity\PostManager
+        arguments:
+            - '%sonata.news.manager.post.entity%'
+            - '@doctrine'

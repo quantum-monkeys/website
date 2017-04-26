@@ -57,6 +57,8 @@ class AppKernel extends Kernel
 
             new Eko\FeedBundle\EkoFeedBundle(),
 
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
+
             new AppBundle\AppBundle(),
         );
 

@@ -3,8 +3,7 @@
 namespace AppBundle\Manager;
 
 use AppBundle\Entity\EventOccurrence;
-use AppBundle\Entity\Trainings\LearningPath;
-use AppBundle\Entity\Trainings\Workshop;
+use AppBundle\Entity\Person;
 use Application\Sonata\NewsBundle\Entity\Post;
 use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
@@ -89,6 +88,14 @@ class BreadcrumbsGenerator
     {
         $this->generateHomepage();
         $this->breadcrumbs->addRouteItem('blog', 'blog');
+    }
+
+    public function generateBlogAuthor(Person $author)
+    {
+        $this->generateBlog();
+        $this->breadcrumbs->addRouteItem($author->getDisplayName(), 'blog_author', [
+            'slug' => $author->getSlug()
+        ]);
     }
 
     public function generateBlogPost(Post $post)

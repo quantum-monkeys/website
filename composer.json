@@ -39,7 +39,8 @@
         "doctrine/doctrine-migrations-bundle": "^1.2",
         "presta/sitemap-bundle": "^1.5",
         "stof/doctrine-extensions-bundle": "^1.2",
-        "eko/feedbundle": "^1.2"
+        "eko/feedbundle": "^1.2",
+        "white-october/pagerfanta-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

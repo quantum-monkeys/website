@@ -10,4 +10,5 @@
     </figure>
     <span class="name" itemprop="author">{{ author.displayName }}</span>
     <p class="description">{{ translate(author, 'description') }}</p>
+    <a href="{{ path('blog_author', { 'slug': author.slug }) }}" class="articles">{{ 'widget.author.articles'|trans }}</a>
 </div>

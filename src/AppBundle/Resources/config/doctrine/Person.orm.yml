@@ -28,6 +28,14 @@ AppBundle\Entity\Person:
         linkedInProfile:
             type: string
             length: 255
+        slug:
+            type: string
+            length: 128
+            gedmo:
+                slug:
+                    fields:
+                        - firstName
+                        - lastName
 
     manyToOne:
         picture:

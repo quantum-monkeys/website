@@ -2,18 +2,64 @@
 
 namespace AppBundle\Controller;
 
-use Application\Sonata\UserBundle\Entity\User;
+use AppBundle\Entity\Person;
+use Doctrine\ORM\Query;
 use Sonata\NewsBundle\Controller\PostController;
+use Sonata\NewsBundle\Model\PostManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class NewsController extends PostController
 {
-    public function archiveAction(Request $request = null)
+    public function indexAction(Request $request = null)
     {
         $this->get('app.manager.breadcrumb_generator')->generateBlog();
 
-        return parent::archiveAction($request);
+        $pager = $this->getPostManager()->getPager(
+            [],
+            $request->get('page', 1)
+        );
+
+        return $this->renderBlogList($pager, $request);
+    }
+
+    /**
+     * @ParamConverter("author", class="AppBundle:Person")
+     *
+     * @param Person $author
+     * @param Request|null $request
+     *
+     * @return Response
+     */
+    public function authorAction(Person $author, Request $request = null)
+    {
+        $this->get('app.manager.breadcrumb_generator')->generateBlogAuthor($author);
+
+        $pager = $this->getPostManager()->getPager(
+            [
+                'author' => $author->getId()
+            ],
+            $request->get('page', 1)
+        );
+
+        return $this->renderBlogList($pager, $request);
+    }
+
+    protected function renderBlogList($pager, Request $request = null)
+    {
+        $parameters = [
+            'pager' => $pager,
+            'blog' => $this->getBlog(),
+            'tag' => false,
+            'collection' => false,
+            'route' => $request->get('_route'),
+            'route_parameters' => $request->get('_route_params'),
+        ];
+
+        $response = $this->render('AppBundle:News:list.html.twig', $parameters);
+
+        return $response;
     }
 
     public function viewAction($permalink)
@@ -58,21 +104,6 @@ class NewsController extends PostController
         return new Response($feed->render('rss'));
     }
 
-    public function authorWidgetAction(User $author)
-    {
-        $person = $this->getDoctrine()->getRepository('AppBundle:Person')->findOneBy([
-            'firstName' => $author->getFirstname(),
-            'lastName' => $author->getLastname()
-        ]);
-
-        return $this->render(
-            '@App/News/_authorWidget.html.twig',
-            [
-                'author' => $person
-            ]
-        );
-    }
-
     public function lastPostsWidgetAction($currentArticleId, int $articlesNumber = 3)
     {
         $articles = $this->getDoctrine()->getRepository('ApplicationSonataNewsBundle:Post')->findBy(
@@ -96,5 +127,33 @@ class NewsController extends PostController
                 'articles' => $articles
             ]
         );
+    }
+
+    public function contributorsWidgetAction()
+    {
+        $queryBuilder = $this->getDoctrine()->getRepository('AppBundle:Person')->createQueryBuilder('a');
+        $queryBuilder
+            ->select('a')
+            ->innerJoin('ApplicationSonataNewsBundle:Post', 'p', 'WITH', 'a.id = p.author')
+            ->addGroupBy('a.id')
+        ;
+
+        $query = $queryBuilder->getQuery()->setHydrationMode(Query::HYDRATE_OBJECT);
+        $authors = $query->getResult();
+
+        return $this->render(
+            '@App/News/_contributorsWidget.html.twig',
+            [
+                'authors' => $authors
+            ]
+        );
+    }
+
+    /**
+     * @return PostManagerInterface
+     */
+    protected function getPostManager()
+    {
+        return $this->get('sonata.news.custom.post_manager');
     }
 }

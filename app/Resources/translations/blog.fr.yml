@@ -35,7 +35,10 @@ meta:
 widget:
   author:
     title: L'auteur
+    articles: Ses articles
   latest_articles:
     title: Derniers articles
   newsletter:
     subscribe: Inscription à la newsletter
+  contributors:
+    title: Contributeurs

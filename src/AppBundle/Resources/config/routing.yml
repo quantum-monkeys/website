@@ -41,7 +41,12 @@ about_us:
 blog:
     path: /blog
     defaults:
-        _controller: AppBundle:News:archive
+        _controller: AppBundle:News:index
+
+blog_author:
+    path: /blog/author/{slug}
+    defaults:
+        _controller: AppBundle:News:author
 
 blog_feed:
     path: /blog/rss

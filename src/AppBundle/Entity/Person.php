@@ -56,6 +56,11 @@ class Person implements TranslatableInterface
     /**
      * @var string
      */
+    protected $slug;
+
+    /**
+     * @var string
+     */
     protected $linkedInProfile;
 
     public function __construct()
@@ -258,6 +263,22 @@ class Person implements TranslatableInterface
     public function setLinkedInProfile($linkedInProfile)
     {
         $this->linkedInProfile = $linkedInProfile;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 
     public function __toString()

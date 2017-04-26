@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row blog archive">
             <div class="col-xs-12 col-sm-8 articles">
-                {% for post in pager.getResults() %}
+                {% for post in pager.getCurrentPageResults() %}
                     <article itemscope itemtype="http://schema.org/Article">
                         <div class="title row">
                             <h1><a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a></h1>
@@ -24,10 +24,14 @@
                                 <span>{{ post.publicationDateStart|localizeddate('long', 'none') }}</span>
                                 <meta itemprop="datePublished" content="{{ post.publicationDateStart|localizeddate('short', 'none') }}"/>
                             </div>
-                            <div class="col-xs-6 author">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
-                                <span itemprop="author">{{ post.author.firstName }} {{ post.author.lastName }}</span>
-                            </div>
+                            {% if post.author %}
+                                <div class="col-xs-6 author">
+                                    <a href="{{ path('blog_author', { 'slug': post.author.slug }) }}">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        <span itemprop="author">{{ post.author.firstName }} {{ post.author.lastName }}</span>
+                                    </a>
+                                </div>
+                            {% endif %}
                         </div>
 
                         <div class="content row">
@@ -49,12 +53,12 @@
                 {% endfor %}
 
                 <ul class="pager">
-                    <li{% if pager.page == pager.lastPage %} class="disabled"{% endif %}>
-                        <a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}" title="{{ 'list.links.previous_page'|trans }}">
+                    <li{% if not pager.hasPreviousPage() %} class="disabled"{% endif %}>
+                        <a href="{{ url(route, route_parameters|merge({'page': pager.hasPreviousPage() ? pager.getPreviousPage() : pager.getCurrentPage() })) }}" title="{{ 'list.links.previous_page'|trans }}">
                             {{ 'list.links.previous_page'|trans }}
                         </a>
-                    <li{% if pager.page == pager.firstPage %} class="disabled"{% endif %}>
-                        <a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}" title="{{ 'list.links.next_page'|trans }}">
+                    <li{% if not pager.hasNextPage() %} class="disabled"{% endif %}>
+                        <a href="{{ url(route, route_parameters|merge({'page': pager.hasNextPage() ? pager.getNextPage() : pager.getCurrentPage() })) }}" title="{{ 'list.links.next_page'|trans }}">
                             {{ 'list.links.next_page'|trans }}
                         </a>
                     </li>
@@ -62,6 +66,7 @@
             </div>
             <div class="col-xs-12 col-sm-3 col-sm-offset-1 sidebar">
                 {{ include('AppBundle:News:_newsletterWidget.html.twig') }}
+                {{ render(controller('AppBundle:News:contributorsWidget')) }}
             </div>
         </div>
     </div>

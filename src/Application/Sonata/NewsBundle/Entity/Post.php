@@ -11,6 +11,7 @@
 
 namespace Application\Sonata\NewsBundle\Entity;
 
+use AppBundle\Entity\Person;
 use Eko\FeedBundle\Item\Writer\RoutedItemInterface;
 use Sonata\NewsBundle\Entity\BasePost as BasePost;
 
@@ -30,6 +31,11 @@ class Post extends BasePost implements RoutedItemInterface
      * @var int $id
      */
     protected $id;
+
+    /**
+     * @var Person $author
+     */
+    protected $author;
 
     /**
      * Get id
