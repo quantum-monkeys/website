@@ -55,22 +55,25 @@ class Post extends BasePost implements RoutedItemInterface
     /**
      * @return string
      */
-    public function getLang(): string
+    public function getLang()
     {
         return $this->lang;
     }
 
     /**
      * @param string $lang
+     * 
+     * @return Post
      */
     public function setLang(string $lang)
     {
         $this->lang = $lang;
+
+        return $this;
     }
 
     /**
      * This method returns feed item title.
-     *
      *
      * @return string
      */
@@ -82,7 +85,6 @@ class Post extends BasePost implements RoutedItemInterface
     /**
      * This method returns feed item description (or content).
      *
-     *
      * @return string
      */
     public function getFeedItemDescription()
@@ -92,7 +94,6 @@ class Post extends BasePost implements RoutedItemInterface
 
     /**
      * This method returns item publication date.
-     *
      *
      * @return \DateTime
      */
@@ -104,7 +105,6 @@ class Post extends BasePost implements RoutedItemInterface
     /**
      * This method returns the name of the route.
      *
-     *
      * @return string
      */
     public function getFeedItemRouteName()
@@ -114,7 +114,6 @@ class Post extends BasePost implements RoutedItemInterface
 
     /**
      * This method returns the parameters for the route.
-     *
      *
      * @return array
      */
@@ -127,7 +126,6 @@ class Post extends BasePost implements RoutedItemInterface
 
     /**
      * This method returns the anchor to be appended on this item's url.
-     *
      *
      * @return string The anchor, without the "#"
      */
