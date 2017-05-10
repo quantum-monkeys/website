@@ -34,11 +34,11 @@ meta:
   description: 'Discover our articles on Agility and modern managment practices !'
 widget:
   author:
-    title: The author
-    articles: His articles
+    title: 'The author'
+    articles: 'His articles'
   latest_articles:
-    title: Latest articles
+    title: 'Latest articles'
   newsletter:
-    subscribe: Subscribe to the newsletter
+    subscribe: 'Subscribe to the newsletter'
   contributors:
     title: Contributors

@@ -34,11 +34,11 @@ meta:
   description: 'Découvrez nos articles sur l''Agilité et les modes de gestion modernes !'
 widget:
   author:
-    title: L'auteur
-    articles: Ses articles
+    title: 'L''auteur'
+    articles: 'Ses articles'
   latest_articles:
-    title: Derniers articles
+    title: 'Derniers articles'
   newsletter:
-    subscribe: Inscription à la newsletter
+    subscribe: 'Inscription à la newsletter'
   contributors:
     title: Contributeurs
