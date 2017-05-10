@@ -5,7 +5,7 @@
     <span><a href="{{ path('blog') }}">{{ 'blog.title'|trans }}</a></span>
 </h3>
 
-{% for post in pager.getResults() %}
+{% for post in pager.getCurrentPageResults() %}
     <a href="{{ url('blog_view', { 'permalink': sonata_news_permalink(post) }) }}">
         <div class="whats_happening_box">
             <div class="whats_happening_box_left">

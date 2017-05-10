@@ -62,7 +62,7 @@ class Post extends BasePost implements RoutedItemInterface
 
     /**
      * @param string $lang
-     * 
+     *
      * @return Post
      */
     public function setLang(string $lang)

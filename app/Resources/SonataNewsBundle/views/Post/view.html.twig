@@ -43,10 +43,10 @@
             </article>
             <div class="col-xs-12 col-sm-3 col-sm-offset-1 sidebar">
                 {#{{ include('AppBundle:News:_shareWidget.html.twig') }}#}
-                {{ include('AppBundle:News:_newsletterWidget.html.twig') }}
                 {{ include('AppBundle:News:_authorWidget.html.twig', {
                     'author': post.author
                 }) }}
+                {{ include('AppBundle:News:_newsletterWidget.html.twig') }}
                 {{ render(controller('AppBundle:News:lastPostsWidget', {
                     'currentArticleId': post.id,
                     'articlesNumber': 3

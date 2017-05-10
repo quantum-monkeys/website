@@ -15,23 +15,10 @@ class SimpleContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName', TextType::class, [
-                'attr' => [
-                    'placeholder' => 'form.placeholders.firstname'
-                ],
-            ])
-            ->add('lastName', TextType::class, [
-                'attr' => [
-                    'placeholder' => 'form.placeholders.lastname'
-                ],
-            ])
             ->add('email', EmailType::class, [
                 'attr' => [
                     'placeholder' => 'form.placeholders.email'
                 ],
-            ])
-            ->add('company', CompanyNameType::class, [
-                'required' => false,
             ])
             ->add('submit', SubmitType::class, [
                 'label' => 'form.label.submit'

@@ -47,38 +47,11 @@
                     }
                 }) }}
                     <div class="row">
-                        <div class="col-xs-6">
-                            {{ form_widget(form.firstName, {
-                                'attr' : {
-                                    'class': 'form-control'
-                                }
-                            }) }}
-                        </div>
-                        <div class="col-xs-6">
-                            {{ form_widget(form.lastName, {
-                                'attr' : {
-                                    'class': 'form-control'
-                                }
-                            }) }}
-                        </div>
-                    </div>
-                    <div class="row">
                         <div class="col-xs-12">
                             {{ form_widget(form.email, {
                                 'attr' : {
                                     'class': 'form-control'
                                 }
-                            }) }}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            {{ form_widget(form.company.name, {
-                                'attr' : {
-                                    'class': 'form-control',
-                                    'placeholder': 'form.placeholders.company.name_facultative'
-                                },
-                                'required': false
                             }) }}
                         </div>
                     </div>
