@@ -70,24 +70,36 @@ class MailchimpListManager extends MailchimpManager
         try {
             $listId = $listId === null ? $this->listId : $listId;
 
+            $data = [
+                'email_address' => $email,
+                'status' => 'subscribed',
+                'merge_fields' => [
+                    'FNAME' => '',
+                    'LNAME' => ''
+                ],
+                'language' => $this->getLocale(),
+            ];
+
+            if ($firstName !== null) {
+                $data['merge_fields']['FNAME'] = $firstName;
+            }
+
+            if ($lastName !== null) {
+                $data['merge_fields']['LNAME'] = $lastName;
+            }
+
             $this->mailChimpClient->post(
                 sprintf('/3.0/lists/%s/members', $listId),
                 [
-                    'json' => [
-                        'email_address' => $email,
-                        'status' => 'subscribed',
-                        'merge_fields' => [
-                            'FNAME' => $firstName,
-                            'LNAME' => $lastName,
-                        ],
-                        'language' => $this->getLocale(),
-                    ],
+                    'json' => $data,
                 ]
             );
 
             return self::SUCCESS;
         } catch (BadResponseException $e) {
             $body = json_decode($e->getResponse()->getBody(), true);
+
+            dump($body);die;
 
             if ($body['title'] === 'Member Exists') {
                 return self::ALREADY_SUBSCRIBED;
