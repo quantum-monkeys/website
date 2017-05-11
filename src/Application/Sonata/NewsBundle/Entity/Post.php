@@ -145,4 +145,8 @@ class Post extends BasePost implements RoutedItemInterface
 
         return implode('/', $permalinkElements);
     }
+
+    public function getGUID() {
+        return $this->getId();
+    }
 }

@@ -12,9 +12,11 @@ AppBundle\Entity\Marketing\Contact:
         firstName:
             type: string
             length: 255
+            nullable: true
         lastName:
             type: string
             length: 255
+            nullable: true
         email:
             type: string
             length: 255

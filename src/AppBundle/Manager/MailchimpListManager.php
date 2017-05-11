@@ -65,7 +65,7 @@ class MailchimpListManager extends MailchimpManager
         }
     }
 
-    public function subscribe(string $email, string $firstName, string $lastName, string $listId = null)
+    public function subscribe(string $email, string $firstName = null, string $lastName = null, string $listId = null)
     {
         try {
             $listId = $listId === null ? $this->listId : $listId;

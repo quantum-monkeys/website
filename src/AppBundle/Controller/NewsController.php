@@ -4,6 +4,9 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Person;
 use Doctrine\ORM\Query;
+use Eko\FeedBundle\Feed\Feed;
+use Eko\FeedBundle\Feed\FeedManager;
+use Eko\FeedBundle\Field\Item\ItemField;
 use Sonata\NewsBundle\Controller\PostController;
 use Sonata\NewsBundle\Model\PostManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -105,10 +108,14 @@ class NewsController extends PostController
             [ 'publicationDateStart' => 'DESC' ]
         );
 
+        /** @var Feed $feed */
         $feed = $this->get('eko_feed.feed.manager')->get('article');
         $feed->addFromArray($articles);
+        $feed->addItemField(new ItemField('guid', 'getGUID'));
 
-        return new Response($feed->render('rss'));
+        return new Response($feed->render('rss'), 200, [
+            'Content-Type', 'application/rss+xml'
+        ]);
     }
 
     public function lastPostsWidgetAction($currentArticleId, int $articlesNumber = 3)
