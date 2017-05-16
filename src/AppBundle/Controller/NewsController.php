@@ -114,7 +114,7 @@ class NewsController extends PostController
         $feed->addItemField(new ItemField('guid', 'getGUID'));
 
         return new Response($feed->render('rss'), 200, [
-            'Content-Type', 'application/rss+xml'
+            'Content-Type' => 'application/rss+xml'
         ]);
     }
 
