@@ -1,0 +1,76 @@
+{% extends 'AppBundle::base.html.twig' %}
+
+{% trans_default_domain 'landingpage' %}
+
+{% block breadcrumb %}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid landing-page full-width">
+        <div class="row subscription">
+            <div class="container">
+            <div class="col-xs-12 col-sm-6">
+                <h3>{{ campaignTranslation.mainFormTitle }}</h3>
+
+                {{ form_start(form, {
+                    'attr' : {
+                        'class': 'form-inline'
+                    }
+                }) }}
+                    <div class="row">
+                        {{ form_widget(form.email, {
+                            'attr' : {
+                                'class': 'form-control'
+                            }
+                        }) }}
+                    </div>
+                    <div class="row">
+                        {{ form_widget(form.submit, {
+                            'label': campaignTranslation.mainSubmitButtonLabel,
+                            'attr' : {
+                                'class': 'btn btn-default'
+                            }
+                        }) }}
+                    </div>
+                {{ form_end(form) }}
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <picture>
+                    {% media campaignTranslation.mainPicture, 'landing_page_main' with {
+                        'class': 'img-responsive'
+                    } %}
+                </picture>
+            </div>
+                </div>
+        </div>
+        <div class="row content">
+            {{ campaignTranslation.mainContent|markdown }}
+        </div>
+        <div class="row author">
+            <div class="container">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <picture>
+                                {% media campaignTranslation.campaign.author.picture, 'person' with {
+                                    'height': 'auto'
+                                } %}
+                            </picture>
+                            <p class="name">{{ campaignTranslation.campaign.author.displayName }}</p>
+                            <p class="job-title">
+                                <span>{{ translate(campaignTranslation.campaign.author, 'position') }}</span>
+                                {% if campaignTranslation.campaign.author.company %}
+                                    <span>{{ 'at'|trans({ '%company%': campaignTranslation.campaign.author.company }) }}</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                        <div class="col-xs-8">
+                            <p class="description">{{ translate(campaignTranslation.campaign.author, 'description') }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

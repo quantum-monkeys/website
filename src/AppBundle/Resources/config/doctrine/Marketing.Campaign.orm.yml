@@ -12,6 +12,11 @@ AppBundle\Entity\Marketing\Campaign:
         title:
             type: string
             length: 255
+        template:
+            type: string
+            length: 255
+            options:
+                default: 'default'
 
     manyToOne:
         author:

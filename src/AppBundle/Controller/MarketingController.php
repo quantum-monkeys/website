@@ -15,7 +15,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class MarketingController extends Controller
 {
-    protected function getCampaignTranslation(string $slug, Request $request)
+    protected function getCampaignTranslation(string $slug, Request $request): CampaignTranslation
     {
         $campaignTranslation = $this->get('doctrine')->getRepository('AppBundle:Marketing\CampaignTranslation')->findOneBy([
             'locale' => $request->getLocale(),
@@ -51,7 +51,7 @@ class MarketingController extends Controller
             return $this->redirect($this->generateUrl('campaign_success', [ 'slug' => $campaignTranslation->getSlug() ]));
         }
 
-        return $this->render('AppBundle:Marketing:index.html.twig', [
+        return $this->render('AppBundle:Marketing:index/' . $campaignTranslation->getCampaign()->getTemplate() . '.html.twig', [
             'campaignTranslation' => $campaignTranslation,
             'form' => $form->createView()
         ]);

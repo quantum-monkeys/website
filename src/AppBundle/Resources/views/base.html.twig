@@ -59,54 +59,56 @@
 
     {% block body %}{% endblock %}
 
-    <div class="footer">
-        <div class="contanear">
-            <div class="footer_top">
-                <p class="hello">{{ 'contact.title'|trans|raw }}</p>
-            </div>
-            <div class="footer_mainpanel_left company">
-                <div class="footer_mainpanel_left_inner">
-                    <a href="https://www.google.ca/maps/place/Quantum+Monkeys/@45.482788,-73.5807847,17z/data=!3m1!4b1!4m5!3m4!1s0x4cc9175f064ce629:0xf74eb2a3b3f0dbb8!8m2!3d45.482788!4d-73.5785907?hl=fr" target="_blank">
-                        <img src="/images/address-icon.png" alt="address icon">
-                    </a>
-                    <p>
-                        <span>{{ 'contact.informations.address.title'|trans }}</span><br>
+    {% block footer %}
+        <div class="footer">
+            <div class="contanear">
+                <div class="footer_top">
+                    <p class="hello">{{ 'contact.title'|trans|raw }}</p>
+                </div>
+                <div class="footer_mainpanel_left company">
+                    <div class="footer_mainpanel_left_inner">
                         <a href="https://www.google.ca/maps/place/Quantum+Monkeys/@45.482788,-73.5807847,17z/data=!3m1!4b1!4m5!3m4!1s0x4cc9175f064ce629:0xf74eb2a3b3f0dbb8!8m2!3d45.482788!4d-73.5785907?hl=fr" target="_blank">
-                            {{ 'contact.informations.address.value'|trans }}
+                            <img src="/images/address-icon.png" alt="address icon">
                         </a>
-                    </p>
+                        <p>
+                            <span>{{ 'contact.informations.address.title'|trans }}</span><br>
+                            <a href="https://www.google.ca/maps/place/Quantum+Monkeys/@45.482788,-73.5807847,17z/data=!3m1!4b1!4m5!3m4!1s0x4cc9175f064ce629:0xf74eb2a3b3f0dbb8!8m2!3d45.482788!4d-73.5785907?hl=fr" target="_blank">
+                                {{ 'contact.informations.address.value'|trans }}
+                            </a>
+                        </p>
+                    </div>
+                    <div class="footer_mainpanel_left_inner">
+                        <a href="tel:{{ 'contact.informations.phone.value'|trans }}">
+                            <img src="/images/phone-icon.png" alt="phone icon">
+                        </a>
+                        <p>
+                            <span>{{ 'contact.informations.phone.title'|trans }}</span><br>
+                            <a href="tel:{{ 'contact.informations.phone.value'|trans }}">{{ 'contact.informations.phone.value'|trans }}</a>
+                        </p>
+                    </div>
+                    <div class="footer_mainpanel_left_inner">
+                        <a href="mailto:{{ 'contact.informations.email.value'|trans }}">
+                            <img src="/images/message-icon.png" alt="email icon">
+                        </a>
+                        <p>
+                            <span>{{ 'contact.informations.email.title'|trans }}</span><br>
+                            <a href="mailto:{{ 'contact.informations.email.value'|trans }}">{{ 'contact.informations.email.value'|trans }}</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="footer_mainpanel_left_inner">
-                    <a href="tel:{{ 'contact.informations.phone.value'|trans }}">
-                        <img src="/images/phone-icon.png" alt="phone icon">
-                    </a>
-                    <p>
-                        <span>{{ 'contact.informations.phone.title'|trans }}</span><br>
-                        <a href="tel:{{ 'contact.informations.phone.value'|trans }}">{{ 'contact.informations.phone.value'|trans }}</a>
-                    </p>
+                <div class="footer_mainpanel_right" id="contact-us">
+                    {{ render(controller('AppBundle:AboutUs:contactWidget')) }}
                 </div>
-                <div class="footer_mainpanel_left_inner">
-                    <a href="mailto:{{ 'contact.informations.email.value'|trans }}">
-                        <img src="/images/message-icon.png" alt="email icon">
-                    </a>
-                    <p>
-                        <span>{{ 'contact.informations.email.title'|trans }}</span><br>
-                        <a href="mailto:{{ 'contact.informations.email.value'|trans }}">{{ 'contact.informations.email.value'|trans }}</a>
-                    </p>
+                <div class="footer_mainpanel_social">
+                    <a href="https://www.facebook.com/quantummonkeys"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/company/quantum-monkeys"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.twitter.com/quantummonkeys"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="http://plus.google.com/117632737566323856593"> <i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    <a href="#" data-toggle="modal" data-target="#newsletterModal"> <i class="fa fa-envelope" aria-hidden="true"></i></a>
                 </div>
-            </div>
-            <div class="footer_mainpanel_right" id="contact-us">
-                {{ render(controller('AppBundle:AboutUs:contactWidget')) }}
-            </div>
-            <div class="footer_mainpanel_social">
-                <a href="https://www.facebook.com/quantummonkeys"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/company/quantum-monkeys"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://www.twitter.com/quantummonkeys"> <i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="http://plus.google.com/117632737566323856593"> <i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                <a href="#" data-toggle="modal" data-target="#newsletterModal"> <i class="fa fa-envelope" aria-hidden="true"></i></a>
             </div>
         </div>
-    </div>
+    {% endblock %}
 
     {{ render(controller('AppBundle:Newsletter:popup')) }}
 

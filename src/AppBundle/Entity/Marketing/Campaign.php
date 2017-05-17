@@ -24,6 +24,11 @@ class Campaign implements TranslatableInterface
     protected $author;
 
     /**
+     * @var string
+     */
+    protected $template;
+
+    /**
      * @var CampaignTranslation[]
      */
     protected $translations;
@@ -79,6 +84,26 @@ class Campaign implements TranslatableInterface
     public function setAuthor($author)
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTemplate()
+    {
+        return $this->template;
+    }
+
+    /**
+     * @param string $template
+     *
+     * @return Campaign
+     */
+    public function setTemplate($template)
+    {
+        $this->template = $template;
 
         return $this;
     }

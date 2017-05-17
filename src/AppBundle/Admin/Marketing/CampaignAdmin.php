@@ -33,6 +33,14 @@ class CampaignAdmin extends Admin
     {
         $formMapper
             ->add('title', 'text')
+            ->add('template', 'choice', [
+                'choices' => [
+                    'default' => 'Default',
+                    'full_width' => 'Full width',
+                ],
+                'multiple' => false,
+                'expanded'=> false,
+            ])
             ->add('author', 'entity', [
                 'class' => 'AppBundle\Entity\Person',
                 'choice_label' => 'displayName',

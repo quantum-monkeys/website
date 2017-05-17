@@ -79,3 +79,63 @@
     }
 }
 
+
+
+
+.landing-page.full-width {
+    padding: 0;
+    margin: -1.4em 0 0;
+}
+
+.landing-page.full-width .row {
+    margin: auto 0;
+}
+
+.landing-page.full-width .row.subscription {
+    background-color: #ff8a00;
+    text-align: center;
+}
+
+.landing-page.full-width .row.subscription h3 {
+    color: #ffffff;
+}
+
+.landing-page.full-width .row.subscription form input {
+    width: 25em;
+    margin: auto;
+}
+
+.landing-page.full-width .row.subscription form .btn {
+    background-color: red;
+    border-radius: 0.5em;
+    font-weight: bold;
+}
+
+.landing-page.full-width .row.subscription picture {
+    height: 10em;
+}
+
+.landing-page.full-width .row.subscription picture img {
+    width: auto;
+    margin: auto;
+}
+
+.landing-page.full-width .row.content {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.landing-page.full-width .row.author {
+    background-color: lightgrey;
+    padding: 2em 0;
+    text-align: center;
+}
+
+.landing-page.full-width .row.author picture img {
+    border-radius: 0;
+}
+
+.landing-page.full-width .row.author .description {
+    margin: 3em 0;
+}
