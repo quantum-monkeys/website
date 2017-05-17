@@ -46,6 +46,7 @@
     border-radius: 15em;
     max-height: 10em;
     width: auto;
+    margin: 2em 0;
 }
 
 .landing-page .author .name {
@@ -117,13 +118,21 @@
 
 .landing-page.full-width .row.subscription picture img {
     width: auto;
-    margin: auto;
+    margin: 1em auto;
 }
 
 .landing-page.full-width .row.content {
     background-color: #ffffff;
     text-align: center;
-    padding: 2em 0;
+    padding: 3em 0;
+}
+
+.landing-page.full-width .row.content h2 {
+    margin-bottom: 1em;
+}
+
+.landing-page.full-width .row.content p {
+    font-size: 1.2em;
 }
 
 .landing-page.full-width .row.author {
