@@ -99,8 +99,6 @@ class MailchimpListManager extends MailchimpManager
         } catch (BadResponseException $e) {
             $body = json_decode($e->getResponse()->getBody(), true);
 
-            dump($body);die;
-
             if ($body['title'] === 'Member Exists') {
                 return self::ALREADY_SUBSCRIBED;
             }
